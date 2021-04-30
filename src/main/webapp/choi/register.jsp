@@ -1,9 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE HTML>
-<!--
-	Phantom by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 <head>
 <title>Generic - Phantom by HTML5 UP</title>
@@ -14,49 +11,49 @@
 <script>
 function userCreate() {
 	if (form.username.value == "") {
-		alert("ì‚¬ìš©ì ì´ë¦„ì„ ì…ë ¥í•˜ì‹­ì‹œì˜¤.");
+		alert("»ç¿ëÀÚ ÀÌ¸§À» ÀÔ·ÂÇÏ½Ê½Ã¿À.");
 		form.username.focus();
 		return false;
 	} 
 	if (form.password1.value == "") {
-		alert("ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì‹­ì‹œì˜¤.");
+		alert("ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇÏ½Ê½Ã¿À.");
 		form.user_password.focus();
 		return false;
 	}
 	if (form.password1.value != form.password2.value) {
-		alert("ë¹„ë°€ë²ˆí˜¸ê°€ ì¼ì¹˜í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
+		alert("ºñ¹Ğ¹øÈ£°¡ ÀÏÄ¡ÇÏÁö ¾Ê½À´Ï´Ù.");
 		form.password2.focus();
 		return false;
 	}
 	if (form.fistName.value == "") {
-		alert("ì´ë¦„ì„ ì…ë ¥í•˜ì‹­ì‹œì˜¤.");
+		alert("ÀÌ¸§À» ÀÔ·ÂÇÏ½Ê½Ã¿À.");
 		form.firstName.focus();
 		return false;
 	}
 	if (form.lastName.value == "") {
-		alert("ì´ë¦„ì„ ì…ë ¥í•˜ì‹­ì‹œì˜¤.");
+		alert("ÀÌ¸§À» ÀÔ·ÂÇÏ½Ê½Ã¿À.");
 		form.lastName.focus();
 		return false;
 	}
 	if (form.address.value == "") {
-		alert("ì£¼ì†Œë¥¼ ì…ë ¥í•˜ì‹­ì‹œì˜¤.");
+		alert("ÁÖ¼Ò¸¦ ÀÔ·ÂÇÏ½Ê½Ã¿À.");
 		form.address.focus();
 		return false;
 	}
 	if (form.phone.value == "") {
-		alert("ì „í™”ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì‹­ì‹œì˜¤.");
+		alert("ÀüÈ­¹øÈ£¸¦ ÀÔ·ÂÇÏ½Ê½Ã¿À.");
 		form.phone.focus();
 		return false;
 	}
 	var emailExp = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
 	if(emailExp.test(form.email.value)==false) {
-		alert("ì´ë©”ì¼ í˜•ì‹ì´ ì˜¬ë°”ë¥´ì§€ ì•ŠìŠµë‹ˆë‹¤.");
+		alert("ÀÌ¸ŞÀÏ Çü½ÄÀÌ ¿Ã¹Ù¸£Áö ¾Ê½À´Ï´Ù.");
 		form.email.focus();
 		return false;
 	}
 	var phoneExp = /^\d{2,3}-\d{3,4}-\d{4}$/;
 	if(phoneExp.test(form.phone.value)==false) {
-		alert("ì „í™”ë²ˆí˜¸ í˜•ì‹ì´ ì˜¬ë°”ë¥´ì§€ ì•ŠìŠµë‹ˆë‹¤.");
+		alert("ÀüÈ­¹øÈ£ Çü½ÄÀÌ ¿Ã¹Ù¸£Áö ¾Ê½À´Ï´Ù.");
 		form.phone.focus();
 		return false;
 	}
@@ -92,14 +89,9 @@ function userCreate() {
 		<nav id="menu">
 			<h2>Menu</h2>
 			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="generic.html">Ipsum veroeros</a></li>
-				<li><a href="generic.html">Tempus etiam</a></li>
-				<li><a href="generic.html">Consequat dolor</a></li>
-				<li><a href="elements.html">Elements</a></li>
-				<li><a href="coPurchasing.html">CoPurchasing</a></li>
-				<li><a href="login.html">Login</a></li>
-				<li><a href="register.html">Register</a></li>
+				<li><a href="coPurchasing.jsp">CoPurchasing</a></li>
+				<li><a href="login.jsp">Login</a></li>
+				<li><a href="register.jsp">Register</a></li>
 			</ul>
 		</nav>
 
@@ -112,28 +104,28 @@ function userCreate() {
 						<div class="form-group">
 							<label for="username" style="font-size: 24px">UserName</label>
 							<input type="text" style="width: 800px" class="form-control"
-								name="username" placeholder="ì´ë¦„ì„ ì…ë ¥í•´ ì£¼ì„¸ìš”.">
+								name="username" placeholder="ÀÌ¸§À» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.">
 						</div>
 						<div class="form-group">
 							<label for="password1" style="font-size: 24px">Password</label>
 							<input type="password" style="width: 800px" class="form-control"
-								name="password1" placeholder="ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš”.">
+								name="password1" placeholder="ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä.">
 						</div>
 						<div class="form-group">
 							<label for="password2" style="font-size: 24px">Password Check</label>
 							<input type="password" style="width: 800px" class="form-control"
-								name="password2" placeholder="ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš”.">
+								name="password2" placeholder="ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä.">
 						</div>
 						<div class="form-group row">
 							<label for="fistName" class="col-lg-2 col-form-label" style="font-size: 24px">FirstName</label>
 							<div class="col-lg-10">
 								<input type="text" name="firstname" class="form-control"
-									placeholder="ê¸¸ë™">
+									placeholder="±æµ¿">
 							</div>
 							<label for="lastName" class="col-lg-2 col-form-label" style="font-size: 24px">LastName</label>
 							<div class="col-lg-10">
 								<input type="text" name="lastName" class="form-control"
-									placeholder="í™">
+									placeholder="È«">
 							</div>
 						</div>
 						<div class="form-group">
@@ -144,7 +136,7 @@ function userCreate() {
 						<div class="form-group">
 							<label for="address" style="font-size: 24px">Address</label>
 							<input type="text" style="width: 800px" class="form-control"
-								name="address" placeholder="ì£¼ì†Œë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš”.">
+								name="address" placeholder="ÁÖ¼Ò¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä.">
 						</div>
 						<div class="form-group">
 							<label for="phone" style="font-size: 24px">PhoneNumber</label> <input
@@ -154,7 +146,7 @@ function userCreate() {
 						<div class="form-group">
 							<label for="favoriteMall" style="font-size: 24px">FavoriteMall</label>
 							<input type="text" style="width: 800px" class="form-control"
-								name="favoriteMall" placeholder="ì„ í˜¸í•˜ëŠ” ë§¤ì¥ì„ ì…ë ¥í•˜ì„¸ìš”.">
+								name="favoriteMall" placeholder="¼±È£ÇÏ´Â ¸ÅÀåÀ» ÀÔ·ÂÇÏ¼¼¿ä.">
 						</div>
 						<div class="form-group">
 							<label for="languagePrefernce" style="font-size: 24px">LanguagePreference</label>
@@ -164,22 +156,22 @@ function userCreate() {
 						<div class="form-group">
 							<label for="carInfo" style="font-size: 24px">CarInfo</label>
 							<input type="text" style="width: 800px" class="form-control"
-								name="carInfo" placeholder="ì†Œìœ í•œ ì°¨ëŸ‰ì˜ ì •ë³´ë¥¼ ì…ë ¥í•˜ì„¸ìš”.">
+								name="carInfo" placeholder="¼ÒÀ¯ÇÑ Â÷·®ÀÇ Á¤º¸¸¦ ÀÔ·ÂÇÏ¼¼¿ä.">
 								<p><p><p><p>
 						</div>
 						<div class="col-6 col-12-small">
 							<label style="font-size: 24px">Agree to Terms</label>
 							<input type="checkbox" id="demo-human" name="demo-human">
-							<label for="demo-human">ì•½ê´€ì— ë™ì˜ í•©ë‹ˆë‹¤.</label>
+							<label for="demo-human">¾à°ü¿¡ µ¿ÀÇ ÇÕ´Ï´Ù.</label>
 							<p><p><p><p>
 							
 						</div>
 						<div class="form-group text-center">
 							<button type="submit" id="join-submit" class="button primary" onClick="userCreate();return false;">
-								íšŒì›ê°€ì…<i class="fa fa-check spaceLeft"></i>
+								È¸¿ø°¡ÀÔ<i class="fa fa-check spaceLeft"></i>
 							</button>
 							<button type="submit" class="btn btn-warning">
-								ê°€ì…ì·¨ì†Œ<i class="fa fa-times spaceLeft"></i>
+								°¡ÀÔÃë¼Ò<i class="fa fa-times spaceLeft"></i>
 							</button>
 						</div>
 					</form>
