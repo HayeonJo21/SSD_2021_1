@@ -1,9 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE HTML>
-<!--
-	Phantom by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 <head>
 <title>Login - Phantom by HTML5 UP</title>
@@ -12,7 +9,7 @@
 	content="width=device-width, initial-scale=1, user-scalable=no" />
 <link rel="stylesheet" href="assets/css/main.css" />
 <noscript>
-	<link rel="stylesheet" href="assets/css/noscript.css" />
+	<link rel="stylesheet" href="assets/css/noscript.css" />a
 </noscript>
 </head>
 <body class="is-preload">
@@ -42,14 +39,9 @@
 		<nav id="menu">
 			<h2>Menu</h2>
 			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="generic.html">Ipsum veroeros</a></li>
-				<li><a href="generic.html">Tempus etiam</a></li>
-				<li><a href="generic.html">Consequat dolor</a></li>
-				<li><a href="elements.html">Elements</a></li>
-				<li><a href="coPurchasing.html">CoPurchasing</a></li>
-				<li><a href="login.html">Login</a></li>
-				<li><a href="register.html">Register</a></li>
+				<li><a href="coPurchasing.jsp">CoPurchasing</a></li>
+				<li><a href="login.jsp">Login</a></li>
+				<li><a href="register.jsp">Register</a></li>
 			</ul>
 		</nav>
 		<!-- Main -->
