@@ -18,32 +18,64 @@ public class MybatisAccountDao implements AccountDao {
 
 	@Autowired
 	private AccountMapper accountMapper;
-	
-	public Account getAccount(String username) throws DataAccessException {
-		return accountMapper.getAccountByUsername(username);
+
+	@Override
+	public void createAccount(Account account) throws DataAccessException {
+		// TODO Auto-generated method stub
+		
 	}
 
-	public Account getAccount(String username, String password) 
-			throws DataAccessException {
-		return accountMapper.getAccountByUsernameAndPassword(username, password);
+	@Override
+	public void removeAccount(Account account) throws DataAccessException {
+		// TODO Auto-generated method stub
+		
 	}
 
-	public void insertAccount(Account account) throws DataAccessException {
-		accountMapper.insertAccount(account);
-		accountMapper.insertProfile(account);
-		accountMapper.insertSignon(account);
+	@Override
+	public List<Account> findUserListByAuctionId(String auctionId) throws DataAccessException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
+	@Override
+	public List<Account> findUserListByUsername(String username) throws DataAccessException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Account> findUserListByBidderId(String bidderId) throws DataAccessException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Account> findUserListByCPId(String CPId) throws DataAccessException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean existingUser(String username) throws DataAccessException {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public List<Account> findFavoriteUserList(String username) throws DataAccessException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Account findUser(String username) throws DataAccessException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
 	public void updateAccount(Account account) throws DataAccessException {
-		accountMapper.updateAccount(account);
-		accountMapper.updateProfile(account);
-		if (account.getPassword() != null && account.getPassword().length() > 0) 
-		{
-			accountMapper.updateSignon(account);
-		}
-	}
- 
-	public List<String> getUsernameList() throws DataAccessException {
-		return accountMapper.getUsernameList();
+		// TODO Auto-generated method stub
+		
 	}
 }
