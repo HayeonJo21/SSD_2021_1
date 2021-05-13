@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.jpetstore.dao.mybatis.mapper.FavoriteUserMapper">
+  <cache />
+
+   <insert id="create" parameterType="FavoriteUserDTO">
+    INSERT INTO FAVORITEUSER
+      (USERNAME, FAVORITEUSERNAME, TRADECOUNT)
+    VALUES
+      (#{username}, #{favoriteUsername}, #{tradeCount})
+	</insert>
+
+	<update id="update" parameterType="FavoriteUserDTO">
+    UPDATE FAVORITEUSER SET 
+	   FAVORITEUSERNAME  = #{favoriteUsername}, 
+	   TRADECOUNT = #{tradeCount} 
+    WHERE USERNAME= #{username}
+	</update>
+
+	<delete id="remove" parameterType="java.lang.String">
+	DELETE FROM FAVORITEUSER 
+	WHERE USERNAME = #{username}
+	</delete>
+	
+	<select id="getFUByUsername" resultType="FavoriteUserDTO">
+    SELECT * 
+    FROM FAVORITEUSER 
+	WHERE USERNAME = #{username}
+	</select>
+  
+	<select id="getFUList" resultType="FavoriteUserDTO">
+    SELECT * FROM FAVORITEUSER
+	</select>
+  
+</mapper>

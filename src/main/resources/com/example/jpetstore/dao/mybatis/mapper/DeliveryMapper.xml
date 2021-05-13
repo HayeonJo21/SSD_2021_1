@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.jpetstore.dao.mybatis.mapper.DeliveryMapper">
+  <cache />
+
+   <insert id="create" parameterType="DeliveryDTO">
+    INSERT INTO DELIVERY
+      (USERNAME, CONTENT, MESSAGEDATE, RECEIVERUSERNAME)
+    VALUES
+      (#{senderUsername}, #{content}, #{messageDate}, #{receiverUsername})
+	</insert>
+
+	<update id="update" parameterType="DeliveryDTO">
+    UPDATE DELIVERY SET 
+	   ADDRESS1  = #{address1}, 
+	   ADDRESS2 = #{address2}, 
+	   USERNAME = #{username}, 
+	   SERVICEDATE = #{serviceDate},
+	   FILENAME   = #{filename}, 
+	   PRICE = #{price}, 
+	   WIDTH = #{width}, 
+	   LENGTH = #{depth}, 
+	   HEIGHT = #{height}, 
+	   WEIGHT = #{weight}, 
+	   LOADAGE = #{loadage} 
+    WHERE DELIVERYID= #{deliveryId}
+	</update>
+
+	<delete id="remove" parameterType="int">
+	DELETE FROM DELIVERY 
+	WHERE DELIVERYID = #{deliveryId}
+	</delete>
+	
+	<select id="getDeliveryById" resultType="DeliveryDTO">
+    SELECT * 
+    FROM DELIVERY 
+    WHERE DELIVERYID = #{deliveryId}
+	</select>
+	
+	<select id="getDeliveryByUsername" resultType="DeliveryDTO">
+    SELECT * 
+    FROM DELIVERY 
+    WHERE USERNAME = #{username}
+	</select>
+  
+	<select id="getDeliveryList" resultType="DeliveryDTO">
+    SELECT * FROM DELIVERY
+	</select>
+  
+</mapper>
