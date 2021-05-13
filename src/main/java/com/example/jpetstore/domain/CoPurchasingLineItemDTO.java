@@ -1,36 +1,39 @@
 package com.example.jpetstore.domain;
 
-public class CoPurchasingLineItemDTO {
+import java.io.Serializable;
 
-	private String username;
-	private String address;
+@SuppressWarnings("serial")
+public class CoPurchasingLineItemDTO implements Serializable{
+
+	private int copurchasingId;
+	private int deliveryId;
 	
 	public CoPurchasingLineItemDTO() {}
 	
-	public CoPurchasingLineItemDTO(String username) {
+	public CoPurchasingLineItemDTO(int copurchasingId) {
 		super();
-		this.username = username;
+		this.copurchasingId = copurchasingId;
 	}
 	
-	public CoPurchasingLineItemDTO(String username, String address) {
+	public CoPurchasingLineItemDTO(int copurchasingId, int deliveryId) {
 		super();
-		this.username = username;
-		this.address = address;
+		this.copurchasingId = copurchasingId;
+		this.deliveryId = deliveryId;
 	}
 	
-	public String getUsername() {
-		return this.username;
+	public int getCopurchasingId() {
+		return this.copurchasingId;
 	}
 	
-	public void setUsername(String username) {
-		this.username = username;
+	public void setCopurchasingId(int copurchasingId) {
+		this.copurchasingId = copurchasingId;
 	}
 	
-	public String getAddress() {
-		return this.address;
+	public int getDeliveryId() {
+		return this.deliveryId;
 	}
 	
-	public void setAddress(String address) {
-		this.address = address;
+	public void setDeliveryId(int deliveryId) {
+		this.deliveryId = deliveryId;
 	}
 }

@@ -1,39 +1,42 @@
 package com.example.jpetstore.domain;
 
-public class BidderLineItemDTO {
+import java.io.Serializable;
 
-	private int bidderId;
-	private String address;
+@SuppressWarnings("serial")
+public class BidderLineItemDTO implements Serializable{
+
+	private int auctionId;
+	private int deliveryId;
 	private int bidPrice;
 	
 	public BidderLineItemDTO() {}
 	
-	public BidderLineItemDTO(int bidderId) {
+	public BidderLineItemDTO(int auctionId) {
 		super();
-		this.bidderId = bidderId;
+		this.auctionId = auctionId;
 	}
 	
-	public BidderLineItemDTO(int bidderId, String address, int bidPrice) {
+	public BidderLineItemDTO(int auctionId, int deliveryId, int bidPrice) {
 		super();
-		this.bidderId = bidderId;
-		this.address = address;
+		this.auctionId = auctionId;
+		this.deliveryId = deliveryId;
 		this.bidPrice = bidPrice;
 	}
 
-	public int getBidderId() {
-		return bidderId;
+	public int getAuctionId() {
+		return auctionId;
 	}
 	
-	public void setBidderId(int bidderId) {
-		this.bidderId = bidderId;
+	public void setAuctionId(int auctionId) {
+		this.auctionId = auctionId;
 	}
 	
-	public String getAddress() {
-		return address;
+	public int getDeliveryId() {
+		return deliveryId;
 	}
 	
-	public void setAddress(String address) {
-		this.address = address;
+	public void setDeliveryId(int deliveryId) {
+		this.deliveryId = deliveryId;
 	}
 	
 	public int getBidPrice() {
