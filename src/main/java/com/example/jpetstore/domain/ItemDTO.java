@@ -1,6 +1,9 @@
 package com.example.jpetstore.domain;
 
-public class ItemDTO {
+import java.io.Serializable;
+
+@SuppressWarnings("serial")
+public class ItemDTO implements Serializable{
 
 	private int itemId;
 	private String itemName;
