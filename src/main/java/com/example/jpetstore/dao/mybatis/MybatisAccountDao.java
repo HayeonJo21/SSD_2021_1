@@ -18,32 +18,62 @@ public class MybatisAccountDao implements AccountDao {
 
 	@Autowired
 	private AccountMapper accountMapper;
-	
-	public Account getAccount(String username) throws DataAccessException {
-		return accountMapper.getAccountByUsername(username);
+
+	@Override
+	public void create(Account account) throws DataAccessException {
+		accountMapper.create(account);
 	}
 
-	public Account getAccount(String username, String password) 
-			throws DataAccessException {
-		return accountMapper.getAccountByUsernameAndPassword(username, password);
+	@Override
+	public void remove(String username) throws DataAccessException {
+		accountMapper.remove(username);
 	}
 
-	public void insertAccount(Account account) throws DataAccessException {
-		accountMapper.insertAccount(account);
-		accountMapper.insertProfile(account);
-		accountMapper.insertSignon(account);
+	@Override
+	public List<Account> findUserListByAuctionId(String auctionId) throws DataAccessException {
+		
+		return accountMapper.findUserListByAuctionId(auctionId);
 	}
 
-	public void updateAccount(Account account) throws DataAccessException {
-		accountMapper.updateAccount(account);
-		accountMapper.updateProfile(account);
-		if (account.getPassword() != null && account.getPassword().length() > 0) 
-		{
-			accountMapper.updateSignon(account);
-		}
+	@Override
+	public List<Account> findUserListByUsername(String username) throws DataAccessException {
+		
+		return accountMapper.findUserListByUsername(username);
 	}
- 
-	public List<String> getUsernameList() throws DataAccessException {
-		return accountMapper.getUsernameList();
+
+	@Override
+	public List<Account> findUserListByBidderId(String bidderId) throws DataAccessException {
+		
+		return accountMapper.findUserListByBidderId(bidderId);
+	}
+
+	@Override
+	public List<Account> findUserListByCPId(String CPId) throws DataAccessException {
+		
+		return accountMapper.findUserListByCPId(CPId);
+	}
+
+	@Override
+	public boolean existingUser(String username) throws DataAccessException {
+		
+		return accountMapper.existingUser(username);
+	}
+
+	@Override
+	public List<Account> findFavoriteUserList(String username) throws DataAccessException {
+		
+		return accountMapper.findFavoriteUserList(username);
+	}
+
+	@Override
+	public Account findUser(String username) throws DataAccessException {
+		
+		return accountMapper.findUser(username);
+	}
+
+	@Override
+	public void update(Account account) throws DataAccessException {
+		accountMapper.update(account);
+		
 	}
 }

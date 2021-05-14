@@ -18,32 +18,24 @@ package com.example.jpetstore.dao.mybatis.mapper;
 
 import java.util.List;
 
-import com.example.jpetstore.domain.Account;
+import com.example.jpetstore.domain.CoPurchasingDTO;
 
 /**
  * @author Eduardo Macarron
  *
  */
-public interface AccountMapper {
+public interface CoPurchasingMapper {
 
-	void create(Account account);
+	void create(CoPurchasingDTO CP);
 	
-	void update(Account account);
+	void update(CoPurchasingDTO CP);
 	
-	void remove(String username);
+	void remove(String CPId);
 	
-	List<Account> findUserListByAuctionId(String auctionId);
+	List<CoPurchasingDTO> findCPList();
 	
-	List<Account> findUserListByUsername(String username);
+	CoPurchasingDTO getCPById(String CPId);
 	
-	List<Account> findUserListByBidderId(String bidderId);
-	
-	List<Account> findUserListByCPId(String CPId);
-	
-	boolean existingUser(String username);
-	
-	List<Account> findFavoriteUserList(String username);
-	
-	Account findUser(String username);
+	CoPurchasingDTO findCPByusername(String username);
 
 }
