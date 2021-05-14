@@ -78,7 +78,6 @@ public class PetStoreImpl implements PetStoreFacade {
 	}
 
 	public void insertAccount(Account account) {
-		
 	}
 
 	public void updateAccount(Account account) {
