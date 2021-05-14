@@ -11,12 +11,13 @@ public class CoPurchasingDTO implements Serializable {
 
 	/* Private Fields */
 
-	private String coPurchasingId;
+	private int coPurchasingId;
 	private int unitCost;
 	private int price;
 	private String username;
 	private int maxNumberofPurchaser;
 	private DeliveryDTO delivery;
+	private String note;
 	
 
 	
@@ -29,8 +30,8 @@ public class CoPurchasingDTO implements Serializable {
 		super();
 	}
 	
-	public CoPurchasingDTO(String coPurchasingId, int unitCost, int price, String username, int maxNumberofPurchaser,
-			DeliveryDTO delivery) {
+	public CoPurchasingDTO(int coPurchasingId, int unitCost, int price, String username, int maxNumberofPurchaser,
+			DeliveryDTO delivery, String note) {
 		super();
 		this.coPurchasingId = coPurchasingId;
 		this.unitCost = unitCost;
@@ -38,14 +39,15 @@ public class CoPurchasingDTO implements Serializable {
 		this.username = username;
 		this.maxNumberofPurchaser = maxNumberofPurchaser;
 		this.delivery = delivery;
+		this.note = note;
 	}
 
 
 
-	public String getCoPurchasingId() {
+	public int getCoPurchasingId() {
 		return coPurchasingId;
 	}
-	public void setCoPurchasingId(String coPurchasingId) {
+	public void setCoPurchasingId(int coPurchasingId) {
 		this.coPurchasingId = coPurchasingId;
 	}
 	public int getUnitCost() {
@@ -78,6 +80,16 @@ public class CoPurchasingDTO implements Serializable {
 	public void setDelivery(DeliveryDTO delivery) {
 		this.delivery = delivery;
 	}
+	
+	
+	public String getNote() {
+		return note;
+	}
+
+	public void setNote(String note) {
+		this.note = note;
+	}
+	
 
 	
 

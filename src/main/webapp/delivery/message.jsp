@@ -34,7 +34,7 @@
 				<span class="align-middle"
 					style="display: table-cell; padding: 0 0 0 20px;">상대방이름(아이디?)</span>
 					<!-- <a href="message_list.jsp">DM리스트</a> -->
-					<a href="message_list.jsp" class="button text-white" style="display:table-cell; padding: 20px;">DM리스트</a>
+					<a href="messageList.jsp" class="button text-white" style="display:table-cell; padding: 20px;">DM리스트</a>
 			</div>
 			
 		
@@ -47,10 +47,6 @@
 					<div class="chatbox ">
 						<label for="buyerMessage">상대방</label><br>
 
-						<!-- <div class="d-inline-flex p-2 bg-secondary text-white float-left"
-							id="buyerMessage">네고해주세요 aaaa bbbb ccc dd ff feew dssss
-							fffff sssss dddd ddd ddd ddd dddaaaa bbbb ccc dd ff feew dssss
-							fffff sssss dddd ddd ddd ddd ddd</div> -->
 							<div class="d-inline-flex p-2 bg-secondary text-white float-left"
 							id="buyerMessage">네고해주세요 </div>
 					</div>

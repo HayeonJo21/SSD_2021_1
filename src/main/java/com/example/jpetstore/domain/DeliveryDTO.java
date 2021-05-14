@@ -9,7 +9,7 @@ public class DeliveryDTO implements Serializable {
 
 	/* Private Fields */
 
-	private String deliveryId;
+	private int deliveryId;
 	private String address1;
 	private String address2;
 	private String username;
@@ -27,7 +27,7 @@ public class DeliveryDTO implements Serializable {
 	public DeliveryDTO() {
 		super();
 	}
-	public DeliveryDTO(String deliveryId, String address1, String address2, String username, Date serviceDate,
+	public DeliveryDTO(int deliveryId, String address1, String address2, String username, Date serviceDate,
 			String filename, int price, int width, int depth, int height, int weight, int loadage) {
 		super();
 		this.deliveryId = deliveryId;
@@ -50,10 +50,10 @@ public class DeliveryDTO implements Serializable {
 
 	/* JavaBeans Properties */
 
-	public String getDeliveryId() {
+	public int getDeliveryId() {
 		return deliveryId;
 	}
-	public void setDeliveryId(String deliveryId) {
+	public void setDeliveryId(int deliveryId) {
 		this.deliveryId = deliveryId;
 	}
 	public String getAddress1() {
