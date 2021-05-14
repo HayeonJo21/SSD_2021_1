@@ -24,6 +24,29 @@ public class DeliveryDTO implements Serializable {
 
 
 
+	public DeliveryDTO() {
+		super();
+	}
+	public DeliveryDTO(String deliveryId, String address1, String address2, String username, Date serviceDate,
+			String filename, int price, int width, int depth, int height, int weight, int loadage) {
+		super();
+		this.deliveryId = deliveryId;
+		this.address1 = address1;
+		this.address2 = address2;
+		this.username = username;
+		this.serviceDate = serviceDate;
+		this.filename = filename;
+		this.price = price;
+		this.width = width;
+		this.depth = depth;
+		this.height = height;
+		this.weight = weight;
+		this.loadage = loadage;
+	}
+
+
+
+
 
 	/* JavaBeans Properties */
 

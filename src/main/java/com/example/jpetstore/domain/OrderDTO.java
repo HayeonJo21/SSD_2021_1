@@ -19,6 +19,18 @@ public class OrderDTO implements Serializable {
 
 
 
+	public OrderDTO() {
+		super();
+	}
+
+	public OrderDTO(String orderId, String username, Date orderDate, String address, int totalPrice) {
+		super();
+		this.orderId = orderId;
+		this.username = username;
+		this.orderDate = orderDate;
+		this.address = address;
+		this.totalPrice = totalPrice;
+	}
 	/* JavaBeans Properties */
 	public String getOrderId() {
 		return orderId;
