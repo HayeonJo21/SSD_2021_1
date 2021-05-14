@@ -26,11 +26,11 @@ import com.example.jpetstore.domain.Account;
  */
 public interface AccountMapper {
 
-	void createAccount(Account account);
+	void create(Account account);
 	
-	void updateAccount(Account account);
+	void update(Account account);
 	
-	void removeAccount(Account account);
+	void remove(String username);
 	
 	List<Account> findUserListByAuctionId(String auctionId);
 	

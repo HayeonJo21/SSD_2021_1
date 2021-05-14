@@ -5,11 +5,11 @@ import org.springframework.dao.DataAccessException;
 import com.example.jpetstore.domain.Account;
 
 public interface AccountDao {
-	void createAccount(Account account) throws DataAccessException;
+	void create(Account account) throws DataAccessException;
 	
-	void updateAccount(Account account) throws DataAccessException;
+	void update(Account account) throws DataAccessException;
 	
-	void removeAccount(Account account) throws DataAccessException;
+	void remove(String username) throws DataAccessException;
 	
 	List<Account> findUserListByAuctionId(String auctionId) throws DataAccessException;
 	

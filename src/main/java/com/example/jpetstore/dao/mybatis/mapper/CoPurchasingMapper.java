@@ -26,11 +26,11 @@ import com.example.jpetstore.domain.CoPurchasingDTO;
  */
 public interface CoPurchasingMapper {
 
-	void createCP(CoPurchasingDTO CP);
+	void create(CoPurchasingDTO CP);
 	
-	void updateCP(CoPurchasingDTO CP);
+	void update(CoPurchasingDTO CP);
 	
-	void removeCP(CoPurchasingDTO CP);
+	void remove(String CPId);
 	
 	List<CoPurchasingDTO> findCPList();
 	

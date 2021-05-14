@@ -20,62 +20,60 @@ public class MybatisAccountDao implements AccountDao {
 	private AccountMapper accountMapper;
 
 	@Override
-	public void createAccount(Account account) throws DataAccessException {
-		// TODO Auto-generated method stub
-		
+	public void create(Account account) throws DataAccessException {
+		accountMapper.create(account);
 	}
 
 	@Override
-	public void removeAccount(Account account) throws DataAccessException {
-		// TODO Auto-generated method stub
-		
+	public void remove(String username) throws DataAccessException {
+		accountMapper.remove(username);
 	}
 
 	@Override
 	public List<Account> findUserListByAuctionId(String auctionId) throws DataAccessException {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return accountMapper.findUserListByAuctionId(auctionId);
 	}
 
 	@Override
 	public List<Account> findUserListByUsername(String username) throws DataAccessException {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return accountMapper.findUserListByUsername(username);
 	}
 
 	@Override
 	public List<Account> findUserListByBidderId(String bidderId) throws DataAccessException {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return accountMapper.findUserListByBidderId(bidderId);
 	}
 
 	@Override
 	public List<Account> findUserListByCPId(String CPId) throws DataAccessException {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return accountMapper.findUserListByCPId(CPId);
 	}
 
 	@Override
 	public boolean existingUser(String username) throws DataAccessException {
-		// TODO Auto-generated method stub
-		return false;
+		
+		return accountMapper.existingUser(username);
 	}
 
 	@Override
 	public List<Account> findFavoriteUserList(String username) throws DataAccessException {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return accountMapper.findFavoriteUserList(username);
 	}
 
 	@Override
 	public Account findUser(String username) throws DataAccessException {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return accountMapper.findUser(username);
 	}
 
 	@Override
-	public void updateAccount(Account account) throws DataAccessException {
-		// TODO Auto-generated method stub
+	public void update(Account account) throws DataAccessException {
+		accountMapper.update(account);
 		
 	}
 }

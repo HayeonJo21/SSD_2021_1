@@ -78,7 +78,7 @@ public class PetStoreImpl implements PetStoreFacade {
 	}
 
 	public void insertAccount(Account account) {
-		accountDao.insertAccount(account);
+		accountDao.createAccount(account);
 	}
 
 	public void updateAccount(Account account) {
@@ -86,7 +86,7 @@ public class PetStoreImpl implements PetStoreFacade {
 	}
 
 	public List<String> getUsernameList() {
-		return accountDao.getUsernameList();
+		return accountDao.getAccountList();
 	}
 
 	public List<Category> getCategoryList() {

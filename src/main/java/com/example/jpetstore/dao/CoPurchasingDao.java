@@ -6,11 +6,11 @@ import com.example.jpetstore.domain.CoPurchasingDTO;
 
 public interface CoPurchasingDao {
 	
-	void createCP(CoPurchasingDTO CP) throws DataAccessException;
+	void create(CoPurchasingDTO CP) throws DataAccessException;
 	
-	void updateCP(CoPurchasingDTO CP) throws DataAccessException;
+	void update(CoPurchasingDTO CP) throws DataAccessException;
 	
-	void removeCP(CoPurchasingDTO CP) throws DataAccessException;
+	void remove(String CPId) throws DataAccessException;
 	
 	List<CoPurchasingDTO> findCPList() throws DataAccessException;
 	

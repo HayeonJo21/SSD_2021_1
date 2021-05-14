@@ -20,38 +20,35 @@ public class MybatisCoPurchasingDao implements CoPurchasingDao {
 	private CoPurchasingMapper CPMapper;
 	
 	@Override
-	public void createCP(CoPurchasingDTO CP) throws DataAccessException {
-		// TODO Auto-generated method stub
+	public void create(CoPurchasingDTO CP) throws DataAccessException {
+		CPMapper.create(CP);
 		
 	}
 
 	@Override
-	public void updateCP(CoPurchasingDTO CP) throws DataAccessException {
-		// TODO Auto-generated method stub
+	public void update(CoPurchasingDTO CP) throws DataAccessException {
+		CPMapper.update(CP);
 		
 	}
 
 	@Override
-	public void removeCP(CoPurchasingDTO CP) throws DataAccessException {
-		// TODO Auto-generated method stub
+	public void remove(String CPId) throws DataAccessException {
+		CPMapper.remove(CPId);
 		
 	}
 
 	@Override
 	public List<CoPurchasingDTO> findCPList() throws DataAccessException {
-		// TODO Auto-generated method stub
-		return null;
+		return CPMapper.findCPList();
 	}
 
 	@Override
 	public CoPurchasingDTO getCPById(String CPId) throws DataAccessException {
-		// TODO Auto-generated method stub
-		return null;
+		return CPMapper.getCPById(CPId);
 	}
 
 	@Override
 	public CoPurchasingDTO findCPByusername(String username) throws DataAccessException {
-		// TODO Auto-generated method stub
-		return null;
+		return CPMapper.findCPByusername(username);
 	}
 }
