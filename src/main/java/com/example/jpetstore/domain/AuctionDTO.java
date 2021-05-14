@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.sql.Date;
 
 public class AuctionDTO implements Serializable {
-	private String auctionId;
+	private int auctionId;
 	private String serviceId;
 	private String customerId;
 	private Date endDate;
@@ -15,6 +15,7 @@ public class AuctionDTO implements Serializable {
 	private String address2;
 	private String successfulBidder;
 	private DeliveryDTO delivery; //deliver 객체 참조
+	private String username;
 	
 	
 	//기본생성자
@@ -23,9 +24,9 @@ public class AuctionDTO implements Serializable {
 	}
 	
 	
-	public AuctionDTO(String auctionId, String serviceId, String customerId, Date endDate, Date serviceDate,
+	public AuctionDTO(int auctionId, String serviceId, String customerId, Date endDate, Date serviceDate,
 			int startPrice, int finalPrice, String address1, String address2, String successfulBidder,
-			DeliveryDTO delivery) {
+			DeliveryDTO delivery, String username) {
 		super();
 		this.auctionId = auctionId;
 		this.serviceId = serviceId;
@@ -38,13 +39,14 @@ public class AuctionDTO implements Serializable {
 		this.address2 = address2;
 		this.successfulBidder = successfulBidder;
 		this.delivery = delivery;
+		this.username = username;
 	}
 	
 	//getter&setter
-	public String getAuctionId() {
+	public int getAuctionId() {
 		return auctionId;
 	}
-	public void setAuctionId(String auctionId) {
+	public void setAuctionId(int auctionId) {
 		this.auctionId = auctionId;
 	}
 	public String getServiceId() {
@@ -107,6 +109,18 @@ public class AuctionDTO implements Serializable {
 	public void setDelivery(DeliveryDTO delivery) {
 		this.delivery = delivery;
 	}
+
+
+	public String getUsername() {
+		return username;
+	}
+
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	
+	
 	
 	
 	

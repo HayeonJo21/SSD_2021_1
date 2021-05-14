@@ -11,7 +11,7 @@ public class OrderDTO implements Serializable {
 
 	/* Private Fields */
 
-	private String orderId;
+	private int orderId;
 	private String username;
 	private Date orderDate;
 	private String address;
@@ -23,7 +23,7 @@ public class OrderDTO implements Serializable {
 		super();
 	}
 
-	public OrderDTO(String orderId, String username, Date orderDate, String address, int totalPrice) {
+	public OrderDTO(int orderId, String username, Date orderDate, String address, int totalPrice) {
 		super();
 		this.orderId = orderId;
 		this.username = username;
@@ -32,10 +32,10 @@ public class OrderDTO implements Serializable {
 		this.totalPrice = totalPrice;
 	}
 	/* JavaBeans Properties */
-	public String getOrderId() {
+	public int getOrderId() {
 		return orderId;
 	}
-	public void setOrderId(String orderId) {
+	public void setOrderId(int orderId) {
 		this.orderId = orderId;
 	}
 	public String getUsername() {
