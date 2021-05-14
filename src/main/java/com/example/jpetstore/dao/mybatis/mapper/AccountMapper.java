@@ -18,12 +18,10 @@ package com.example.jpetstore.dao.mybatis.mapper;
 
 import java.util.List;
 
-import com.example.jpetstore.domain.Account;
+import org.apache.ibatis.annotations.Mapper;
 
-/**
- * @author Eduardo Macarron
- *
- */
+import com.example.jpetstore.domain.Account;
+@Mapper
 public interface AccountMapper {
 
 	void create(Account account);

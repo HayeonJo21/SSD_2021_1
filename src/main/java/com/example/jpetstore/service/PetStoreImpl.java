@@ -70,23 +70,23 @@ public class PetStoreImpl implements PetStoreFacade {
 	//-------------------------------------------------------------------------
 
 	public Account getAccount(String username) {
-		return accountDao.getAccount(username);
+		return null;
 	}
 
 	public Account getAccount(String username, String password) {
-		return accountDao.getAccount(username, password);
+		return null;
 	}
 
 	public void insertAccount(Account account) {
-		accountDao.createAccount(account);
+		
 	}
 
 	public void updateAccount(Account account) {
-		accountDao.updateAccount(account);
+		
 	}
 
 	public List<String> getUsernameList() {
-		return accountDao.getAccountList();
+		return null;
 	}
 
 	public List<Category> getCategoryList() {

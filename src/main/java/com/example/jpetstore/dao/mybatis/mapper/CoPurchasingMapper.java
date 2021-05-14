@@ -18,12 +18,15 @@ package com.example.jpetstore.dao.mybatis.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Mapper;
+
 import com.example.jpetstore.domain.CoPurchasingDTO;
 
 /**
  * @author Eduardo Macarron
  *
  */
+@Mapper
 public interface CoPurchasingMapper {
 
 	void create(CoPurchasingDTO CP);

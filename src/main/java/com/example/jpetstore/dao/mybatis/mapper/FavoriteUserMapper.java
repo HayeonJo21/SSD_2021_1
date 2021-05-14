@@ -2,8 +2,10 @@ package com.example.jpetstore.dao.mybatis.mapper;
 
 import java.util.List;
 
-import com.example.jpetstore.domain.FavoriteUserDTO;
+import org.apache.ibatis.annotations.Mapper;
 
+import com.example.jpetstore.domain.FavoriteUserDTO;
+@Mapper
 public interface FavoriteUserMapper {
 
 	void create(FavoriteUserDTO favoriteUser);

@@ -2,10 +2,12 @@ package com.example.jpetstore.dao.mybatis.mapper;
 
 import java.util.List;
 
-import com.example.jpetstore.domain.DeliveryDTO;
+import org.apache.ibatis.annotations.Mapper;
 
+import com.example.jpetstore.domain.DeliveryDTO;
+@Mapper
 public interface DeliveryMapper {
-	
+
 	void create (DeliveryDTO delivery);
 	
 	void update(DeliveryDTO delivery);
