@@ -20,12 +20,12 @@ public class MybatisAccountDao implements AccountDao {
 	private AccountMapper accountMapper;
 
 	@Override
-	public void create(Account account) throws DataAccessException {
+	public void insert(Account account) throws DataAccessException {
 		accountMapper.create(account);
 	}
 
 	@Override
-	public void remove(String username) throws DataAccessException {
+	public void delete(String username) throws DataAccessException {
 		accountMapper.remove(username);
 	}
 

@@ -20,7 +20,7 @@ public class MybatisCoPurchasingDao implements CoPurchasingDao {
 	private CoPurchasingMapper CPMapper;
 	
 	@Override
-	public void create(CoPurchasingDTO CP) throws DataAccessException {
+	public void insert(CoPurchasingDTO CP) throws DataAccessException {
 		CPMapper.create(CP);
 		
 	}
@@ -32,7 +32,7 @@ public class MybatisCoPurchasingDao implements CoPurchasingDao {
 	}
 
 	@Override
-	public void remove(String CPId) throws DataAccessException {
+	public void delete(String CPId) throws DataAccessException {
 		CPMapper.remove(CPId);
 		
 	}

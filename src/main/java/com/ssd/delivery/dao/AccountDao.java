@@ -6,11 +6,11 @@ import org.springframework.dao.DataAccessException;
 import com.ssd.delivery.domain.Account;
 
 public interface AccountDao {
-	void create(Account account) throws DataAccessException;
+	void insert(Account account) throws DataAccessException;
 	
 	void update(Account account) throws DataAccessException;
 	
-	void remove(String username) throws DataAccessException;
+	void delete(String username) throws DataAccessException;
 	
 	List<Account> getUserListByAuctionId(String auctionId) throws DataAccessException;
 	
