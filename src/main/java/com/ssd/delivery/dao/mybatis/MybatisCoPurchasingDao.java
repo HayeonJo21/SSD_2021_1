@@ -38,7 +38,7 @@ public class MybatisCoPurchasingDao implements CoPurchasingDao {
 	}
 
 	@Override
-	public List<CoPurchasingDTO> findCPList() throws DataAccessException {
+	public List<CoPurchasingDTO> getCPList() throws DataAccessException {
 		return CPMapper.findCPList();
 	}
 
@@ -48,7 +48,7 @@ public class MybatisCoPurchasingDao implements CoPurchasingDao {
 	}
 
 	@Override
-	public CoPurchasingDTO findCPByusername(String username) throws DataAccessException {
+	public CoPurchasingDTO getCPByusername(String username) throws DataAccessException {
 		return CPMapper.findCPByusername(username);
 	}
 }
