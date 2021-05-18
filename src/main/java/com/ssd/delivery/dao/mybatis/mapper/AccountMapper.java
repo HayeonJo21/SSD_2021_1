@@ -24,24 +24,24 @@ import com.ssd.delivery.domain.Account;
 @Mapper
 public interface AccountMapper {
 
-	void create(Account account);
+	void insert(Account account);
 	
 	void update(Account account);
 	
-	void remove(String username);
+	void delete(String username);
 	
-	List<Account> findUserListByAuctionId(String auctionId);
+	List<Account> getUserListByAuctionId(String auctionId);
 	
-	List<Account> findUserListByUsername(String username);
+	List<Account> getUserListByUsername(String username);
 	
-	List<Account> findUserListByBidderId(String bidderId);
+	List<Account> getUserListByBidderId(String bidderId);
 	
-	List<Account> findUserListByCPId(String CPId);
+	List<Account> getUserListByCPId(String CPId);
 	
 	boolean existingUser(String username);
 	
-	List<Account> findFavoriteUserList(String username);
+	List<Account> getFavoriteUserList(String username);
 	
-	Account findUser(String username);
+	Account getUser(String username);
 
 }

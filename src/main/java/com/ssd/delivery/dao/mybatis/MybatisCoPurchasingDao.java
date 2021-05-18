@@ -21,7 +21,7 @@ public class MybatisCoPurchasingDao implements CoPurchasingDao {
 	
 	@Override
 	public void insert(CoPurchasingDTO CP) throws DataAccessException {
-		CPMapper.create(CP);
+		CPMapper.insert(CP);
 		
 	}
 
@@ -33,13 +33,13 @@ public class MybatisCoPurchasingDao implements CoPurchasingDao {
 
 	@Override
 	public void delete(String CPId) throws DataAccessException {
-		CPMapper.remove(CPId);
+		CPMapper.delete(CPId);
 		
 	}
 
 	@Override
 	public List<CoPurchasingDTO> getCPList() throws DataAccessException {
-		return CPMapper.findCPList();
+		return CPMapper.getCPList();
 	}
 
 	@Override
@@ -49,6 +49,6 @@ public class MybatisCoPurchasingDao implements CoPurchasingDao {
 
 	@Override
 	public CoPurchasingDTO getCPByusername(String username) throws DataAccessException {
-		return CPMapper.findCPByusername(username);
+		return CPMapper.getCPByusername(username);
 	}
 }

@@ -29,16 +29,16 @@ import com.ssd.delivery.domain.CoPurchasingDTO;
 @Mapper
 public interface CoPurchasingMapper {
 
-	void create(CoPurchasingDTO CP);
+	void insert(CoPurchasingDTO CP);
 	
 	void update(CoPurchasingDTO CP);
 	
-	void remove(String CPId);
+	void delete(String CPId);
 	
-	List<CoPurchasingDTO> findCPList();
+	List<CoPurchasingDTO> getCPList();
 	
 	CoPurchasingDTO getCPById(String CPId);
 	
-	CoPurchasingDTO findCPByusername(String username);
+	CoPurchasingDTO getCPByusername(String username);
 
 }
