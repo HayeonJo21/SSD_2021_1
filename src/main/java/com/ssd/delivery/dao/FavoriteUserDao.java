@@ -8,7 +8,7 @@ import com.ssd.delivery.domain.FavoriteUserDTO;
 
 public interface FavoriteUserDao {
 
-	void create(FavoriteUserDTO favoriteUser) throws DataAccessException;
+	void insert(FavoriteUserDTO favoriteUser) throws DataAccessException;
 	
 	void update(FavoriteUserDTO favoriteUser) throws DataAccessException;
 	

@@ -8,11 +8,11 @@ import com.ssd.delivery.domain.DeliveryDTO;
 @Mapper
 public interface DeliveryMapper {
 
-	void create (DeliveryDTO delivery);
+	void insert (DeliveryDTO delivery);
 	
 	void update(DeliveryDTO delivery);
 	
-	void remove(int deliveryId);
+	void delete(int deliveryId);
 	
 	DeliveryDTO getDeliveryById(int deliveryId);
 	
