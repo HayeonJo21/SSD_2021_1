@@ -10,6 +10,7 @@ import com.ssd.delivery.domain.OrderDTO;
 public interface FleaMarketDao {
 
 	void insert(ItemDTO item) throws DataAccessException;
+	
 	void update(ItemDTO item) throws DataAccessException;
 	void delete(ItemDTO item) throws DataAccessException;
 

@@ -9,6 +9,7 @@ import com.ssd.delivery.domain.Order;
 
 public interface AuctionDao {
 	
+	
 	  
 	  void insert(AuctionDTO auction) throws DataAccessException;
 	  void update(AuctionDTO auction) throws DataAccessException;

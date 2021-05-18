@@ -19,6 +19,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class MybatisAuctionDao implements AuctionDao {
 	
+	
 	@Autowired
 	protected OrderMapper orderMapper;
 	@Autowired

@@ -15,3 +15,4 @@ public interface FleaMarketMapper {
 	List<ItemDTO> getFleaMarketList();
 
 }
+

@@ -17,6 +17,7 @@ import com.ssd.delivery.domain.Order;
 
 public class MybatisFleaMarketDao {
 	
+	
 	@Autowired
 	private ItemMapper itemMapper;
 	private FleaMarketMapper fleaMarketMapper;
