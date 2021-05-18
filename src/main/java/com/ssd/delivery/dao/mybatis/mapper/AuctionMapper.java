@@ -33,6 +33,6 @@ public interface AuctionMapper {
 	void remove(AuctionDTO auction);
 
 	AuctionDTO getAuctionById(int auctionId);
-	List<AuctionDTO> findAuctionByUsername(String username);
-	List<AuctionDTO> findAuctionList();
+	List<AuctionDTO> getAuctionByUsername(String username);
+	List<AuctionDTO> getAuctionList();
 }

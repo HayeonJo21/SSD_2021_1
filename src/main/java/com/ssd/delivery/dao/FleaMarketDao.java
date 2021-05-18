@@ -14,8 +14,8 @@ public interface FleaMarketDao {
 	void remove(ItemDTO item) throws DataAccessException;
 
 	ItemDTO getFleaMarketById(int itemId) throws DataAccessException;
-	List<ItemDTO> findFleaMarketByUsername(String username) throws DataAccessException;
-	List<ItemDTO> findFleaMarketList() throws DataAccessException;
+	List<ItemDTO> getFleaMarketByUsername(String username) throws DataAccessException;
+	List<ItemDTO> getFleaMarketList() throws DataAccessException;
 
 
 

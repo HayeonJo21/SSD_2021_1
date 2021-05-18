@@ -66,12 +66,12 @@ public class MybatisFleaMarketDao {
 		return fleaMarketMapper.getFleaMarketById(itemId);
 	};
 	
-	List<ItemDTO> findFleaMarketByUsername(String username) throws DataAccessException{
-		return fleaMarketMapper.findFleaMarketByUsername(username);
+	List<ItemDTO> getleaMarketByUsername(String username) throws DataAccessException{
+		return fleaMarketMapper.getFleaMarketByUsername(username);
 	};
 	
-	List<ItemDTO> findFleaMarketList() throws DataAccessException{
-		return fleaMarketMapper.findFleaMarketList();
+	List<ItemDTO> getFleaMarketList() throws DataAccessException{
+		return fleaMarketMapper.getFleaMarketList();
 	};
 
 }

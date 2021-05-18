@@ -48,13 +48,14 @@ public class MybatisAuctionDao implements AuctionDao {
 		AuctionDTO auction = auctionMapper.getAuctionById(auctionId);
 		return auction;
 	};
+	
 	@Override
-	public List<AuctionDTO> findAuctionByUsername(String username){
-	    return auctionMapper.findAuctionByUsername(username);
+	public List<AuctionDTO> getAuctionByUsername(String username){
+	    return auctionMapper.getAuctionByUsername(username);
 	};
 	@Override
-	public List<AuctionDTO> findAuctionList(){
-	    return auctionMapper.findAuctionList();
+	public List<AuctionDTO> getAuctionList(){
+	    return auctionMapper.getAuctionList();
 	}
 
 	

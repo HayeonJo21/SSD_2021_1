@@ -11,7 +11,7 @@ public interface FleaMarketMapper {
 	void remove(ItemDTO item);
 
 	ItemDTO getFleaMarketById(int itemId);
-	List<ItemDTO> findFleaMarketByUsername(String username);
-	List<ItemDTO> findFleaMarketList();
+	List<ItemDTO> getFleaMarketByUsername(String username);
+	List<ItemDTO> getFleaMarketList();
 
 }
