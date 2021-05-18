@@ -31,17 +31,17 @@ public class MybatisAuctionDao implements AuctionDao {
 	
 	
 	@Override
-	public void create(AuctionDTO auction) throws DataAccessException {  
+	public void insert(AuctionDTO auction) throws DataAccessException {  
     	auction.setAuctionId(sequenceDao.getNextId("auctionId"));
-    	auctionMapper.create(auction);
+    	auctionMapper.insert(auction);
 	}
 	@Override
 	public void update(AuctionDTO auction) throws DataAccessException {  
     	auctionMapper.update(auction);
 	}
 	@Override
-	public void remove(AuctionDTO auction) throws DataAccessException {  
-    	auctionMapper.remove(auction);
+	public void delete(AuctionDTO auction) throws DataAccessException {  
+    	auctionMapper.delete(auction);
 	}
 	@Override
 	public AuctionDTO getAuctionById(int auctionId) {

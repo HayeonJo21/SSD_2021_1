@@ -48,16 +48,16 @@ public class MybatisFleaMarketDao {
 	
 	
 	
-	void create(ItemDTO item) throws DataAccessException{
-		fleaMarketMapper.create(item);
+	void insert(ItemDTO item) throws DataAccessException{
+		fleaMarketMapper.insert(item);
 	};
 	
 	void update(ItemDTO item) throws DataAccessException{
 		fleaMarketMapper.update(item);
 	};
 	
-	void remove(ItemDTO item) throws DataAccessException{
-		fleaMarketMapper.remove(item);
+	void delete(ItemDTO item) throws DataAccessException{
+		fleaMarketMapper.delete(item);
 	};
 	
 	

@@ -9,9 +9,9 @@ import com.ssd.delivery.domain.OrderDTO;
 
 public interface FleaMarketDao {
 
-	void create(ItemDTO item) throws DataAccessException;
+	void insert(ItemDTO item) throws DataAccessException;
 	void update(ItemDTO item) throws DataAccessException;
-	void remove(ItemDTO item) throws DataAccessException;
+	void delete(ItemDTO item) throws DataAccessException;
 
 	ItemDTO getFleaMarketById(int itemId) throws DataAccessException;
 	List<ItemDTO> getFleaMarketByUsername(String username) throws DataAccessException;
