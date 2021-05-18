@@ -14,6 +14,7 @@
  *    limitations under the License.
  */
 
+
 package com.ssd.delivery.dao.mybatis.mapper;
 
 import java.util.List;
@@ -28,11 +29,11 @@ import com.ssd.delivery.domain.AuctionDTO;
 @Mapper
 public interface AuctionMapper {
 
-	void create(AuctionDTO auction);
+	void insert(AuctionDTO auction);
 	void update(AuctionDTO auction);
-	void remove(AuctionDTO auction);
+	void delete(AuctionDTO auction);
 
 	AuctionDTO getAuctionById(int auctionId);
-	List<AuctionDTO> findAuctionByUsername(String username);
-	List<AuctionDTO> findAuctionList();
+	List<AuctionDTO> getAuctionByUsername(String username);
+	List<AuctionDTO> getAuctionList();
 }

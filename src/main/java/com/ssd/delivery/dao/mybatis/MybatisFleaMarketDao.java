@@ -17,6 +17,7 @@ import com.ssd.delivery.domain.Order;
 
 public class MybatisFleaMarketDao {
 	
+	
 	@Autowired
 	private ItemMapper itemMapper;
 	private FleaMarketMapper fleaMarketMapper;
@@ -48,16 +49,16 @@ public class MybatisFleaMarketDao {
 	
 	
 	
-	void create(ItemDTO item) throws DataAccessException{
-		fleaMarketMapper.create(item);
+	void insert(ItemDTO item) throws DataAccessException{
+		fleaMarketMapper.insert(item);
 	};
 	
 	void update(ItemDTO item) throws DataAccessException{
 		fleaMarketMapper.update(item);
 	};
 	
-	void remove(ItemDTO item) throws DataAccessException{
-		fleaMarketMapper.remove(item);
+	void delete(ItemDTO item) throws DataAccessException{
+		fleaMarketMapper.delete(item);
 	};
 	
 	
@@ -66,12 +67,12 @@ public class MybatisFleaMarketDao {
 		return fleaMarketMapper.getFleaMarketById(itemId);
 	};
 	
-	List<ItemDTO> findFleaMarketByUsername(String username) throws DataAccessException{
-		return fleaMarketMapper.findFleaMarketByUsername(username);
+	List<ItemDTO> getleaMarketByUsername(String username) throws DataAccessException{
+		return fleaMarketMapper.getFleaMarketByUsername(username);
 	};
 	
-	List<ItemDTO> findFleaMarketList() throws DataAccessException{
-		return fleaMarketMapper.findFleaMarketList();
+	List<ItemDTO> getFleaMarketList() throws DataAccessException{
+		return fleaMarketMapper.getFleaMarketList();
 	};
 
 }

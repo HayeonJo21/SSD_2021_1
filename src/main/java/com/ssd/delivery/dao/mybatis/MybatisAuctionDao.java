@@ -19,6 +19,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class MybatisAuctionDao implements AuctionDao {
 	
+	
 	@Autowired
 	protected OrderMapper orderMapper;
 	@Autowired
@@ -31,30 +32,31 @@ public class MybatisAuctionDao implements AuctionDao {
 	
 	
 	@Override
-	public void create(AuctionDTO auction) throws DataAccessException {  
+	public void insert(AuctionDTO auction) throws DataAccessException {  
     	auction.setAuctionId(sequenceDao.getNextId("auctionId"));
-    	auctionMapper.create(auction);
+    	auctionMapper.insert(auction);
 	}
 	@Override
 	public void update(AuctionDTO auction) throws DataAccessException {  
     	auctionMapper.update(auction);
 	}
 	@Override
-	public void remove(AuctionDTO auction) throws DataAccessException {  
-    	auctionMapper.remove(auction);
+	public void delete(AuctionDTO auction) throws DataAccessException {  
+    	auctionMapper.delete(auction);
 	}
 	@Override
 	public AuctionDTO getAuctionById(int auctionId) {
 		AuctionDTO auction = auctionMapper.getAuctionById(auctionId);
 		return auction;
 	};
+	
 	@Override
-	public List<AuctionDTO> findAuctionByUsername(String username){
-	    return auctionMapper.findAuctionByUsername(username);
+	public List<AuctionDTO> getAuctionByUsername(String username){
+	    return auctionMapper.getAuctionByUsername(username);
 	};
 	@Override
-	public List<AuctionDTO> findAuctionList(){
-	    return auctionMapper.findAuctionList();
+	public List<AuctionDTO> getAuctionList(){
+	    return auctionMapper.getAuctionList();
 	}
 
 	
