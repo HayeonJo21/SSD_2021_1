@@ -13,11 +13,11 @@ public interface CoPurchasingDao {
 	
 	void remove(String CPId) throws DataAccessException;
 	
-	List<CoPurchasingDTO> findCPList() throws DataAccessException;
+	List<CoPurchasingDTO> getCPList() throws DataAccessException;
 	
 	CoPurchasingDTO getCPById(String CPId) throws DataAccessException;
 	
-	CoPurchasingDTO findCPByusername(String username) throws DataAccessException;
+	CoPurchasingDTO getCPByusername(String username) throws DataAccessException;
 	
 	
 

@@ -30,25 +30,25 @@ public class MybatisAccountDao implements AccountDao {
 	}
 
 	@Override
-	public List<Account> findUserListByAuctionId(String auctionId) throws DataAccessException {
+	public List<Account> getUserListByAuctionId(String auctionId) throws DataAccessException {
 		
 		return accountMapper.findUserListByAuctionId(auctionId);
 	}
 
 	@Override
-	public List<Account> findUserListByUsername(String username) throws DataAccessException {
+	public List<Account> getUserListByUsername(String username) throws DataAccessException {
 		
 		return accountMapper.findUserListByUsername(username);
 	}
 
 	@Override
-	public List<Account> findUserListByBidderId(String bidderId) throws DataAccessException {
+	public List<Account> getUserListByBidderId(String bidderId) throws DataAccessException {
 		
 		return accountMapper.findUserListByBidderId(bidderId);
 	}
 
 	@Override
-	public List<Account> findUserListByCPId(String CPId) throws DataAccessException {
+	public List<Account> getUserListByCPId(String CPId) throws DataAccessException {
 		
 		return accountMapper.findUserListByCPId(CPId);
 	}
@@ -60,7 +60,7 @@ public class MybatisAccountDao implements AccountDao {
 	}
 
 	@Override
-	public List<Account> findFavoriteUserList(String username) throws DataAccessException {
+	public List<Account> getFavoriteUserList(String username) throws DataAccessException {
 		
 		return accountMapper.findFavoriteUserList(username);
 	}
