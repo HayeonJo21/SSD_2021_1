@@ -8,11 +8,11 @@ import com.ssd.delivery.domain.MessageDTO;
 
 public interface MessageDao {
 
-	void create(MessageDTO message) throws DataAccessException;
+	void insert(MessageDTO message) throws DataAccessException;
 	
 	void update(MessageDTO message) throws DataAccessException;
 	
-	void remove(String username) throws DataAccessException;
+	void delete(String username) throws DataAccessException;
 	
 	MessageDTO getMessageByUsername(String username) throws DataAccessException;
 	

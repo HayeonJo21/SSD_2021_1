@@ -8,11 +8,11 @@ import com.ssd.delivery.domain.DeliveryDTO;
 
 public interface DeliveryDao {
 
-	void create (DeliveryDTO delivery) throws DataAccessException;
+	void insert (DeliveryDTO delivery) throws DataAccessException;
 	
 	void update(DeliveryDTO delivery) throws DataAccessException;
 	
-	void remove(int deliveryId) throws DataAccessException;
+	void delete(int deliveryId) throws DataAccessException;
 	
 	DeliveryDTO getDeliveryById(int deliveryId) throws DataAccessException;
 	

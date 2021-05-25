@@ -15,16 +15,16 @@ public class MybatisDeliveryDao implements DeliveryDao{
 	@Autowired
 	private DeliveryMapper deliveryMapper;
 	
-	public void create (DeliveryDTO delivery) throws DataAccessException {
-		deliveryMapper.create(delivery);
+	public void insert (DeliveryDTO delivery) throws DataAccessException {
+		deliveryMapper.insert(delivery);
 	}
 	
 	public void update(DeliveryDTO delivery) throws DataAccessException {
 		deliveryMapper.update(delivery);
 	}
 	
-	public void remove(int deliveryId) throws DataAccessException {
-		deliveryMapper.remove(deliveryId);
+	public void delete(int deliveryId) throws DataAccessException {
+		deliveryMapper.delete(deliveryId);
 	}
 	
 	public DeliveryDTO getDeliveryById(int deliveryId) throws DataAccessException {
@@ -38,4 +38,5 @@ public class MybatisDeliveryDao implements DeliveryDao{
 	public List<DeliveryDTO> getDeliveryList() throws DataAccessException {
 		return deliveryMapper.getDeliveryList();
 	}
+
 }

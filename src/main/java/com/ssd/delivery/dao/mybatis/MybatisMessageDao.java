@@ -15,16 +15,16 @@ public class MybatisMessageDao implements MessageDao {
 	@Autowired
 	private MessageMapper messageMapper;
 	
-	public void create(MessageDTO message) throws DataAccessException {
-		messageMapper.create(message);
+	public void insert(MessageDTO message) throws DataAccessException {
+		messageMapper.insert(message);
 	}
 	
 	public void update(MessageDTO message) throws DataAccessException {
 		messageMapper.update(message);
 	}
 	
-	public void remove(String username) throws DataAccessException {
-		messageMapper.remove(username);
+	public void delete(String username) throws DataAccessException {
+		messageMapper.delete(username);
 	}
 	
 	public MessageDTO getMessageByUsername(String username) throws DataAccessException {
