@@ -4,7 +4,7 @@
 <mapper namespace="com.ssd.delivery.dao.mybatis.mapper.MessageMapper">
   <cache />
 
-   <insert id="create" parameterType="MessageDTO">
+   <insert id="insert" parameterType="MessageDTO">
     INSERT INTO MESSAGE
       (USERNAME, CONTENT, MESSAGEDATE, RECEIVERUSERNAME)
     VALUES
@@ -19,7 +19,7 @@
     WHERE USERNAME = #{senderUsername}
 	</update>
 
-	<delete id="remove" parameterType="int">
+	<delete id="delete" parameterType="int">
 	DELETE FROM MESSAGE 
 	WHERE USERNAME = #{senderUsername}
 	</delete>
