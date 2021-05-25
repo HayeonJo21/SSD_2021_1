@@ -37,6 +37,21 @@ public class AccountDTO implements Serializable{
 		this.carInfo = carInfo;
 	}
 	
+	//update 생성자
+	public AccountDTO(String email, String firstName, String lastName, String address, String phone,
+			String languagePreference, int status, String favoriteMall, String carInfo) {
+		super();
+		this.email = email;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.address = address;
+		this.phone = phone;
+		this.languagePreference = languagePreference;
+		this.status = status;
+		this.favoriteMall = favoriteMall;
+		this.carInfo = carInfo;
+	}
+	
 	//비밀번호 확인 메소드
 	public boolean matchPassword(String password) {
 		System.out.println(password);

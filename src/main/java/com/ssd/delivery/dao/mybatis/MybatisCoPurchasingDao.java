@@ -48,7 +48,7 @@ public class MybatisCoPurchasingDao implements CoPurchasingDao {
 	}
 
 	@Override
-	public CoPurchasingDTO getCPByusername(String username) throws DataAccessException {
-		return CPMapper.getCPByusername(username);
+	public CoPurchasingDTO getCPByUsername(String username) throws DataAccessException {
+		return CPMapper.getCPByUsername(username);
 	}
 }

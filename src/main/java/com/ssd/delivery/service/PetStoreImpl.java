@@ -11,6 +11,7 @@ import com.ssd.delivery.dao.ItemDao;
 import com.ssd.delivery.dao.OrderDao;
 import com.ssd.delivery.dao.ProductDao;
 import com.ssd.delivery.domain.Account;
+import com.ssd.delivery.domain.AccountDTO;
 import com.ssd.delivery.domain.Category;
 import com.ssd.delivery.domain.Item;
 import com.ssd.delivery.domain.Order;
@@ -132,5 +133,17 @@ public class PetStoreImpl implements PetStoreFacade {
 
 	public List<Order> getOrdersByUsername(String username) {
 		return orderDao.getOrdersByUsername(username);
+	}
+
+	@Override
+	public List<AccountDTO> findUserList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public AccountDTO getAccountDTO(String username) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

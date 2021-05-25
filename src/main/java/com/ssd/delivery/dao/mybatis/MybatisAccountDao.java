@@ -36,18 +36,6 @@ public class MybatisAccountDao implements AccountDao {
 	}
 
 	@Override
-	public List<Account> getUserListByUsername(String username) throws DataAccessException {
-		
-		return accountMapper.getUserListByUsername(username);
-	}
-
-	@Override
-	public List<Account> getUserListByBidderId(String bidderId) throws DataAccessException {
-		
-		return accountMapper.getUserListByBidderId(bidderId);
-	}
-
-	@Override
 	public List<Account> getUserListByCPId(String CPId) throws DataAccessException {
 		
 		return accountMapper.getUserListByCPId(CPId);

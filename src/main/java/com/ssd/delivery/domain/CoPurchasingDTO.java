@@ -19,13 +19,6 @@ public class CoPurchasingDTO implements Serializable {
 	private DeliveryDTO delivery;
 	private String note;
 	
-
-	
-	
-	
-	/* JavaBeans Properties */
-	
-	
 	public CoPurchasingDTO() {
 		super();
 	}
@@ -41,12 +34,21 @@ public class CoPurchasingDTO implements Serializable {
 		this.delivery = delivery;
 		this.note = note;
 	}
-
-
+	
+	//update 생성자
+	public CoPurchasingDTO(int unitCost, int price, int maxNumberofPurchaser, DeliveryDTO delivery, String note) {
+		super();
+		this.unitCost = unitCost;
+		this.price = price;
+		this.maxNumberofPurchaser = maxNumberofPurchaser;
+		this.delivery = delivery;
+		this.note = note;
+	}
 
 	public int getCoPurchasingId() {
 		return coPurchasingId;
 	}
+	
 	public void setCoPurchasingId(int coPurchasingId) {
 		this.coPurchasingId = coPurchasingId;
 	}

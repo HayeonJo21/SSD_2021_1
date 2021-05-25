@@ -3,8 +3,58 @@
 
 <mapper namespace="com.ssd.delivery.dao.mybatis.mapper.AccountMapper">
   <cache />
+  
+  <update id="update" parameterType="AccountDTO">
+    UPDATE ACCOUNT 
+      EMAIL = #{email},
+      FIRSTNAME = #{firstName},
+      LASTNAME = #{lastName},
+      ADDRESS = #{address},
+      PHONE = #{phone},
+      LANGUAGEPREFERENCE = #{languagePreference},
+      STATUS = #{status},
+      FAVOURTIEMALL = #{favoriteMall},
+      CARINFO = #{carInfo}
+      
+    WHERE USERNAME = #{username}
+  </update>
+  
+  <insert id="insert" parameterType="AccountDTO">
+    INSERT INTO ACCOUNT (USERNAME, PASSWORD, EMAIL, FISTNAME, LASTNAME, ADDRESS, PHONE, LANGUAGEPREFERENCE, STATUS, FAVORITEMALL, CARINFO)
+    VALUES (#{username), #{password}, #{email}, #{firstName}, #{lastName}, #{address}, #{phone}, #{languagePreference}, #{status}, #{favoriteMall}, #{carInfo}"
+  </insert>
+  
+  <delete id="delete" parameterType="int">
+	DELETE FROM ACCOUNT 
+	WHERE USERNAME = #{username}
+	</delete>
+	
+	<select id="getUserListByAuctionId" resultType="AccountDTO">
+    SELECT * 
+    FROM ACCOUNT JOIN AUCTION
+    WHERE AUCTIONID = #{auctionId}
+	</select>
 
-  <select id="getAccountByUsername" resultType="Account">
+	<select id="getUserListByCPId" resultType="AccountDTO">
+    SELECT * 
+    FROM ACCOUNT JOIN COPURCHASING
+    WHERE coPurchasingId = #{coPurchasingId}
+	</select>
+	
+	<select id="getFavoriteUserList" resultType="AccountDTO">
+    SELECT * 
+    FROM ACCOUNT JOIN FAVORITEUSER
+    WHERE username = #{username}
+	</select>
+	
+	<select id="findUser" resultType="AccountDTO">
+    SELECT * 
+    FROM ACCOUNT
+    WHERE username = #{username}
+	</select>
+	
+	
+<!--   <select id="getAccountByUsername" resultType="Account">
     SELECT SIGNON.USERNAME,
           ACCOUNT.EMAIL,
           ACCOUNT.FIRSTNAME,
@@ -82,7 +132,7 @@
       (#{email}, #{firstName}, #{lastName}, #{status}, #{address1}, #{address2,jdbcType=VARCHAR}, #{city}, #{state}, #{zip}, #{country}, #{phone}, #{username})
   </insert>
 
-  <!--  
+ 
   TODO MyBatis 3 does not map booleans to integers
   <update id="updateProfile" parameterType="Account">
     UPDATE PROFILE SET
@@ -94,12 +144,12 @@
   </update>
   -->
 
-  <update id="updateProfile" parameterType="Account">
+<!-- <update id="updateProfile" parameterType="Account">
     UPDATE PROFILE SET
       LANGPREF = #{languagePreference},
       FAVCATEGORY = #{favouriteCategoryId}
     WHERE USERID = #{username}
-  </update>
+  </update>  --> 
 
   <!--  
   TODO MyBatis 3 does not map booleans to integers
@@ -109,7 +159,7 @@
   </insert>
   -->
 
-  <insert id="insertProfile" parameterType="Account">
+ <!-- <insert id="insertProfile" parameterType="Account">
     INSERT INTO PROFILE (LANGPREF, FAVCATEGORY, USERID)
     VALUES (#{languagePreference}, #{favouriteCategoryId}, #{username})
   </insert>
@@ -122,5 +172,5 @@
   <insert id="insertSignon" parameterType="Account">
     INSERT INTO SIGNON (PASSWORD,USERNAME)
     VALUES (#{password}, #{username})
-  </insert>
+  </insert> --> 
 </mapper>
