@@ -29,12 +29,31 @@
 	WHERE USERNAME = #{username}
 	</delete>
 	
-	<select id="getUserList" resultType="DeliveryDTO">
+	<select id="getUserListByAuctionId" resultType="AccountDTO">
     SELECT * 
-    FROM DELIVERY 
-    WHERE DELIVERYID = #{deliveryId}
+    FROM ACCOUNT JOIN AUCTION
+    WHERE AUCTIONID = #{auctionId}
 	</select>
 
+	<select id="getUserListByCPId" resultType="AccountDTO">
+    SELECT * 
+    FROM ACCOUNT JOIN COPURCHASING
+    WHERE coPurchasingId = #{coPurchasingId}
+	</select>
+	
+	<select id="getFavoriteUserList" resultType="AccountDTO">
+    SELECT * 
+    FROM ACCOUNT JOIN FAVORITEUSER
+    WHERE username = #{username}
+	</select>
+	
+	<select id="findUser" resultType="AccountDTO">
+    SELECT * 
+    FROM ACCOUNT
+    WHERE username = #{username}
+	</select>
+	
+	
 <!--   <select id="getAccountByUsername" resultType="Account">
     SELECT SIGNON.USERNAME,
           ACCOUNT.EMAIL,

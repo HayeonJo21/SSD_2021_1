@@ -39,6 +39,6 @@ public interface CoPurchasingMapper {
 	
 	CoPurchasingDTO getCPById(String CPId);
 	
-	CoPurchasingDTO getCPByusername(String username);
+	CoPurchasingDTO getCPByUsername(String username);
 
 }

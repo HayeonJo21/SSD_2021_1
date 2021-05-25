@@ -14,10 +14,6 @@ public interface AccountDao {
 	
 	List<Account> getUserListByAuctionId(String auctionId) throws DataAccessException;
 	
-	List<Account> getUserListByUsername(String username) throws DataAccessException;
-	
-	List<Account> getUserListByBidderId(String bidderId) throws DataAccessException;
-	
 	List<Account> getUserListByCPId(String CPId) throws DataAccessException;
 	
 	boolean existingUser(String username) throws DataAccessException;
