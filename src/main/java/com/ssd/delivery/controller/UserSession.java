@@ -4,6 +4,7 @@ import java.io.Serializable;
 import org.springframework.beans.support.PagedListHolder;
 
 import com.ssd.delivery.domain.Account;
+import com.ssd.delivery.domain.AccountDTO;
 import com.ssd.delivery.domain.Product;
 
 /**
@@ -17,8 +18,8 @@ public class UserSession implements Serializable {
 
 	private PagedListHolder<Product> myList;
 
-	public UserSession(Account account) {
-		this.account = account;
+	public UserSession(Account account2) {
+		this.account = account2;
 	}
 
 	public Account getAccount() {
