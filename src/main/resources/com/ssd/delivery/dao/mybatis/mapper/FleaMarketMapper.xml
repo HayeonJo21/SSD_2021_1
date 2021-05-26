@@ -4,14 +4,14 @@
 <mapper namespace="com.ssd.delivery.dao.mybatis.mapper.FleaMarketMapper">
   <cache />
 
-   <insert id="insert" parameterType="FleaMarketDTO">
+   <insert id="insertFM" parameterType="FleaMarketDTO">
       insert into fleamarket
       (fleamarketid, username, fleamarketdate, address, totalprice, itemid)
       values
       (#{fleamarketId}, #{username}, #{fleamarketDate}, #{address}, #{totalPrice}, #{itemId} )
 	</insert>
 
-	<update id="update" parameterType="FleaMarketDTO">
+	<update id="updateFM" parameterType="FleaMarketDTO">
     UPDATE FAVORITEUSER SET 
 	   FAVORITEUSERNAME  = #{favoriteUsername}, 
 	   TRADECOUNT = #{tradeCount} 
@@ -24,24 +24,24 @@
     
 	</update>
 
-	<delete id="delete" parameterType="java.lang.String">
+	<delete id="deleteFM" parameterType="java.lang.String">
 	DELETE FROM fleamarket 
 	WHERE fleamarketid = #{fleaMarketId}
 	</delete>
 	
   
 	
-	<select id="getFleaMarketById" resultType="FleaMarketDTO">
+	<select id="getFMById" resultType="FleaMarketDTO">
     select * from fleamarket
     where username = #{username}
 	</select>
 	
-	<select id="getFleaMarketByUsername" resultType="FleaMarketDTO">
+	<select id="getFMByUsername" resultType="FleaMarketDTO">
    	select * from fleamarket
     where username = #{username}
 	</select>
 	
-	<select id="getFleaMarketList" resultType="FleaMarketDTO">
+	<select id="getFMList" resultType="FleaMarketDTO">
     select * from fleamarket
 	</select>
 	

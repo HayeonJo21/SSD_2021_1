@@ -4,7 +4,7 @@
 <mapper namespace="com.ssd.delivery.dao.mybatis.mapper.AuctionMapper">
   <cache />
 
-   <insert id="insert" parameterType="AuctionDTO">
+   <insert id="insertAuction" parameterType="AuctionDTO">
 
       insert into auction
       	(auctionid, serviceid, customerid, enddate, servicedate, startprice, finalprice, address1, address2, successfulbidder, delivery, username)
@@ -13,7 +13,7 @@
       	null, #{address1}, #{address2}, null, #{delivery}, #{username} )
 	</insert>
 
-	<update id="update" parameterType="AuctionDTO">
+	<update id="updateAuction" parameterType="AuctionDTO">
     <!-- UPDATE FAVORITEUSER SET 
 	   FAVORITEUSERNAME  = #{favoriteUsername}, 
 	   TRADECOUNT = #{tradeCount} 
@@ -26,7 +26,7 @@
     	
 	</update>
 
-	<delete id="delete" parameterType="java.lang.String">
+	<delete id="deleteAuction" parameterType="java.lang.String">
 	DELETE FROM auction 
 	WHERE auctionid = #{auctionId}
 	</delete>

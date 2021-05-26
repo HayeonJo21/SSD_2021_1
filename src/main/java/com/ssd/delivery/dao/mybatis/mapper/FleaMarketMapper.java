@@ -6,13 +6,13 @@ import com.ssd.delivery.domain.ItemDTO;
 
 public interface FleaMarketMapper {
 	
-	void insert(ItemDTO item);
-	void update(ItemDTO item);
-	void delete(ItemDTO item);
+	void insertFM(ItemDTO item);
+	void updateFM(ItemDTO item);
+	void deleteFM(ItemDTO item);
 
-	ItemDTO getFleaMarketById(int itemId);
-	List<ItemDTO> getFleaMarketByUsername(String username);
-	List<ItemDTO> getFleaMarketList();
+	ItemDTO getFMById(int itemId);
+	List<ItemDTO> getFMByUsername(String username);
+	List<ItemDTO> getFMList();
 
 }
 
