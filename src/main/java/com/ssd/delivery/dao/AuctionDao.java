@@ -11,9 +11,9 @@ public interface AuctionDao {
 	
 	
 	  
-	  void insert(AuctionDTO auction) throws DataAccessException;
-	  void update(AuctionDTO auction) throws DataAccessException;
-	  void delete(AuctionDTO auction) throws DataAccessException;
+	  void insertAuction(AuctionDTO auction) throws DataAccessException;
+	  void updateAuction(AuctionDTO auction) throws DataAccessException;
+	  void deleteAuction(AuctionDTO auction) throws DataAccessException;
 	  
 	  AuctionDTO getAuctionById(int auctionId) throws DataAccessException;
 	  List<AuctionDTO> getAuctionByUsername(String username) throws DataAccessException;

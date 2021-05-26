@@ -25,30 +25,30 @@ public class MybatisFleaMarketDao {
 
 	
 	
-	void insert(ItemDTO item) throws DataAccessException{
-		fleaMarketMapper.insert(item);
+	void insertFM(ItemDTO item) throws DataAccessException{
+		fleaMarketMapper.insertFM(item);
 	};
 	
-	void update(ItemDTO item) throws DataAccessException{
-		fleaMarketMapper.update(item);
+	void updateFM(ItemDTO item) throws DataAccessException{
+		fleaMarketMapper.updateFM(item);
 	};
 	
-	void delete(ItemDTO item) throws DataAccessException{
-		fleaMarketMapper.delete(item);
+	void deleteFM(ItemDTO item) throws DataAccessException{
+		fleaMarketMapper.deleteFM(item);
 	};
 	
 	
 
-	ItemDTO getFleaMarketById(int itemId) throws DataAccessException{
-		return fleaMarketMapper.getFleaMarketById(itemId);
+	ItemDTO getFMById(int itemId) throws DataAccessException{
+		return fleaMarketMapper.getFMById(itemId);
 	};
 	
-	List<ItemDTO> getleaMarketByUsername(String username) throws DataAccessException{
-		return fleaMarketMapper.getFleaMarketByUsername(username);
+	List<ItemDTO> getFMByUsername(String username) throws DataAccessException{
+		return fleaMarketMapper.getFMByUsername(username);
 	};
 	
-	List<ItemDTO> getFleaMarketList() throws DataAccessException{
-		return fleaMarketMapper.getFleaMarketList();
+	List<ItemDTO> getFMList() throws DataAccessException{
+		return fleaMarketMapper.getFMList();
 	};
 
 }

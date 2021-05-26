@@ -29,9 +29,9 @@ import com.ssd.delivery.domain.AuctionDTO;
 @Mapper
 public interface AuctionMapper {
 
-	void insert(AuctionDTO auction);
-	void update(AuctionDTO auction);
-	void delete(AuctionDTO auction);
+	void insertAuction(AuctionDTO auction);
+	void updateAuction(AuctionDTO auction);
+	void deleteAuction(AuctionDTO auction);
 
 	AuctionDTO getAuctionById(int auctionId);
 	List<AuctionDTO> getAuctionByUsername(String username);
