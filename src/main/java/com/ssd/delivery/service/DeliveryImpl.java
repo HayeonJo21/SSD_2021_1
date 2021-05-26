@@ -14,6 +14,7 @@ import com.ssd.delivery.dao.FavoriteUserDao;
 import com.ssd.delivery.dao.FleaMarketDao;
 import com.ssd.delivery.dao.MessageDao;
 import com.ssd.delivery.domain.Account;
+import com.ssd.delivery.domain.AccountDTO;
 import com.ssd.delivery.domain.AuctionDTO;
 import com.ssd.delivery.domain.CoPurchasingDTO;
 import com.ssd.delivery.domain.DeliveryDTO;
@@ -40,11 +41,15 @@ public class DeliveryImpl implements DeliveryFacade {
 	private MessageDao messageDao;
 	
 	// Account
-	public void insertAccount(Account account) {
+	public void insertAccount(AccountDTO account) {
 		accountDao.insertAccount(account);
 	}
+	
+	public List<AccountDTO> getUserList(){
+		return accountDao.getUserList();
+	}
 
-	public void updateAccount(Account account) {
+	public void updateAccount(AccountDTO account) {
 		accountDao.updateAccount(account);
 	}
 
@@ -52,11 +57,11 @@ public class DeliveryImpl implements DeliveryFacade {
 		accountDao.deleteAccount(username);
 	}
 
-	public List<Account> getUserListByAuctionId(String auctionId) {
+	public List<AccountDTO> getUserListByAuctionId(String auctionId) {
 		return accountDao.getUserListByAuctionId(auctionId);
 	}
 
-	public List<Account> getUserListByCPId(String CPId) {
+	public List<AccountDTO> getUserListByCPId(String CPId) {
 		return accountDao.getUserListByCPId(CPId);
 	}
 
@@ -64,11 +69,11 @@ public class DeliveryImpl implements DeliveryFacade {
 		return accountDao.existingUser(username);
 	}
 
-	public List<Account> getFavoriteUserList(String username) {
+	public List<FavoriteUserDTO> getFavoriteUserList(String username) {
 		return accountDao.getFavoriteUserList(username);
 	}
 
-	public Account findUser(String username) {
+	public AccountDTO findUser(String username) {
 		return accountDao.findUser(username);
 	}
 

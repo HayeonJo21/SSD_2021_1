@@ -21,27 +21,31 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.ssd.delivery.domain.Account;
+import com.ssd.delivery.domain.AccountDTO;
+import com.ssd.delivery.domain.FavoriteUserDTO;
 @Mapper
 public interface AccountMapper {
 
-	void insertAccount(Account account);
+	void insertAccount(AccountDTO account);
 	
-	void updateAccount(Account account);
+	void updateAccount(AccountDTO account);
 	
 	void deleteAccount(String username);
 	
-	List<Account> getUserListByAuctionId(String auctionId);
+	List<AccountDTO> getUserListByAuctionId(String auctionId);
 	
-	List<Account> getUserListByUsername(String username);
+	List<AccountDTO> getUserListByUsername(String username);
 	
-	List<Account> getUserListByBidderId(String bidderId);
+	List<AccountDTO> getUserListByBidderId(String bidderId);
 	
-	List<Account> getUserListByCPId(String CPId);
+	List<AccountDTO> getUserListByCPId(String CPId);
+	
+	List<AccountDTO> getUserList();
 	
 	boolean existingUser(String username);
 	
-	List<Account> getFavoriteUserList(String username);
+	List<FavoriteUserDTO> getFavoriteUserList(String username);
 	
-	Account getUser(String username);
+	AccountDTO getUser(String username);
 
 }

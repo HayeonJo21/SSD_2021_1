@@ -2,32 +2,28 @@ package com.ssd.delivery.controller.account;
 
 import java.io.Serializable;
 
-import com.ssd.delivery.domain.Account;
+import com.ssd.delivery.domain.AccountDTO;
 
-/**
- * @author Juergen Hoeller
- * @since 01.12.2003
- */
 @SuppressWarnings("serial")
 public class AccountForm implements Serializable {
 
-	private Account account;
+	private AccountDTO account;
 
 	private boolean newAccount;
 
 	private String repeatedPassword;
 
-	public AccountForm(Account account) {
+	public AccountForm(AccountDTO account) {
 		this.account = account;
 		this.newAccount = false;
 	}
 
 	public AccountForm() {
-		this.account = new Account();
+		this.account = new AccountDTO();
 		this.newAccount = true;
 	}
 
-	public Account getAccount() {
+	public AccountDTO getAccount() {
 		return account;
 	}
 

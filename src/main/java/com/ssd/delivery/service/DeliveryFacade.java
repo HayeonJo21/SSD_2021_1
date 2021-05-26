@@ -3,6 +3,7 @@ package com.ssd.delivery.service;
 import java.util.List;
 
 import com.ssd.delivery.domain.Account;
+import com.ssd.delivery.domain.AccountDTO;
 import com.ssd.delivery.domain.AuctionDTO;
 import com.ssd.delivery.domain.CoPurchasingDTO;
 import com.ssd.delivery.domain.DeliveryDTO;
@@ -13,21 +14,23 @@ import com.ssd.delivery.domain.MessageDTO;
 public interface DeliveryFacade {
 
 	// Account
-	void insertAccount(Account account);
+	void insertAccount(AccountDTO accountDTO);
 
-	void updateAccount(Account account);
+	void updateAccount(AccountDTO account);
 
 	void deleteAccount(String username);
 
-	List<Account> getUserListByAuctionId(String auctionId);
+	List<AccountDTO> getUserListByAuctionId(String auctionId);
 
-	List<Account> getUserListByCPId(String CPId);
+	List<AccountDTO> getUserListByCPId(String CPId);
 
 	boolean existingUser(String username);
 
-	List<Account> getFavoriteUserList(String username);
+	List<FavoriteUserDTO> getFavoriteUserList(String username);
+	
+	List<AccountDTO> getUserList();
 
-	Account findUser(String username);
+	AccountDTO findUser(String username);
 
 	// Auction
 	void insertAuction(AuctionDTO auction);

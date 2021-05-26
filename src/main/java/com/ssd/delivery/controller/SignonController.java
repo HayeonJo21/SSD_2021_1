@@ -9,7 +9,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ssd.delivery.domain.Account;
+import com.ssd.delivery.domain.AccountDTO;
+import com.ssd.delivery.domain.FavoriteUserDTO;
 import com.ssd.delivery.domain.Product;
+import com.ssd.delivery.service.DeliveryFacade;
 import com.ssd.delivery.service.PetStoreFacade;
 
 import org.springframework.web.bind.annotation.SessionAttributes;
@@ -24,10 +27,10 @@ import org.springframework.ui.Model;
 @SessionAttributes("userSession")
 public class SignonController { 
 
-	private PetStoreFacade petStore;
+	private DeliveryFacade delStore;
 	@Autowired
-	public void setPetStore(PetStoreFacade petStore) {
-		this.petStore = petStore;
+	public void setPetStore(DeliveryFacade delStore) {
+		this.delStore = delStore;
 	}
 
 	@RequestMapping("/shop/signon.do")
@@ -36,14 +39,14 @@ public class SignonController {
 			@RequestParam("password") String password,
 			@RequestParam(value="forwardAction", required=false) String forwardAction,
 			Model model) throws Exception {
-		Account account = petStore.getAccount(username, password);
+		AccountDTO account = delStore.findUser(username);
 		if (account == null) {
 			return new ModelAndView("Error", "message", 
 					"Invalid username or password.  Signon failed.");
 		}
 		else {
 			UserSession userSession = new UserSession(account);
-			PagedListHolder<Product> myList = new PagedListHolder<Product>(this.petStore.getProductListByCategory(account.getFavouriteCategoryId()));
+			PagedListHolder<FavoriteUserDTO> myList = new PagedListHolder<FavoriteUserDTO>(this.delStore.getFavoriteUserList(account.getFavoriteMall()));
 			myList.setPageSize(4);
 			userSession.setMyList(myList);
 			model.addAttribute("userSession", userSession);

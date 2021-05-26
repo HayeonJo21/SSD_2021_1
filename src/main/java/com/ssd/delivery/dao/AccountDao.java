@@ -4,22 +4,26 @@ import java.util.List;
 import org.springframework.dao.DataAccessException;
 
 import com.ssd.delivery.domain.Account;
+import com.ssd.delivery.domain.AccountDTO;
+import com.ssd.delivery.domain.FavoriteUserDTO;
 
 public interface AccountDao {
-	void insertAccount(Account account) throws DataAccessException;
+	void insertAccount(AccountDTO account) throws DataAccessException;
 	
-	void updateAccount(Account account) throws DataAccessException;
+	void updateAccount(AccountDTO account) throws DataAccessException;
 	
 	void deleteAccount(String username) throws DataAccessException;
 	
-	List<Account> getUserListByAuctionId(String auctionId) throws DataAccessException;
+	List<AccountDTO> getUserListByAuctionId(String auctionId) throws DataAccessException;
 	
-	List<Account> getUserListByCPId(String CPId) throws DataAccessException;
+	List<AccountDTO> getUserList() throws DataAccessException;
+	
+	List<AccountDTO> getUserListByCPId(String CPId) throws DataAccessException;
 	
 	boolean existingUser(String username) throws DataAccessException;
 	
-	List<Account> getFavoriteUserList(String username) throws DataAccessException;
+	List<FavoriteUserDTO> getFavoriteUserList(String username) throws DataAccessException;
 	
-	Account findUser(String username) throws DataAccessException;
+	AccountDTO findUser(String username) throws DataAccessException;
 
 }

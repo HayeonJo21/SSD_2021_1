@@ -7,6 +7,7 @@ import org.springframework.validation.Validator;
 
 import com.ssd.delivery.controller.account.AccountForm;
 import com.ssd.delivery.domain.Account;
+import com.ssd.delivery.domain.AccountDTO;
 /**
  * @author Juergen Hoeller
  * @since 01.12.2003
@@ -21,7 +22,7 @@ public class AccountFormValidator implements Validator {
 
 	public void validate(Object obj, Errors errors) {
 		AccountForm accountForm = (AccountForm)obj; 
-		Account account = accountForm.getAccount();
+		AccountDTO account = accountForm.getAccount();
 
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "account.firstName", "FIRST_NAME_REQUIRED", "First name is required.");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "account.lastName", "LAST_NAME_REQUIRED", "Last name is required.");
@@ -33,19 +34,19 @@ public class AccountFormValidator implements Validator {
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "account.zip", "ZIP_REQUIRED", "ZIP is required.");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "account.country", "COUNTRY_REQUIRED", "Country is required.");
 		
-		if (accountForm.isNewAccount()) {
-			account.setStatus("OK");
-			ValidationUtils.rejectIfEmptyOrWhitespace(errors, "account.username", "USER_ID_REQUIRED", "User ID is required.");
-			if (account.getPassword() == null || account.getPassword().length() < 1 ||
-					!account.getPassword().equals(accountForm.getRepeatedPassword())) {
-				errors.reject("PASSWORD_MISMATCH",
-					 "Passwords did not match or were not provided. Matching passwords are required.");
-			}
-		}
-		else if (account.getPassword() != null && account.getPassword().length() > 0) {
-			if (!account.getPassword().equals(accountForm.getRepeatedPassword())) {
-				errors.reject("PASSWORD_MISMATCH", "Passwords did not match. Matching passwords are required.");
-			}
-		}
+//		if (accountForm.isNewAccount()) {
+//			account.setStatus("OK");
+//			ValidationUtils.rejectIfEmptyOrWhitespace(errors, "account.username", "USER_ID_REQUIRED", "User ID is required.");
+//			if (account.getPassword() == null || account.getPassword().length() < 1 ||
+//					!account.getPassword().equals(accountForm.getRepeatedPassword())) {
+//				errors.reject("PASSWORD_MISMATCH",
+//					 "Passwords did not match or were not provided. Matching passwords are required.");
+//			}
+//		}
+//		else if (account.getPassword() != null && account.getPassword().length() > 0) {
+//			if (!account.getPassword().equals(accountForm.getRepeatedPassword())) {
+//				errors.reject("PASSWORD_MISMATCH", "Passwords did not match. Matching passwords are required.");
+//			}
+//		}
 	}
 }

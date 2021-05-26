@@ -21,7 +21,7 @@
   
   <insert id="insert" parameterType="AccountDTO">
     INSERT INTO ACCOUNT (USERNAME, PASSWORD, EMAIL, FISTNAME, LASTNAME, ADDRESS, PHONE, LANGUAGEPREFERENCE, STATUS, FAVORITEMALL, CARINFO)
-    VALUES (#{username), #{password}, #{email}, #{firstName}, #{lastName}, #{address}, #{phone}, #{languagePreference}, #{status}, #{favoriteMall}, #{carInfo}"
+    VALUES (#{username}, #{password}, #{email}, #{firstName}, #{lastName}, #{address}, #{phone}, #{languagePreference}, #{status}, #{favoriteMall}, #{carInfo}"
   </insert>
   
   <delete id="delete" parameterType="int">
@@ -34,6 +34,11 @@
     FROM ACCOUNT JOIN AUCTION
     WHERE AUCTIONID = #{auctionId}
 	</select>
+	
+	<select id="getUserList" resultType="AccountDTO">
+    SELECT * 
+    FROM ACCOUNT
+	</select>
 
 	<select id="getUserListByCPId" resultType="AccountDTO">
     SELECT * 
@@ -42,7 +47,7 @@
 	</select>
 	
 	<select id="getFavoriteUserList" resultType="AccountDTO">
-    SELECT * 
+    SELECT FAVORITEUSERNAME
     FROM ACCOUNT JOIN FAVORITEUSER
     WHERE username = #{username}
 	</select>

@@ -8,19 +8,17 @@ import org.springframework.stereotype.Repository;
 import com.ssd.delivery.dao.AccountDao;
 import com.ssd.delivery.dao.mybatis.mapper.AccountMapper;
 import com.ssd.delivery.domain.Account;
+import com.ssd.delivery.domain.AccountDTO;
+import com.ssd.delivery.domain.FavoriteUserDTO;
 
-/**
- * @author Juergen Hoeller
- * @author Colin Sampaleanu
- */
 @Repository
 public class MybatisAccountDao implements AccountDao {
 
 	@Autowired
 	private AccountMapper accountMapper;
-
+	
 	@Override
-	public void insertAccount(Account account) throws DataAccessException {
+	public void insertAccount(AccountDTO account) throws DataAccessException {
 		accountMapper.insertAccount(account);
 	}
 
@@ -30,13 +28,13 @@ public class MybatisAccountDao implements AccountDao {
 	}
 
 	@Override
-	public List<Account> getUserListByAuctionId(String auctionId) throws DataAccessException {
+	public List<AccountDTO> getUserListByAuctionId(String auctionId) throws DataAccessException {
 		
 		return accountMapper.getUserListByAuctionId(auctionId);
 	}
 
 	@Override
-	public List<Account> getUserListByCPId(String CPId) throws DataAccessException {
+	public List<AccountDTO> getUserListByCPId(String CPId) throws DataAccessException {
 		
 		return accountMapper.getUserListByCPId(CPId);
 	}
@@ -48,20 +46,27 @@ public class MybatisAccountDao implements AccountDao {
 	}
 
 	@Override
-	public List<Account> getFavoriteUserList(String username) throws DataAccessException {
+	public List<FavoriteUserDTO> getFavoriteUserList(String username) throws DataAccessException {
 		
 		return accountMapper.getFavoriteUserList(username);
 	}
 
 	@Override
-	public Account findUser(String username) throws DataAccessException {
+	public AccountDTO findUser(String username) throws DataAccessException {
 		
 		return accountMapper.getUser(username);
 	}
 
+	
 	@Override
-	public void updateAccount(Account account) throws DataAccessException {
+	public void updateAccount(AccountDTO account) throws DataAccessException {
 		accountMapper.updateAccount(account);
 		
 	}
+
+	@Override
+	public List<AccountDTO> getUserList() throws DataAccessException {
+		return accountMapper.getUserList();
+	}
+
 }
