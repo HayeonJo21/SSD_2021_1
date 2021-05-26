@@ -9,7 +9,7 @@ import com.ssd.delivery.domain.MessageDTO;
 public interface MessageDao {
 
 	void insertMessage(MessageDTO message) throws DataAccessException;
-	
+	//ddd
 	void updateMessage(MessageDTO message) throws DataAccessException;
 	
 	void deleteMessage(String username) throws DataAccessException;
