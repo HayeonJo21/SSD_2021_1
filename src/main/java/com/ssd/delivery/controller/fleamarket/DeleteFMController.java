@@ -12,7 +12,7 @@ import com.ssd.delivery.domain.Cart;
 
 @Controller
 @SessionAttributes("userSession")
-public class DeleteFleaMarketController { 
+public class DeleteFMController { 
 
 	@RequestMapping("/fleamarket/delete")
 	public ModelAndView handleRequest(
