@@ -2,54 +2,105 @@ package com.ssd.delivery.service;
 
 import java.util.List;
 
-import org.springframework.dao.DataAccessException;
-
 import com.ssd.delivery.domain.Account;
 import com.ssd.delivery.domain.AuctionDTO;
 import com.ssd.delivery.domain.CoPurchasingDTO;
+import com.ssd.delivery.domain.DeliveryDTO;
+import com.ssd.delivery.domain.FavoriteUserDTO;
+import com.ssd.delivery.domain.ItemDTO;
+import com.ssd.delivery.domain.MessageDTO;
 
 public interface DeliveryFacade {
 
-	void insertDelivery(Account account);
+	// Account
+	void insertAccount(Account account);
 
-	void updateDelivery(Account account);
+	void updateAccount(Account account);
 
-	void deleteDelivery(String username);
+	void deleteAccount(String username);
 
-	List<Account> getUserListByAuctionId(String auctionId)
-			throws DataAccessException;
+	List<Account> getUserListByAuctionId(String auctionId);
 
-	List<Account> getUserListByCPId(String CPId) throws DataAccessException;
+	List<Account> getUserListByCPId(String CPId);
 
-	boolean existingUser(String username) throws DataAccessException;
+	boolean existingUser(String username);
 
-	List<Account> getFavoriteUserList(String username)
-			throws DataAccessException;
+	List<Account> getFavoriteUserList(String username);
 
-	Account findUser(String username) throws DataAccessException;
+	Account findUser(String username);
 
-	void insert(AuctionDTO auction) throws DataAccessException;
+	// Auction
+	void insertAuction(AuctionDTO auction);
 
-	void update(AuctionDTO auction) throws DataAccessException;
+	void updateAuction(AuctionDTO auction);
 
-	void delete(AuctionDTO auction) throws DataAccessException;
+	void deleteAuction(AuctionDTO auction);
 
-	AuctionDTO getAuctionById(int auctionId) throws DataAccessException;
+	AuctionDTO getAuctionById(int auctionId);
 
-	List<AuctionDTO> getAuctionByUsername(String username)
-			throws DataAccessException;
+	List<AuctionDTO> getAuctionByUsername(String username);
 
-	List<AuctionDTO> getAuctionList() throws DataAccessException;
-void insert(CoPurchasingDTO CP) throws DataAccessException;
-	
-	void update(CoPurchasingDTO CP) throws DataAccessException;
-	
-	void delete(String CPId) throws DataAccessException;
-	
-	List<CoPurchasingDTO> getCPList() throws DataAccessException;
-	
-	CoPurchasingDTO getCPById(String CPId) throws DataAccessException;
-	
-	CoPurchasingDTO getCPByUsername(String username) throws DataAccessException;
-	
+	List<AuctionDTO> getAuctionList();
+
+	// CoPurchasing
+	void insertCP(CoPurchasingDTO CP);
+
+	void updateCP(CoPurchasingDTO CP);
+
+	void deleteCP(String CPId);
+
+	List<CoPurchasingDTO> getCPList();
+
+	CoPurchasingDTO getCPById(String CPId);
+
+	CoPurchasingDTO getCPByUsername(String username);
+
+	// Delivery
+	void insertDelivery(DeliveryDTO delivery);
+
+	void updateDelivery(DeliveryDTO delivery);
+
+	void deleteDelivery(int deliveryId);
+
+	DeliveryDTO getDeliveryById(int deliveryId);
+
+	DeliveryDTO getDeliveryByUsername(String username);
+
+	List<DeliveryDTO> getDeliveryList();
+
+	// FavoriteUser
+	void insertFU(FavoriteUserDTO favoriteUser);
+
+	void updateFU(FavoriteUserDTO favoriteUser);
+
+	void deleteFU(String username);
+
+	FavoriteUserDTO getFUByUsername(String username);
+
+	List<FavoriteUserDTO> getFUList();
+
+	// FleaMarket
+	void insertFM(ItemDTO item);
+
+	void updateFM(ItemDTO item);
+
+	void deleteFM(ItemDTO item);
+
+	ItemDTO getFMById(int itemId);
+
+	List<ItemDTO> getFMByUsername(String username);
+
+	List<ItemDTO> getFMList();
+
+	// Message
+	void insertMessage(MessageDTO message);
+
+	void updateMessage(MessageDTO message);
+
+	void deleteMessage(String username);
+
+	MessageDTO getMessageByUsername(String username);
+
+	List<MessageDTO> getMessageList();
+
 }

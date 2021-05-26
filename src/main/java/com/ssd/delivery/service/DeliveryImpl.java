@@ -1,5 +1,216 @@
 package com.ssd.delivery.service;
 
-public class DeliveryImpl {
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.ssd.delivery.dao.AccountDao;
+import com.ssd.delivery.dao.AuctionDao;
+import com.ssd.delivery.dao.CoPurchasingDao;
+import com.ssd.delivery.dao.DeliveryDao;
+import com.ssd.delivery.dao.FavoriteUserDao;
+import com.ssd.delivery.dao.FleaMarketDao;
+import com.ssd.delivery.dao.MessageDao;
+import com.ssd.delivery.domain.Account;
+import com.ssd.delivery.domain.AuctionDTO;
+import com.ssd.delivery.domain.CoPurchasingDTO;
+import com.ssd.delivery.domain.DeliveryDTO;
+import com.ssd.delivery.domain.MessageDTO;
+import com.ssd.delivery.domain.FavoriteUserDTO;
+import com.ssd.delivery.domain.ItemDTO;
+
+@Service
+@Transactional
+public class DeliveryImpl implements DeliveryFacade {
+	@Autowired
+	private AccountDao accountDao;
+	@Autowired
+	private AuctionDao auctionDao;
+	@Autowired
+	private CoPurchasingDao cpDao;
+	@Autowired
+	private DeliveryDao deliveryDao;
+	@Autowired
+	private FavoriteUserDao fuDao;
+	@Autowired
+	private FleaMarketDao fmDao;
+	@Autowired
+	private MessageDao messageDao;
+	
+	// Account
+	public void insertAccount(Account account) {
+		accountDao.insertAccount(account);
+	}
+
+	public void updateAccount(Account account) {
+		accountDao.updateAccount(account);
+	}
+
+	public void deleteAccount(String username) {
+		accountDao.deleteAccount(username);
+	}
+
+	public List<Account> getUserListByAuctionId(String auctionId) {
+		return accountDao.getUserListByAuctionId(auctionId);
+	}
+
+	public List<Account> getUserListByCPId(String CPId) {
+		return accountDao.getUserListByCPId(CPId);
+	}
+
+	public boolean existingUser(String username) {
+		return accountDao.existingUser(username);
+	}
+
+	public List<Account> getFavoriteUserList(String username) {
+		return accountDao.getFavoriteUserList(username);
+	}
+
+	public Account findUser(String username) {
+		return accountDao.findUser(username);
+	}
+
+	// Auction
+	public void insertAuction(AuctionDTO auction) {
+		auctionDao.insertAuction(auction);
+	}
+
+	public void updateAuction(AuctionDTO auction) {
+		auctionDao.updateAuction(auction);
+	}
+
+	public void deleteAuction(AuctionDTO auction) {
+		auctionDao.deleteAuction(auction);
+	}
+
+	public AuctionDTO getAuctionById(int auctionId) {
+		return auctionDao.getAuctionById(auctionId);
+	}
+
+	public List<AuctionDTO> getAuctionByUsername(String username) {
+		return auctionDao.getAuctionByUsername(username);
+	}
+
+	public List<AuctionDTO> getAuctionList() {
+		return auctionDao.getAuctionList();
+	}
+	
+	// CoPurchasing
+	public void insertCP(CoPurchasingDTO CP) {
+		cpDao.insertCP(CP);
+	}
+
+	public void updateCP(CoPurchasingDTO CP) {
+		cpDao.updateCP(CP);
+	}
+
+	public void deleteCP(String CPId) {
+		cpDao.deleteCP(CPId);
+	}
+	public List<CoPurchasingDTO> getCPList() {
+		return cpDao.getCPList();
+	}
+
+	public CoPurchasingDTO getCPById(String CPId) {
+		return cpDao.getCPById(CPId);
+	}
+
+	public CoPurchasingDTO getCPByUsername(String username) {
+		return cpDao.getCPByUsername(username);
+	}
+	
+	// Delivery
+	public void insertDelivery(DeliveryDTO delivery) {
+		deliveryDao.insertDelivery(delivery);
+	}
+
+	public void updateDelivery(DeliveryDTO delivery) {
+		deliveryDao.updateDelivery(delivery);
+	}
+
+	public void deleteDelivery(int deliveryId) {
+		deliveryDao.deleteDelivery(deliveryId);
+	}
+
+	public DeliveryDTO getDeliveryById(int deliveryId) {
+		return deliveryDao.getDeliveryById(deliveryId);
+	}
+
+	public DeliveryDTO getDeliveryByUsername(String username) {
+		return deliveryDao.getDeliveryByUsername(username);
+	}
+
+	public List<DeliveryDTO> getDeliveryList() {
+		return deliveryDao.getDeliveryList();
+	}
+	
+	// FavoriteUser
+	public void insertFU(FavoriteUserDTO favoriteUser) {
+		fuDao.insertFU(favoriteUser);
+	}
+
+	public void updateFU(FavoriteUserDTO favoriteUser) {
+		fuDao.updateFU(favoriteUser);
+	}
+
+	public void deleteFU(String username) {
+		fuDao.deleteFU(username);
+	}
+
+	public FavoriteUserDTO getFUByUsername(String username) {
+		return fuDao.getFUByUsername(username);
+	}
+
+	public List<FavoriteUserDTO> getFUList() {
+		return fuDao.getFUList();
+	}
+
+	// FleaMarket
+	public void insertFM(ItemDTO item) {
+		fmDao.insertFM(item);
+	}
+
+	public void updateFM(ItemDTO item) {
+		fmDao.updateFM(item);
+	}
+
+	public void deleteFM(ItemDTO item) {
+		fmDao.deleteFM(item);
+	}
+
+	public ItemDTO getFMById(int itemId) {
+		return fmDao.getFMById(itemId);
+	}
+
+	public List<ItemDTO> getFMByUsername(String username) {
+		return fmDao.getFMByUsername(username);
+	}
+
+	public List<ItemDTO> getFMList() {
+		return fmDao.getFMList();
+	}
+
+	// Message
+	public void insertMessage(MessageDTO message) {
+		messageDao.insertMessage(message);
+	}
+
+	public void updateMessage(MessageDTO message) {
+		messageDao.updateMessage(message);
+	}
+
+	public void deleteMessage(String username) {
+		messageDao.deleteMessage(username);
+	}
+
+	public MessageDTO getMessageByUsername(String username) {
+		return messageDao.getMessageByUsername(username);
+	}
+
+	public List<MessageDTO> getMessageList() {
+		return messageDao.getMessageList();
+	}
 
 }
