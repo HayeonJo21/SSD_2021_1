@@ -3,8 +3,7 @@
 
 <mapper namespace="com.ssd.delivery.dao.mybatis.mapper.AuctionMapper">
   <cache />
-
-   <insert id="insertAuction" parameterType="AuctionDTO">
+  <insert id="insertAuction" parameterType="AuctionDTO">
       insert into auction
       	(auctionid, serviceid, customerid, enddate, servicedate, startprice, finalprice, address1, address2, successfulbidder, deliveryId, username)
       	values
