@@ -34,6 +34,11 @@
     FROM ACCOUNT JOIN AUCTION
     WHERE AUCTIONID = #{auctionId}
 	</select>
+	
+	<select id="getUserList" resultType="AccountDTO">
+    SELECT * 
+    FROM ACCOUNT
+	</select>
 
 	<select id="getUserListByCPId" resultType="AccountDTO">
     SELECT * 
@@ -42,7 +47,7 @@
 	</select>
 	
 	<select id="getFavoriteUserList" resultType="AccountDTO">
-    SELECT * 
+    SELECT FAVORITEUSERNAME
     FROM ACCOUNT JOIN FAVORITEUSER
     WHERE username = #{username}
 	</select>

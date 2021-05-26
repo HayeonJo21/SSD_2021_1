@@ -5,6 +5,7 @@ import org.springframework.beans.support.PagedListHolder;
 
 import com.ssd.delivery.domain.Account;
 import com.ssd.delivery.domain.AccountDTO;
+import com.ssd.delivery.domain.FavoriteUserDTO;
 import com.ssd.delivery.domain.Product;
 
 /**
@@ -14,23 +15,23 @@ import com.ssd.delivery.domain.Product;
 @SuppressWarnings("serial")
 public class UserSession implements Serializable {
 
-	private Account account;
+	private AccountDTO account;
 
-	private PagedListHolder<Product> myList;
+	private PagedListHolder<FavoriteUserDTO> myList;
 
-	public UserSession(Account account2) {
-		this.account = account2;
+	public UserSession(AccountDTO accountDTO) {
+		this.account = accountDTO;
 	}
 
-	public Account getAccount() {
+	public AccountDTO getAccount() {
 		return account;
 	}
 
-	public void setMyList(PagedListHolder<Product> myList) {
-		this.myList = myList;
+	public void setMyList(PagedListHolder<FavoriteUserDTO> myList2) {
+		this.myList = myList2;
 	}
 
-	public PagedListHolder<Product> getMyList() {
+	public PagedListHolder<FavoriteUserDTO> getMyList() {
 		return myList;
 	}
 }

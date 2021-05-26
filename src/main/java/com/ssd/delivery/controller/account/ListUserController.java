@@ -8,17 +8,17 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ssd.delivery.controller.UserSession;
-import com.ssd.delivery.service.PetStoreFacade;
+import com.ssd.delivery.service.DeliveryFacade;
 
 @Controller
 @SessionAttributes("userSession")
 public class ListUserController {
 
-	private PetStoreFacade petStore;
+	private DeliveryFacade delStore;
 
 	@Autowired
-	public void setPetStore(PetStoreFacade petStore) {
-		this.petStore = petStore;
+	public void setDelStore(DeliveryFacade delStore) {
+		this.delStore = delStore;
 	}
 
 	@RequestMapping("/user/list.do")
@@ -26,7 +26,7 @@ public class ListUserController {
 		@ModelAttribute("userSession") UserSession userSession
 		) throws Exception {
 		return new ModelAndView("viewUserList", "userList", 
-				petStore.findUserList());
+				delStore.getUserList());
 	}
 
 }
