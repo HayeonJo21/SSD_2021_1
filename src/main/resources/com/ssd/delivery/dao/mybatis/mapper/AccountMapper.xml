@@ -21,7 +21,7 @@
   
   <insert id="insert" parameterType="AccountDTO">
     INSERT INTO ACCOUNT (USERNAME, PASSWORD, EMAIL, FISTNAME, LASTNAME, ADDRESS, PHONE, LANGUAGEPREFERENCE, STATUS, FAVORITEMALL, CARINFO)
-    VALUES (#{username), #{password}, #{email}, #{firstName}, #{lastName}, #{address}, #{phone}, #{languagePreference}, #{status}, #{favoriteMall}, #{carInfo}"
+    VALUES (#{username}, #{password}, #{email}, #{firstName}, #{lastName}, #{address}, #{phone}, #{languagePreference}, #{status}, #{favoriteMall}, #{carInfo}"
   </insert>
   
   <delete id="delete" parameterType="int">

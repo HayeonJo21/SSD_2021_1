@@ -9,15 +9,15 @@
      UNITCOST = #{unitCost},
      PRICE = #{price},
      MAXNUMBEROFPURCHASER = #{maxNumberOfPurchaser},
-     DELIVERY = #{delivery},
+     DELIVERYID = #{deliveryId},
      NOTE = #{note}
 
     WHERE coPurchasingId = #{coPurchasingId}
   </update>
   
   <insert id="insert" parameterType="CoPurchasingDTO">
-    INSERT INTO COPURCHASING (COPURCHASINGID, UNITCOST, PRICE, USERNAME, MAXNUMBEROFPURCHASER, DELIVERY, NOTE)
-    VALUES (#{coPurchasingId}, #{unitCost}, #{price}, #{username}, #{maxNumberOfPurchaser}, #{delivery}, #{note}"
+    INSERT INTO COPURCHASING (COPURCHASINGID, UNITCOST, PRICE, USERNAME, MAXNUMBEROFPURCHASER, DELIVERYID, NOTE)
+    VALUES (#{coPurchasingId}, #{unitCost}, #{price}, #{username}, #{maxNumberOfPurchaser}, #{deliveryId}, #{note}"
   </insert>
   
   <delete id="delete" parameterType="int">
