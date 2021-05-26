@@ -6,7 +6,9 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.ssd.delivery.domain.AuctionDTO;
 import com.ssd.delivery.domain.Item;
+import com.ssd.delivery.service.DeliveryFacade;
 import com.ssd.delivery.service.PetStoreFacade;
 
 /**
@@ -18,20 +20,28 @@ import com.ssd.delivery.service.PetStoreFacade;
 public class DetailViewAuctionController { 
 
 	private PetStoreFacade petStore;
+	private DeliveryFacade delivery;
+	
 
 	@Autowired
-	public void setPetStore(PetStoreFacade petStore) {
-		this.petStore = petStore;
+	
+
+	public void setDelivery(DeliveryFacade delivery) {
+		this.delivery = delivery;
 	}
 
 	@RequestMapping("/shop/viewItem.do")
 	public String handleRequest(
-			@RequestParam("itemId") String itemId,
+			@RequestParam("auctionId") int auctionId,
 			ModelMap model) throws Exception {
-		Item item = this.petStore.getItem(itemId);
-		model.put("item", item);
-		model.put("product", item.getProduct());
-		return "Item";
+		AuctionDTO auction = this.delivery.getAuctionById(auctionId);
+		model.put("auction", auction);
+		model.put("auctionView", auction);
+		return "Auction";
+		
+		
+		
+		
 	}
 
 }

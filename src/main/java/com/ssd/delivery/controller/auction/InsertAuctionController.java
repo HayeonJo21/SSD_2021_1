@@ -12,7 +12,7 @@ import com.ssd.delivery.domain.AuctionDTO;
 
 
 @Controller
-public class RegisterAuctionController { 
+public class InsertAuctionController { 
 
 	@RequestMapping("/auction/update")
 	public ModelAndView handleRequest(

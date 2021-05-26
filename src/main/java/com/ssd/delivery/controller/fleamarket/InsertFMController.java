@@ -12,7 +12,7 @@ import com.ssd.delivery.controller.UserSession;
 import com.ssd.delivery.domain.FleaMarketDTO;
 @Controller
 @SessionAttributes("userSession")
-public class RegisterFMController { 
+public class InsertFMController { 
 
 	@RequestMapping("/fleamarket/update")
 	public ModelAndView handleRequest(
