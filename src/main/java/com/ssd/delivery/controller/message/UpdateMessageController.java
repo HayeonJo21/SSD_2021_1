@@ -1,4 +1,4 @@
-package com.ssd.delivery.controller;
+package com.ssd.delivery.controller.message;
 
 import javax.servlet.http.HttpServletRequest;
 

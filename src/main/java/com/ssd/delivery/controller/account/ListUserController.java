@@ -1,4 +1,4 @@
-package com.ssd.delivery.controller;
+package com.ssd.delivery.controller.account;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -7,16 +7,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.ssd.delivery.controller.UserSession;
 import com.ssd.delivery.service.PetStoreFacade;
 
-/**
- * @author Juergen Hoeller
- * @since 01.12.2003
- * @modified by Changsup Park
- */
 @Controller
 @SessionAttributes("userSession")
-public class ListAuctionController {
+public class ListUserController {
 
 	private PetStoreFacade petStore;
 
@@ -25,13 +21,12 @@ public class ListAuctionController {
 		this.petStore = petStore;
 	}
 
-	@RequestMapping("/auction/list")
+	@RequestMapping("/user/list.do")
 	public ModelAndView handleRequest(
 		@ModelAttribute("userSession") UserSession userSession
 		) throws Exception {
-		String username = userSession.getAccount().getUsername();
-		return new ModelAndView("ListOrders", "orderList", 
-				petStore.getOrdersByUsername(username));
+		return new ModelAndView("viewUserList", "userList", 
+				petStore.findUserList());
 	}
 
 }

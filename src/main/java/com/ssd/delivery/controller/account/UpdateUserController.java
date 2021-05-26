@@ -1,4 +1,4 @@
-package com.ssd.delivery.controller;
+package com.ssd.delivery.controller.account;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -8,16 +8,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.ssd.delivery.domain.DeliveryDTO;
-
+import com.ssd.delivery.controller.UserSession;
+import com.ssd.delivery.domain.AccountDTO;
 @Controller
-@SessionAttributes("sessionDelivery")
-public class UpdateDeliveryController {
-	@RequestMapping("/delivery/update")
+@SessionAttributes("userSession")
+public class UpdateUserController { 
+
+	@RequestMapping("/user/update")
 	public ModelAndView handleRequest(
 			HttpServletRequest request,	
-			@ModelAttribute("sessionDelivery") DeliveryDTO Delivery) throws Exception {
-		DeliveryDTO delivery = new DeliveryDTO();
-		return new ModelAndView("UpdateDeliveryView", "delivery", delivery);
+			@ModelAttribute("userSession") UserSession userSession) throws Exception {
+		AccountDTO user = new AccountDTO();
+		return new ModelAndView("UpdateUserView", "user", user);
 	}
+
 }

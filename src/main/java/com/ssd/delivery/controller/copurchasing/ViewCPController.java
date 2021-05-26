@@ -1,4 +1,4 @@
-package com.ssd.delivery.controller;
+package com.ssd.delivery.controller.copurchasing;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -6,11 +6,11 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.ssd.delivery.domain.AccountDTO;
+import com.ssd.delivery.domain.CoPurchasingDTO;
 import com.ssd.delivery.service.PetStoreFacade;
 
 @Controller
-public class ViewUserController { 
+public class ViewCPController { 
 
 	private PetStoreFacade petStore;
 
@@ -19,13 +19,13 @@ public class ViewUserController {
 		this.petStore = petStore;
 	}
 
-	@RequestMapping("/user/view")
+	@RequestMapping("/coPurchasing/view")
 	public String handleRequest(
-			@RequestParam("username") String username,
+			@RequestParam("coPurchasingId") String CPId,
 			ModelMap model) throws Exception {
-		AccountDTO user = this.petStore.getAccountDTO(username);
-		model.put("user", user);
-		return "userView";
+		CoPurchasingDTO cp = null;
+		model.put("cp", cp);
+		return "coPurchaingView";
 	}
 
 }
