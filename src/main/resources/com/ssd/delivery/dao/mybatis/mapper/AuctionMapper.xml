@@ -15,15 +15,11 @@
     <!-- UPDATE FAVORITEUSER SET 
 	   FAVORITEUSERNAME  = #{favoriteUsername}, 
 	   TRADECOUNT = #{tradeCount} 
-    WHERE USERNAME= #{username} -->
-    
+    WHERE USERNAME= #{username} --> 
     update auction set
     	customerid = #{customerId},
-    	finalprice = #{finalPrice},
-    	    	
-    	
+    	finalprice = #{finalPrice}
 	</update>
-
 	<delete id="deleteAuction" parameterType="java.lang.String">
 	DELETE FROM auction 
 	WHERE auctionid = #{auctionId}
