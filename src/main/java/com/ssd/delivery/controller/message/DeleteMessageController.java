@@ -18,7 +18,7 @@ public class DeleteMessageController {
 			@RequestParam("username") String username,
 			@ModelAttribute("sessionMessage") MessageMapper message
 			) throws Exception {
-		message.delete(username);
+		message.deleteMessage(username);
 		return new ModelAndView("Message", "message", message);
 	}
 }

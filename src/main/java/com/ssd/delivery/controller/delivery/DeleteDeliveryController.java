@@ -18,7 +18,7 @@ public class DeleteDeliveryController {
 			@RequestParam("username") int username,
 			@ModelAttribute("sessionDelivery") DeliveryMapper delivery
 			) throws Exception {
-		delivery.delete(username);
+		delivery.deleteDelivery(username);
 		return new ModelAndView("Delivery", "delivery", delivery);
 	}
 }
