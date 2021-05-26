@@ -7,11 +7,11 @@ import com.ssd.delivery.domain.CoPurchasingDTO;
 
 public interface CoPurchasingDao {
 	
-	void insert(CoPurchasingDTO CP) throws DataAccessException;
+	void insertCP(CoPurchasingDTO CP) throws DataAccessException;
 	
-	void update(CoPurchasingDTO CP) throws DataAccessException;
+	void updateCP(CoPurchasingDTO CP) throws DataAccessException;
 	
-	void delete(String CPId) throws DataAccessException;
+	void deleteCP(String CPId) throws DataAccessException;
 	
 	List<CoPurchasingDTO> getCPList() throws DataAccessException;
 	

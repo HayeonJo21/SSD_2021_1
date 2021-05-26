@@ -20,20 +20,20 @@ public class MybatisCoPurchasingDao implements CoPurchasingDao {
 	private CoPurchasingMapper CPMapper;
 	
 	@Override
-	public void insert(CoPurchasingDTO CP) throws DataAccessException {
-		CPMapper.insert(CP);
+	public void insertCP(CoPurchasingDTO CP) throws DataAccessException {
+		CPMapper.insertCP(CP);
 		
 	}
 
 	@Override
-	public void update(CoPurchasingDTO CP) throws DataAccessException {
-		CPMapper.update(CP);
+	public void updateCP(CoPurchasingDTO CP) throws DataAccessException {
+		CPMapper.updateCP(CP);
 		
 	}
 
 	@Override
-	public void delete(String CPId) throws DataAccessException {
-		CPMapper.delete(CPId);
+	public void deleteCP(String CPId) throws DataAccessException {
+		CPMapper.deleteCP(CPId);
 		
 	}
 

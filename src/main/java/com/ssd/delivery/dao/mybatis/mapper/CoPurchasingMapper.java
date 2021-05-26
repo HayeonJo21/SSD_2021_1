@@ -29,11 +29,11 @@ import com.ssd.delivery.domain.CoPurchasingDTO;
 @Mapper
 public interface CoPurchasingMapper {
 
-	void insert(CoPurchasingDTO CP);
+	void insertCP(CoPurchasingDTO CP);
 	
-	void update(CoPurchasingDTO CP);
+	void updateCP(CoPurchasingDTO CP);
 	
-	void delete(String CPId);
+	void deleteCP(String CPId);
 	
 	List<CoPurchasingDTO> getCPList();
 	
