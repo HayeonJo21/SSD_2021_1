@@ -15,16 +15,16 @@ public class MybatisFavoriteUserDao implements FavoriteUserDao{
 	@Autowired
 	private FavoriteUserMapper favoriteUserMapper;
 	
-	public void insert(FavoriteUserDTO favoriteUser) throws DataAccessException {
-		favoriteUserMapper.insert(favoriteUser);
+	public void insertFU(FavoriteUserDTO favoriteUser) throws DataAccessException {
+		favoriteUserMapper.insertFU(favoriteUser);
 	}
 	
-	public void update(FavoriteUserDTO favoriteUser) throws DataAccessException {
-		favoriteUserMapper.update(favoriteUser);
+	public void updateFU(FavoriteUserDTO favoriteUser) throws DataAccessException {
+		favoriteUserMapper.updateFU(favoriteUser);
 	}
 	
-	public void delete(String username) throws DataAccessException {
-		favoriteUserMapper.delete(username);
+	public void deleteFU(String username) throws DataAccessException {
+		favoriteUserMapper.deleteFU(username);
 	}
 	
 	public FavoriteUserDTO getFUByUsername(String username) throws DataAccessException {

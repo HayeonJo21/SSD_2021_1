@@ -8,11 +8,11 @@ import com.ssd.delivery.domain.FavoriteUserDTO;
 @Mapper
 public interface FavoriteUserMapper {
 
-	void insert(FavoriteUserDTO favoriteUser);
+	void insertFU(FavoriteUserDTO favoriteUser);
 	
-	void update(FavoriteUserDTO favoriteUser);
+	void updateFU(FavoriteUserDTO favoriteUser);
 	
-	void delete(String username);
+	void deleteFU(String username);
 	
 	FavoriteUserDTO getFUByUsername(String username);
 	

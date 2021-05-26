@@ -8,11 +8,11 @@ import com.ssd.delivery.domain.FavoriteUserDTO;
 
 public interface FavoriteUserDao {
 
-	void insert(FavoriteUserDTO favoriteUser) throws DataAccessException;
+	void insertFU(FavoriteUserDTO favoriteUser) throws DataAccessException;
 	
-	void update(FavoriteUserDTO favoriteUser) throws DataAccessException;
+	void updateFU(FavoriteUserDTO favoriteUser) throws DataAccessException;
 	
-	void delete(String username) throws DataAccessException;
+	void deleteFU(String username) throws DataAccessException;
 	
 	FavoriteUserDTO getFUByUsername(String username) throws DataAccessException;
 	

@@ -4,21 +4,21 @@
 <mapper namespace="com.ssd.delivery.dao.mybatis.mapper.FavoriteUserMapper">
   <cache />
 
-   <insert id="create" parameterType="FavoriteUserDTO">
+   <insert id="insertFU" parameterType="FavoriteUserDTO">
     INSERT INTO FAVORITEUSER
       (USERNAME, FAVORITEUSERNAME, TRADECOUNT)
     VALUES
       (#{username}, #{favoriteUsername}, #{tradeCount})
 	</insert>
 
-	<update id="update" parameterType="FavoriteUserDTO">
+	<update id="updateFU" parameterType="FavoriteUserDTO">
     UPDATE FAVORITEUSER SET 
 	   FAVORITEUSERNAME  = #{favoriteUsername}, 
 	   TRADECOUNT = #{tradeCount} 
     WHERE USERNAME= #{username}
 	</update>
 
-	<delete id="remove" parameterType="java.lang.String">
+	<delete id="deleteFU" parameterType="java.lang.String">
 	DELETE FROM FAVORITEUSER 
 	WHERE USERNAME = #{username}
 	</delete>

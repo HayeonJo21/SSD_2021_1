@@ -8,11 +8,11 @@ import com.ssd.delivery.domain.MessageDTO;
 @Mapper
 public interface MessageMapper {
 	
-	void insert(MessageDTO message);
+	void insertMessage(MessageDTO message);
 	
-	void update(MessageDTO message);
+	void updateMessage(MessageDTO message);
 	
-	void delete(String username);
+	void deleteMessage(String username);
 	
 	MessageDTO getMessageByUsername(String username);
 	
