@@ -1,4 +1,4 @@
-package com.ssd.delivery.controller;
+package com.ssd.delivery.controller.fleamarket;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,7 +10,7 @@ import com.ssd.delivery.domain.AccountDTO;
 import com.ssd.delivery.service.PetStoreFacade;
 
 @Controller
-public class ViewUserController { 
+public class ViewFleaMarketController { 
 
 	private PetStoreFacade petStore;
 
@@ -19,12 +19,15 @@ public class ViewUserController {
 		this.petStore = petStore;
 	}
 
-	@RequestMapping("/user/view")
+	@RequestMapping("/auction/view")
 	public String handleRequest(
 			@RequestParam("username") String username,
+			@RequestParam("auction") String auction,
 			ModelMap model) throws Exception {
+//		AuctionDTO auction = this.petStore.getAuctionById(auctionId);
+
 		AccountDTO user = this.petStore.getAccountDTO(username);
-		model.put("user", user);
+		model.put("auction", auction);
 		return "userView";
 	}
 

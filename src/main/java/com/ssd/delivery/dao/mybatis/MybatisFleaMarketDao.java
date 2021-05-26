@@ -22,31 +22,7 @@ public class MybatisFleaMarketDao {
 	private ItemMapper itemMapper;
 	private FleaMarketMapper fleaMarketMapper;
 	
-//	public void updateQuantity(Order order) throws DataAccessException {
-//		for (int i = 0; i < order.getLineItems().size(); i++) {
-//			LineItem lineItem = (LineItem) order.getLineItems().get(i);
-//			String itemId = lineItem.getItemId();
-//			Integer increment = new Integer(lineItem.getQuantity());
-//			Map<String, Object> param = new HashMap<String, Object>(2);
-//			param.put("itemId", itemId);
-//			param.put("increment", increment);
-//			itemMapper.updateInventoryQuantity(param);
-//		}
-//	}
-//
-//	public boolean isItemInStock(String itemId) throws DataAccessException {
-//		return (itemMapper.getInventoryQuantity(itemId) > 0);
-//	}
-//
-//	public List<Item> getItemListByProduct(String productId) 
-//			throws DataAccessException {
-//		return itemMapper.getItemListByProduct(productId);
-//	}
-//
-//	public Item getItem(String itemId) throws DataAccessException {
-//		return itemMapper.getItem(itemId);
-//	}
-	
+
 	
 	
 	void insert(ItemDTO item) throws DataAccessException{

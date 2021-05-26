@@ -38,4 +38,5 @@ public class MybatisDeliveryDao implements DeliveryDao{
 	public List<DeliveryDTO> getDeliveryList() throws DataAccessException {
 		return deliveryMapper.getDeliveryList();
 	}
+
 }

@@ -1,4 +1,4 @@
-package com.ssd.delivery.controller;
+package com.ssd.delivery.controller.account;
 
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.util.WebUtils;
 
+import com.ssd.delivery.controller.UserSession;
 import com.ssd.delivery.domain.Category;
 import com.ssd.delivery.domain.Product;
 import com.ssd.delivery.service.AccountFormValidator;

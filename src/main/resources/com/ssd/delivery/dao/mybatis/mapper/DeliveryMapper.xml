@@ -4,11 +4,11 @@
 <mapper namespace="com.ssd.delivery.dao.mybatis.mapper.DeliveryMapper">
   <cache />
 
-   <insert id="create" parameterType="DeliveryDTO">
+   <insert id="insert" parameterType="DeliveryDTO">
     INSERT INTO DELIVERY
-      (USERNAME, CONTENT, MESSAGEDATE, RECEIVERUSERNAME)
+      (ADDRESS1, ADDRESS2, USERNAME, SERVICEDATE, FILENAME, PRICE, WIDTH, LENGTH, HEIGHT, WEIGHT, LOADAGE)
     VALUES
-      (#{senderUsername}, #{content}, #{messageDate}, #{receiverUsername})
+      (#{address1}, #{address2}, #{username}, #{serviceDate}, #{filename}, #{price}, #{width}, #{depth}, #{weight}, #{loadage}, #{deliveryId})
 	</insert>
 
 	<update id="update" parameterType="DeliveryDTO">
@@ -17,7 +17,7 @@
 	   ADDRESS2 = #{address2}, 
 	   USERNAME = #{username}, 
 	   SERVICEDATE = #{serviceDate},
-	   FILENAME   = #{filename}, 
+	   FILENAME = #{filename}, 
 	   PRICE = #{price}, 
 	   WIDTH = #{width}, 
 	   LENGTH = #{depth}, 
@@ -27,7 +27,7 @@
     WHERE DELIVERYID= #{deliveryId}
 	</update>
 
-	<delete id="remove" parameterType="int">
+	<delete id="delete" parameterType="int">
 	DELETE FROM DELIVERY 
 	WHERE DELIVERYID = #{deliveryId}
 	</delete>

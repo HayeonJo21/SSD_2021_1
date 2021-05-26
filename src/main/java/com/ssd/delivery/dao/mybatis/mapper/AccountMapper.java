@@ -24,11 +24,11 @@ import com.ssd.delivery.domain.Account;
 @Mapper
 public interface AccountMapper {
 
-	void insert(Account account);
+	void insertAccount(Account account);
 	
-	void update(Account account);
+	void updateAccount(Account account);
 	
-	void delete(String username);
+	void deleteAccount(String username);
 	
 	List<Account> getUserListByAuctionId(String auctionId);
 	

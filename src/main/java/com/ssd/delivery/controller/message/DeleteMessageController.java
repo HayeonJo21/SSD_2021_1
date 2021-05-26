@@ -1,4 +1,4 @@
-package com.ssd.delivery.controller;
+package com.ssd.delivery.controller.message;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -7,18 +7,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.ssd.delivery.domain.Cart;
+import com.ssd.delivery.dao.mybatis.mapper.MessageMapper;
 
 @Controller
-@SessionAttributes("userSession")
-public class DeleteUserController { 
+@SessionAttributes("sessionMessage")
+public class DeleteMessageController {
 
-	@RequestMapping("/user/delete")
+	@RequestMapping("/message/delete")
 	public ModelAndView handleRequest(
 			@RequestParam("username") String username,
-			@ModelAttribute("userSession") UserSession userSession
-		) throws Exception {
-		// userSession.delete(username);
-		return new ModelAndView();
+			@ModelAttribute("sessionMessage") MessageMapper message
+			) throws Exception {
+		message.delete(username);
+		return new ModelAndView("Message", "message", message);
 	}
 }

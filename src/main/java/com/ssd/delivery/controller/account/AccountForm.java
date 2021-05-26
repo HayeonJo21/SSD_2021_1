@@ -1,4 +1,4 @@
-package com.ssd.delivery.controller;
+package com.ssd.delivery.controller.account;
 
 import java.io.Serializable;
 

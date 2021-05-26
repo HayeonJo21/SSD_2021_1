@@ -5,7 +5,7 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
-import com.ssd.delivery.controller.AccountForm;
+import com.ssd.delivery.controller.account.AccountForm;
 import com.ssd.delivery.domain.Account;
 /**
  * @author Juergen Hoeller

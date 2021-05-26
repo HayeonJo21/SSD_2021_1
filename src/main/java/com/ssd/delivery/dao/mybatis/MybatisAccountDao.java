@@ -20,13 +20,13 @@ public class MybatisAccountDao implements AccountDao {
 	private AccountMapper accountMapper;
 
 	@Override
-	public void insert(Account account) throws DataAccessException {
-		accountMapper.insert(account);
+	public void insertAccount(Account account) throws DataAccessException {
+		accountMapper.insertAccount(account);
 	}
 
 	@Override
-	public void delete(String username) throws DataAccessException {
-		accountMapper.delete(username);
+	public void deleteAccount(String username) throws DataAccessException {
+		accountMapper.deleteAccount(username);
 	}
 
 	@Override
@@ -60,8 +60,8 @@ public class MybatisAccountDao implements AccountDao {
 	}
 
 	@Override
-	public void update(Account account) throws DataAccessException {
-		accountMapper.update(account);
+	public void updateAccount(Account account) throws DataAccessException {
+		accountMapper.updateAccount(account);
 		
 	}
 }
