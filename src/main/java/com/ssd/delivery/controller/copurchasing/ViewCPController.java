@@ -7,16 +7,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ssd.delivery.domain.CoPurchasingDTO;
-import com.ssd.delivery.service.PetStoreFacade;
+import com.ssd.delivery.service.DeliveryFacade;
 
 @Controller
 public class ViewCPController { 
 
-	private PetStoreFacade petStore;
+	private DeliveryFacade delStore;
 
 	@Autowired
-	public void setPetStore(PetStoreFacade petStore) {
-		this.petStore = petStore;
+	public void setPetStore(DeliveryFacade delStore) {
+		this.delStore = delStore;
 	}
 
 	@RequestMapping("/coPurchasing/view")

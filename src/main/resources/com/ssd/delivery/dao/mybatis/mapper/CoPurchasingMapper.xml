@@ -36,7 +36,7 @@
     WHERE coPurchasingId = #{coPurchasingId}
 	</select>
 	
-	<select id="getCPByUsername" resultType="CoPurchasingDTO">
+	<select id="getCPListByUsername" resultType="CoPurchasingDTO">
     SELECT * 
     FROM COPURCHASING
     WHERE username = #{username}

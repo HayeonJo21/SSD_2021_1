@@ -17,7 +17,7 @@ public interface CoPurchasingDao {
 	
 	CoPurchasingDTO getCPById(String CPId) throws DataAccessException;
 	
-	CoPurchasingDTO getCPByUsername(String username) throws DataAccessException;
+	List<CoPurchasingDTO> getCPListByUsername(String username) throws DataAccessException;
 	
 	
 
