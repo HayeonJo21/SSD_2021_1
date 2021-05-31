@@ -14,56 +14,36 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.util.WebUtils;
 
 import com.ssd.delivery.controller.UserSession;
-import com.ssd.delivery.domain.FavoriteUserDTO;
+import com.ssd.delivery.domain.*;
 import com.ssd.delivery.service.AccountFormValidator;
 import com.ssd.delivery.service.DeliveryFacade;
 
+//등록, 수정 둘 다 이곳에서
 @Controller
-@RequestMapping({"/shop/newAccount.do","/shop/editAccount.do"})
-public class AccountFormController { 
+@RequestMapping({"/user/insertAccount.do","/user/updateAccount.do"})
+public class AccountFormController {
 
-	@Value("EditAccountForm")
+	@Value("updateAccountForm")
 	private String formViewName;
-	@Value("index")
-	private String successViewName;
-	private static final String[] LANGUAGES = {"english", "japanese"};
 	
 	@Autowired
 	private DeliveryFacade delStore;
 	
-	public void setPetStore(DeliveryFacade delStore) {
-		this.delStore = delStore;
-	}
-
 	@Autowired
 	private AccountFormValidator validator;
-	public void setValidator(AccountFormValidator validator) {
-		this.validator = validator;
-	}
-		
+	
 	@ModelAttribute("accountForm")
 	public AccountForm formBackingObject(HttpServletRequest request) 
 			throws Exception {
-		UserSession userSession = 
-			(UserSession) WebUtils.getSessionAttribute(request, "userSession");
+		Account userSession = 
+			(Account) WebUtils.getSessionAttribute(request, "userSession");
 		if (userSession != null) {	// edit an existing account
-			return new AccountForm(
-				delStore.findUser(userSession.getAccount().getUsername()));
+			return new AccountForm(delStore.findUser(userSession.getUsername()));
 		}
 		else {	// create a new account
 			return new AccountForm();
 		}
 	}
-
-	@ModelAttribute("languages")
-	public String[] getLanguages() {
-		return LANGUAGES;
-	}
-
-//	@ModelAttribute("categories")
-//	public List<Category> getCategoryList() {
-//		return petStore.getCategoryList();
-//	}
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public String showForm() {
@@ -71,21 +51,13 @@ public class AccountFormController {
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
-	public String onSubmit(
-			HttpServletRequest request, HttpSession session,
+	public String onSubmit(HttpServletRequest request, HttpSession session,
 			@ModelAttribute("accountForm") AccountForm accountForm,
-			BindingResult result) throws Exception {
-
-//		if (request.getParameter("account.listOption") == null) {
-//			accountForm.getAccount().setListOption(false);
-//		}
-//		if (request.getParameter("account.bannerOption") == null) {
-//			accountForm.getAccount().setBannerOption(false);
-//		}
+			BindingResult result) throws Exception  {
 		
 		validator.validate(accountForm, result);
-		
 		if (result.hasErrors()) return formViewName;
+		
 		try {
 			if (accountForm.isNewAccount()) {
 				delStore.insertAccount(accountForm.getAccount());
@@ -95,18 +67,16 @@ public class AccountFormController {
 			}
 		}
 		catch (DataIntegrityViolationException ex) {
-			result.rejectValue("account.username", "USER_ID_ALREADY_EXISTS",
-					"이미 존재하는 아이디 입니다. 다른 아이디를 입력해주세요.");
+			result.rejectValue("account.userId", "USER_ID_ALREADY_EXISTS",
+					"User ID already exists: choose a different ID.");
 			return formViewName; 
 		}
 		
-		UserSession userSession = new UserSession(
-			delStore.findUser(accountForm.getAccount().getUsername()));
-		PagedListHolder<FavoriteUserDTO> myList = new PagedListHolder<FavoriteUserDTO>(
-			delStore.getFavoriteUserList(accountForm.getAccount().getFavoriteMall()));
-		myList.setPageSize(4);
-		userSession.setMyList(myList);
+		
+		AccountDTO userSession = delStore.findUser(accountForm.getAccount().getUsername());
+
 		session.setAttribute("userSession", userSession);
-		return successViewName;  
+		
+		return "redirect:/";
 	}
 }
