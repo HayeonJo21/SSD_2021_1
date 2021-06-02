@@ -26,11 +26,7 @@ public class ListFMController {
 		this.petStore = petStore;
 	}
 
-<<<<<<< HEAD
-	//@RequestMapping("/auction/list")
-=======
 	@RequestMapping("/auction/list1")
->>>>>>> branch 'master' of https://github.com/choi1k/SSD_2021_1.git
 	public ModelAndView handleRequest(
 		@ModelAttribute("userSession") UserSession userSession
 		) throws Exception {
