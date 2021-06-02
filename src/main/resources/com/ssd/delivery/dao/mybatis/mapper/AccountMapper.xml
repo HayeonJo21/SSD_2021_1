@@ -4,7 +4,7 @@
 <mapper namespace="com.ssd.delivery.dao.mybatis.mapper.AccountMapper">
   <cache />
   
-  <update id="update" parameterType="AccountDTO">
+  <update id="updateAccount" parameterType="AccountDTO">
     UPDATE ACCOUNT 
       EMAIL = #{email},
       FIRSTNAME = #{firstName},
@@ -19,12 +19,12 @@
     WHERE USERNAME = #{username}
   </update>
   
-  <insert id="insert" parameterType="AccountDTO">
+  <insert id="insertAccount" parameterType="AccountDTO">
     INSERT INTO ACCOUNT (USERNAME, PASSWORD, EMAIL, FIRSTNAME, LASTNAME, ADDRESS, PHONE, LANGUAGEPREFERENCE, STATUS, FAVORITEUSER, CARINFO) 
     VALUES (#{username}, #{password}, #{email}, #{firstName}, #{lastName}, #{address}, #{phone}, #{languagePreference}, #{status}, #{favoriteUser}, #{carInfo})
   </insert>
   
-  <delete id="delete" parameterType="int">
+  <delete id="deleteAccount" parameterType="int">
 	DELETE FROM ACCOUNT 
 	WHERE USERNAME = #{username}
 	</delete>

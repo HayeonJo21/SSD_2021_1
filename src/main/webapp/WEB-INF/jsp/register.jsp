@@ -134,8 +134,6 @@ function userCreate() {
 			</div>
 		</div>
 
-</script>
-
 <!-- 도로명주소 api 활용 -->
 
 <input type="text" id="sample2_postcode" placeholder="우편번호">
