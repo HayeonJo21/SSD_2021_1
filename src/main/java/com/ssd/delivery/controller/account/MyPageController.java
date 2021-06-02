@@ -14,20 +14,17 @@ import com.ssd.delivery.domain.*;
 import com.ssd.delivery.service.DeliveryFacade;
 
 @Controller
+@RequestMapping("/user/mypage.do")
 public class MyPageController {
-	private DeliveryFacade delStore;
+	private DeliveryFacade delivery;
 	@Autowired
-	public void setJkdk(DeliveryFacade delStore) {
-		this.delStore = delStore;
+	public void setDeliveryFacade(DeliveryFacade delivery) {
+		this.delivery= delivery;
 	}
   
-  @RequestMapping("/user/myPage.do")
-	public ModelAndView viewMyPagesMain(@SessionAttribute("userSession") AccountDTO userSession) {
-		if (userSession == null) {
-			return new ModelAndView("thyme/Home", "message", "로그인 후 이용 가능합니다.");
-		}
-		
-		return new ModelAndView("thyme/user/MyPage");
+  @GetMapping
+	public String showPage() {
+		return "mypage";
 	}
 	
 	@RequestMapping("/user/myPage/coPurchasing.do")
@@ -36,7 +33,7 @@ public class MyPageController {
 		
 		String username = account.getUsername();
 		
-		List<CoPurchasingDTO> CPList = delStore.getCPListByUsername(username); //dao 인터페이스에 추가해야 할 메소드
+		List<CoPurchasingDTO> CPList = delivery.getCPListByUsername(username); //dao 인터페이스에 추가해야 할 메소드
 
 		model.put("CPList", CPList);
 		
@@ -49,7 +46,7 @@ public class MyPageController {
 		
 		String username = account.getUsername();
 		
-		List<AuctionDTO> auctionList = delStore.getAuctionByUsername(username);
+		List<AuctionDTO> auctionList = delivery.getAuctionByUsername(username);
 
 		model.put("auctionList", auctionList);
 		

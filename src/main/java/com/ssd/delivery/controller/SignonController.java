@@ -4,7 +4,10 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.support.PagedListHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -21,15 +24,21 @@ import org.springframework.ui.Model;
 
 @Controller
 @SessionAttributes("userSession")
+@RequestMapping("/delivery/signon.do")
 public class SignonController { 
 
 	private DeliveryFacade delivery;
 	@Autowired
-	public void setPetStore(DeliveryFacade delivery) {
+	public void setDelivery(DeliveryFacade delivery) {
 		this.delivery = delivery;
 	}
+	
+	@GetMapping
+	public String showForm() {
+		return "login";
+	}
 
-	@RequestMapping("/delivery/signon.do")
+	@PostMapping
 	public String handleRequest(HttpServletRequest request,
 			@RequestParam("username") String username,
 			@RequestParam("password") String password,

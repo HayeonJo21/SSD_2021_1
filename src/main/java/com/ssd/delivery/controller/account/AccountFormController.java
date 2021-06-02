@@ -30,9 +30,7 @@ public class AccountFormController {
 	@RequestMapping(method=RequestMethod.POST)
 	public String submit(AccountDTO account) {
 		account.setStatus(1);
-		account.setCarInfo("avcx");
 		delivery.insertAccount(account);
-		System.out.println("DDDD"); 
 		
 		return "index";
 	}

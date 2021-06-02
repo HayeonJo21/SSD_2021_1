@@ -70,11 +70,11 @@
 						type="password" style="width: 800px" class="form-control"
 						name="password" placeholder="비밀번호를 입력해 주세요.">
 				</div>
-				<div class="form-group">
+				<!--  <div class="form-group">
 					<label for="password2" style="font-size: 24px">Password
 						Check</label> <input type="password" style="width: 800px"
 						class="form-control" name="password2" placeholder="비밀번호를 입력해 주세요.">
-				</div>
+				</div>-->
 				<div class="form-group row">
 					<label for="firstName" class="col-lg-2 col-form-label"
 						style="font-size: 24px">FirstName</label>
@@ -118,17 +118,15 @@
 					<label for="carInfo" style="font-size: 24px">CarInfo</label> <input
 						type="text" style="width: 800px" class="form-control"
 						name="carInfo" placeholder="소유한 차량의 정보를 입력하세요.">
-					<p>
-					<p>
-					<p>
-					<p>
+					<br>
+					<br>
 				</div>
 				<div class="form-group text-center">
 					<button type="submit" id="join-submit" class="button primary"
 						onClick="userCreate();return false;">
 						회원가입<i class="fa fa-check spaceLeft"></i>
 					</button>
-					<button type="submit" class="btn btn-warning">
+					<button type="reset" class="btn btn-warning">
 						가입취소<i class="fa fa-times spaceLeft"></i>
 					</button>
 				</div>
