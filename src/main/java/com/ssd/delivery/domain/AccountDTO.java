@@ -12,7 +12,7 @@ public class AccountDTO implements Serializable{
 	private String phone;
 	private String languagePreference;
 	private int status;
-	private String favoriteMall;
+	private String favoriteUser;
 	private String carInfo;
 	
 	//기본생성자
@@ -33,7 +33,7 @@ public class AccountDTO implements Serializable{
 		this.phone = phone;
 		this.languagePreference = languagePreference;
 		this.status = status;
-		this.favoriteMall = favoriteMall;
+		this.favoriteUser = favoriteMall;
 		this.carInfo = carInfo;
 	}
 	
@@ -48,7 +48,7 @@ public class AccountDTO implements Serializable{
 		this.phone = phone;
 		this.languagePreference = languagePreference;
 		this.status = status;
-		this.favoriteMall = favoriteMall;
+		this.favoriteUser = favoriteMall;
 		this.carInfo = carInfo;
 	}
 	
@@ -131,11 +131,11 @@ public class AccountDTO implements Serializable{
 	public void setStatus(int status) {
 		this.status = status;
 	}
-	public String getFavoriteMall() {
-		return favoriteMall;
+	public String getFavoriteUser() {
+		return favoriteUser;
 	}
-	public void setFavoriteMall(String favoriteMall) {
-		this.favoriteMall = favoriteMall;
+	public void setFavoriteUser(String favoriteUser) {
+		this.favoriteUser = favoriteUser;
 	}
 	public String getCarInfo() {
 		return carInfo;
