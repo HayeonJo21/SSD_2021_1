@@ -22,7 +22,7 @@ public class AccountForm implements Serializable {
 		this.account = new AccountDTO();
 		this.newAccount = true;
 	}
-
+	
 	public AccountDTO getAccount() {
 		return account;
 	}
