@@ -31,7 +31,7 @@
 			<div class="inner">
 
 				<!-- Logo -->
-				<a href="mainpage.jsp" class="logo"> <span class="symbol"><img
+				<a href="/" class="logo"> <span class="symbol"><img
 						src="images/logoicon.svg" alt="" /></span><span class="title">용달의 민족</span>
 				</a>
 

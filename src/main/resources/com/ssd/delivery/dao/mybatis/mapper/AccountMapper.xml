@@ -13,15 +13,15 @@
       PHONE = #{phone},
       LANGUAGEPREFERENCE = #{languagePreference},
       STATUS = #{status},
-      FAVOURTIEMALL = #{favoriteMall},
+      FAVORITEUSER = #{favoriteUser},
       CARINFO = #{carInfo}
       
     WHERE USERNAME = #{username}
   </update>
   
   <insert id="insert" parameterType="AccountDTO">
-    INSERT INTO ACCOUNT (USERNAME, PASSWORD, EMAIL, FISTNAME, LASTNAME, ADDRESS, PHONE, LANGUAGEPREFERENCE, STATUS, FAVORITEMALL, CARINFO)
-    VALUES (#{username}, #{password}, #{email}, #{firstName}, #{lastName}, #{address}, #{phone}, #{languagePreference}, #{status}, #{favoriteMall}, #{carInfo}"
+    INSERT INTO ACCOUNT (USERNAME, PASSWORD, EMAIL, FIRSTNAME, LASTNAME, ADDRESS, PHONE, LANGUAGEPREFERENCE, STATUS, FAVORITEUSER, CARINFO) 
+    VALUES (#{username}, #{password}, #{email}, #{firstName}, #{lastName}, #{address}, #{phone}, #{languagePreference}, #{status}, #{favoriteUser}, #{carInfo})
   </insert>
   
   <delete id="delete" parameterType="int">

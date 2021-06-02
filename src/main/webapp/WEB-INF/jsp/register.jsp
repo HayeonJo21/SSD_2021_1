@@ -79,9 +79,9 @@ function userCreate() {
 								name="password2" placeholder="비밀번호를 입력해 주세요.">
 						</div>
 						<div class="form-group row">
-							<label for="fistName" class="col-lg-2 col-form-label" style="font-size: 24px">FirstName</label>
+							<label for="firstName" class="col-lg-2 col-form-label" style="font-size: 24px">FirstName</label>
 							<div class="col-lg-10">
-								<input type="text" name="firstname" class="form-control"
+								<input type="text" name="firstName" class="form-control"
 									placeholder="길동">
 							</div>
 							<label for="lastName" class="col-lg-2 col-form-label" style="font-size: 24px">LastName</label>
@@ -106,14 +106,14 @@ function userCreate() {
 								name="phone" placeholder="010-0000-0000">
 						</div>
 						<div class="form-group">
-							<label for="favoriteMall" style="font-size: 24px">FavoriteMall</label>
+							<label for="favoriteUser" style="font-size: 24px">FavoriteMall</label>
 							<input type="text" style="width: 800px" class="form-control"
-								name="favoriteMall" placeholder="선호하는 매장을 입력하세요.">
+								name="favoriteUser" placeholder="선호하는 매장을 입력하세요.">
 						</div>
 						<div class="form-group">
-							<label for="languagePrefernce" style="font-size: 24px">LanguagePreference</label>
+							<label for="languagePreference" style="font-size: 24px">LanguagePreference</label>
 							<input type="text" style="width: 800px" class="form-control"
-								name="languagePrefernce" placeholder="Korean">
+								name="languagePreference" placeholder="Korean">
 						</div>
 						<div class="form-group">
 							<label for="carInfo" style="font-size: 24px">CarInfo</label>
