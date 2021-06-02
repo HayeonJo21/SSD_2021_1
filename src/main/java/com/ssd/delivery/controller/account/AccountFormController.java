@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.util.WebUtils;
-
-import com.ssd.delivery.controller.UserSession;
 import com.ssd.delivery.domain.*;
 import com.ssd.delivery.service.AccountFormValidator;
 import com.ssd.delivery.service.DeliveryFacade;
