@@ -8,6 +8,7 @@ import org.springframework.beans.support.PagedListHolder;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -23,22 +24,19 @@ import com.ssd.delivery.service.DeliveryFacade;
 @RequestMapping({"/user/insertAccount.do","/user/updateAccount.do"})
 public class AccountFormController {
 
-	@Value("updateAccountForm")
-	private String formViewName;
-	
 	@Autowired
-	private DeliveryFacade delStore;
+	private DeliveryFacade delivery;
 	
 	@Autowired
 	private AccountFormValidator validator;
 	
-	@ModelAttribute("accountForm")
+	@ModelAttribute("register")
 	public AccountForm formBackingObject(HttpServletRequest request) 
 			throws Exception {
 		Account userSession = 
 			(Account) WebUtils.getSessionAttribute(request, "userSession");
 		if (userSession != null) {	// edit an existing account
-			return new AccountForm(delStore.findUser(userSession.getUsername()));
+			return new AccountForm(delivery.findUser(userSession.getUsername()));
 		}
 		else {	// create a new account
 			return new AccountForm();
@@ -47,33 +45,33 @@ public class AccountFormController {
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public String showForm() {
-		return formViewName;
+		return "register";
 	}
 	
-	@RequestMapping(method = RequestMethod.POST)
+	@RequestMapping("user/newUserSubmitted.do")
 	public String onSubmit(HttpServletRequest request, HttpSession session,
 			@ModelAttribute("accountForm") AccountForm accountForm,
 			BindingResult result) throws Exception  {
 		
 		validator.validate(accountForm, result);
-		if (result.hasErrors()) return formViewName;
+		if (result.hasErrors()) return "index";
 		
 		try {
 			if (accountForm.isNewAccount()) {
-				delStore.insertAccount(accountForm.getAccount());
+				delivery.insertAccount(accountForm.getAccount());
 			}
 			else {
-				delStore.updateAccount(accountForm.getAccount());
+				delivery.updateAccount(accountForm.getAccount());
 			}
 		}
 		catch (DataIntegrityViolationException ex) {
 			result.rejectValue("account.userId", "USER_ID_ALREADY_EXISTS",
 					"User ID already exists: choose a different ID.");
-			return formViewName; 
+			return "index"; 
 		}
 		
 		
-		AccountDTO userSession = delStore.findUser(accountForm.getAccount().getUsername());
+		AccountDTO userSession = delivery.findUser(accountForm.getAccount().getUsername());
 
 		session.setAttribute("userSession", userSession);
 		
