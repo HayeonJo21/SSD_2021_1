@@ -1,25 +1,28 @@
 package com.ssd.delivery.controller.auction;
 
-import javax.servlet.http.HttpServletRequest;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
-import com.ssd.delivery.controller.UserSession;
-import com.ssd.delivery.domain.AuctionDTO;
-
+import com.ssd.delivery.domain.*;
+import com.ssd.delivery.service.DeliveryImpl;
 
 @Controller
-public class InsertAuctionController { 
-
-	@RequestMapping("/auction/update")
-	public ModelAndView handleRequest(
-			HttpServletRequest request,	
-			@ModelAttribute("userSession") UserSession userSession) throws Exception {
-		AuctionDTO auction = new AuctionDTO();
-		return new ModelAndView("UpdateAuctionView", "auction", auction);
+@SessionAttributes("sessionCP")
+public class InsertAuctionController {
+	@Autowired
+	private DeliveryImpl deliveryImpl;
+	
+	@RequestMapping("/auction/insert")
+	public String handleRequest(
+			@RequestParam("auction") AuctionDTO auction,
+			ModelMap model) throws Exception {
+		
+		deliveryImpl.insertAuction(auction);
+		
+		return "deliveryList";
 	}
-
 }
