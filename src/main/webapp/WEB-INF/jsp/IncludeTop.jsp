@@ -1,51 +1,64 @@
-<%@ page contentType="text/html" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<!DOCTYPE HTML>
 <html>
 <head>
-  <title>JPetStore</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta http-equiv="Cache-Control" content="max-age=0">
-  <meta http-equiv="Cache-Control" content="no-cache">
-  <meta http-equiv="expires" content="0">
-  <meta http-equiv="Expires" content="Tue, 01 Jan 1980 1:00:00 GMT">
-  <meta http-equiv="Pragma" content="no-cache">
-  <link rel="stylesheet" href="../style/petstore.css" type="text/css" />
+<title>용달의 민족</title>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, user-scalable=no" />
+<!-- Bootstrap -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<link rel="stylesheet" href="assets/css/main.css" />
+<noscript>
+	<link rel="stylesheet" href="assets/css/noscript.css" />
+</noscript>
 </head>
+<body class="is-preload">
+	<!-- Wrapper -->
+	<div id="wrapper">
 
-<body bgcolor="white">
-<table class="top">
-  <tr>
-    <td>
-      <a href="<c:url value="/shop/index.do"/>">
-        <img border="0" src="../images/logo-topbar.gif" /></a>
-    </td>
-    <td style="text-align:right">
-      <a href="<c:url value="/shop/viewCart.do"/>">
-        <img border="0" name="img_cart" src="../images/cart.gif" /></a>
-      <img border="0" src="../images/separator.gif" />
-      <c:if test="${empty userSession.account}" >
-        <a href="<c:url value="/shop/signonForm.do"/>">
-          <img border="0" name="img_signin" src="../images/sign-in.gif" /></a>
-      </c:if>
-      <c:if test="${!empty userSession.account}" >
-        <a href="<c:url value="/shop/signoff.do"/>">
-          <img border="0" name="img_signout" src="../images/sign-out.gif" /></a>
-        <img border="0" src="../images/separator.gif" />
-        <a href="<c:url value="/shop/editAccount.do"/>">
-          <img border="0" name="img_myaccount" src="../images/my_account.gif" /></a>
-      </c:if>
-      <img border="0" src="../images/separator.gif" />&nbsp;
-      <a href="../help.html"><img border="0" name="img_help" src="../images/help.gif" /></a>
-    </td>
-    <td style="text-align:left">
-      <form action="<c:url value="/shop/searchProducts.do"/>" method="post">
-	    <input type="hidden" name="search" value="true"/>
-        <input type="text" name="keyword" size="14" />&nbsp;
-        <input src="../images/search.gif" type="image"/>
-      </form>
-    </td>
-  </tr>
-</table>
+		<!-- Header -->
+		<header id="header">
+			<div class="inner">
 
-<%@ include file="IncludeQuickHeader.jsp" %>
+				<!-- Logo -->
+				<a href="mainpage.jsp" class="logo"> <span class="symbol"><img
+						src="images/logoicon.svg" alt="" /></span><span class="title">용달의 민족</span>
+				</a>
+
+				<!-- Nav -->
+				<nav>
+					<ul>
+						<li><a href="#menu">Menu</a></li>
+					</ul>
+				</nav>
+
+			</div>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<h2>Menu</h2>
+			<ul>
+				<li><a href="mainpage.jsp">메인</a></li>
+				<li><a href="login.jsp">로그인</a></li>
+				<li><a href="register.jsp">회원가입</a></li>
+				<li><a href="auctionpage.jsp">용달 서비스 경매</a></li>
+
+				<li><a href="mypage.jsp">마이페이지</a></li>
+				<li><a href="message.jsp">DM</a></li>
+				<li><a href="auctionForm.jsp">경매 </a></li>
+				<li><a href="copurchasingForm.jsp">공동구매</a></li>
+				<li><a href="p2pForm.jsp">회원간 거래</a></li>
+				
+			</ul>
+		</nav>

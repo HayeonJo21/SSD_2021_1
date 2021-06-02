@@ -18,15 +18,27 @@ import com.ssd.delivery.service.PetStoreFacade;
  */
 @Controller
 public class DetailViewAuctionController { 
+<<<<<<< HEAD
 
 	@Autowired
+=======
+>>>>>>> branch 'master' of https://github.com/choi1k/SSD_2021_1.git
 	private DeliveryFacade delivery;
 	
+<<<<<<< HEAD
+=======
+
+	@Autowired
+>>>>>>> branch 'master' of https://github.com/choi1k/SSD_2021_1.git
 	public void setDelivery(DeliveryFacade delivery) {
 		this.delivery = delivery;
 	}
 
+<<<<<<< HEAD
 	//@RequestMapping("/shop/viewItem.do")
+=======
+	@RequestMapping("/shop/viewItem1.do")
+>>>>>>> branch 'master' of https://github.com/choi1k/SSD_2021_1.git
 	public String handleRequest(
 			@RequestParam("auctionId") int auctionId,
 			ModelMap model) throws Exception {

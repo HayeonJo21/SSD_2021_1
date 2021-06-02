@@ -24,7 +24,11 @@ public class DetailViewFMController {
 		this.petStore = petStore;
 	}
 
+<<<<<<< HEAD
 	//@RequestMapping("/shop/viewItem.do")
+=======
+	@RequestMapping("#")
+>>>>>>> branch 'master' of https://github.com/choi1k/SSD_2021_1.git
 	public String handleRequest(
 			@RequestParam("itemId") String itemId,
 			ModelMap model) throws Exception {

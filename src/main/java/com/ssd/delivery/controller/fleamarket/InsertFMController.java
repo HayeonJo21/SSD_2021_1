@@ -14,7 +14,11 @@ import com.ssd.delivery.domain.FleaMarketDTO;
 @SessionAttributes("userSession")
 public class InsertFMController { 
 
+<<<<<<< HEAD
 	@RequestMapping("/fleamarket/insert")
+=======
+	@RequestMapping("/fleamarket/update.do")
+>>>>>>> branch 'master' of https://github.com/choi1k/SSD_2021_1.git
 	public ModelAndView handleRequest(
 			HttpServletRequest request,	
 			@ModelAttribute("userSession") UserSession userSession) throws Exception {

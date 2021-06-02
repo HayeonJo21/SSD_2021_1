@@ -21,8 +21,6 @@ import com.ssd.delivery.service.PetStoreFacade;
 @Controller
 @SessionAttributes("sessionCart")
 public class AddBidderController { 
-
-	private PetStoreFacade petStore;
 	
 	private DeliveryFacade delivery;
 	
@@ -50,7 +48,11 @@ public class AddBidderController {
 //			// isInStock is a "real-time" property that must be updated
 //			// every time an item is added to the cart, even if other
 //			// item details are cached.
+<<<<<<< HEAD
 //			boolean isInStock = this.petStore.isItemInStock(workingItemId);
+=======
+//			boolean isInStock = this.delivery.isItemInStock(workingItemId);
+>>>>>>> branch 'master' of https://github.com/choi1k/SSD_2021_1.git
 //			Item item = this.petStore.getItem(workingItemId);
 //			cart.addItem(item, isInStock);
 //		}
