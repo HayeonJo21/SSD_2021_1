@@ -2,7 +2,6 @@ package com.ssd.delivery.service;
 
 import java.util.List;
 
-import com.ssd.delivery.domain.Account;
 import com.ssd.delivery.domain.AccountDTO;
 import com.ssd.delivery.domain.AuctionDTO;
 import com.ssd.delivery.domain.CoPurchasingDTO;
