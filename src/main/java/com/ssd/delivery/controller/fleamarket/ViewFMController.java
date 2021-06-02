@@ -19,7 +19,7 @@ public class ViewFMController {
 		this.petStore = petStore;
 	}
 
-	@RequestMapping("/fleamarket/view")
+	@RequestMapping("/fleamarket/view.do")
 	public String handleRequest(
 			@RequestParam("username") String username,
 			@RequestParam("fleamarket") String fleamarket,
