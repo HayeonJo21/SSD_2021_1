@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
+import com.ssd.delivery.dao.FleaMarketDao;
 import com.ssd.delivery.dao.ItemDao;
 import com.ssd.delivery.dao.mybatis.mapper.FleaMarketMapper;
 import com.ssd.delivery.dao.mybatis.mapper.ItemMapper;
@@ -15,7 +16,7 @@ import com.ssd.delivery.domain.ItemDTO;
 import com.ssd.delivery.domain.LineItem;
 import com.ssd.delivery.domain.Order;
 
-public class MybatisFleaMarketDao {
+public class MybatisFleaMarketDao implements FleaMarketDao {
 	
 	
 	@Autowired
