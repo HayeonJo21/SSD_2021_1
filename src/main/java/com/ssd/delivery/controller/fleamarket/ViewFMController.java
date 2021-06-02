@@ -19,15 +19,15 @@ public class ViewFMController {
 		this.petStore = petStore;
 	}
 
-	@RequestMapping("/auction/view")
+	@RequestMapping("/fleamarket/view")
 	public String handleRequest(
 			@RequestParam("username") String username,
-			@RequestParam("auction") String auction,
+			@RequestParam("fleamarket") String fleamarket,
 			ModelMap model) throws Exception {
 //		AuctionDTO auction = this.petStore.getAuctionById(auctionId);
 
 		AccountDTO user = this.petStore.getAccountDTO(username);
-		model.put("auction", auction);
+		model.put("fleamarket", fleamarket);
 		return "userView";
 	}
 

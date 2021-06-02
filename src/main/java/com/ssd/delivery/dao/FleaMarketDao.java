@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.dao.DataAccessException;
 
 import com.ssd.delivery.domain.ItemDTO;
-import com.ssd.delivery.domain.OrderDTO;
 
 public interface FleaMarketDao {
 

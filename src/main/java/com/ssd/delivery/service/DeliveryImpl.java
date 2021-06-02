@@ -13,7 +13,6 @@ import com.ssd.delivery.dao.DeliveryDao;
 import com.ssd.delivery.dao.FavoriteUserDao;
 import com.ssd.delivery.dao.FleaMarketDao;
 import com.ssd.delivery.dao.MessageDao;
-import com.ssd.delivery.domain.Account;
 import com.ssd.delivery.domain.AccountDTO;
 import com.ssd.delivery.domain.AuctionDTO;
 import com.ssd.delivery.domain.CoPurchasingDTO;
@@ -22,9 +21,11 @@ import com.ssd.delivery.domain.MessageDTO;
 import com.ssd.delivery.domain.FavoriteUserDTO;
 import com.ssd.delivery.domain.ItemDTO;
 
-@Service
+
 @Transactional
+@Service
 public class DeliveryImpl implements DeliveryFacade {
+	
 	@Autowired
 	private AccountDao accountDao;
 	@Autowired

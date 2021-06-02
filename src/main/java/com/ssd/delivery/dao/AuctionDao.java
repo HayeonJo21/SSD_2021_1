@@ -8,9 +8,7 @@ import com.ssd.delivery.domain.AuctionDTO;
 import com.ssd.delivery.domain.Order;
 
 public interface AuctionDao {
-	
-	
-	  
+		  
 	  void insertAuction(AuctionDTO auction) throws DataAccessException;
 	  void updateAuction(AuctionDTO auction) throws DataAccessException;
 	  void deleteAuction(AuctionDTO auction) throws DataAccessException;

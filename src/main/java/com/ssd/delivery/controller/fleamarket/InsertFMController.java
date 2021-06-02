@@ -14,7 +14,7 @@ import com.ssd.delivery.domain.FleaMarketDTO;
 @SessionAttributes("userSession")
 public class InsertFMController { 
 
-	@RequestMapping("/fleamarket/update")
+	@RequestMapping("/fleamarket/update.do")
 	public ModelAndView handleRequest(
 			HttpServletRequest request,	
 			@ModelAttribute("userSession") UserSession userSession) throws Exception {

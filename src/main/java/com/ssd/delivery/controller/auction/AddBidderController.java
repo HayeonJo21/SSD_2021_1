@@ -21,8 +21,6 @@ import com.ssd.delivery.service.PetStoreFacade;
 @Controller
 @SessionAttributes("sessionCart")
 public class AddBidderController { 
-
-	private PetStoreFacade petStore;
 	
 	private DeliveryFacade delivery;
 	
@@ -38,22 +36,22 @@ public class AddBidderController {
 		return new Cart();
 	}
 	
-	@RequestMapping("/shop/addItemToCart.do")
-	public ModelAndView handleRequest(
-			@RequestParam("workingItemId") String workingItemId,
-			@ModelAttribute("sessionCart") Cart cart 
-			) throws Exception {
-		if (cart.containsItemId(workingItemId)) {
-			cart.incrementQuantityByItemId(workingItemId);
-		}
-		else {
-			// isInStock is a "real-time" property that must be updated
-			// every time an item is added to the cart, even if other
-			// item details are cached.
-			boolean isInStock = this.petStore.isItemInStock(workingItemId);
-			Item item = this.petStore.getItem(workingItemId);
-			cart.addItem(item, isInStock);
-		}
-		return new ModelAndView("Cart", "cart", cart);
-	}
+//	@RequestMapping("/shop/addItemToCart.do")
+//	public ModelAndView handleRequest(
+//			@RequestParam("workingItemId") String workingItemId,
+//			@ModelAttribute("sessionCart") Cart cart 
+//			) throws Exception {
+//		if (cart.containsItemId(workingItemId)) {
+//			cart.incrementQuantityByItemId(workingItemId);
+//		}
+//		else {
+//			// isInStock is a "real-time" property that must be updated
+//			// every time an item is added to the cart, even if other
+//			// item details are cached.
+//			boolean isInStock = this.delivery.isItemInStock(workingItemId);
+//			Item item = this.petStore.getItem(workingItemId);
+//			cart.addItem(item, isInStock);
+//		}
+//		return new ModelAndView("Cart", "cart", cart);
+//	}
 }
