@@ -21,34 +21,35 @@ public class MybatisFleaMarketDao implements FleaMarketDao {
 	
 	@Autowired
 	private ItemMapper itemMapper;
+	@Autowired
 	private FleaMarketMapper fleaMarketMapper;
 	
 
 	
 	
-	void insertFM(ItemDTO item) throws DataAccessException{
+	public void insertFM(ItemDTO item) throws DataAccessException{
 		fleaMarketMapper.insertFM(item);
 	};
 	
-	void updateFM(ItemDTO item) throws DataAccessException{
+	public void updateFM(ItemDTO item) throws DataAccessException{
 		fleaMarketMapper.updateFM(item);
 	};
 	
-	void deleteFM(ItemDTO item) throws DataAccessException{
+	public void deleteFM(ItemDTO item) throws DataAccessException{
 		fleaMarketMapper.deleteFM(item);
 	};
 	
 	
 
-	ItemDTO getFMById(int itemId) throws DataAccessException{
+	public ItemDTO getFMById(int itemId) throws DataAccessException{
 		return fleaMarketMapper.getFMById(itemId);
 	};
 	
-	List<ItemDTO> getFMByUsername(String username) throws DataAccessException{
+	public List<ItemDTO> getFMByUsername(String username) throws DataAccessException{
 		return fleaMarketMapper.getFMByUsername(username);
 	};
 	
-	List<ItemDTO> getFMList() throws DataAccessException{
+	public List<ItemDTO> getFMList() throws DataAccessException{
 		return fleaMarketMapper.getFMList();
 	};
 
