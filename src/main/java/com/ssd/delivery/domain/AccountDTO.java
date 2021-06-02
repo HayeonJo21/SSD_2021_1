@@ -1,7 +1,7 @@
 package com.ssd.delivery.domain;
 
 import java.io.Serializable;
-
+@SuppressWarnings("serial")
 public class AccountDTO implements Serializable{
 	private String username;
 	private String password;
@@ -39,7 +39,7 @@ public class AccountDTO implements Serializable{
 	
 	//update 생성자
 	public AccountDTO(String email, String firstName, String lastName, String address, String phone,
-			String languagePreference, int status, String favoriteMall, String carInfo) {
+			String languagePreference, int status, String favoriteUser, String carInfo) {
 		super();
 		this.email = email;
 		this.firstName = firstName;
@@ -48,7 +48,7 @@ public class AccountDTO implements Serializable{
 		this.phone = phone;
 		this.languagePreference = languagePreference;
 		this.status = status;
-		this.favoriteUser = favoriteMall;
+		this.favoriteUser = favoriteUser;
 		this.carInfo = carInfo;
 	}
 	

@@ -84,11 +84,8 @@ public class AccountForm implements Serializable {
 		this.carInfo = carInfo;
 	}
 	
-	
-	
-}
 
-//	private AccountDTO account;
+	private AccountDTO account;
 //
 //	private boolean newAccount;
 //
@@ -104,9 +101,9 @@ public class AccountForm implements Serializable {
 //		this.newAccount = true;
 //	}
 //
-//	public AccountDTO getAccount() {
-//		return account;
-//	}
+	public AccountDTO getAccount() {
+		return account;
+	}
 //
 //	public boolean isNewAccount() {
 //		return newAccount;
@@ -119,4 +116,4 @@ public class AccountForm implements Serializable {
 //	public String getRepeatedPassword() {
 //		return repeatedPassword;
 //	}
-//}
+}
