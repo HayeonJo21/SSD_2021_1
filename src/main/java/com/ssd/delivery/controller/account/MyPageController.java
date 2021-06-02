@@ -14,7 +14,6 @@ import com.ssd.delivery.domain.*;
 import com.ssd.delivery.service.DeliveryFacade;
 
 @Controller
-@SessionAttributes("userSession")
 public class MyPageController {
 	private DeliveryFacade delStore;
 	@Autowired
