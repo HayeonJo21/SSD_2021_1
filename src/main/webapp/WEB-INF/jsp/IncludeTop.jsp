@@ -33,6 +33,9 @@
 				<!-- Logo -->
 				<a href="/" class="logo"> <span class="symbol"><img
 						src="/images/logoicon.svg" alt="" /></span><span class="title">용달의 민족</span>
+
+						<img src="images/logoicon.svg" alt="" /></span><span class="title">용달의 민족</span>
+
 				</a>
 
 				<!-- Nav -->

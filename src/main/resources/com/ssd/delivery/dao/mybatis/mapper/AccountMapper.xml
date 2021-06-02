@@ -13,7 +13,7 @@
       PHONE = #{phone},
       LANGUAGEPREFERENCE = #{languagePreference},
       STATUS = #{status},
-      FAVORTIEMALL = #{favoriteMall},
+      FAVORITEUSER = #{favoriteUser},
       CARINFO = #{carInfo}
       
     WHERE USERNAME = #{username}
@@ -25,7 +25,6 @@
   </insert>
   
   <delete id="deleteAccount" parameterType="int">
-
 	DELETE FROM ACCOUNT 
 	WHERE USERNAME = #{username}
 	</delete>
