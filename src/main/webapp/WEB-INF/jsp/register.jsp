@@ -1,6 +1,9 @@
 <%@ include file="IncludeTop.jsp"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <script>
 function userCreate() {
 	if (form.username.value == "") {
@@ -54,73 +57,76 @@ function userCreate() {
 	form.submit();
 }
 	</script>
+	
+	<c:set var="targetUrl"><c:url value="/shop/newOrderSubmitted.do" /></c:set>
 		<!-- Main -->
 		<div id="main">
 			<div class="inner">
 				<h1>Register Page</h1>
 				<div class="col-sm-6 col-md-offset-3">
-					<form role="form" action="user/newUserSubmitted.do" method="post">
+					<form:form modelAttribute="orderForm" action="${targetUrl}" method="post">
+				
 						<div class="form-group">
-							<label for="username" style="font-size: 24px">UserName</label>
-							<input type="text" style="width: 800px" class="form-control"
-								name="username" placeholder="이름을 입력해 주세요.">
+							<label for="account.username" style="font-size: 24px">UserName</label>
+							<form:input path="account.username" type="text" style="width: 800px" class="form-control"
+								name="username" placeholder="이름을 입력해 주세요." />
 						</div>
 						<div class="form-group">
 							<label for="password1" style="font-size: 24px">Password</label>
-							<input type="password" style="width: 800px" class="form-control"
-								name="password1" placeholder="비밀번호를 입력해 주세요.">
+							<form:input path="account.password" type="password" style="width: 800px" class="form-control"
+								name="password1" placeholder="비밀번호를 입력해 주세요." />
 						</div>
 						<div class="form-group">
 							<label for="password2" style="font-size: 24px">Password Check</label>
-							<input type="password" style="width: 800px" class="form-control"
-								name="password2" placeholder="비밀번호를 입력해 주세요.">
+							<form:input path="account.password" type="password" style="width: 800px" class="form-control"
+								name="password2" placeholder="비밀번호를 입력해 주세요." />
 						</div>
 						<div class="form-group row">
 							<label for="fistName" class="col-lg-2 col-form-label" style="font-size: 24px">FirstName</label>
 							<div class="col-lg-10">
-								<input type="text" name="firstname" class="form-control"
-									placeholder="길동">
+								<form:input path="account.firstname" type="text" name="firstname" class="form-control"
+									placeholder="길동" />
 							</div>
 							<label for="lastName" class="col-lg-2 col-form-label" style="font-size: 24px">LastName</label>
 							<div class="col-lg-10">
-								<input type="text" name="lastName" class="form-control"
-									placeholder="홍">
+								<form:input path="account.lastname" type="text" name="lastName" class="form-control"
+									placeholder="홍" />
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="email" style="font-size: 24px">Email</label>
-							<input type="text" style="width: 800px" class="form-control"
-								name="email" placeholder="kildongHong@naver.com">
+							<form:input path="account.email" type="text" style="width: 800px" class="form-control"
+								name="email" placeholder="kildongHong@naver.com" />
 						</div>
 						<div class="form-group">
 							<label for="address" style="font-size: 24px">Address</label>
-							<input type="text" style="width: 800px" class="form-control"
-								name="address" placeholder="주소를 입력해 주세요.">
+							<form:input path="account.address" type="text" style="width: 800px" class="form-control"
+								name="address" placeholder="주소를 입력해 주세요." />
 						</div>
 						<div class="form-group">
-							<label for="phone" style="font-size: 24px">PhoneNumber</label> <input
-								type="text" style="width: 800px" class="form-control"
-								name="phone" placeholder="010-0000-0000">
+							<label for="phone" style="font-size: 24px">PhoneNumber</label>
+							<form:input path="account.phone" type="text" style="width: 800px" class="form-control"
+								name="phone" placeholder="010-0000-0000" />
 						</div>
 						<div class="form-group">
 							<label for="favoriteMall" style="font-size: 24px">FavoriteMall</label>
-							<input type="text" style="width: 800px" class="form-control"
-								name="favoriteMall" placeholder="선호하는 매장을 입력하세요.">
+							<form:input path="account.favoriteMall" type="text" style="width: 800px" class="form-control"
+								name="favoriteMall" placeholder="선호하는 매장을 입력하세요." />
 						</div>
 						<div class="form-group">
 							<label for="languagePrefernce" style="font-size: 24px">LanguagePreference</label>
-							<input type="text" style="width: 800px" class="form-control"
-								name="languagePrefernce" placeholder="Korean">
+							<form:input path="account.languagePreference" type="text" style="width: 800px" class="form-control"
+								name="languagePrefernce" placeholder="Korean" />
 						</div>
 						<div class="form-group">
 							<label for="carInfo" style="font-size: 24px">CarInfo</label>
-							<input type="text" style="width: 800px" class="form-control"
-								name="carInfo" placeholder="소유한 차량의 정보를 입력하세요.">
+							<form:input path="account.carInfo" type="text" style="width: 800px" class="form-control"
+								name="carInfo" placeholder="소유한 차량의 정보를 입력하세요." />
 								<p><p><p><p>
 						</div>
 						<div class="col-6 col-12-small">
 							<label style="font-size: 24px">Agree to Terms</label>
-							<input type="checkbox" id="demo-human" name="demo-human">
+							<form:input type="checkbox" id="demo-human" name="demo-human" />
 							<label for="demo-human">약관에 동의 합니다.</label>
 							<p><p><p><p>
 							
@@ -133,7 +139,7 @@ function userCreate() {
 								가입취소<i class="fa fa-times spaceLeft"></i>
 							</button>
 						</div>
-					</form>
+					</form:form>
 				</div>
 			</div>
 		</div>
