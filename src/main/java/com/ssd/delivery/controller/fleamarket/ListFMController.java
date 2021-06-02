@@ -26,7 +26,7 @@ public class ListFMController {
 		this.petStore = petStore;
 	}
 
-	@RequestMapping("/auction/list")
+	//@RequestMapping("/auction/list")
 	public ModelAndView handleRequest(
 		@ModelAttribute("userSession") UserSession userSession
 		) throws Exception {

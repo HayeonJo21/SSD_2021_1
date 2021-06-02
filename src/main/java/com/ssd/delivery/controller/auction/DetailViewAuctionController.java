@@ -19,18 +19,14 @@ import com.ssd.delivery.service.PetStoreFacade;
 @Controller
 public class DetailViewAuctionController { 
 
-	private PetStoreFacade petStore;
+	@Autowired
 	private DeliveryFacade delivery;
 	
-
-	@Autowired
-	
-
 	public void setDelivery(DeliveryFacade delivery) {
 		this.delivery = delivery;
 	}
 
-	@RequestMapping("/shop/viewItem.do")
+	//@RequestMapping("/shop/viewItem.do")
 	public String handleRequest(
 			@RequestParam("auctionId") int auctionId,
 			ModelMap model) throws Exception {

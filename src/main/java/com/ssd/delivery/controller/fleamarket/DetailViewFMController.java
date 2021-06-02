@@ -24,7 +24,7 @@ public class DetailViewFMController {
 		this.petStore = petStore;
 	}
 
-	@RequestMapping("/shop/viewItem.do")
+	//@RequestMapping("/shop/viewItem.do")
 	public String handleRequest(
 			@RequestParam("itemId") String itemId,
 			ModelMap model) throws Exception {
