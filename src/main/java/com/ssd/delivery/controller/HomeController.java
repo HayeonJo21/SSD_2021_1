@@ -1,11 +1,7 @@
 package com.ssd.delivery.controller;
 
-import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
-
 
 @Controller
 public class HomeController {

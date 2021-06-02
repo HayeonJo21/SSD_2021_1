@@ -51,7 +51,7 @@
 			<ul>
 				<li><a href="mainpage.jsp">메인</a></li>
 				<li><a href="login.jsp">로그인</a></li>
-				<li><a href="register.jsp">회원가입</a></li>
+				<li><a href="/user/insertAccount.do">회원가입</a></li>
 				<li><a href="auctionpage.jsp">용달 서비스 경매</a></li>
 
 				<li><a href="mypage.jsp">마이페이지</a></li>
