@@ -3,6 +3,7 @@ package com.ssd.delivery.controller.copurchasing;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -12,21 +13,27 @@ import com.ssd.delivery.domain.*;
 import com.ssd.delivery.service.DeliveryFacade;
 
 @Controller
-public class ViewCPController { 
+@RequestMapping("/copurchasing/view.do")
+public class ViewCPController {
 
-	private DeliveryFacade delStore;
+	private DeliveryFacade delivery;
 
 	@Autowired
-	public void setPetStore(DeliveryFacade delStore) {
-		this.delStore = delStore;
+	public void setDelivery(DeliveryFacade delivery) {
+		this.delivery = delivery;
 	}
 
-	@RequestMapping("/coPurchasing/view")
-	public ModelAndView handleRequest(@ModelAttribute("user") AccountDTO user,
-			@RequestParam("coPurchasingId") String CPId) throws Exception {
-		CoPurchasingDTO cp = delStore.getCPById(CPId);
-		
-		return new ModelAndView("ViewCP", "cp", cp);
+	@GetMapping
+	public String showPage() {
+		return "copurchasingpage";
 	}
+
+//	@RequestMapping("/coPurchasing/view")
+//	public ModelAndView handleRequest(@ModelAttribute("user") AccountDTO user,
+//			@RequestParam("coPurchasingId") String CPId) throws Exception {
+//		CoPurchasingDTO cp = delStore.getCPById(CPId);
+//		
+//		return new ModelAndView("ViewCP", "cp", cp);
+//	}
 
 }

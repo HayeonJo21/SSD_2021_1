@@ -128,9 +128,9 @@
 						onClick="userCreate();return false;">
 						회원가입<i class="fa fa-check spaceLeft"></i>
 					</button>
-					<button type="reset" class="btn btn-warning">
+					<a class="btn btn-warning" href="/">
 						가입취소<i class="fa fa-times spaceLeft"></i>
-					</button>
+					</a>
 				</div>
 			</form>
 		</div>

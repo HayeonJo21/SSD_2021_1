@@ -32,12 +32,9 @@
 
 				<!-- Logo -->
 				<a href="/" class="logo"> <span class="symbol"><img
-						src="/images/logoicon.svg" alt="" /></span><span class="title">용달의 민족</span>
-
-						<img src="images/logoicon.svg" alt="" /></span><span class="title">용달의 민족</span>
-
+						src="/images/logoicon.svg" alt="" /></span><span class="title">용달의
+						민족</span>
 				</a>
-
 				<!-- Nav -->
 				<nav>
 					<ul>
@@ -55,13 +52,10 @@
 				<li><a href="/">메인</a></li>
 				<li><a href="/delivery/signon.do">로그인</a></li>
 				<li><a href="/user/insertAccount.do">회원가입</a></li>
-				<li><a href="auctionpage.jsp">용달 서비스 경매</a></li>
-
+				<li><a href="/auction/view.do">경매 </a></li>
+				<li><a href="/copurchasing/view.do">공동구매</a></li>
+				<li><a href="/fleamarket/view.do">중고거래</a></li>
 				<li><a href="user/mypage.do">마이페이지</a></li>
 				<li><a href="user/message.do">DM</a></li>
-				<li><a href="/aution.do">경매 </a></li>
-				<li><a href="/copurchasing.do">공동구매</a></li>
-				<li><a href="/fleamarket.do">회원간 거래</a></li>
-				
 			</ul>
 		</nav>
