@@ -20,7 +20,7 @@
       	servicedate, startprice, finalprice, address1, 
       	address2, successfulbidder, delivery, username)
       	values
-      	(#{auctionId}, null, null,null,
+      	(2, null, null,null,
       	null,#{startPrice},null, null, 
       	null, null, null, null )
 	</insert>

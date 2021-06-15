@@ -1,58 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<head>
-<title>경매 등록</title>
-<meta charset="utf-8" />
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, user-scalable=no" />
-<link rel="stylesheet" href="assets/css/main.css" />
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-	crossorigin="anonymous">
-
-<noscript>
-	<link rel="stylesheet" href="assets/css/noscript.css" />
-</noscript>
-</head>
-<body class="is-preload">
-	<!-- Wrapper -->
-	<div id="wrapper">
-
-		<!-- Header -->
-		<header id="header">
-			<div class="inner">
-
-				<!-- Logo -->
-				<a href="index.html" class="logo"> <span class="symbol"><img
-						src="images/logo.svg" alt="" /></span><span class="title">Phantom</span>
-				</a>
-
-				<!-- Nav -->
-				<nav>
-					<ul>
-						<li><a href="#menu">Menu</a></li>
-					</ul>
-				</nav>
-
-			</div>
-		</header>
-
-		<!-- Menu -->
-		<nav id="menu">
-			<h2>Menu</h2>
-			<ul>
-				<li><a href="mypage.jsp">마이페이지</a></li>
-				<li><a href="message.jsp">DM</a></li>
-				<li><a href="auction_form.jsp">경매 </a></li>
-				<li><a href="copurchasing_form.jsp">공동구매</a></li>
-				<li><a href="p2p_form.jsp">회원간 거래</a></li>
-			</ul>
-		</nav>
+<%@ include file="IncludeTop.jsp"%>
 
 		<!-- Main -->
 		<div id="main">
