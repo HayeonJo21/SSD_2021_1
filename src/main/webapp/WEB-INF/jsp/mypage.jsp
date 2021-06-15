@@ -19,7 +19,7 @@
 					<tbody>
 						<tr>
 							<td>username</td>
-							<td>${user.username}</td>
+							<td>${user.username}</td> 
 						</tr>
 						<tr>
 							<td>password</td>

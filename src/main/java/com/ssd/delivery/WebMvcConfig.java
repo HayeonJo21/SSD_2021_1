@@ -17,7 +17,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
 
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
-		registry.addViewController("/delivery/mainpage.jsp").setViewName("index");
+		registry.addViewController("/delivery/mainpage.jsp").setViewName("index"); 
 		registry.addViewController("/user/insertAccount.do").setViewName("register");
 		registry.addViewController("/user/updateAccount.do").setViewName("mypage");
 		registry.addViewController("/user/newUserSubmitted.do").setViewName("index");

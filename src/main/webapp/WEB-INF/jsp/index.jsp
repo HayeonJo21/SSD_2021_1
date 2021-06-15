@@ -62,7 +62,7 @@
 				</a><br />
 				<div class="col-6 col-12-medium">
 					<ul class="actions stacked">
-						<li><a href="#" class="button fit">경매 입장</a></li>
+						<li><a href="#" class="button fit">경매 입장</a></li> 
 					</ul>
 				</div>
 			</article>

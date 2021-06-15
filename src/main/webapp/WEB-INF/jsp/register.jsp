@@ -15,7 +15,7 @@
 				<div class="form-group">
 					<label for="password1" style="font-size: 24px">Password</label> <input
 						type="password" style="width: 800px" class="form-control"
-						name="password" value="${userSession.password}" placeholder="비밀번호를 입력해 주세요.">
+						name="password" value="${userSession.password}" placeholder="비밀번호를 입력해 주세요."> 
 				</div>
 				<!--  <div class="form-group">
 					<label for="password2" style="font-size: 24px">Password
