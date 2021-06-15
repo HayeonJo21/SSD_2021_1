@@ -24,14 +24,14 @@
 	WHERE USERNAME = #{username}
 	</delete>
 	
-	<select id="getMessageListByUsername" resultType="MessageDTO">
+	<select id="getMessageListByUsername" resultType="MessageDTO" parameterType="map">
     SELECT *
     FROM MESSAGE 
     WHERE USERNAME = #{username}
 	</select>
 	
-	<select id="getMessageContentByUsername" resultType="MessageDTO">
-    SELECT CONTENT, MESSGAEDATE
+	<select id="getMessageContentByUsername" resultType="MessageDTO" parameterType="map">
+    SELECT *
     FROM MESSAGE 
     WHERE USERNAME = #{username} AND RECEIVERUSERNAME = #{receiverUsername}
 	</select>

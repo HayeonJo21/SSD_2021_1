@@ -28,50 +28,52 @@
 </head>
 <body class="is-preload">
 	<!-- Wrapper -->
+	<form action="/message/sending.do" method="POST">
 	<div id="wrapper">
 		<div style="width: 400px;">
 			<div class="bg-dark text-white "
 				style="width: 400px; height: 80px; display: table;">
 				<span class="align-middle"
-					style="display: table-cell; padding: 0 0 0 20px;">상대방이름(아이디?)</span>
+					style="display: table-cell; padding: 0 0 0 20px;">${receiver}님과의 대화</span>
 				<!-- <a href="message_list.jsp">DM리스트</a> -->
-				<a href="messageList.jsp" class="button text-white"
+				<a href="/user/message.do" class="button text-white"
 					style="display: table-cell; padding: 20px;">DM리스트</a>
 			</div>
-
+			<c:forEach var="list" items="${contentList}">
 			<c:choose>
-				<c:when test="${userSession.username eq contentList.username}">
+				<c:when test="${usersession.username eq $contentList.username}">
 					<div class="chatbox ">
-					<div class="chatbox float-right">
-						<label for="myMessage" class="float-right">나</label><br>
-						<div class="d-inline-flex p-2 bg-light text-dark float-right"
-							id="myMessage">"${contentList.content }"</div>
+						<div class="chatbox float-right">
+							<label for="myMessage" class="float-right">나</label><br>
+							<div class="d-inline-flex p-2 bg-light text-dark float-right"
+								id="myMessage">${list.content }</div>
+						</div>
 					</div>
-				</div>
 				</c:when>
 				<c:otherwise>
 					<div class="chatbox">
-					<div class="chatbox ">
-						<label for="buyerMessage">상대방</label><br>
+						<div class="chatbox ">
+							<label for="buyerMessage">상대방</label><br>
 
-						<div class="d-inline-flex p-2 bg-secondary text-white float-left"
-							id="buyerMessage">${contentList.content }</div>
+							<div class="d-inline-flex p-2 bg-secondary text-white float-left"
+								id="buyerMessage">${list.content}</div>
+						</div>
 					</div>
-				</div>
 				</c:otherwise>
 			</c:choose>
+			</c:forEach>
 		</div>
 		<br>
 		<div class="form-group">
 			<label for="exampleFormControlTextarea1">메시지 보내기</label>
 			<textarea class="form-control" id="exampleFormControlTextarea1"
-				rows="3" style="width: 400px;" placeholder="이곳에 메세지를 작성하세요,,,, "></textarea>
+				rows="3" style="width: 400px;" placeholder="이곳에 메세지를 작성하세요." name="content"></textarea>
+				<input type="hidden" id="receiverUsername" name="receiverUsername">
 		</div>
 		<input type="submit" value="Send Message" class="primary" />
 
 	</div>
-
-	</div>
+	</form>
 
 	<!-- Scripts -->
 	<script src="assets/js/jquery.min.js"></script>

@@ -43,8 +43,7 @@
 				<a class="list-group-item list-group-item-action active">현재 채팅중인
 					상대</a>
 				<c:forEach var="dm" items="${DMList}">
-					<a
-						href="<c:url value='/message/view/content.do'>
+					<a href="<c:url value='/message/view/content.do'>
 						   <c:param name='receiver' value='${dm.receiverUsername}'/>
 				 		 </c:url>"
 						class="list-group-item list-group-item-action">${dm.receiverUsername}</a>
