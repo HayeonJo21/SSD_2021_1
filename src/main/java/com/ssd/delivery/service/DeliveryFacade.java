@@ -102,7 +102,9 @@ public interface DeliveryFacade {
 
 	void deleteMessage(String username);
 
-	MessageDTO getMessageByUsername(String username);
+	List<MessageDTO> getMessageListByUsername(String username);
+	
+	List<MessageDTO> getMessageContentByUsername(String sender, String receiver);
 
 	List<MessageDTO> getMessageList();
 

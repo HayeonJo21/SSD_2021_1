@@ -212,10 +212,14 @@ public class DeliveryImpl implements DeliveryFacade {
 		messageDao.deleteMessage(username);
 	}
 
-	public MessageDTO getMessageByUsername(String username) {
-		return messageDao.getMessageByUsername(username);
+	public List<MessageDTO> getMessageListByUsername(String username) {
+		return messageDao.getMessageListByUsername(username);
 	}
 
+	public List<MessageDTO> getMessageContentByUsername(String sender, String receiver) {
+		return messageDao.getMessageContentByUsername(sender, receiver);
+	}
+	
 	public List<MessageDTO> getMessageList() {
 		return messageDao.getMessageList();
 	}

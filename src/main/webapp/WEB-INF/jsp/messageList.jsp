@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <head>
-<title>dm리스트</title>
+<title>DM 리스트</title>
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -32,23 +33,27 @@
 			<div class="bg-dark text-white "
 				style="width: 400px; height: 80px; display: table;">
 				<span class="align-middle"
-					style="display: table-cell; padding: 0 0 0 20px;">메세지 리스트</span>
-				<a href=#menu></a>
+					style="display: table-cell; padding: 0 0 0 20px;">메시지 리스트</span> <a
+					href=#menu></a>
 			</div>
 
 		</div>
-		<div class="list-group" style="width:400px;">
-			  
-			  <a href="message.jsp" class="list-group-item list-group-item-action active">현재 채팅중인 상대</a>
-			  <a href="message.jsp" class="list-group-item list-group-item-action">김현경</a>
-			  <a href="message.jsp" class="list-group-item list-group-item-action">조하연</a>
-			  <a href="message.jsp" class="list-group-item list-group-item-action">최재원</a>
-			  <a href="message.jsp" class="list-group-item list-group-item-action">cspark</a>
-			  <a href="message.jsp" class="list-group-item list-group-item-action">hhyuck</a>
-			  <a href="message.jsp" class="list-group-item list-group-item-action">suepark</a>
-			  <a href="message.jsp" class="list-group-item list-group-item-action">wanlee</a>
-			  <a href="message.jsp" class="list-group-item list-group-item-action">sclim</a>
-			</div>
+		<div class="list-group" style="width: 400px;">
+			<c:if test="${DMList ne null}">
+				<a class="list-group-item list-group-item-action active">현재 채팅중인
+					상대</a>
+				<c:forEach var="dm" items="${DMList}">
+					<a href="<c:url value='/message/view/content.do'>
+						   <c:param name='receiver' value='${dm.receiverUsername}'/>
+				 		 </c:url>"
+						class="list-group-item list-group-item-action">${dm.receiverUsername}</a>
+				</c:forEach>
+			</c:if>
+			<a href="/message/create.do"
+				class="list-group-item list-group-item-action active">새로운 메시지
+				시작하기</a>
+
+		</div>
 	</div>
 
 	<!-- Scripts -->

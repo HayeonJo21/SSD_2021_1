@@ -24,8 +24,8 @@ import org.springframework.ui.Model;
 
 @Controller
 @SessionAttributes("userSession")
-@RequestMapping("/delivery/signon.do")
-public class SignonController {
+@RequestMapping("/delivery/admin/signon.do")
+public class AdminSignonController {
 
 	private DeliveryFacade delivery;
 
@@ -36,7 +36,7 @@ public class SignonController {
 
 	@GetMapping
 	public String showForm() {
-		return "login";
+		return "adminLogin";
 	}
 
 	@PostMapping
@@ -47,11 +47,10 @@ public class SignonController {
 
 		AccountDTO account = delivery.findUser(username);
 
-		if (account == null || !account.getPassword().equals(password)) { // 로그인 정보 불일치
-			model.addAttribute("data", new Message("가입되지 않은 아이디거나 잘못된 비밀번호 입니다.", "/"));
-			return "login";
+		if (account == null || !account.getPassword().equals(password) || account.getStatus() != 0) { // 로그인 정보 불일치
+			model.addAttribute("data", new Message("관리자가 아니거나, 잘못된 비밀번호 입니다.", "/"));
+			return "adminLogin";
 		}
-
 		model.addAttribute("userSession", account);
 
 		if (forwardAction != null) {
