@@ -102,12 +102,6 @@ public class AccountFormController {
 				account.setStatus(1);
 				delivery.insertAccount(account);
 			}
-			else {
-				delivery.updateAccount(account);
-				
-				session.setAttribute("userSession", account);
-				return "redirect:/user/mypage.do";
-			}
 		}
 		catch (DataIntegrityViolationException ex) {
 			result.rejectValue("account.userId", "USER_ID_ALREADY_EXISTS",

@@ -4,7 +4,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!-- Main -->
 <div id="main">
-	<div class="inner">
+	<div class="inner"> 
 		<h1>${user.username}님</h1>
 		<div>
 			<h3>회원정보</h3>

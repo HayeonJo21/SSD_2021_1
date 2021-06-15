@@ -17,7 +17,7 @@ import com.ssd.delivery.service.DeliveryFacade;
 
 @Controller
 @RequestMapping("/user/mypage.do")
-public class MyPageController {
+public class MyPageController { 
 	private DeliveryFacade delivery;
 	@Autowired
 	public void setDeliveryFacade(DeliveryFacade delivery) {

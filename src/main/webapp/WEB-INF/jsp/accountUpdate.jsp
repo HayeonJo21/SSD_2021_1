@@ -5,24 +5,14 @@
 <!-- Main -->
 <div id="main">
 	<div class="inner">
-		<h1>Register Page</h1>
+		<h1>Update Info</h1>
 		<div class="col-sm-6 col-md-offset-3">
-			<form action="/user/newUserSubmitted.do" method="post">
+			<form action="/user/mypage.do" method="post"> 
 				<div class="form-group">
 					<label for="account.username" style="font-size: 24px">Username</label>
-					<input type="text" style="width: 800px" class="form-control"
-						name="username" value="${userSession.username}" placeholder="로그인 시 사용할 이름을 입력해 주세요.">
+					<input
+						type="text" style="width: 800px" class="form-control" name="username" value="${userSession.username}">
 				</div>
-				<div class="form-group">
-					<label for="password1" style="font-size: 24px">Password</label> <input
-						type="password" style="width: 800px" class="form-control"
-						name="password" value="${userSession.password}" placeholder="비밀번호를 입력해 주세요."> 
-				</div>
-				<!--  <div class="form-group">
-					<label for="password2" style="font-size: 24px">Password
-						Check</label> <input type="password" style="width: 800px"
-						class="form-control" name="password2" placeholder="비밀번호를 입력해 주세요.">
-				</div>-->
 				<div class="form-group row">
 					<label for="firstName" class="col-lg-2 col-form-label"
 						style="font-size: 24px">FirstName</label>
@@ -195,9 +185,10 @@
 				</div>
 				<div class="form-group" style="text-align:center">
 					<button type="submit" id="join-submit" class="button primary">
-						회원가입<i class="fa fa-check spaceLeft"></i>
+						정보수정<i class="fa fa-check spaceLeft"></i>
 					</button>
-					<a class="button" href="/">가입취소<i class="fa fa-times spaceLeft"></i></a>
+					<a class="button" href="/user/mypage.do">수정취소<i class="fa fa-times spaceLeft"></i></a>
+						
 				</div>
 			</form>
 		</div>
