@@ -1,4 +1,4 @@
-package com.ssd.delivery.controller;
+package com.ssd.delivery.controller.account;
 
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,41 +25,43 @@ import org.springframework.ui.Model;
 @Controller
 @SessionAttributes("userSession")
 @RequestMapping("/delivery/signon.do")
-public class SignonController { 
+public class SignonController {
 
 	private DeliveryFacade delivery;
+
 	@Autowired
 	public void setDelivery(DeliveryFacade delivery) {
 		this.delivery = delivery;
 	}
-	
+
 	@GetMapping
 	public String showForm() {
 		return "login";
 	}
 
 	@PostMapping
-	public String handleRequest(HttpServletRequest request,
-			@RequestParam("username") String username,
+	public String handleRequest(HttpServletRequest request, @RequestParam("username") String username,
 			@RequestParam("password") String password,
-			@RequestParam(value="forwardAction", required=false) String forwardAction,
-			Model model) throws Exception {
-		
-		AccountDTO account = delivery.findUser(username);
-		
-		if (account == null) { //로그인 정보 불일치
-			model.addAttribute("data", new Message("가입되지 않은 아이디거나 잘못된 비밀번호 입니다.", "/"));
-			return "thyme/utils/MessagePage";
-		}
-		
-		model.addAttribute("userSession", account);
-		
-		// 로그인 하기 직전 페이지로 이동
-				// forwardAction(이전 페이지) 값은 GET 요청 시 interceptor에서 form으로 보낸 뒤 POST 요청 시에 parameter로 받아오는 것
-				if (forwardAction != null)
-					return "redirect:/" + forwardAction;
-				else 
-					return "redirect:/";
-			}
-	}
+			@RequestParam(value = "forwardAction", required = false) String forwardAction, Model model)
+			throws Exception {
 
+		AccountDTO account = delivery.findUser(username);
+		System.out.println("******로그인 컨트롤러*******");
+
+		if (account == null) { // 로그인 정보 불일치
+			model.addAttribute("data", new Message("가입되지 않은 아이디거나 잘못된 비밀번호 입니다.", "/"));
+			return "login";
+		}
+
+		model.addAttribute("userSession", account);
+
+		// 로그인 하기 직전 페이지로 이동
+		// forwardAction(이전 페이지) 값은 GET 요청 시 interceptor에서 form으로 보낸 뒤 POST 요청 시에
+		// parameter로 받아오는 것
+		
+		if (forwardAction != null)
+			return "redirect:/" + forwardAction;
+		else
+			return "redirect:/";
+	}
+}

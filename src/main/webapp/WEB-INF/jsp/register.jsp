@@ -97,9 +97,9 @@
 				</div>
 				<div class="form-group">
 					<label for="address" style="font-size: 24px">Address</label>
-					<!-- <input
+					<input
 						type="text" style="width: 800px" class="form-control"
-						name="address" placeholder="주소를 입력해 주세요."> -->
+						name="address" placeholder="주소를 입력해 주세요.">
 						
 					<!-- 도로명주소 api 활용 -->
 					<input type="text" id="sample2_postcode" placeholder="우편번호"> 

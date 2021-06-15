@@ -39,6 +39,12 @@
     SELECT * 
     FROM ACCOUNT
 	</select>
+	
+	<select id="getUser" resultType="AccountDTO">
+    SELECT * 
+    FROM ACCOUNT
+    WHERE username = #{username}
+	</select>
 
 	<select id="getUserListByCPId" resultType="AccountDTO">
     SELECT * 
