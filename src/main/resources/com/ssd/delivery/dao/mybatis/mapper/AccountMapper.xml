@@ -5,7 +5,7 @@
   <cache />
   
   <update id="updateAccount" parameterType="AccountDTO">
-    UPDATE ACCOUNT 
+    UPDATE ACCOUNT SET 
       EMAIL = #{email},
       FIRSTNAME = #{firstName},
       LASTNAME = #{lastName},
@@ -14,8 +14,7 @@
       LANGUAGEPREFERENCE = #{languagePreference},
       STATUS = #{status},
       FAVORITEUSER = #{favoriteUser},
-      CARINFO = #{carInfo}
-      
+      CARINFO = #{carInfo} 
     WHERE USERNAME = #{username}
   </update>
   
