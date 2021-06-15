@@ -33,7 +33,7 @@ public class MybatisAuctionDao implements AuctionDao {
 	
 	@Override
 	public void insertAuction(AuctionDTO auction) throws DataAccessException {  
-    	auction.setAuctionId(sequenceDao.getNextId("auctionId"));
+//    	auction.setAuctionId(sequenceDao.getNextId("auctionId"));
     	auctionMapper.insertAuction(auction);
 	}
 	@Override
