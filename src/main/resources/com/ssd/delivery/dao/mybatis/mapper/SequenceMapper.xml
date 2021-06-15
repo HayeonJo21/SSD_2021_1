@@ -19,5 +19,9 @@
     SET NEXTID = #{nextId}
     WHERE NAME = #{name}
   </update>
+  
+ <!--  <select id="getNextAuctionId" resultType="Sequence">
+  select auctionid_seq.nextval from dual
+  </select> -->
 
 </mapper>

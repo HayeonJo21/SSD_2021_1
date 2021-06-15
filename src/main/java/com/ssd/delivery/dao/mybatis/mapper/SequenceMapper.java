@@ -28,4 +28,7 @@ public interface SequenceMapper {
   Sequence getSequence(Sequence sequence);
   Sequence getOracleSequence(Sequence sequence);
   void updateSequence(Sequence sequence);
+  
+  
+  
 }

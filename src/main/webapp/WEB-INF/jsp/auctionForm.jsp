@@ -83,7 +83,7 @@
 					</div> -->
 					<div class="form-group text-center">
 						<button type="submit" class="button primary">
-							회원가입<i class="fa fa-check spaceLeft"></i>
+							경매 등록<i class="fa fa-check spaceLeft"></i>
 						</button>
 						<a class="btn btn-warning" href="/">가입취소<i
 							class="fa fa-times spaceLeft"></i>
