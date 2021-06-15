@@ -67,7 +67,7 @@
 							<div class="chatbox ">
 								<div class="chatbox float-right">
 									<label for="myMessage" class="float-right">나</label><br>
-									<div class="d-inline-flex p-2 bg-light text-dark float-right"
+									${list.messageDate }<div class="d-inline-flex p-2 bg-light text-dark float-right"
 										id="myMessage">${list.content}</div>
 								</div>
 							</div>
@@ -77,7 +77,7 @@
 								<div class="chatbox ">
 									<label for="buyerMessage">${list.senderUsername}</label><br>
 
-									<div
+									${list.messageDate }<div
 										class="d-inline-flex p-2 bg-secondary text-white float-left"
 										id="buyerMessage">${list.content}</div>
 								</div>

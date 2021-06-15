@@ -6,9 +6,9 @@
 
    <insert id="insertMessage" parameterType="MessageDTO">
     INSERT INTO MESSAGE
-      (SENDERUSERNAME, RECEIVERUSERNAME, CONTENT, MESSAGEDATE)
+      (DMNO, SENDERUSERNAME, RECEIVERUSERNAME, CONTENT, MESSAGEDATE)
     VALUES
-      (#{senderUsername}, #{receiverUsername}, #{content}, #{messageDate})
+      (dm_seq.nextval, #{senderUsername}, #{receiverUsername}, #{content}, #{messageDate})
 	</insert>
 
 	<update id="updateMessage" parameterType="MessageDTO">
@@ -42,13 +42,13 @@
 	</select>
 	
 	<select id="getMessageListByUsername" resultType="MessageDTO" parameterType="map">
-    SELECT *
-    FROM MESSAGE 
-    WHERE SENDERUSERNAME = #{username}
+   SELECT distinct m2.receiverusername
+    FROM MESSAGE m1 JOIN MESSAGE m2 ON m1.dmno = m2.dmNo
+    WHERE m1.senderusername = #{username} or m2.senderusername = #{username}
 	</select>
 	
 	<select id="getMessageListByReceiverUsername" resultType="MessageDTO" parameterType="map">
-    SELECT *
+    SELECT DISTINCT SENDERUSERNAME
     FROM MESSAGE 
     WHERE RECEIVERUSERNAME = #{receiver}
 	</select>

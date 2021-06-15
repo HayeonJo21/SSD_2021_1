@@ -2,8 +2,10 @@ package com.ssd.delivery.domain;
 import java.io.Serializable;
 import java.sql.Date;
 
-public class MessageDTO implements Serializable{
-	
+@SuppressWarnings("serial")
+public class MessageDTO implements Serializable
+{
+	private int dmNo;
 	private String senderUsername;
 	private String receiverUsername;
 	private String content;
@@ -50,7 +52,15 @@ public class MessageDTO implements Serializable{
 	public void setMessageDate(String messageDate) {
 		this.messageDate = messageDate;
 	}
-	
-	
+
+
+	public int getDmNo() {
+		return dmNo;
+	}
+
+
+	public void setDmNo(int dmNo) {
+		this.dmNo = dmNo;
+	}
 
 }

@@ -82,11 +82,9 @@ public class ViewMessageController {
 		String username = account.getUsername();
 		ModelAndView mav = new ModelAndView();
 	
-		List<MessageDTO> messageReceiveList = delivery.getMessageListByReceiverUsername(username);
 		List<MessageDTO> messageList = delivery.getMessageListByUsername(username);
 
 		mav.addObject("DMList", messageList);
-		mav.addObject("RCList", messageReceiveList);
 		mav.addObject("userSession", account);
 		mav.setViewName("messageList");
 				
