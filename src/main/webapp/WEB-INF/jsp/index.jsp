@@ -16,7 +16,7 @@
 		<section class="tiles">
 			<article class="style4">
 				<span class="image"> <img src="images/pic1.png" alt="" />
-				</span> <a href="auctionDetail.jsp">
+				</span> <a href="auctionDetail.do">
 					<h2>출발지: 광명 이케아(IKEA)</h2>
 					<div class="content">
 						<p>
@@ -34,7 +34,7 @@
 			</article>
 			<article class="style5">
 				<span class="image"> <img src="images/pic3.jpg" alt="" />
-				</span> <a href="generic.html">
+				</span> <a href="auctionDetail.do">
 					<h2>배달가능지역: 경기도 고양시</h2>
 					<div class="content">
 						<p>
@@ -51,7 +51,7 @@
 			</article>
 			<article class="style6">
 				<span class="image"> <img src="images/pic2.png" alt="" />
-				</span> <a href="generic.html">
+				</span> <a href="auctionDetail.do">
 					<h2>출발지: 서울시 용산구</h2>
 					<div class="content">
 						<p>

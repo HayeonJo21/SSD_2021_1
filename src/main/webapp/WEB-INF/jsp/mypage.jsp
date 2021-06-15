@@ -58,10 +58,6 @@
 							<td>carInfo</td>
 							<td>${user.carInfo}</td>
 						</tr>
-						<tr>
-							<td>status</td>
-							<td>${user.status}</td>
-						</tr>
 					</tbody>
 				</table>
 			</div>
