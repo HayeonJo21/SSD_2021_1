@@ -6,7 +6,7 @@
 		<div id="main">
 			<div class="inner">
 				<h1 style="color: purple">Administrator Login</h1>
-				<form action="/delivery/signon.do" method="POST">
+				<form action="/delivery/admin/signon.do" method="POST">
 				<c:if test="${data ne null}">
 					<p style="color: red">${data.message}</p>
 				 </c:if>
