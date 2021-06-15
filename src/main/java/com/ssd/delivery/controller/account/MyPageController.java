@@ -16,7 +16,7 @@ import com.ssd.delivery.domain.*;
 import com.ssd.delivery.service.DeliveryFacade;
 
 @Controller
-@RequestMapping("/user/mypage.do")
+@RequestMapping("/delivery/mypage.do")
 public class MyPageController { 
 	private DeliveryFacade delivery;
 	@Autowired
@@ -55,7 +55,7 @@ public class MyPageController {
 		delivery.updateAccount(account);
 		
 		session.setAttribute("userSession", account);
-		return "redirect:/user/mypage.do";
+		return "redirect:/delivery/mypage.do";
 }
 	
 }
