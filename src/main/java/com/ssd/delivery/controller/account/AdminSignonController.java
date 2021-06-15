@@ -51,7 +51,6 @@ public class AdminSignonController {
 			model.addAttribute("data", new Message("관리자가 아니거나, 잘못된 비밀번호 입니다.", "/"));
 			return "adminLogin";
 		}
-
 		model.addAttribute("userSession", account);
 
 		if (forwardAction != null) {
