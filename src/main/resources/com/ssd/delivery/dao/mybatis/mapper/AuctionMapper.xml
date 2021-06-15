@@ -3,12 +3,23 @@
 
 <mapper namespace="com.ssd.delivery.dao.mybatis.mapper.AuctionMapper">
   <cache />
-  <insert id="insertAuction" parameterType="AuctionDTO">
+  <!-- <insert id="insertAuction" parameterType="AuctionDTO">
       insert into auction
       	(auctionid, serviceid, customerid, enddate, servicedate, startprice, finalprice, address1, address2, successfulbidder, deliveryId, username)
       	values
       	(#{auctionId}, #{serviceId}, #{customerId},#{endDate},#{serviceDate},#{startPrice},
       	null, #{address1}, #{address2}, null, #{deliveryId}, #{username} )
+	</insert> -->
+	
+	<insert id="insertAuction" parameterType="AuctionDTO">
+	<!-- <selectKey keyProperty = "auctionId" resultType="int" order="BEFORE">
+	select SEQ_auctionId.nextval from dual
+	</selectKey> -->
+      insert into auction
+      	(auctionid, serviceid, customerid, enddate, servicedate, startprice, finalprice, address1, address2, successfulbidder, deliveryId, username)
+      	values
+      	(#{auctionId}, null, null,null,null,#{startPrice},
+      	null, null, null, null, null, #{username} )
 	</insert>
 
 	<update id="updateAuction" parameterType="AuctionDTO">
