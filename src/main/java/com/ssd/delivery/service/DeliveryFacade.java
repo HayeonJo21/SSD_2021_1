@@ -7,6 +7,7 @@ import com.ssd.delivery.domain.AuctionDTO;
 import com.ssd.delivery.domain.CoPurchasingDTO;
 import com.ssd.delivery.domain.DeliveryDTO;
 import com.ssd.delivery.domain.FavoriteUserDTO;
+import com.ssd.delivery.domain.FleaMarketDTO;
 import com.ssd.delivery.domain.ItemDTO;
 import com.ssd.delivery.domain.MessageDTO;
 
@@ -90,7 +91,7 @@ public interface DeliveryFacade {
 
 	ItemDTO getFMById(int itemId);
 
-	List<ItemDTO> getFMByUsername(String username);
+	List<FleaMarketDTO> getFMByUsername(String username);
 
 	List<ItemDTO> getFMList();
 
