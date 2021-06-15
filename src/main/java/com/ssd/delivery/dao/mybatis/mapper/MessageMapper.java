@@ -21,5 +21,7 @@ public interface MessageMapper {
 	
 	List<MessageDTO> getMessageContentByUsername(@Param("username")String sender, @Param("receiverUsername")String receiver);
 	
+	List<MessageDTO> getMessageContentByReceiverUsername(@Param("receiverUsername")String sender, @Param("username")String receiver);
+	
 	List<MessageDTO> getMessageList();
 }

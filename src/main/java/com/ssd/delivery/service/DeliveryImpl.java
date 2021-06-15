@@ -217,11 +217,15 @@ public class DeliveryImpl implements DeliveryFacade {
 	}
 	
 	public List<MessageDTO> getMessageListByReceiverUsername(String receiver) {
-		return messageDao.getMessageListByUsername(receiver);
+		return messageDao.getMessageListByReceiverUsername(receiver);
 	}
 
 	public List<MessageDTO> getMessageContentByUsername(String sender, String receiver) {
 		return messageDao.getMessageContentByUsername(sender, receiver);
+	}
+	
+	public List<MessageDTO> getMessageContentByReceiverUsername(String sender, String receiver) {
+		return messageDao.getMessageContentByReceiverUsername(sender, receiver);
 	}
 	
 	public List<MessageDTO> getMessageList() {

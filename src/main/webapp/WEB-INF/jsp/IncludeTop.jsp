@@ -67,7 +67,7 @@
 				<li><a href="/delivery/fleamarketView.do">중고거래</a></li>
 				<c:if test="${userSession.username ne null}">
 					<li class="nav-item"><li><a href="/user/mypage.do">마이페이지</a></li>
-					<li><a href="/delivery/message.do">DM</a></li>
+					<li><a href="/user/message.do">DM</a></li>
 				</c:if>
 				
 			</ul>

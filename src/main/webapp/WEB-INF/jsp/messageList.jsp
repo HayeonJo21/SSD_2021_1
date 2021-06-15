@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -15,7 +16,15 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
-
+	<!-- Bootstrap -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<link rel="stylesheet" href="/assets/css/main.css" />
+<noscript>
+	<link rel="stylesheet" href="/assets/css/noscript.css" />
+</noscript>
 <noscript>
 	<link rel="stylesheet" href="assets/css/noscript.css" />
 </noscript>
@@ -27,6 +36,18 @@
 </style>
 </head>
 <body class="is-preload">
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<div class="inner">
+
+				<!-- Logo -->
+				<a href="/" class="logo"> <span class="symbol"><img
+						src="/images/logoicon.svg" alt="" /></span><span class="title">용달의
+						민족</span>
+				</a>
 	<!-- Wrapper -->
 	<div id="wrapper">
 		<div style="width: 400px;">

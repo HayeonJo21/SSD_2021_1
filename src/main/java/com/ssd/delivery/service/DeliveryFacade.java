@@ -107,6 +107,8 @@ public interface DeliveryFacade {
 	List<MessageDTO> getMessageListByReceiverUsername(String receiver);
 	
 	List<MessageDTO> getMessageContentByUsername(String sender, String receiver);
+	
+	List<MessageDTO> getMessageContentByReceiverUsername(String sender, String receiver);
 
 	List<MessageDTO> getMessageList();
 

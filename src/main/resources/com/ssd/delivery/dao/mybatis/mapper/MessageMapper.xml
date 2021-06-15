@@ -6,9 +6,9 @@
 
    <insert id="insertMessage" parameterType="MessageDTO">
     INSERT INTO MESSAGE
-      (USERNAME, CONTENT, MESSAGEDATE, RECEIVERUSERNAME)
+      (SENDERUSERNAME, RECEIVERUSERNAME, CONTENT, MESSAGEDATE)
     VALUES
-      (#{senderUsername}, #{content}, #{messageDate}, #{receiverUsername})
+      (#{senderUsername}, #{receiverUsername}, #{content}, #{messageDate})
 	</insert>
 
 	<update id="updateMessage" parameterType="MessageDTO">
@@ -16,34 +16,41 @@
       CONTENT = #{languagePreference}, 
       MESSAGEDATE = #{favouriteCategoryId}, 
       receiverUsername = #{receiverUsername}, 
-    WHERE USERNAME = #{username}
+      senderUsername = #{senderUsername}
+    WHERE SENDERUSERNAME = #{username}
 	</update>
 
 	<delete id="deleteMessage" parameterType="int">
 	DELETE FROM MESSAGE 
-	WHERE USERNAME = #{username}
+	WHERE SENDERUSERNAME = #{username}
 	</delete>
+	
+	<select id="getMessageContentByUsername" resultType="MessageDTO" parameterType="map">
+    SELECT *
+    FROM MESSAGE
+    WHERE SENDERUSERNAME = #{username} AND RECEIVERUSERNAME = #{receiverUsername}
+	</select>
+	
+	<select id="getMessageContentByReceiverUsername" resultType="MessageDTO" parameterType="map">
+    SELECT *
+    FROM MESSAGE
+    WHERE SENDERUSERNAME = #{receiverUsername} AND RECEIVERUSERNAME = #{username}
+	</select>
+  
+	<select id="getMessageList" resultType="MessageDTO">
+    SELECT * FROM Message
+	</select>
 	
 	<select id="getMessageListByUsername" resultType="MessageDTO" parameterType="map">
     SELECT *
     FROM MESSAGE 
-    WHERE USERNAME = #{username}
+    WHERE SENDERUSERNAME = #{username}
 	</select>
 	
 	<select id="getMessageListByReceiverUsername" resultType="MessageDTO" parameterType="map">
     SELECT *
     FROM MESSAGE 
     WHERE RECEIVERUSERNAME = #{receiver}
-	</select>
-	
-	<select id="getMessageContentByUsername" resultType="MessageDTO" parameterType="map">
-    SELECT *
-    FROM MESSAGE 
-    WHERE USERNAME = #{username} AND RECEIVERUSERNAME = #{receiverUsername}
-	</select>
-  
-	<select id="getMessageList" resultType="MessageDTO">
-    SELECT * FROM Message
 	</select>
   
 </mapper>
