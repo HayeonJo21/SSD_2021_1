@@ -11,7 +11,7 @@ import com.ssd.delivery.domain.AccountDTO;
 import com.ssd.delivery.service.DeliveryFacade;
 
 @Controller
-@RequestMapping("/fleamarket/view.do")
+@RequestMapping("/delivery/fleamarketView.do")
 public class ViewFMController { 
 
 	private DeliveryFacade delivery;

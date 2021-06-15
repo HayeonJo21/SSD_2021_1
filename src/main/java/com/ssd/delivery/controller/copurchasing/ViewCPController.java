@@ -13,7 +13,7 @@ import com.ssd.delivery.domain.*;
 import com.ssd.delivery.service.DeliveryFacade;
 
 @Controller
-@RequestMapping("/copurchasing/view.do")
+@RequestMapping("/delivery/copurchasingView.do")
 public class ViewCPController {
 
 	private DeliveryFacade delivery;

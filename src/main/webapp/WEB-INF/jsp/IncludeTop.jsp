@@ -58,16 +58,16 @@
 					</c:when>
 					<c:otherwise>
 						<li><a href="/delivery/signon.do">로그인</a></li>
-						<li><a href="/user/insertAccount.do">회원가입</a></li>
+						<li><a href="/delivery/insertAccount.do">회원가입</a></li>
 					</c:otherwise>
 				</c:choose>
 				
-				<li><a href="/auction/view.do">경매 </a></li>
-				<li><a href="/copurchasing/view.do">공동구매</a></li>
-				<li><a href="/fleamarket/view.do">중고거래</a></li>
+				<li><a href="/delivery/auctionView.do">경매 </a></li>
+				<li><a href="/delivery/copurchasingView.do">공동구매</a></li>
+				<li><a href="/delivery/fleamarketView.do">중고거래</a></li>
 				<c:if test="${userSession.username ne null}">
 					<li class="nav-item"><li><a href="/user/mypage.do">마이페이지</a></li>
-					<li><a href="/user/message.do">DM</a></li>
+					<li><a href="/delivery/message.do">DM</a></li>
 				</c:if>
 				
 			</ul>

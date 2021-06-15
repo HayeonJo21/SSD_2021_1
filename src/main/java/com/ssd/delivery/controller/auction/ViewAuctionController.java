@@ -11,7 +11,7 @@ import com.ssd.delivery.domain.AccountDTO;
 import com.ssd.delivery.service.DeliveryFacade;
 
 @Controller
-@RequestMapping("/auction/view.do")
+@RequestMapping("/delivery/auctionView.do")
 public class ViewAuctionController { 
 
 	private DeliveryFacade delivery;

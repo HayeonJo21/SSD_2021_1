@@ -18,16 +18,16 @@ public class WebMvcConfig implements WebMvcConfigurer {
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
 		registry.addViewController("/delivery/mainpage.jsp").setViewName("index"); 
-		registry.addViewController("/user/insertAccount.do").setViewName("register");
-		registry.addViewController("/user/updateAccount.do").setViewName("accountUpdate");
-		registry.addViewController("/user/newUserSubmitted.do").setViewName("index");
-		registry.addViewController("/user/mypage.do").setViewName("mypage");
+		registry.addViewController("/delivery/insertAccount.do").setViewName("register");
+		registry.addViewController("/delivery/updateAccount.do").setViewName("accountUpdate");
+		registry.addViewController("/delivery/newUserSubmitted.do").setViewName("index");
+		registry.addViewController("/delivery/user/mypage.do").setViewName("mypage");
 		registry.addViewController("/delivery/signon.do").setViewName("login");
 		registry.addViewController("/delivery/signoff.do").setViewName("index"); 
 //		registry.addViewController("/auction/view.do").setViewName("auctionpage");
-		registry.addViewController("/copurchasing/view.do").setViewName("copurchasingpage");
-		registry.addViewController("/fleamarket/view.do").setViewName("fleaMarketPage");
-		registry.addViewController("/user/message.do").setViewName("message");
+		registry.addViewController("/delivery/copurchasingView.do").setViewName("copurchasingpage");
+		registry.addViewController("/delivery/fleamarketView.do").setViewName("fleaMarketPage");
+		registry.addViewController("/delivery/message.do").setViewName("message");
 		registry.addViewController("auctionDetail.do").setViewName("auctionDetail");
 		
 
