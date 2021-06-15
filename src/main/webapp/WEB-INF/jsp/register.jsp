@@ -6,7 +6,7 @@
 	<div class="inner">
 		<h1>Register Page</h1>
 		<div class="col-sm-6 col-md-offset-3">
-			<form action="user/newUserSubmitted.do" method="post">
+			<form action="/user/newUserSubmitted.do" method="post">
 				<div class="form-group">
 					<label for="account.username" style="font-size: 24px">Username</label>
 					<input type="text" style="width: 800px" class="form-control"
@@ -37,7 +37,8 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="email" style="font-size: 24px">Email</label><input
+					<label for="email" style="font-size: 24px">Email</label>
+					<input
 						type="text" style="width: 800px" class="form-control" name="email"
 						placeholder="kildongHong@naver.com">
 				</div>
@@ -63,7 +64,8 @@
 					</div>
 
 					<script
-						src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+						src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js">
+					</script>
 					<script>
 						// 우편번호 찾기 화면을 넣을 element
 						var element_layer = document.getElementById('layer');
@@ -190,15 +192,15 @@
 						class="form-control" name="carInfo"
 						placeholder="소유한 차량의 정보를 입력하세요."> <br> <br>
 				</div>
-				<div class="form-group text-center">
+				<div class="form-group" style="text-align:center">
 					<button type="submit" id="join-submit" class="button primary"
 						onClick="userCreate();return false;">
 						회원가입<i class="fa fa-check spaceLeft"></i>
 					</button>
-					<a class="btn btn-warning" href="/">가입취소<i
-						class="fa fa-times spaceLeft"></i>
-					</a>
+					<a class="button" href="/">가입취소<i class="fa fa-times spaceLeft"></i></a>
 				</div>
 			</form>
 		</div>
+	</div>
+</div>
 <%@ include file="IncludeBottom.jsp"%>

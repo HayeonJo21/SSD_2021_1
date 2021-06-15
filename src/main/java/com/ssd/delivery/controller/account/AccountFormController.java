@@ -17,7 +17,7 @@ import com.ssd.delivery.service.DeliveryFacade;
 
 //등록, 수정 둘 다 이곳에서
 @Controller
-@RequestMapping({"/user/insertAccount.do","/user/updateAccount.do", "user/user/newUserSubmitted.do"})
+@RequestMapping({"/user/insertAccount.do","/user/updateAccount.do", "/user/newUserSubmitted.do"})
 public class AccountFormController {
 	@Autowired
 	private DeliveryFacade delivery;

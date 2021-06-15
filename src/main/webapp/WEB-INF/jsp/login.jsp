@@ -13,7 +13,7 @@
 				<input type="text" style="width:420px" id="username" name="username" placeholder="Username" required autofocus>
 				<p/><p/>
 				<label for="password" class="visually-hidden" style="font-size:24px">Password</label>
-				<input type="password" style="width:420px" id=password" name="password" placeholder="Password" required>
+				<input type="password" style="width:420px" id="password" name="password" placeholder="Password" required>
 				
 				<ul class="actions">
 					<li><button type="submit" >&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;</button></li>
