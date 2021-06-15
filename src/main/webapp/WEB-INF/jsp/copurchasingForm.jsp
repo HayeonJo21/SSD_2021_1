@@ -89,7 +89,6 @@
 					</div>
 				</form>
 
-				<jsp:include page="delivery.jsp" flush="true" />
 			</div>
 
 		</div>

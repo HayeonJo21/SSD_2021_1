@@ -31,7 +31,7 @@ public class MybatisDeliveryDao implements DeliveryDao{
 		return deliveryMapper.getDeliveryById(deliveryId);
 	}
 	
-	public DeliveryDTO getDeliveryByUsername(String username) throws DataAccessException {
+	public List<DeliveryDTO> getDeliveryByUsername(String username) throws DataAccessException {
 		return deliveryMapper.getDeliveryByUsername(username);
 	}
 	

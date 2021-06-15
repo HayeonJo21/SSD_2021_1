@@ -27,10 +27,10 @@ public class DeliveryDTO implements Serializable {
 	public DeliveryDTO() {
 		super();
 	}
-	public DeliveryDTO(int deliveryId, String address1, String address2, String username, Date serviceDate,
+	public DeliveryDTO(String address1, String address2, String username, Date serviceDate,
 			String filename, int price, int width, int depth, int height, int weight, int loadage) {
 		super();
-		this.deliveryId = deliveryId;
+	
 		this.address1 = address1;
 		this.address2 = address2;
 		this.username = username;

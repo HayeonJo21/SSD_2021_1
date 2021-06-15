@@ -16,7 +16,7 @@ public interface DeliveryDao {
 	
 	DeliveryDTO getDeliveryById(int deliveryId) throws DataAccessException;
 	
-	DeliveryDTO getDeliveryByUsername(String username) throws DataAccessException;
+	List<DeliveryDTO> getDeliveryByUsername(String username) throws DataAccessException;
 	
 	List<DeliveryDTO> getDeliveryList() throws DataAccessException;
 }

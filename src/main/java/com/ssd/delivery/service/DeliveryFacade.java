@@ -67,7 +67,7 @@ public interface DeliveryFacade {
 
 	DeliveryDTO getDeliveryById(int deliveryId);
 
-	DeliveryDTO getDeliveryByUsername(String username);
+	List<DeliveryDTO> getDeliveryByUsername(String username);
 
 	List<DeliveryDTO> getDeliveryList();
 

@@ -16,7 +16,7 @@ import com.ssd.delivery.domain.*;
 import com.ssd.delivery.service.DeliveryFacade;
 
 @Controller
-@RequestMapping("/delivery/mypage.do")
+@RequestMapping("/user/mypage.do")
 public class MyPageController { 
 	private DeliveryFacade delivery;
 	@Autowired
@@ -33,10 +33,10 @@ public class MyPageController {
 		
 		List<CoPurchasingDTO> CPList = delivery.getCPListByUsername(username);
 		List<AuctionDTO> ACList = delivery.getAuctionByUsername(username);
-		List<FleaMarketDTO> FMList = delivery.getFMByUsername(username);
+		List<DeliveryDTO> DelList = delivery.getDeliveryByUsername(username);
 		
 		mav.addObject("CPList", CPList);
-		mav.addObject("FMList", FMList);
+		mav.addObject("DelList", DelList);
 		mav.addObject("ACList", ACList);
 		mav.addObject("user", account);
 		mav.setViewName("mypage");

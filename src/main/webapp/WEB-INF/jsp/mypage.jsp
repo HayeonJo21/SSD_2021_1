@@ -102,16 +102,14 @@
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach var="fm" items="${FMList}">
+						<c:forEach var="del" items="${DelList}">
 							<tr>
 								<td><a
-									href="<c:url value='/fm/view.do'>
-						   <c:param name='fmId' value='${fm.fleamarketId}'/>
-				 		 </c:url>">${fm.fleamarketId}</a></td>
-								<td>${fm.username}</td>
-								<td>${fm.address}</td>
-								<td>${fm.totalPrice}</td>
-								<td>${fm.itemId}</td>
+									href="<c:url value='/delivery/detail/view.do'>
+						   <c:param name='deliveryd' value='${del.deliveryId}'/>
+				 		 </c:url>">${del.deliveryId}</a></td>
+								<td>${del.serviceDate}</td>
+								<td>${del.price}</td>
 							</tr>
 						</c:forEach>
 					</tbody>

@@ -6,7 +6,6 @@
 		<div id="main">
 			<div class="inner">
 			<%-- --%>
-				<jsp:include page="delivery.jsp" flush="true" />
 			
 			
 			</div>

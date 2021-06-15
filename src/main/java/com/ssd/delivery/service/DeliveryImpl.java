@@ -145,7 +145,7 @@ public class DeliveryImpl implements DeliveryFacade {
 		return deliveryDao.getDeliveryById(deliveryId);
 	}
 
-	public DeliveryDTO getDeliveryByUsername(String username) {
+	public List<DeliveryDTO> getDeliveryByUsername(String username) {
 		return deliveryDao.getDeliveryByUsername(username);
 	}
 

@@ -44,6 +44,27 @@
 				</nav>
 
 			</div>
+			<script>
+	$(function() {
+		$("#datepicker1").datepicker(
+				{
+					dateFormat : 'yy/mm/dd',
+					prevText : '이전 달',
+					nextText : '다음 달',
+					monthNames : [ '1월', '2월', '3월', '4월', '5월', '6월', '7월',
+							'8월', '9월', '10월', '11월', '12월' ],
+					monthNamesShort : [ '1월', '2월', '3월', '4월', '5월', '6월',
+							'7월', '8월', '9월', '10월', '11월', '12월' ],
+					dayNames : [ '일', '월', '화', '수', '목', '금', '토' ],
+					dayNamesShort : [ '일', '월', '화', '수', '목', '금', '토' ],
+					dayNamesMin : [ '일', '월', '화', '수', '목', '금', '토' ],
+					showMonthAfterYear : true,
+					changeMonth : true,
+					changeYear : true,
+					yearSuffix : '년'
+				});
+	});
+</script>
 		</header>
 
 		<!-- Menu -->
@@ -65,6 +86,7 @@
 				<li><a href="/delivery/auctionView.do">경매 </a></li>
 				<li><a href="/delivery/copurchasingView.do">공동구매</a></li>
 				<li><a href="/delivery/fleamarketView.do">중고거래</a></li>
+				<li><a href="/delivery/list/view.do">용달서비스 거래</a></li>
 				<c:if test="${userSession.username ne null}">
 
 					<li class="nav-item"><li><a href="/user/mypage.do">마이페이지</a></li>
