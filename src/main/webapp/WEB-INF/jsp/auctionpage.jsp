@@ -12,6 +12,9 @@
 			<p>
 				진행중인 경매 목록입니다. <br /> ** 기사분이 올린 경매는 저가 경매로 이루어집니다.(역경매) **
 			</p>
+			
+			
+			<li><a href="/auction/insert">경매등록 </a></li>
 		</header>
 		<section class="tiles">
 			<article class="style1">

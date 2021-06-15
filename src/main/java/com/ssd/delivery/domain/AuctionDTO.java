@@ -42,6 +42,22 @@ public class AuctionDTO implements Serializable {
 		this.username = username;
 	}
 	
+	
+	
+//	public AuctionDTO(Date endDate, int startPrice, String username) {
+//		super();
+//		this.endDate = endDate;
+//		this.startPrice = startPrice;
+//		this.username = username;
+//	}
+	
+	public AuctionDTO(int startPrice, String username) {
+		super();
+		this.startPrice = startPrice;
+		this.username = username;
+	}
+
+
 	//getter&setter
 	public int getAuctionId() {
 		return auctionId;

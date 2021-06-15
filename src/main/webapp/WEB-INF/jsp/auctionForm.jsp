@@ -59,8 +59,39 @@
 			<div class="inner">
 
 				<h2>경매 글 작성</h2>
-				<form method="post" action="#">
-					<div class="row gtr-uniform">
+				<form method="post" action="/auction/newAuctionSubmitted.do">
+					<div class="form-group">
+						<label for="auction.serviceId" style="font-size: 24px">Username</label>
+						<input type="text" style="width: 800px" class="form-control"
+							name="username" value = "${userSession.username}"placeholder="${userSession.username}" >
+					</div>
+					<!-- <div class="form-group">
+						<label for="auction.endDate" style="font-size: 24px">EndDate</label>
+						<input type="text" style="width: 800px" class="form-control"
+							name="endDate" placeholder="마감일 ex 20210615" value="20210630">
+					</div> -->
+					<div class="form-group">
+						<label for="auction.startPrice" style="font-size: 24px">StartPrice</label>
+						<input type="text" style="width: 800px" class="form-control"
+							name="username" placeholder="ex 50000" value="50000">
+					</div>
+					<!-- <div class="col-12">
+						<ul class="actions">
+							<li><input type="submit" value="Submit" class="primary" /></li>
+							<li><input type="reset" value="Reset" /></li>
+						</ul>
+					</div> -->
+					<div class="form-group text-center">
+						<button type="submit" class="button primary">
+							회원가입<i class="fa fa-check spaceLeft"></i>
+						</button>
+						<a class="btn btn-warning" href="/">가입취소<i
+							class="fa fa-times spaceLeft"></i>
+						</a>
+					</div>
+
+
+					<!-- <div class="row gtr-uniform">
 						<div class="col-12">
 							<label for="demo-name"></label> <input type="text"
 								name="demo-name" id="demo-name" value="" placeholder="username"
@@ -74,18 +105,17 @@
 							<input type="text" name="startPrice" id="startPrice" value=""
 								placeholder="경매 시작가" />
 						</div>
-						
+
 						<div class="col-12">
 							<ul class="actions">
-								<li><input type="submit" value="Submit"
-									class="primary" /></li>
+								<li><input type="submit" value="Submit" class="primary" /></li>
 								<li><input type="reset" value="Reset" /></li>
 							</ul>
 						</div>
-					</div>
+					</div> -->
 				</form>
 
-				<jsp:include page="delivery.jsp" flush="true" />
+				<%-- 	<jsp:include page="delivery.jsp" flush="true" /> --%>
 			</div>
 
 		</div>
