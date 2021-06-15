@@ -22,4 +22,4 @@
 			</div>
 		
 		</div>
-		<%@ include file="IncludeBottom.jsp"%>
+<%@ include file="IncludeBottom.jsp"%>

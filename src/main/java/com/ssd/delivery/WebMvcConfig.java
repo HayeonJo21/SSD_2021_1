@@ -19,6 +19,12 @@ public class WebMvcConfig implements WebMvcConfigurer {
 	public void addViewControllers(ViewControllerRegistry registry) {
 		registry.addViewController("/delivery/mainpage.jsp").setViewName("index");
 		registry.addViewController("/shop/signonForm.do").setViewName("SignonForm");
+		registry.addViewController("/user/insertAccount.do").setViewName("register");
+		registry.addViewController("/auction/view.do").setViewName("auctionpage");
+		registry.addViewController("/copurchasing/view.do").setViewName("copurchasingpage");
+		registry.addViewController("/fleamarket/view.do").setViewName("fleaMarketPage");
+		registry.addViewController("/user/mypage.do").setViewName("mypage");
+		registry.addViewController("/user/message.do").setViewName("message");
 	}
 	
 	@Override
