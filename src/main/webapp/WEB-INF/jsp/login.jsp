@@ -10,7 +10,7 @@
 			<div class="inner">
 				<h1>Login</h1>
 				<form action="/delivery/signon.do" method="POST">
-				<c:if test="${data ne null}">
+				<c:if test="${data ne null}"> 
 					<p style="color: red">${data.message}</p>
 				 </c:if>
 				<label for="username" class="visually-hidden" style="font-size:24px">Username</label>
