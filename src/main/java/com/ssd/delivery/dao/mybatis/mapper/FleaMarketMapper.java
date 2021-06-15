@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import com.ssd.delivery.domain.FleaMarketDTO;
 import com.ssd.delivery.domain.ItemDTO;
 
 @Mapper
@@ -14,7 +15,7 @@ public interface FleaMarketMapper {
 	void deleteFM(ItemDTO item);
 
 	ItemDTO getFMById(int itemId);
-	List<ItemDTO> getFMByUsername(String username);
+	List<FleaMarketDTO> getFMByUsername(String username);
 	List<ItemDTO> getFMList();
 
 }

@@ -19,6 +19,7 @@ import com.ssd.delivery.domain.CoPurchasingDTO;
 import com.ssd.delivery.domain.DeliveryDTO;
 import com.ssd.delivery.domain.MessageDTO;
 import com.ssd.delivery.domain.FavoriteUserDTO;
+import com.ssd.delivery.domain.FleaMarketDTO;
 import com.ssd.delivery.domain.ItemDTO;
 
 
@@ -190,7 +191,7 @@ public class DeliveryImpl implements DeliveryFacade {
 		return fmDao.getFMById(itemId);
 	}
 
-	public List<ItemDTO> getFMByUsername(String username) {
+	public List<FleaMarketDTO> getFMByUsername(String username) {
 		return fmDao.getFMByUsername(username);
 	}
 

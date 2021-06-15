@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -21,35 +22,26 @@ public class MyPageController {
 	public void setDeliveryFacade(DeliveryFacade delivery) {
 		this.delivery= delivery;
 	}
-  
-  @GetMapping
-	public String showPage() {
-		return "mypage";
-	}
-	
-	@RequestMapping("/user/myPage/coPurchasing.do")
-	public String viewCPItem(ModelMap model, HttpSession session) throws Exception {
+   
+	@GetMapping
+	public ModelAndView viewMypage(Model model, HttpSession session) throws Exception {
 		AccountDTO account = (AccountDTO)session.getAttribute("userSession");
 		
 		String username = account.getUsername();
+		ModelAndView mav = new ModelAndView();
 		
-		List<CoPurchasingDTO> CPList = delivery.getCPListByUsername(username); //dao 인터페이스에 추가해야 할 메소드
-
-		model.put("CPList", CPList);
+		List<CoPurchasingDTO> CPList = delivery.getCPListByUsername(username);
+		List<AuctionDTO> ACList = delivery.getAuctionByUsername(username);
+		List<FleaMarketDTO> FMList = delivery.getFMByUsername(username);
 		
-		return "/coPurchasing";
+		mav.addObject("CPList", CPList);
+		mav.addObject("FMList", FMList);
+		mav.addObject("ACList", ACList);
+		mav.addObject("user", account);
+		mav.setViewName("mypage");
+		System.out.println("########MYPAGE");
+		return mav;
 	}
 	
-	@RequestMapping("/user/myPage/auction.do")
-	public String viewAuctionItem(ModelMap model, HttpSession session) throws Exception {
-		AccountDTO account = (AccountDTO)session.getAttribute("userSession");
-		
-		String username = account.getUsername();
-		
-		List<AuctionDTO> auctionList = delivery.getAuctionByUsername(username);
-
-		model.put("auctionList", auctionList);
-		
-		return "/auction";
-	}
+	
 }

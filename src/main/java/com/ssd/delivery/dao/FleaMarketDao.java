@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.dao.DataAccessException;
 
+import com.ssd.delivery.domain.FleaMarketDTO;
 import com.ssd.delivery.domain.ItemDTO;
 
 public interface FleaMarketDao {
@@ -14,7 +15,7 @@ public interface FleaMarketDao {
 	void deleteFM(ItemDTO item) throws DataAccessException;
 
 	ItemDTO getFMById(int itemId) throws DataAccessException;
-	List<ItemDTO> getFMByUsername(String username) throws DataAccessException;
+	List<FleaMarketDTO> getFMByUsername(String username) throws DataAccessException;
 	List<ItemDTO> getFMList() throws DataAccessException;
 
 

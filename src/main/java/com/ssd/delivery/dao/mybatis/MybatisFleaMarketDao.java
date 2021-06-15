@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import com.ssd.delivery.dao.FleaMarketDao;
 import com.ssd.delivery.dao.mybatis.mapper.FleaMarketMapper;
 import com.ssd.delivery.dao.mybatis.mapper.ItemMapper;
+import com.ssd.delivery.domain.FleaMarketDTO;
 import com.ssd.delivery.domain.ItemDTO;
 
 @Repository
@@ -36,7 +37,7 @@ public class MybatisFleaMarketDao implements FleaMarketDao{
 		return fleaMarketMapper.getFMById(itemId);
 	};
 	
-	public List<ItemDTO> getFMByUsername(String username) throws DataAccessException{
+	public List<FleaMarketDTO> getFMByUsername(String username) throws DataAccessException{
 		return fleaMarketMapper.getFMByUsername(username);
 	};
 	
