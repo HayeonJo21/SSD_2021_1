@@ -15,6 +15,36 @@
 			
 			
 			<li><a href="/auction/insert">경매등록 </a></li>
+			<li><a href="/auction/list">auctionlist </a></li>
+			
+			<div class="table-wrapper">
+				<table class="alt">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Description</th>
+
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach var="ac" items="${ACList}">
+					<tr>
+						<td><a
+							href="<c:url value='/auction/view.do'>
+						   <c:param name='acId' value='${ac.auctionId}'/>
+				 		 </c:url>">${ac.acutionId}</a></td>
+						<td>${ac.username}</td>
+						<td>${ac.serviceId}</td>
+						<td>${ac.startPrice}</td>
+						<td>${ac.finalPrice}</td>
+						<td>${ac.endDate}</td>
+					</tr>
+				</c:forEach>
+					</tbody>
+				</table>
+			</div>
+		</div>
+			
 		</header>
 		<section class="tiles">
 			<article class="style1">
