@@ -52,16 +52,16 @@
 								<td>${user.languagePreference}</td>
 							</tr>
 							<tr>
-								<td>status</td>
-								<td>${user.status}</td>
-							</tr>
-							<tr>
 								<td>favoriteUser</td>
 								<td>${user.favoriteUser}</td>
 							</tr>
 							<tr>
 								<td>carInfo</td>
 								<td>${user.carInfo}</td>
+							</tr>
+							<tr>
+								<td>status</td>
+								<td>${user.status}</td>
 							</tr>
 						</tbody>
 					</table>

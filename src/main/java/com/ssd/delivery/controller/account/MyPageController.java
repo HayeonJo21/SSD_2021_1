@@ -39,7 +39,7 @@ public class MyPageController {
 		mav.addObject("ACList", ACList);
 		mav.addObject("user", account);
 		mav.setViewName("mypage");
-		System.out.println("########MYPAGE");
+	
 		return mav;
 	}
 	
