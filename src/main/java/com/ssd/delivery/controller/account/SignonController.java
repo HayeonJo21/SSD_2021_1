@@ -46,7 +46,6 @@ public class SignonController {
 			throws Exception {
 
 		AccountDTO account = delivery.findUser(username);
-		System.out.println("******로그인 컨트롤러*******");
 
 		if (account == null) { // 로그인 정보 불일치
 			model.addAttribute("data", new Message("가입되지 않은 아이디거나 잘못된 비밀번호 입니다.", "/"));
@@ -55,13 +54,11 @@ public class SignonController {
 
 		model.addAttribute("userSession", account);
 
-		// 로그인 하기 직전 페이지로 이동
-		// forwardAction(이전 페이지) 값은 GET 요청 시 interceptor에서 form으로 보낸 뒤 POST 요청 시에
-		// parameter로 받아오는 것
-		
-		if (forwardAction != null)
+		if (forwardAction != null) {
 			return "redirect:/" + forwardAction;
-		else
+		}
+		else {
 			return "redirect:/";
+		}
 	}
 }

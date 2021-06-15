@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!--
 	Phantom by HTML5 UP
 	html5up.net | @ajlkn
@@ -50,7 +51,16 @@
 			<h2>Menu</h2>
 			<ul>
 				<li><a href="/">메인</a></li>
-				<li><a href="/delivery/signon.do">로그인</a></li>
+				<c:choose>
+				<c:when test="${userSession.username ne null}">
+					<li><a href="/delivery/signoff.do">${userSession.username}(로그아웃)
+					</a></li>
+				</c:when>
+				<c:otherwise>
+					<li><a href="/delivery/signon.do">로그인</a></li>
+				</c:otherwise>
+
+			</c:choose>
 				<li><a href="/user/insertAccount.do">회원가입</a></li>
 				<li><a href="/auction/view.do">경매 </a></li>
 				<li><a href="/copurchasing/view.do">공동구매</a></li>
