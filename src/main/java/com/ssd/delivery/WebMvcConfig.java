@@ -26,6 +26,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
 		registry.addViewController("/user/mypage.do").setViewName("mypage");
 		registry.addViewController("/user/message.do").setViewName("message");
 		registry.addViewController("/user/newUserSubmitted.do").setViewName("index");
+		registry.addViewController("/delivery/signoff.do").setViewName("index");
 	}
 	
 	@Override

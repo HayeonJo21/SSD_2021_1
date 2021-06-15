@@ -45,7 +45,7 @@
 				<div class="form-group">
 					<label for="address" style="font-size: 24px">Address</label>
 					<input
-						type="text" style="width: 800px" class="form-control">
+						type="text" style="width: 800px" class="form-control" name="address">
 					<!-- 도로명주소 api 활용 -->
 					<input type="text" id="sample2_postcode" placeholder="우편번호">
 					<input type="button" class="button small"

@@ -32,7 +32,7 @@ public class AccountFormController {
 		account.setStatus(1);
 		delivery.insertAccount(account);
 		
-		return "index";
+		return "redirect:/";
 	}
 
 //	

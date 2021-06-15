@@ -8,7 +8,7 @@
 			<h1>
 				용달 서비스 공동구매<br />
 			</h1>
-			<p>진행중인 공동구매 목록입니다.</p>
+			<p>진행중인 공동구매 목록입니다.</p>defdf
 		</header>
 		<section class="tiles">
 			<article class="style1">
