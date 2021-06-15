@@ -27,9 +27,14 @@ public class MybatisMessageDao implements MessageDao {
 		messageMapper.deleteMessage(username);
 	}
 	
-	public MessageDTO getMessageByUsername(String username) throws DataAccessException {
-		return messageMapper.getMessageByUsername(username);
+	public List<MessageDTO> getMessageListByUsername(String username) throws DataAccessException {
+		return messageMapper.getMessageListByUsername(username);
 	}
+	
+	public List<MessageDTO> getMessageContentByUsername(String sender, String receiver) throws DataAccessException {
+		return messageMapper.getMessageContentByUsername(sender, receiver);
+	}
+	
 	
 	public List<MessageDTO> getMessageList() throws DataAccessException {
 		return messageMapper.getMessageList();

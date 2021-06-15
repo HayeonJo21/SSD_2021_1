@@ -16,18 +16,24 @@
       CONTENT = #{languagePreference}, 
       MESSAGEDATE = #{favouriteCategoryId}, 
       receiverUsername = #{receiverUsername}, 
-    WHERE USERNAME = #{senderUsername}
+    WHERE USERNAME = #{username}
 	</update>
 
 	<delete id="deleteMessage" parameterType="int">
 	DELETE FROM MESSAGE 
-	WHERE USERNAME = #{senderUsername}
+	WHERE USERNAME = #{username}
 	</delete>
 	
-	<select id="getMessageByUsername" resultType="MessageDTO">
-    SELECT * 
+	<select id="getMessageListByUsername" resultType="MessageDTO">
+    SELECT *
     FROM MESSAGE 
-    WHERE USERNAME = #{senderUsername}
+    WHERE USERNAME = #{username}
+	</select>
+	
+	<select id="getMessageContentByUsername" resultType="MessageDTO">
+    SELECT CONTENT, MESSGAEDATE
+    FROM MESSAGE 
+    WHERE USERNAME = #{username} AND RECEIVERUSERNAME = #{receiverUsername}
 	</select>
   
 	<select id="getMessageList" resultType="MessageDTO">

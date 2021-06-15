@@ -14,7 +14,9 @@ public interface MessageDao {
 	
 	void deleteMessage(String username) throws DataAccessException;
 	
-	MessageDTO getMessageByUsername(String username) throws DataAccessException;
+	List<MessageDTO> getMessageListByUsername(String username) throws DataAccessException;
+	
+	List<MessageDTO> getMessageContentByUsername(String sender, String receiver) throws DataAccessException;
 	
 	List<MessageDTO> getMessageList() throws DataAccessException;
 }
