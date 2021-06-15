@@ -4,11 +4,8 @@
 <%@ include file="IncludeTop.jsp"%>
 		<!-- Main -->
 		<div id="main">
-			<div style="float:right; padding-right:100px">
-				<a href="/delivery/admin/signon.do" class="button primary">&nbsp;&nbsp;&nbsp;&nbsp;Admin&nbsp;&nbsp;&nbsp;&nbsp;</a>
-			</div>
 			<div class="inner">
-				<h1>Login</h1>
+				<h1 style="color: purple">Administrator Login</h1>
 				<form action="/delivery/signon.do" method="POST">
 				<c:if test="${data ne null}">
 					<p style="color: red">${data.message}</p>
@@ -21,7 +18,6 @@
 				
 				<ul class="actions">
 					<li><button type="submit" >&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;</button></li>
-					<li><a href="/user/insertAccount.do" class="button">&nbsp;&nbsp;Register&nbsp;&nbsp;</a></li>
 				</ul></form>
 			</div>
 		

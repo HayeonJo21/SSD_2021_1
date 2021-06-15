@@ -24,7 +24,7 @@ import org.springframework.ui.Model;
 
 @Controller
 @SessionAttributes("userSession")
-@RequestMapping("/delivery/signon.do")
+@RequestMapping({"/delivery/signon.do", "delivery/admin/signon.do"})
 public class SignonController {
 
 	private DeliveryFacade delivery;
@@ -37,6 +37,11 @@ public class SignonController {
 	@GetMapping
 	public String showForm() {
 		return "login";
+	}
+	
+	@RequestMapping("/delivery/admin/signon.do")
+	public String showAdminForm() {
+		return "adminLogin";
 	}
 
 	@PostMapping
