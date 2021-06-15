@@ -42,12 +42,20 @@
 			<c:if test="${DMList ne null}">
 				<a class="list-group-item list-group-item-action active">현재 채팅중인
 					상대</a>
-				<c:forEach var="dm" items="${DMList}">
-					<a href="<c:url value='/message/view/content.do'>
+						<c:forEach var="dm" items="${DMList}">
+						<a href="<c:url value='/message/view/content.do'>
 						   <c:param name='receiver' value='${dm.receiverUsername}'/>
 				 		 </c:url>"
 						class="list-group-item list-group-item-action">${dm.receiverUsername}</a>
 				</c:forEach>
+				</c:if>
+			<c:if test="${RCList ne null}">
+			<c:forEach var="rc" items="${RCList}">
+						<a href="<c:url value='/message/view/content.do'>
+						   <c:param name='receiver' value='${rc.senderUsername}'/>
+				 		 </c:url>"
+						class="list-group-item list-group-item-action">${rc.senderUsername}</a>
+						</c:forEach>
 			</c:if>
 			<a href="/message/create.do"
 				class="list-group-item list-group-item-action active">새로운 메시지

@@ -16,6 +16,8 @@ public interface MessageDao {
 	
 	List<MessageDTO> getMessageListByUsername(String username) throws DataAccessException;
 	
+	List<MessageDTO> getMessageListByReceiverUsername(String receiver) throws DataAccessException;
+	
 	List<MessageDTO> getMessageContentByUsername(String sender, String receiver) throws DataAccessException;
 	
 	List<MessageDTO> getMessageList() throws DataAccessException;

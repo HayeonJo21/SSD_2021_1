@@ -83,9 +83,12 @@ public class ViewMessageController {
 		String username = account.getUsername();
 		ModelAndView mav = new ModelAndView();
 		
+		List<MessageDTO> messageReceiveList = delivery.getMessageListByReceiverUsername(username);
 		List<MessageDTO> messageList = delivery.getMessageListByUsername(username);
 		
 		mav.addObject("DMList", messageList);
+		mav.addObject("RCList", messageReceiveList);
+		mav.addObject("userSession", account);
 		mav.setViewName("messageList");
 				
 		return mav;
@@ -94,8 +97,6 @@ public class ViewMessageController {
 	@RequestMapping("/message/view/content.do")
 	public ModelAndView viewMessageContent(Model model, HttpSession session, @RequestParam("receiver") String receiver) throws Exception {
 		AccountDTO account = (AccountDTO)session.getAttribute("userSession");
-		
-		System.out.println("######MESSAGE");
 		
 		String username = account.getUsername();
 		ModelAndView mav = new ModelAndView();

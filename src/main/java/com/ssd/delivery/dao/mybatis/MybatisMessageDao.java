@@ -34,7 +34,10 @@ public class MybatisMessageDao implements MessageDao {
 	public List<MessageDTO> getMessageContentByUsername(String sender, String receiver) throws DataAccessException {
 		return messageMapper.getMessageContentByUsername(sender, receiver);
 	}
-	
+
+	public List<MessageDTO> getMessageListByReceiverUsername(String receiver) throws DataAccessException {
+		return messageMapper.getMessageListByReceiverUsername(receiver);
+	}
 	
 	public List<MessageDTO> getMessageList() throws DataAccessException {
 		return messageMapper.getMessageList();

@@ -30,6 +30,12 @@
     WHERE USERNAME = #{username}
 	</select>
 	
+	<select id="getMessageListByReceiverUsername" resultType="MessageDTO" parameterType="map">
+    SELECT *
+    FROM MESSAGE 
+    WHERE RECEIVERUSERNAME = #{receiver}
+	</select>
+	
 	<select id="getMessageContentByUsername" resultType="MessageDTO" parameterType="map">
     SELECT *
     FROM MESSAGE 
