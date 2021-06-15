@@ -3,7 +3,7 @@
 
 <mapper namespace="com.ssd.delivery.dao.mybatis.mapper.AccountMapper">
   <cache />
-  
+   
   <update id="updateAccount" parameterType="AccountDTO"> 
     UPDATE ACCOUNT SET 
       EMAIL = #{email},

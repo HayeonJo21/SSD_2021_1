@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 public class WebMvcConfig implements WebMvcConfigurer {
 
 	@Autowired
-	@Qualifier(value = "signonInterceptor")
+	@Qualifier(value = "signonInterceptor") 
 	private HandlerInterceptor interceptor;
 
 	@Override

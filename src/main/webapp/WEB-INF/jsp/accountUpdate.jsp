@@ -5,7 +5,7 @@
 <!-- Main -->
 <div id="main">
 	<div class="inner">
-		<h1>Update Info</h1>
+		<h1>Update Info</h1> 
 		<div class="col-sm-6 col-md-offset-3">
 			<form action="/user/mypage.do" method="post"> 
 				<div class="form-group">

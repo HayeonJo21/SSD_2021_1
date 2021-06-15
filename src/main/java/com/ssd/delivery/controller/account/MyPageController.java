@@ -24,7 +24,7 @@ public class MyPageController {
 		this.delivery= delivery;
 	}
    
-	@GetMapping
+	@GetMapping 
 	public ModelAndView viewMypage(Model model, HttpSession session) throws Exception {
 		AccountDTO account = (AccountDTO)session.getAttribute("userSession");
 		

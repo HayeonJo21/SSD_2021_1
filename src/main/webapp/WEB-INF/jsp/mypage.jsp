@@ -8,7 +8,7 @@
 		<h1>${user.username}님</h1>
 		<div>
 			<h3>회원정보</h3>
-			<div class="table-wrapper">
+			<div class="table-wrapper"> 
 				<table class="alt">
 					<thead>
 						<tr>

@@ -29,7 +29,7 @@ public class AccountFormController {
 	private DeliveryFacade delivery;
 	
 	@GetMapping
-	public String showForm() {
+	public String showForm() { 
 		return "register";
 	}
 	
