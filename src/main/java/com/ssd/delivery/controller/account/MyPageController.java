@@ -2,12 +2,13 @@ package com.ssd.delivery.controller.account;
 
 import java.util.*;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -43,5 +44,18 @@ public class MyPageController {
 		return mav;
 	}
 	
+	@PostMapping
+	public String onSubmit(HttpServletRequest request, HttpSession session,
+			@ModelAttribute("accountForm")  AccountDTO account,
+			BindingResult result) throws Exception  {
+		
+//		validator.validate(accountForm, result);
+//		if (result.hasErrors()) return "index";
+		
+		delivery.updateAccount(account);
+		
+		session.setAttribute("userSession", account);
+		return "redirect:/user/mypage.do";
+}
 	
 }

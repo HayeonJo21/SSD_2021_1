@@ -23,7 +23,7 @@ import com.ssd.delivery.service.Message;
 //등록, 수정 둘 다 이곳에서
 @Controller
 @SessionAttributes("userSession")
-@RequestMapping({"/user/insertAccount.do","/user/updateAccount.do", "/user/newUserSubmitted.do"})
+@RequestMapping({"/user/insertAccount.do","/user/newUserSubmitted.do"})
 public class AccountFormController {
 	@Autowired
 	private DeliveryFacade delivery;
@@ -87,7 +87,7 @@ public class AccountFormController {
 //	
 
 //	
-	@RequestMapping(method=RequestMethod.POST)
+	@PostMapping
 	public String onSubmit(HttpServletRequest request, HttpSession session,
 			@ModelAttribute("accountForm")  AccountDTO account,
 			BindingResult result) throws Exception  {
@@ -105,6 +105,7 @@ public class AccountFormController {
 			else {
 				delivery.updateAccount(account);
 				
+				session.setAttribute("userSession", account);
 				return "redirect:/user/mypage.do";
 			}
 		}

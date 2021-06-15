@@ -12,7 +12,6 @@
       ADDRESS = #{address},
       PHONE = #{phone},
       LANGUAGEPREFERENCE = #{languagePreference},
-      STATUS = #{status},
       FAVORITEUSER = #{favoriteUser},
       CARINFO = #{carInfo} 
     WHERE USERNAME = #{username}

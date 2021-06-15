@@ -22,10 +22,6 @@
 							<td>${user.username}</td> 
 						</tr>
 						<tr>
-							<td>password</td>
-							<td>${user.password}</td>
-						</tr>
-						<tr>
 							<td>email</td>
 							<td>${user.email}</td>
 						</tr>
