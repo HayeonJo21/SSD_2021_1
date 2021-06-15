@@ -15,7 +15,6 @@
 			
 			
 			<li><a href="/auction/insert">경매등록 </a></li>
-			<li><a href="/auction/list">auctionlist </a></li>
 			
 			<div class="table-wrapper">
 				<table class="alt">
