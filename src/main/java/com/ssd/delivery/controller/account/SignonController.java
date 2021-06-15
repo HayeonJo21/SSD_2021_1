@@ -47,7 +47,7 @@ public class SignonController {
 
 		AccountDTO account = delivery.findUser(username);
 
-		if (account == null) { // 로그인 정보 불일치
+		if (account == null || !account.getPassword().equals(password)) { // 로그인 정보 불일치
 			model.addAttribute("data", new Message("가입되지 않은 아이디거나 잘못된 비밀번호 입니다.", "/"));
 			return "login";
 		}
