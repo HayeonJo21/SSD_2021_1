@@ -72,7 +72,6 @@ public class ViewMessageController {
 		mav.setViewName("messageList");
 				
 		return mav;
-
 	
 	}
 	
