@@ -61,16 +61,18 @@
 						<input type="text" name="loadage" id="loadage"
 							value="${delivery.loadage }" placeholder="총 적재량" />
 					</div>
-
-				 <div class="col-12">
-				<ul class="actions">
-					<li><input type="submit" value="Submit" class="primary" /></li>
-					<li><input type="reset" value="Reset" /></li>
-				</ul>
-			</div> 
+					<br>
+					<br>
+					<div class="col-12">
+						<ul class="actions">
+							<li><input type="submit" value="Submit" class="primary" /></li>
+							<li><input type="reset" value="Reset" /></li>
+						</ul>
+					</div>
 				</div>
+			</div>
 		</form>
 	</div>
 </div>
-</div>
+
 <%@ include file="IncludeBottom.jsp"%>

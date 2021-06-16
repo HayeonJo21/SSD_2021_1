@@ -26,7 +26,7 @@
 						<c:forEach var="del" items="${delivery}">
 							<tr>
 								<td><a
-									href="<c:url value='/delivery/detail/view.do'>
+									href="<c:url value='/delivery/detailView.do'>
 						   <c:param name='deliveryId' value='${del.deliveryId}'/>
 				 		 </c:url>">${del.deliveryId}</a></td>
 								<td>${del.serviceDate}</td>

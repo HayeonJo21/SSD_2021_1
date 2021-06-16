@@ -17,7 +17,7 @@ import com.ssd.delivery.service.DeliveryFacade;
 import com.ssd.delivery.service.DeliveryImpl;
 
 @Controller
-@RequestMapping("/delivery/detail/view.do")
+@RequestMapping("/delivery/detailView.do")
 public class ViewDeliveryController {
 	@Autowired
 	private DeliveryFacade delivery;
