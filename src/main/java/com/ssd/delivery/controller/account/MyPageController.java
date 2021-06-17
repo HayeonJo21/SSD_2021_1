@@ -16,7 +16,7 @@ import com.ssd.delivery.domain.*;
 import com.ssd.delivery.service.DeliveryFacade;
 
 @Controller
-@RequestMapping("/user/mypage.do")
+@RequestMapping("/delivery/mypage.do")
 public class MyPageController { 
 	private DeliveryFacade delivery;
 	@Autowired
