@@ -36,6 +36,8 @@ public class AddBidderController {
 		return new Cart();
 	}
 	
+	
+	
 //	@RequestMapping("/shop/addItemToCart.do")
 //	public ModelAndView handleRequest(
 //			@RequestParam("workingItemId") String workingItemId,
