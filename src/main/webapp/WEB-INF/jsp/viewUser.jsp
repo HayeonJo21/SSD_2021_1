@@ -6,6 +6,13 @@
 <div id="main">
 	<div class="inner"> 
 		<h1>${user.username}님</h1>
+		
+		
+		
+		
+		
+		
+		<a class="button" href="/user/favoriteUser.do?username=${user.username}">즐겨찾기 등록</a>
 		<div>
 			<h3>회원정보</h3>
 			<div class="table-wrapper"> 

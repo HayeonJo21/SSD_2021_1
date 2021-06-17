@@ -62,6 +62,31 @@
 						<jsp:include page="message.jsp" flush="true" />
 					</div> --%>
 		</div>
+		
+		<div>
+			<h3>즐겨찾기</h3>
+			<div class="table-wrapper">
+				<table class="alt">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Description</th>
+
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach var="fav" items="${favList}">
+							<tr>
+								<td>${fav.username}</a></td>
+								<td>${fav.favoriteUsername}</td>
+								<td>${fav.tradeCount}</td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		
 		<div>
 			<h3>참여한 공동구매 내역</h3>
 			<div class="table-wrapper">

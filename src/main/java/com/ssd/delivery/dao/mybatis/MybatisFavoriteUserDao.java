@@ -27,7 +27,11 @@ public class MybatisFavoriteUserDao implements FavoriteUserDao{
 		favoriteUserMapper.deleteFU(username);
 	}
 	
-	public FavoriteUserDTO getFUByUsername(String username) throws DataAccessException {
+//	public FavoriteUserDTO getFUByUsername(String username) throws DataAccessException {
+//		return favoriteUserMapper.getFUByUsername(username);
+//	}
+	
+	public List<FavoriteUserDTO> getFUByUsername(String username) throws DataAccessException {
 		return favoriteUserMapper.getFUByUsername(username);
 	}
 	

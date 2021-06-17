@@ -25,7 +25,7 @@
 						</tr>
 						<tr>
 							<td>Poster</td>
-							<td> ${cp.username}</td>
+							<td> <a href="/user/view?username=${cp.username}">${cp.username}</a></td>
 							<td></td>
 						</tr>
 						<tr>

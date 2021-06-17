@@ -14,7 +14,7 @@ public interface FavoriteUserDao {
 	
 	void deleteFU(String username) throws DataAccessException;
 	
-	FavoriteUserDTO getFUByUsername(String username) throws DataAccessException;
+	List<FavoriteUserDTO> getFUByUsername(String username) throws DataAccessException;
 	
 	List<FavoriteUserDTO> getFUList() throws DataAccessException;
 }

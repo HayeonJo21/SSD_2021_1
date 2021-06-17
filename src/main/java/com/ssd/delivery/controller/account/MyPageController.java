@@ -34,10 +34,12 @@ public class MyPageController {
 		List<CoPurchasingDTO> CPList = delivery.getCPListByUsername(username);
 		List<AuctionDTO> ACList = delivery.getAuctionByUsername(username);
 		List<DeliveryDTO> DelList = delivery.getDeliveryByUsername(username);
+		List<FavoriteUserDTO> favList = delivery.getFUByUsername(username);
 		
 		mav.addObject("CPList", CPList);
 		mav.addObject("DelList", DelList);
 		mav.addObject("ACList", ACList);
+		mav.addObject("favList", favList);
 		mav.addObject("user", account);
 		mav.setViewName("mypage");
 	

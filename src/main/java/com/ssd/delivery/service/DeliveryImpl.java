@@ -170,7 +170,7 @@ public class DeliveryImpl implements DeliveryFacade {
 		fuDao.deleteFU(username);
 	}
 
-	public FavoriteUserDTO getFUByUsername(String username) {
+	public List<FavoriteUserDTO> getFUByUsername(String username) {
 		return fuDao.getFUByUsername(username);
 	}
 

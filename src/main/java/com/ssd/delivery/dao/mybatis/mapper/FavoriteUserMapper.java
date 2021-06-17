@@ -14,7 +14,7 @@ public interface FavoriteUserMapper {
 	
 	void deleteFU(String username);
 	
-	FavoriteUserDTO getFUByUsername(String username);
+	List<FavoriteUserDTO> getFUByUsername(String username);
 	
 	List<FavoriteUserDTO> getFUList();
 }

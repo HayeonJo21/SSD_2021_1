@@ -23,7 +23,7 @@
 				<tbody>
 					<tr>
 						<td>서비스 제공자</td>
-						<td>${delivery.username}</td>
+						<td><a href="/user/view?username=${delivery.username}">${delivery.username}</a></td>
 
 					</tr>
 					<tr>
