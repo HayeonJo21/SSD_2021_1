@@ -1,4 +1,4 @@
-package com.ssd.delivery.controller.account;
+package com.ssd.delivery.controller.auction;
 
 import java.util.List;
 
@@ -31,7 +31,7 @@ import org.springframework.ui.Model;
 
 @Controller
 @SessionAttributes("userSession")
-@RequestMapping({"/admin/auction.do", "/admin/auction/delete.do"})
+@RequestMapping("/admin/auction.do")
 public class AdminAuctionController {
 
 	private DeliveryFacade delivery;
@@ -55,12 +55,5 @@ public class AdminAuctionController {
 		return mav;
 	}
 	
-	@RequestMapping("/admin/auction/delete.do")
-	public String adminAuctionDelete(Model model, HttpSession session, @RequestParam("auctionId") int auctionId) throws Exception {
-		
-		delivery.deleteAuction(auctionId);
-		
-		return "redirect:/";
-	}
 	
 }

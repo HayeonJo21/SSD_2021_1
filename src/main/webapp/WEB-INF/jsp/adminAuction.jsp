@@ -71,8 +71,8 @@
 				 		 <td>${ac.username }</td>
 								<td>${ac.serviceDate}</td>
 								<td><a
-									href="<c:url value='/delivery/detailView.do'>
-						   <c:param name='auctionId' value='${ac.auctionId}'/>
+									href="<c:url value='/auction/view.do'>
+						   <c:param name='acId' value='${ac.auctionId}'/>
 				 		 </c:url>" class="button">&nbsp;&nbsp;&nbsp;&nbsp;Detail&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
 								<td><a
 									href="<c:url value='/admin/auction/delete.do'>

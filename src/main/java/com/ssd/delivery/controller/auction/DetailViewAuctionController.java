@@ -18,6 +18,7 @@ import com.ssd.delivery.service.PetStoreFacade;
  * @modified-by Changsup Park
  */
 @Controller
+@RequestMapping("/auction/view.do")
 public class DetailViewAuctionController { 
 	@Autowired
 	private DeliveryFacade delivery;
@@ -27,7 +28,7 @@ public class DetailViewAuctionController {
 		this.delivery = delivery;
 	}
 	
-	@RequestMapping("/auction/view.do")
+	@GetMapping
 	public String handleRequest(
 			@RequestParam("acId") int auctionId,
 			ModelMap model) throws Exception {
