@@ -5,7 +5,6 @@
 <div id="main">
 	<div class="inner">
 		<h1>CoPurchasing</h1>
-		<span class="image main"><img src="images/ikea.jpg" alt="" /></span>
 		<section>
 			<h1 style="font-size: 40px">공동구매 상세내역</h1>
 			<h1 style="font-size: 30px">공동구매 ID : ${cp.coPurchasingId}</h1>

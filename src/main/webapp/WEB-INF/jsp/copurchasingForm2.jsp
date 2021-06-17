@@ -20,7 +20,7 @@
 
 				<div class="col-12">
 					<label for="demo-name">공동구매 상품</label> <input type="hidden"
-						name="deliveryId" id="deliveryId" value='${delivery.deliveryId}'/>
+						name="deliveryId" id="deliveryId" value='${delivery.deliveryId}' placeholder="${delivery.deliveryId}"/>
 						<div class="col-lg-10">
 	        	<p class="form-control-static">${delivery.deliveryId}</p> 
 	        </div>
