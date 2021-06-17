@@ -45,6 +45,7 @@
 								name="content"></textarea>
 						</div>
 						<input type="submit" value="Send Message" class="primary" />
+						</div>
 				</form>
 
 			</div>
