@@ -54,10 +54,10 @@ public class AdminSignonController {
 		model.addAttribute("userSession", account);
 
 		if (forwardAction != null) {
-			return "adminLogin" + forwardAction;
+			return "redirect:/admin/main.do" + forwardAction;
 		}
 		else {
-			return "adminMain";
+			return "redirect:/admin/main.do";
 		}
 	}
 }
