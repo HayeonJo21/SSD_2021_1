@@ -113,7 +113,7 @@ public class DeliveryImpl implements DeliveryFacade {
 		cpDao.updateCP(CP);
 	}
 
-	public void deleteCP(String CPId) {
+	public void deleteCP(int CPId) {
 		cpDao.deleteCP(CPId);
 	}
 	public List<CoPurchasingDTO> getCPList() {

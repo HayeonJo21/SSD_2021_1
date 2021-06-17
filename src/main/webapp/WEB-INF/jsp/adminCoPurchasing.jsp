@@ -45,23 +45,43 @@
 			<h1>
 				용달의 민족 <br /> Administrator Page <br />
 			</h1>
-			<p>관리자 페이지 입니다.</p>
+			<p>관리자 공동구매 관리 페이지 입니다.</p>
 		</header>
 		<br />
 		<div class="inner">
-		<h3><a href="/admin/auction.do" class="logo"> <span class="symbol"></span><span class="title">* 경매 관리</span></a></h3>
+		<h3>* 공동구매 관리</h3>
 		</div>
-		<br /> <br /> <br />
+<div class="table-wrapper">
+				<table class="alt">
+					<thead>
+						<tr>
+							<th>CoPurchasing ID</th>
+							<th>Delivery Id</th>
+							<th>CoPurchasing Promoter</th>
+							<th>Show Detail</th>
+							<th>Remove</th>
 
-		<div class="inner">
-		<h3><a href="/admin/delivery.do" class="logo"> <span class="symbol"></span><span class="title">* 회원간 용달 거래 관리</span></a></h3>
-		</div>
-
-		<br /> <br /> <br />
-		<div class="inner">
-		<h3><a href="/admin/coPurchasing.do" class="logo"> <span class="symbol"></span><span class="title">* 공동구매 관리</span></a></h3>
-		</div>
-
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach var="cp" items="${CPList}">
+							<tr>
+								<td>${cp.coPurchasingId}</td>
+				 		 <td>${cp.delivery }</td>
+								<td>${cp.username}</td>
+								<td><a
+									href="<c:url value='/coPurchasing/view.do'>
+						   <c:param name='cpId' value='${cp.coPurchasingId}'/>
+				 		 </c:url>" class="button">&nbsp;&nbsp;&nbsp;&nbsp;Detail&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
+								<td><a
+									href="<c:url value='/admin/coPurchasing/delete.do'>
+						   <c:param name='cpId' value='${cp.coPurchasingId}'/>
+				 		 </c:url>" class="button">&nbsp;&nbsp;&nbsp;&nbsp;Remove&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</div>
 		<br /> <br /> <br />
 	</div>
 </div>

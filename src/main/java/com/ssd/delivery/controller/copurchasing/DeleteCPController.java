@@ -2,26 +2,33 @@ package com.ssd.delivery.controller.copurchasing;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
 
-import com.ssd.delivery.domain.*;
-import com.ssd.delivery.service.DeliveryImpl;
+import com.ssd.delivery.service.DeliveryFacade;
 
 @Controller
+@RequestMapping("/admin/coPurchasing/delete.do")
 public class DeleteCPController { 
 
+	private DeliveryFacade delivery;
+
 	@Autowired
-	private DeliveryImpl deliveryImpl;
+	public void setDelivery(DeliveryFacade delivery) {
+		this.delivery = delivery;
+	}
 	
-	@RequestMapping("/coPurchasing/delete")
-	public ModelAndView handleRequest(
-			@RequestParam("CPId") String CPId) throws Exception {
-		deliveryImpl.deleteCP(CPId);
-		List<CoPurchasingDTO> CPList = deliveryImpl.getCPList();
-		return new ModelAndView("CoPurchasing", "copurchasing", CPList);
+	@GetMapping
+	public String admincoPurchasingDelete(Model model, HttpSession session, @RequestParam("cpId") int cpId) throws Exception {
+		
+		delivery.deleteCP(cpId);
+		
+		return "redirect:/admin/coPurchasing.do";
 	}
 }

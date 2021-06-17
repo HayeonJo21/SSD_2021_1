@@ -32,7 +32,7 @@ public class MybatisCoPurchasingDao implements CoPurchasingDao {
 	}
 
 	@Override
-	public void deleteCP(String CPId) throws DataAccessException {
+	public void deleteCP(int CPId) throws DataAccessException {
 		CPMapper.deleteCP(CPId);
 		
 	}

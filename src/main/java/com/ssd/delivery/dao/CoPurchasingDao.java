@@ -11,7 +11,7 @@ public interface CoPurchasingDao {
 	
 	void updateCP(CoPurchasingDTO CP) throws DataAccessException;
 	
-	void deleteCP(String CPId) throws DataAccessException;
+	void deleteCP(int CPId) throws DataAccessException;
 	
 	List<CoPurchasingDTO> getCPList() throws DataAccessException;
 	

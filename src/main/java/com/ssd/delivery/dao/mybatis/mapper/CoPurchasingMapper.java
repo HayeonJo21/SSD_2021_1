@@ -33,7 +33,7 @@ public interface CoPurchasingMapper {
 	
 	void updateCP(CoPurchasingDTO CP);
 	
-	void deleteCP(String CPId);
+	void deleteCP(int CPId);
 	
 	List<CoPurchasingDTO> getCPList();
 	

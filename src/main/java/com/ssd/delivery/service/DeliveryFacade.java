@@ -50,7 +50,7 @@ public interface DeliveryFacade {
 
 	void updateCP(CoPurchasingDTO CP);
 
-	void deleteCP(String CPId);
+	void deleteCP(int cpId);
 
 	List<CoPurchasingDTO> getCPList();
 

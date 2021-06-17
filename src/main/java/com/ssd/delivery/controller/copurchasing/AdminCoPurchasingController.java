@@ -1,4 +1,4 @@
-package com.ssd.delivery.controller.account;
+package com.ssd.delivery.controller.copurchasing;
 
 import java.util.List;
 
@@ -30,7 +30,6 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.ui.Model;
 
 @Controller
-@SessionAttributes("userSession")
 @RequestMapping("/admin/coPurchasing.do")
 public class AdminCoPurchasingController {
 

@@ -29,7 +29,7 @@ public class DeleteAuctionController {
 	
 	@GetMapping
 	public String adminAuctionDelete(Model model, HttpSession session, @RequestParam("auctionId") int auctionId) throws Exception {
-		System.out.println("경매 삭제!!!!");
+		
 		delivery.deleteAuction(auctionId);
 		
 		return "redirect:/admin/auction.do";

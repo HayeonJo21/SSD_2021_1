@@ -45,7 +45,7 @@
 			<h1>
 				용달의 민족 <br /> Administrator Page <br />
 			</h1>
-			<p>관리자 페이지 입니다.</p>
+			<p>관리자 경매 관리 페이지 입니다.</p>
 		</header>
 		<br />
 		<div class="inner">
@@ -60,7 +60,7 @@
 							<th>Service Provider</th>
 							<th>Service Date</th>
 							<th>Show Detail</th>
-							<th>Action</th>
+							<th>Remove</th>
 
 						</tr>
 					</thead>
