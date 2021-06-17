@@ -31,11 +31,6 @@ public class DeleteUserController {
 			return new AccountForm();
 	}
 	
-	@RequestMapping(method = RequestMethod.GET)
-	public String showForm() {
-		return formViewName;
-	}
-	
 	@RequestMapping(method = RequestMethod.POST)
 	public String deleteAccount(@RequestParam("account.password") String password, 
 			 HttpSession session) throws Exception {

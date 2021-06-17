@@ -8,8 +8,7 @@
 		<span class="image main"><img src="images/ikea.jpg" alt="" /></span>
 		<section>
 			<h1 style="font-size: 40px">공동구매 상세내역</h1>
-			<!--  <h2>공동구매 ID : ${coPurchasingLineItem.coPurchasingId}</h2> -->
-			<h1 style="font-size: 30px">공동구매 ID : IK330</h1>
+			<h1 style="font-size: 30px">공동구매 ID : ${cp.coPurchasingId}</h1>
 			<div class="table-wrapper">
 				<table>
 					<thead>
@@ -22,48 +21,43 @@
 					<tbody>
 						<tr>
 							<td>ServiceDate</td>
-							<td>21.04.16</td>
+							<td> ${del.serviceDate }</td>
 							<td></td>
 						</tr>
 						<tr>
 							<td>Poster</td>
-							<td>광명Love</td>
+							<td> ${cp.username}</td>
 							<td></td>
 						</tr>
 						<tr>
 							<td>Destination</td>
-							<td>광명동</td>
-							<td>수궁동 부근까지 가능</td>
+							<td> ${del.address2 }</td>
+							<td></td>
 						</tr>
 						<tr>
 							<td>Price</td>
-							<td>56000원</td>
-							<td>인당 14000원</td>
+							<td> ${del.price }</td>
+							<td>인당 ${cp.unitCost }</td>
 						</tr>
 						<tr>
 							<td>MaxNumberOfPurchaser</td>
-							<td>4명</td>
+							<td> ${cp.maxNumberOfPurchaser }</td>
 							<td></td>
 						</tr>
 						<tr>
 							<td>Width</td>
-							<td>2m</td>
+							<td> ${delivery.width}m</td>
 							<td></td>
 						</tr>
 						<tr>
 							<td>Height</td>
-							<td>1.2m</td>
+							<td> ${delivery.height }m</td>
 							<td></td>
 						</tr>
 						<tr>
 							<td>Weight</td>
-							<td>50kg</td>
+							<td> ${delivery.weight }kg</td>
 							<td></td>
-						</tr>
-						<tr>
-							<td>Loadage</td>
-							<td>10개</td>
-							<td>인당 3개 이하</td>
 						</tr>
 					</tbody>
 				</table>
