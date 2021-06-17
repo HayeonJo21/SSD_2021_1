@@ -57,16 +57,16 @@
 			</ul>
 		</nav>
 
-
+		<div>
 
 		<!-- Main -->
 		<div id="main">
 			<div class="inner">
 				<h1>출발지: 광명 이케아(IKEA)</h1>
-				<h2>게시자: username</h2>
+				<h2>${auction.username} </h2>
 				<h2>남은시간: (endDate - 현재 시간) <a href="index.jsp" class="button primary">낙찰</a></h2>
 				<span class="image main"><img src="images/pic1.png" alt="" /></span>
-				<h3>시작가: 20,000 (KRW)</h3>
+				<h3>시작가: ${auction.startPrice} (KRW)</h3>
 				<h3>입찰단위: 500 (KRW)</h3>
 				<br />
 				<h3>입찰 현황</h3>

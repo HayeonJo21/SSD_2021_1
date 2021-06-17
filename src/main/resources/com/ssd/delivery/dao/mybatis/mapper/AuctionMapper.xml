@@ -42,7 +42,7 @@
 	
 	<select id="getAuctionById" resultType="AuctionDTO">
     select * from auction
-    where  = #{username}
+    where  auctionId = #{auctionId}
 	</select>
 	
 	<select id="getAuctionByUsername" resultType="AuctionDTO">
