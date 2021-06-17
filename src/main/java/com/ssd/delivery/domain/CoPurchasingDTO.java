@@ -16,7 +16,7 @@ public class CoPurchasingDTO implements Serializable {
 	private int price;
 	private String username;
 	private int maxNumberofPurchaser;
-	private DeliveryDTO delivery;
+	private int deliveryId;
 	private String note;
 	
 	public CoPurchasingDTO() {
@@ -24,24 +24,24 @@ public class CoPurchasingDTO implements Serializable {
 	}
 	
 	public CoPurchasingDTO(int coPurchasingId, int unitCost, int price, String username, int maxNumberofPurchaser,
-			DeliveryDTO delivery, String note) {
+			int delivery, String note) {
 		super();
 		this.coPurchasingId = coPurchasingId;
 		this.unitCost = unitCost;
 		this.price = price;
 		this.username = username;
 		this.maxNumberofPurchaser = maxNumberofPurchaser;
-		this.delivery = delivery;
+		this.deliveryId = delivery;
 		this.note = note;
 	}
 	
 	//update 생성자
-	public CoPurchasingDTO(int unitCost, int price, int maxNumberofPurchaser, DeliveryDTO delivery, String note) {
+	public CoPurchasingDTO(int unitCost, int price, int maxNumberofPurchaser, int delivery, String note) {
 		super();
 		this.unitCost = unitCost;
 		this.price = price;
 		this.maxNumberofPurchaser = maxNumberofPurchaser;
-		this.delivery = delivery;
+		this.deliveryId = delivery;
 		this.note = note;
 	}
 
@@ -76,11 +76,11 @@ public class CoPurchasingDTO implements Serializable {
 	public void setMaxNumberofPurchaser(int maxNumberofPurchaser) {
 		this.maxNumberofPurchaser = maxNumberofPurchaser;
 	}
-	public DeliveryDTO getDelivery() {
-		return delivery;
+	public int getDelivery() {
+		return deliveryId;
 	}
-	public void setDelivery(DeliveryDTO delivery) {
-		this.delivery = delivery;
+	public void setDelivery(int delivery) {
+		this.deliveryId = delivery;
 	}
 	
 	
