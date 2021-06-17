@@ -1,49 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!--
-	Phantom by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<!DOCTYPE HTML>
-<html>
-<head>
-<title>용달의 민족 - 경매상세</title>
-<meta charset="utf-8" />
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, user-scalable=no" />
-<!-- Bootstrap -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-	crossorigin="anonymous">
-<link rel="stylesheet" href="assets/css/main.css" />
-<noscript>
-	<link rel="stylesheet" href="assets/css/noscript.css" />
-</noscript>
-</head>
-<body class="is-preload">
-	<!-- Wrapper -->
-	<div id="wrapper">
-
-		<!-- Header -->
-		<header id="header">
-			<div class="inner">
-				<!-- Logo -->
-				<a href="mainpage.jsp" class="logo"> <span class="symbol"><img
-						src="images/logoicon.svg" alt="" /></span><span class="title">용달의
-						민족</span>
-				</a>
-
-				<!-- Nav -->
-				<nav>
-					<ul>
-						<li><a href="#menu">Menu</a></li>
-					</ul>
-				</nav>
-
-			</div>
-		</header>
+<%@ include file="IncludeTop.jsp"%>
 
 		<!-- Menu -->
 		<nav id="menu">
