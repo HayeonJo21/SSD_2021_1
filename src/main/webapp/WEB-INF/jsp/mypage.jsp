@@ -82,7 +82,7 @@
 				 		 </c:url>">${cp.coPurchasingId}</a></td>
 								<td>${cp.username}</td>
 								<td>${cp.note}</td>
-								<td>${cp.unitcost}</td>
+								<td>${cp.unitCost}</td>
 								<td>${cp.price}</td>
 							</tr>
 						</c:forEach>
