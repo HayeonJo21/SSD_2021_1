@@ -71,7 +71,7 @@ public interface DeliveryFacade {
 
 	List<DeliveryDTO> getDeliveryList();
 	
-	DeliveryDTO isExistingCP();
+	List<DeliveryDTO> isExistingCP();
 
 	// FavoriteUser
 	void insertFU(FavoriteUserDTO favoriteUser);

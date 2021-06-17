@@ -67,8 +67,16 @@
 						<tbody>
 							<c:forEach var="cp" items="${CPList}">
 								<tr>
-									<td>${cp.coPurchasingId}</td>
-									<td>${cp.delivery }</td>
+									<td>
+									${cp.coPurchasingId}</td>
+									<td>
+									<!--<c:forEach var="Ncp" items="${NoCPList}">
+									<c:if test="${cp.delivery eq Ncp.delivery}">
+									<b style="color:red">존재하지 않는 용달 서비스 이용, <br/> 삭제 요망</b><br/>
+									</c:if>-->
+									${cp.delivery }
+									<!--</c:forEach>-->
+									</td>
 									<td>${cp.username}</td>
 									<td><a
 										href="<c:url value='/coPurchasing/detailView.do'>
@@ -81,7 +89,8 @@
 				 		 </c:url>"
 										class="button">&nbsp;&nbsp;&nbsp;&nbsp;Remove&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
 								</tr>
-							</c:forEach>
+								</c:forEach>
+							
 						</tbody>
 					</table>
 				</div>

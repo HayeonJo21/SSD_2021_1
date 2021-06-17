@@ -42,12 +42,24 @@ public class AdminCoPurchasingController {
 
 	@GetMapping
 	public ModelAndView adminCPView(Model model, HttpSession session) throws Exception {
+		List<DeliveryDTO> del = delivery.isExistingCP();
 		
 		ModelAndView mav = new ModelAndView();
 		
+		List<CoPurchasingDTO> NoExistList = delivery.getCPList();
 		List<CoPurchasingDTO> CPList = delivery.getCPList();
 		
+	
+		for (int i = 0; i < del.size(); i++) {
+			for (int j = 0; j < CPList.size() - 1; j++) {
+				if (del.get(i).getDeliveryId() == CPList.get(j).getDelivery()) {
+					NoExistList.remove(j);
+				}
+			}
+		}
 		
+		
+		mav.addObject("NoCPList", NoExistList);
 		mav.addObject("CPList", CPList);
 		mav.setViewName("adminCoPurchasing");
 	

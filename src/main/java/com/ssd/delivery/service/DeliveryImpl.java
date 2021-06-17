@@ -145,7 +145,7 @@ public class DeliveryImpl implements DeliveryFacade {
 		return deliveryDao.getDeliveryById(deliveryId);
 	}
 	
-	public DeliveryDTO isExistingCP() {
+	public List<DeliveryDTO> isExistingCP() {
 		return deliveryDao.isExistingCP();
 	}
 

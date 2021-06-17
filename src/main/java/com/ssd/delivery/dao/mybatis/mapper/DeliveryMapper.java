@@ -16,7 +16,7 @@ public interface DeliveryMapper {
 	
 	DeliveryDTO getDeliveryById(int deliveryId);
 	
-	DeliveryDTO isExistingCP();
+	List<DeliveryDTO> isExistingCP();
 	
 	List<DeliveryDTO> getDeliveryByUsername(String username);
 	

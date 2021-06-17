@@ -20,6 +20,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.ssd.delivery.domain.*;
 import com.ssd.delivery.service.DeliveryFacade;
 import com.ssd.delivery.service.DeliveryImpl;
+import com.ssd.delivery.service.Message;
 
 @Controller
 @SessionAttributes("userSession")
@@ -31,10 +32,11 @@ public class InsertCPController {
 	@GetMapping
 	public ModelAndView insert2(@RequestParam("deliveryId") int deliveryId) throws Exception {
 
-		DeliveryDTO del = delivery.getDeliveryById(deliveryId);
+		DeliveryDTO delItem = delivery.getDeliveryById(deliveryId);
+		
 		ModelAndView mav = new ModelAndView();
 
-		mav.addObject("delivery", del);
+		mav.addObject("delivery", delItem);
 		mav.setViewName("copurchasingForm2");
 
 		return mav;

@@ -1,5 +1,7 @@
 package com.ssd.delivery.controller.delivery;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,13 +30,21 @@ public class ViewDeliveryController {
 		AccountDTO account = (AccountDTO)session.getAttribute("userSession");
 		
 		DeliveryDTO deliveryItem = delivery.getDeliveryById(deliveryId);
-		DeliveryDTO del = delivery.isExistingCP();
+		List<DeliveryDTO> del = delivery.isExistingCP();
 		
 		ModelAndView mav = new ModelAndView();
 		
-		if(del != null && del.getDeliveryId() == deliveryId) {
-			Message msg = new Message("공동구매로 진행중인 용달 서비스 입니다.", "/");
-			mav.addObject("msg", msg);
+		if(del != null) {
+			for(int i = 0; i < del.size(); i++) {
+				if(del.get(i).getDeliveryId() == deliveryId) {
+					Message msg = new Message("공동구매로 진행중인 용달 서비스 입니다.", "/");
+					mav.addObject("msg", msg);
+					mav.addObject("delivery", deliveryItem);
+					mav.addObject("userSession", account);
+					mav.setViewName("deliveryDetail");
+					break;
+				}
+			}
 			mav.addObject("delivery", deliveryItem);
 			mav.addObject("userSession", account);
 			mav.setViewName("deliveryDetail");

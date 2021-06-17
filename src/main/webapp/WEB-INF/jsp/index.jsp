@@ -29,7 +29,7 @@
 					</a>
 	<br /><div class="col-6 col-12-medium">
 		<ul class="actions">
-			<li><span class="button primary">경매 입장가능</span></li>
+			<li><span class="button">경매 입장가능</span></li>
 		</ul></div>
 	</article>
 	</c:forEach>
@@ -49,7 +49,7 @@
 					<h2>출발지: ${del.address1 }</h2>
 					<div class="content">
 						<p>
-							출발: ${del.address1 } > 도착: ${del.address2 }. <br /> 가격:
+							출발: ${del.address1 } > 도착: ${del.address2 } <br /> 가격:
 							${del.price}
 						</p>
 					</div>

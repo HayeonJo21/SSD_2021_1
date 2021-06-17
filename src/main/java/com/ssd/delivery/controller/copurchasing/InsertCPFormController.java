@@ -20,6 +20,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.ssd.delivery.domain.*;
 import com.ssd.delivery.service.DeliveryFacade;
 import com.ssd.delivery.service.DeliveryImpl;
+import com.ssd.delivery.service.Message;
 
 @Controller
 @SessionAttributes("userSession")
@@ -28,10 +29,21 @@ public class InsertCPFormController {
 	@Autowired
 	private DeliveryFacade delivery;
 
+	@SuppressWarnings("null")
 	@GetMapping
 	public ModelAndView showInsertForm() {
 		List<DeliveryDTO> deliveryList = delivery.getDeliveryList();
+		List<DeliveryDTO> del = delivery.isExistingCP();
+
 		ModelAndView mav = new ModelAndView();
+
+		for (int i = 0; i < del.size(); i++) {
+			for (int j = 0; j < deliveryList.size(); j++) {
+				if (del.get(i).getDeliveryId() == deliveryList.get(j).getDeliveryId()) {
+					deliveryList.remove(j);
+				}
+			}
+		}
 
 		mav.addObject("delList", deliveryList);
 		mav.setViewName("copurchasingForm");
