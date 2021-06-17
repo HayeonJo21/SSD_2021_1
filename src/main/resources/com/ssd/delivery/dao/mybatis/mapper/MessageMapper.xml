@@ -30,7 +30,7 @@
     FROM MESSAGE
     WHERE SENDERUSERNAME = #{username} AND RECEIVERUSERNAME = #{receiverUsername}
 	</select>
-	
+	 
 	<select id="getMessageContentByReceiverUsername" resultType="MessageDTO" parameterType="map">
     SELECT *
     FROM MESSAGE

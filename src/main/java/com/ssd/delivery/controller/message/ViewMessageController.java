@@ -110,7 +110,7 @@ public class ViewMessageController {
 				messageList.add(rmessageList.get(i).getSenderUsername());
 			else if (!messageList.contains(rmessageList.get(i).getReceiverUsername()) && rmessageList.get(i).getReceiverUsername() != null)
 				messageList.add(rmessageList.get(i).getReceiverUsername());
-		}
+		} 
 		
 		mav.addObject("DMList", messageList);
 		mav.addObject("userSession", account);
