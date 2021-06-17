@@ -36,6 +36,9 @@
 						src="/images/logoicon.svg" alt="" /></span><span class="title">용달의
 						민족 관리자 페이지</span>
 				</a>
+				<div style="float:right; padding-right:100px">
+				<a href="/" class="button primary">&nbsp;&nbsp;사용자 화면으로 돌아가기&nbsp;&nbsp;</a>
+			</div>
 			</div>
 		</header>		
 		<!-- Main -->

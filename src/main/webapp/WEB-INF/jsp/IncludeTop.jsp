@@ -85,7 +85,6 @@
 				
 				<li><a href="/delivery/auctionView.do">경매 </a></li>
 				<li><a href="/delivery/copurchasingView.do">공동구매</a></li>
-				<li><a href="/delivery/fleamarketView.do">중고거래</a></li>
 				<li><a href="/delivery/list/view.do">용달서비스 거래</a></li>
 				<c:if test="${userSession.username ne null}">
 
@@ -93,6 +92,8 @@
 					<li><a href="/delivery/message.do">DM</a></li>
 					
 				</c:if>
-				
+				<c:if test="${userSession.username eq 'king'}">
+				<li class="nav-item"><li><a href="/admin/main.do">**관리자 페이지**</a></li>
+				</c:if>
 			</ul>
 		</nav>
