@@ -16,7 +16,7 @@ public class InsertMessageController {
 	@Autowired
 	private DeliveryImpl deliveryImpl;
 	
-	@RequestMapping("/message/insert")
+	@RequestMapping("/delivery/messageInsert.do")
 	public String handleRequest(
 			@RequestParam("message") MessageDTO message,
 			ModelMap model) throws Exception {
@@ -25,3 +25,6 @@ public class InsertMessageController {
 		return "messageList";
 	}
 }
+
+
+//////

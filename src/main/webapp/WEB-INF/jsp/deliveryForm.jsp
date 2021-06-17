@@ -53,7 +53,7 @@
 							value="${delivery.height }" placeholder="높이" />
 					</div>
 					<div class="col-3">
-						<input type="text" name="weight" id="we1ght"
+						<input type="text" name="weight" id="weight"
 							value="${delivery.weight }" placeholder="무게" />
 					</div>
 

@@ -35,7 +35,7 @@ public class ViewMessageController {
 		this.delivery = delivery;
 	}
 	
-	@RequestMapping("/message/create.do")
+	@RequestMapping("/delivery/messageCreate.do")
 	public ModelAndView showMessageForm(Model model, HttpSession session) throws Exception {
 		AccountDTO account = (AccountDTO)session.getAttribute("userSession");
 		
@@ -52,7 +52,7 @@ public class ViewMessageController {
 	
 	}
 	
-	@RequestMapping("/message/sending.do")
+	@RequestMapping("/delivery/messageSend.do")
 	public ModelAndView sendingMessage(Model model, HttpSession session, @RequestParam("receiverUsername") String receiver,
 			@RequestParam("content") String content) throws Exception {
 		AccountDTO account = (AccountDTO)session.getAttribute("userSession");
@@ -75,7 +75,7 @@ public class ViewMessageController {
 	
 	}
 	
-	@RequestMapping("/user/message.do")
+	@RequestMapping("/delivery/message.do")
 	public ModelAndView showMessageList(Model model, HttpSession session) throws Exception {
 		AccountDTO account = (AccountDTO)session.getAttribute("userSession");
 		
@@ -91,7 +91,7 @@ public class ViewMessageController {
 		return mav;
 	}
 	
-	@RequestMapping("/message/view/content.do")
+	@RequestMapping("/delivery/messageViewContent.do")
 	public ModelAndView viewMessageContent(Model model, HttpSession session, @RequestParam("receiver") String receiver) throws Exception {
 		AccountDTO account = (AccountDTO)session.getAttribute("userSession");
 		
