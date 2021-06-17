@@ -41,8 +41,8 @@ public class MybatisAuctionDao implements AuctionDao {
     	auctionMapper.updateAuction(auction);
 	}
 	@Override
-	public void deleteAuction(AuctionDTO auction) throws DataAccessException {  
-    	auctionMapper.deleteAuction(auction);
+	public void deleteAuction(int auctionId) throws DataAccessException {  
+    	auctionMapper.deleteAuction(auctionId);
 	}
 	@Override
 	public AuctionDTO getAuctionById(int auctionId) {

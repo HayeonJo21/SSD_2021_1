@@ -34,7 +34,8 @@
     	customerid = #{customerId},
     	finalprice = #{finalPrice}
 	</update>
-	<delete id="deleteAuction" parameterType="java.lang.String">
+	
+	<delete id="deleteAuction" parameterType="int">
 	DELETE FROM auction 
 	WHERE auctionid = #{auctionId}
 	</delete>

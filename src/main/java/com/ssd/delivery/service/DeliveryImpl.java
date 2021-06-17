@@ -88,8 +88,8 @@ public class DeliveryImpl implements DeliveryFacade {
 		auctionDao.updateAuction(auction);
 	}
 
-	public void deleteAuction(AuctionDTO auction) {
-		auctionDao.deleteAuction(auction);
+	public void deleteAuction(int auctionId) {
+		auctionDao.deleteAuction(auctionId);
 	}
 
 	public AuctionDTO getAuctionById(int auctionId) {

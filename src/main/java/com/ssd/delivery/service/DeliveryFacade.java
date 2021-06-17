@@ -37,7 +37,7 @@ public interface DeliveryFacade {
 
 	void updateAuction(AuctionDTO auction);
 
-	void deleteAuction(AuctionDTO auction);
+	void deleteAuction(int auctionId);
 
 	AuctionDTO getAuctionById(int auctionId);
 

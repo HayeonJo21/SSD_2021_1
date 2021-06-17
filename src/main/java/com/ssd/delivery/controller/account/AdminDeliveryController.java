@@ -1,6 +1,10 @@
 package com.ssd.delivery.controller.account;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.support.PagedListHolder;
 import org.springframework.stereotype.Controller;
@@ -13,6 +17,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.ssd.delivery.domain.Account;
 import com.ssd.delivery.domain.AccountDTO;
+import com.ssd.delivery.domain.AuctionDTO;
+import com.ssd.delivery.domain.CoPurchasingDTO;
+import com.ssd.delivery.domain.DeliveryDTO;
 import com.ssd.delivery.domain.FavoriteUserDTO;
 import com.ssd.delivery.domain.Product;
 import com.ssd.delivery.service.DeliveryFacade;
@@ -24,8 +31,8 @@ import org.springframework.ui.Model;
 
 @Controller
 @SessionAttributes("userSession")
-@RequestMapping("/delivery/admin/signon.do")
-public class AdminSignonController {
+@RequestMapping("/admin/delivery.do")
+public class AdminDeliveryController {
 
 	private DeliveryFacade delivery;
 
@@ -35,29 +42,17 @@ public class AdminSignonController {
 	}
 
 	@GetMapping
-	public String showForm() {
-		return "adminLogin";
+	public ModelAndView adminDeliveryView(Model model, HttpSession session) throws Exception {
+		
+		ModelAndView mav = new ModelAndView();
+		
+		List<DeliveryDTO> DelList = delivery.getDeliveryList();
+		
+		
+		mav.addObject("DelList", DelList);
+		mav.setViewName("adminDelivery");
+	
+		return mav;
 	}
-
-	@PostMapping
-	public String handleRequest(HttpServletRequest request, @RequestParam("username") String username,
-			@RequestParam("password") String password,
-			@RequestParam(value = "forwardAction", required = false) String forwardAction, Model model)
-			throws Exception {
-
-		AccountDTO account = delivery.findUser(username);
-
-		if (account == null || !account.getPassword().equals(password) || account.getStatus() != 0) { // 로그인 정보 불일치
-			model.addAttribute("data", new Message("관리자가 아니거나, 잘못된 비밀번호 입니다.", "/"));
-			return "adminLogin";
-		}
-		model.addAttribute("userSession", account);
-
-		if (forwardAction != null) {
-			return "adminLogin" + forwardAction;
-		}
-		else {
-			return "adminMain";
-		}
-	}
+	
 }
