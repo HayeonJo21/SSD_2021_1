@@ -51,7 +51,7 @@
 		<div class="inner">
 		<h3>* 경매 관리</h3>
 		</div>
-		<br /> <br /> <br />
+		<br />
 		<div class="table-wrapper">
 				<table class="alt">
 					<thead>

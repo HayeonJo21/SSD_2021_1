@@ -37,34 +37,57 @@
 						민족 관리자 페이지</span>
 				</a>
 			</div>
-		</header>		
-		<!-- Main -->
-<div id="main">
-	<div class="inner">
-		<header>
-			<h1>
-				용달의 민족 <br /> Administrator Page <br />
-			</h1>
-			<p>관리자 페이지 입니다.</p>
 		</header>
-		<br />
-		<div class="inner">
-		<h3><a href="/admin/auction.do" class="logo"> <span class="symbol"></span><span class="title">* 경매 관리</span></a></h3>
-		</div>
-		<br /> <br /> <br />
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+				<header>
+					<h1>
+						용달의 민족 <br /> Administrator Page <br />
+					</h1>
+					<p>관리자 회원간 용달 거래 관리 페이지 입니다.</p>
+				</header>
+				<br />
+				<div class="inner">
+					<h3>
+						<span class="title">* 회원간 용달 거래 관리</span>
+					</h3>
+				</div><br />
+				<div class="table-wrapper">
+					<table class="alt">
+						<thead>
+							<tr>
+								<th>Delivery ID</th>
+								<th>Service Provider</th>
+								<th>Service Date</th>
+								<th>Show Detail</th>
+								<th>Remove</th>
 
-		<div class="inner">
-		<h3><a href="/admin/delivery.do" class="logo"> <span class="symbol"></span><span class="title">* 회원간 용달 거래 관리</span></a></h3>
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach var="del" items="${DelList}">
+								<tr>
+									<td>${del.deliveryId}</td>
+									<td>${del.username }</td>
+									<td>${del.serviceDate}</td>
+									<td><a
+										href="<c:url value='/delivery/detailView.do'>
+						   <c:param name='deliveryId' value='${del.deliveryId}'/>
+				 		 </c:url>"
+										class="button">&nbsp;&nbsp;&nbsp;&nbsp;Detail&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
+									<td><a
+										href="<c:url value='/admin/delivery/delete.do'>
+						   <c:param name='delId' value='${del.deliveryId}'/>
+				 		 </c:url>"
+										class="button">&nbsp;&nbsp;&nbsp;&nbsp;Remove&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
+				</div>
+			</div>
 		</div>
-
-		<br /> <br /> <br />
-		<div class="inner">
-		<h3><a href="/admin/coPurchasing.do" class="logo"> <span class="symbol"></span><span class="title">* 공동구매 관리</span></a></h3>
-		</div>
-
-		<br /> <br /> <br />
-	</div>
-</div>
 
 		<!-- Scripts -->
 		<script src="assets/js/jquery.min.js"></script>
@@ -84,6 +107,5 @@
 			src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
 			integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 			crossorigin="anonymous"></script>
-
 </body>
 </html>
