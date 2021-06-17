@@ -1,5 +1,6 @@
 package com.ssd.delivery.controller.message;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -61,9 +62,7 @@ public class ViewMessageController {
 		AccountDTO account = (AccountDTO)session.getAttribute("userSession");
 		
 		String username = account.getUsername();
-//		LocalTime currentTime = LocalTime.now();
-//		String date = currentTime.getHour() + "시 " + currentTime.getMinute() + "분";
-//		
+
 		Calendar cal = Calendar.getInstance();
 		Date date = cal.getTime();
 		SimpleDateFormat dFormat = new SimpleDateFormat("yyyy/MM/dd hh:mm");
@@ -93,13 +92,31 @@ public class ViewMessageController {
 		
 		String username = account.getUsername();
 		ModelAndView mav = new ModelAndView();
-	
-		List<MessageDTO> messageList = delivery.getMessageListByUsername(username);
 
+		List<MessageDTO> smessageList = delivery.getMessageListByUsername(username);
+		List<MessageDTO> rmessageList = delivery.getMessageListByReceiverUsername(username);
+
+		ArrayList<String> messageList = new ArrayList<>();
+		
+		for (int i = 0; i < smessageList.size(); i++) {
+			if (!messageList.contains(smessageList.get(i).getSenderUsername()) && smessageList.get(i).getSenderUsername() != null)
+				messageList.add(smessageList.get(i).getSenderUsername());
+			else if (!messageList.contains(smessageList.get(i).getReceiverUsername()) && smessageList.get(i).getReceiverUsername() != null)
+				messageList.add(smessageList.get(i).getReceiverUsername());
+		}
+		
+		for (int i = 0; i < rmessageList.size(); i++) {
+			if (!messageList.contains(rmessageList.get(i).getSenderUsername()) && rmessageList.get(i).getSenderUsername() != null)
+				messageList.add(rmessageList.get(i).getSenderUsername());
+			else if (!messageList.contains(rmessageList.get(i).getReceiverUsername()) && rmessageList.get(i).getReceiverUsername() != null)
+				messageList.add(rmessageList.get(i).getReceiverUsername());
+		}
+		
 		mav.addObject("DMList", messageList);
 		mav.addObject("userSession", account);
+		mav.addObject("username", username);
 		mav.setViewName("messageList");
-				
+		
 		return mav;
 	}
 	

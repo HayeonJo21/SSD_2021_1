@@ -1,6 +1,5 @@
 package com.ssd.delivery.domain;
 import java.io.Serializable;
-import java.util.Date;
 
 @SuppressWarnings("serial")
 public class MessageDTO implements Serializable

@@ -22,29 +22,23 @@
 							style="display: table-cell; padding: 0 0 0 20px;">메시지 리스트</span>
 						<a href=#menu></a>
 					</div>
- 
+
 				</div>
 				<div class="list-group" style="width: 400px;">
+					<a class="list-group-item list-group-item-action active">현재
+						채팅중인 상대</a>
 					<c:if test="${DMList ne null}">
-						<a class="list-group-item list-group-item-action active">현재
-							채팅중인 상대</a>
 						<c:forEach var="dm" items="${DMList}">
+						<c:if test="${dm ne null}">
 							<a
 								href="<c:url value='/delivery/messageViewContent.do'>
-						   <c:param name='receiver' value='${dm.receiverUsername}'/>
+						   <c:param name='receiver' value='${dm}'/>
 				 		 </c:url>"
-								class="list-group-item list-group-item-action">${dm.receiverUsername}</a>
+								class="list-group-item list-group-item-action">${dm}</a>
+								</c:if>
+								
 						</c:forEach>
-					</c:if>
-					<c:if test="${RCList ne null}">
-						<c:forEach var="rc" items="${RCList}">
-							<a
-								href="<c:url value='/delivery/messageViewContent.do'>
-						   <c:param name='receiver' value='${rc.senderUsername}'/>
-				 		 </c:url>"
-								class="list-group-item list-group-item-action">${rc.senderUsername}</a>
-						</c:forEach>
-					</c:if>
+					</c:if> 
 					<a href="/delivery/messageCreate.do"
 						class="list-group-item list-group-item-action active">새로운 메시지
 						시작하기</a>

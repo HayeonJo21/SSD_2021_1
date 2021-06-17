@@ -41,10 +41,20 @@
     SELECT * FROM Message
 	</select>
 	
-	<select id="getMessageListByUsername" resultType="MessageDTO" parameterType="map">
+<!-- <select id="getMessageListByUsername" resultType="MessageDTO" parameterType="map">
    SELECT distinct m2.receiverusername
-    FROM MESSAGE m1 JOIN MESSAGE m2 ON m1.dmno = m2.dmNo
+    FROM MESSAGE m1 JOIN MESSAGE m2 ON m1.dmNo = m2.dmNo
     WHERE m1.senderusername = #{username} or m2.senderusername = #{username}
+	</select>
+	<select id="getMessageListByUsername" resultType="MessageDTO" parameterType="map">
+    SELECT distinct m2.senderUsername
+    FROM MESSAGE m1 JOIN MESSAGE m2 ON m1.dmNo = m2.dmNo
+    WHERE m1.senderusername = #{username} or m2.receiverusername = #{username}
+	</select>  -->	
+	<select id="getMessageListByUsername" resultType="MessageDTO" parameterType="map">
+    SELECT DISTINCT RECEIVERUSERNAME
+    FROM MESSAGE 
+    WHERE SENDERUSERNAME = #{username}
 	</select>
 	
 	<select id="getMessageListByReceiverUsername" resultType="MessageDTO" parameterType="map">
