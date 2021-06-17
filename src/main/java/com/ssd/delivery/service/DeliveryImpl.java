@@ -120,7 +120,7 @@ public class DeliveryImpl implements DeliveryFacade {
 		return cpDao.getCPList();
 	}
 
-	public CoPurchasingDTO getCPById(String CPId) {
+	public CoPurchasingDTO getCPById(int CPId) {
 		return cpDao.getCPById(CPId);
 	}
 
@@ -143,6 +143,10 @@ public class DeliveryImpl implements DeliveryFacade {
 
 	public DeliveryDTO getDeliveryById(int deliveryId) {
 		return deliveryDao.getDeliveryById(deliveryId);
+	}
+	
+	public DeliveryDTO isExistingCP() {
+		return deliveryDao.isExistingCP();
 	}
 
 	public List<DeliveryDTO> getDeliveryByUsername(String username) {

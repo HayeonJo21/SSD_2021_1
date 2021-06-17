@@ -45,4 +45,7 @@
     SELECT * FROM DELIVERY
 	</select>
   
+  <select id="isExistingCP" resultType="DeliveryDTO">
+  	select * from Delivery d, coPurchasing c 
+ 	where d.deliveryId = c.delivery</select>
 </mapper>

@@ -15,6 +15,7 @@ import com.ssd.delivery.domain.AccountDTO;
 import com.ssd.delivery.domain.DeliveryDTO;
 import com.ssd.delivery.service.DeliveryFacade;
 import com.ssd.delivery.service.DeliveryImpl;
+import com.ssd.delivery.service.Message;
 
 @Controller
 @RequestMapping("/delivery/detailView.do")
@@ -27,12 +28,23 @@ public class ViewDeliveryController {
 		AccountDTO account = (AccountDTO)session.getAttribute("userSession");
 		
 		DeliveryDTO deliveryItem = delivery.getDeliveryById(deliveryId);
+		DeliveryDTO del = delivery.isExistingCP();
 		
 		ModelAndView mav = new ModelAndView();
 		
-		mav.addObject("delivery", deliveryItem);
-		mav.addObject("userSession", account);
-		mav.setViewName("deliveryDetail");
+		if(del != null && del.getDeliveryId() == deliveryId) {
+			Message msg = new Message("공동구매로 진행중인 용달 서비스 입니다.", "/");
+			mav.addObject("msg", msg);
+			mav.addObject("delivery", deliveryItem);
+			mav.addObject("userSession", account);
+			mav.setViewName("deliveryDetail");
+		}
+		else{
+			mav.addObject("delivery", deliveryItem);
+			mav.addObject("userSession", account);
+			mav.setViewName("deliveryDetail");
+		}
+		
 				
 		return mav;
 	}

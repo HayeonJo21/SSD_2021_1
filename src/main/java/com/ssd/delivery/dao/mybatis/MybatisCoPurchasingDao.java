@@ -43,7 +43,7 @@ public class MybatisCoPurchasingDao implements CoPurchasingDao {
 	}
 
 	@Override
-	public CoPurchasingDTO getCPById(String CPId) throws DataAccessException {
+	public CoPurchasingDTO getCPById(int CPId) throws DataAccessException {
 		return CPMapper.getCPById(CPId);
 	}
 

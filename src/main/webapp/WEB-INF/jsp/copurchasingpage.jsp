@@ -14,24 +14,25 @@
 			<br/>
 		</header>
 		<section class="tiles">
-			<c:forEach var="del" items="${DelList}">
-				<article class="style1">
-					<span class="image"> <img src="images/pic06.jpg" alt="" />
-					</span> <a
-						href="<c:url value='/delivery/detailView.do'>
-						   <c:param name='deliveryId' value='${del.deliveryId}'/>
+		<c:forEach var="cp" items="${CPList}">
+			<article class="style5">
+				<span class="image"> <img src="/images/pic08.jpg" alt="" />
+				</span> <a
+					href="<c:url value='/coPurchasing/detailView.do'>
+						   <c:param name='coPurchasingId' value='${cp.coPurchasingId}'/>
 				 		 </c:url>">
-						<h2>출발지: ${del.address1 }</h2>
-						<div class="content">
-							<p>
-								출발: ${del.address1 } > 도착: ${del.address2 }. <br /> 가격:
-								${del.price}
-							</p>
-						</div>
-					</a> <br /> 서비스 제공일: ${del.serviceDate }
-				</article>
-			</c:forEach>
-		</section>
+					<h2>${cp.username}님의공동구매</h2>
+					<div class="content">
+						<p>1인당 가격: ${cp.unitCost }</p>
+					</div>
+				</a> 현황
+				<div class="progress">
+					<div class="progress-bar" role="progressbar" style="width: 65%;"
+						aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">65%</div>
+				</div>
+			</article>
+		</c:forEach>
+	</section>
 	</div>
 </div>
 

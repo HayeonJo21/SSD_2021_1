@@ -4,24 +4,24 @@
 <!-- Main -->
 <div id="main">
 	<div class="inner">
-		<h1>CoPurchasing</h1>
+		<h1>Co-Purchasing</h1>
 		<section>
 			<h1 style="font-size: 40px">공동구매 상세내역</h1>
 			<h1 style="font-size: 30px">공동구매 ID : ${cp.coPurchasingId}</h1>
+			<h3>@Note: <b style="color:#f2849e">${cp.note }</b></h3>
 			<div class="table-wrapper">
 				<table>
 					<thead>
 						<tr>
 							<th>Item</th>
 							<th>Description</th>
-							<th>note</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
 							<td>ServiceDate</td>
 							<td> ${del.serviceDate }</td>
-							<td></td>
+							
 						</tr>
 						<tr>
 							<td>Poster</td>
@@ -31,7 +31,7 @@
 						<tr>
 							<td>Destination</td>
 							<td> ${del.address2 }</td>
-							<td></td>
+						
 						</tr>
 						<tr>
 							<td>Price</td>
@@ -40,27 +40,28 @@
 						<tr>
 							<td>MaxNumberOfPurchaser</td>
 							<td> ${cp.maxNumberOfPurchaser }</td>
-							<td></td>
+							
 						</tr>
 						<tr>
 							<td>Width</td>
 							<td> ${del.width}m</td>
-							<td></td>
+						
 						</tr>
 						<tr>
 							<td>Height</td>
 							<td> ${del.height }m</td>
-							<td></td>
+							
 						</tr>
 						<tr>
 							<td>Weight</td>
 							<td> ${del.weight }kg</td>
-							<td></td>
+						
 						</tr>
 					</tbody>
 				</table>
 			</div>
 			<br>
+			
 			<!-- percentage bar -->
 			<h1 style="font-size: 30px">Progress of CoPurchasing</h1>
 			<p>공동구매 진행상황을 보여줍니다.</p>

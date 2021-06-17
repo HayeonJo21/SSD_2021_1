@@ -1,7 +1,12 @@
 package com.ssd.delivery.controller.copurchasing;
 
+import java.util.List;
+
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -24,8 +29,15 @@ public class ViewCPController {
 	}
 
 	@GetMapping
-	public String showPage() {
-		return "copurchasingpage";
+	public ModelAndView showCP(Model model, HttpSession session) throws Exception {
+		List<CoPurchasingDTO> CPList = delivery.getCPList();
+		
+		ModelAndView mav = new ModelAndView();
+		
+		mav.addObject("CPList", CPList);
+		mav.setViewName("copurchasingpage");
+				
+		return mav;
 	}
 
 //	@RequestMapping("/coPurchasing/view")

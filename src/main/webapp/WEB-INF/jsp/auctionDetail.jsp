@@ -5,8 +5,8 @@
 		<!-- Main -->
 		<div id="main">
 			<div class="inner">
-				<h1>출발지: 광명 이케아(IKEA)</h1>
-				
+				<h1>Auction</h1>
+				<h2>출발지: 광명 이케아(IKEA)</h2>
 				<h2>판매자 : ${auction.username} </h2>
 				
 				<div class="table-wrapper">

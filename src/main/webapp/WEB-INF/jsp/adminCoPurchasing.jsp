@@ -71,8 +71,8 @@
 									<td>${cp.delivery }</td>
 									<td>${cp.username}</td>
 									<td><a
-										href="<c:url value='/coPurchasing/view.do'>
-						   <c:param name='cpId' value='${cp.coPurchasingId}'/>
+										href="<c:url value='/coPurchasing/detailView.do'>
+						   <c:param name='coPurchasingId' value='${cp.coPurchasingId}'/>
 				 		 </c:url>"
 										class="button">&nbsp;&nbsp;&nbsp;&nbsp;Detail&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
 									<td><a

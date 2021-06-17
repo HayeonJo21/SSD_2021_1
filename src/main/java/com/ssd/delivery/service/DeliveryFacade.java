@@ -54,7 +54,7 @@ public interface DeliveryFacade {
 
 	List<CoPurchasingDTO> getCPList();
 
-	CoPurchasingDTO getCPById(String CPId);
+	CoPurchasingDTO getCPById(int CPId);
 
 	List<CoPurchasingDTO> getCPListByUsername(String username);
 
@@ -70,6 +70,8 @@ public interface DeliveryFacade {
 	List<DeliveryDTO> getDeliveryByUsername(String username);
 
 	List<DeliveryDTO> getDeliveryList();
+	
+	DeliveryDTO isExistingCP();
 
 	// FavoriteUser
 	void insertFU(FavoriteUserDTO favoriteUser);

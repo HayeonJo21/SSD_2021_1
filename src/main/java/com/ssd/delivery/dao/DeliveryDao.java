@@ -19,4 +19,6 @@ public interface DeliveryDao {
 	List<DeliveryDTO> getDeliveryByUsername(String username) throws DataAccessException;
 	
 	List<DeliveryDTO> getDeliveryList() throws DataAccessException;
+	
+	public DeliveryDTO isExistingCP() throws DataAccessException;
 }
