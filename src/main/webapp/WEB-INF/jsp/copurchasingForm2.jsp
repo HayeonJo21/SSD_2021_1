@@ -11,31 +11,39 @@
 		<form method="post" action="/coPurchasing/insert.do">
 			<div class="row gtr-uniform">
 				<div class="col-12">
-					<label for="demo-name">공동구매 모집자 이름</label> <input type="text"
-						name="username" id="username" value="${userSession.username}"
-						placeholder="${userSession.username}" />
+					<label for="demo-name">공동구매 모집자 이름</label><input type="hidden"
+						name="username" id="username" value='${userSession.username}' />
+						<div class="col-lg-10">
+	        	<p class="form-control-static">${userSession.username}</p> 
+	        </div>
 				</div>
 
 				<div class="col-12">
-					<label for="demo-name">공동구매 상품</label> <input type="text"
-						name="deliveryId" id="deliveryId" value="${delivery.deliveryId}" disabled/>
+					<label for="demo-name">공동구매 상품</label> <input type="hidden"
+						name="deliveryId" id="deliveryId" value='${delivery.deliveryId}'/>
+						<div class="col-lg-10">
+	        	<p class="form-control-static">${delivery.deliveryId}</p> 
+	        </div>
 				</div>
 
 				<div class="col-12">
-					<label for="demo-name">가격</label> <input type="text" name="price"
-						id="price" value="${delivery.price}"
-						placeholder="${delivery.price}" disabled />
+					<label for="demo-name">가격</label> <input type="hidden" name="price"
+						id="price" value='${delivery.price}'
+						placeholder="${delivery.price}" />
+						<div class="col-lg-10">
+	        	<p class="form-control-static">${delivery.price}</p> 
+	        </div>
 				</div>
 
 				<div class="col-12">
 					<label for="demo-name">1인당 가격</label> <input type="text"
-						name="unitCost" id="unitCost" value="" placeholder="unitCost" />
+						name="unitCost" id="unitCost" value="" placeholder="1인당 가격을 입력하세요." />
 				</div>
 
 				<div class="col-12">
 					<label for="demo-name">총 모집 인원</label> <input type="text"
 						name="maxNumberOfPurchaser" id="maxNumberOfPurchaser" value=""
-						placeholder="maxNumberOfPurchaser" />
+						placeholder="총 모집 인원을 입력하세요." />
 				</div>
 				<div class="col-12">
 					<label for="demo-name">부가 설명</label> <input type="text" name="note"

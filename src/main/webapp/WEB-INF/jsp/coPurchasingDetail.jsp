@@ -46,17 +46,17 @@
 						</tr>
 						<tr>
 							<td>Width</td>
-							<td> ${delivery.width}m</td>
+							<td> ${del.width}m</td>
 							<td></td>
 						</tr>
 						<tr>
 							<td>Height</td>
-							<td> ${delivery.height }m</td>
+							<td> ${del.height }m</td>
 							<td></td>
 						</tr>
 						<tr>
 							<td>Weight</td>
-							<td> ${delivery.weight }kg</td>
+							<td> ${del.weight }kg</td>
 							<td></td>
 						</tr>
 					</tbody>

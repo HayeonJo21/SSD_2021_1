@@ -31,7 +31,6 @@ public class InsertCPController {
 	@GetMapping
 	public ModelAndView insert2(@RequestParam("deliveryId") int deliveryId) throws Exception {
 
-		System.out.println("%%%%%%%%%%%%%%%%%");
 		DeliveryDTO del = delivery.getDeliveryById(deliveryId);
 		ModelAndView mav = new ModelAndView();
 
@@ -42,15 +41,16 @@ public class InsertCPController {
 	}
 
 	@PostMapping
-	public ModelAndView inserCP(Model model, HttpSession session, @ModelAttribute("CPForm")  CoPurchasingDTO CP) throws Exception {
+	public ModelAndView inserCP(Model model, HttpSession session, @ModelAttribute("CoPurchasingForm")  CoPurchasingDTO CP) throws Exception {
 		AccountDTO account = (AccountDTO)session.getAttribute("userSession");
 		
 		delivery.insertCP(CP);
 		
 		ModelAndView mav = new ModelAndView();
 		
+		System.out.println("################" + CP.getDelivery());
 		DeliveryDTO del = delivery.getDeliveryById(CP.getDelivery());
-		
+
 		mav.addObject("cp", CP);
 		mav.addObject("del", del);
 		mav.addObject("userSession", account);
