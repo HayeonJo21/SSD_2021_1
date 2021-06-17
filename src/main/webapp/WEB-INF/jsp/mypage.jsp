@@ -133,7 +133,7 @@
 								<td><a
 									href="<c:url value='/auction/view.do'>
 						   <c:param name='acId' value='${ac.auctionId}'/>
-				 		 </c:url>">${ac.acutionId}</a></td>
+				 		 </c:url>">${ac.auctionId}</a></td>
 								<td>${ac.username}</td>
 								<td>${ac.serviceId}</td>
 								<td>${ac.startPrice}</td>

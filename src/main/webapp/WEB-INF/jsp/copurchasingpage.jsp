@@ -13,7 +13,7 @@
 		<section class="tiles">
 			<article class="style1">
 				<span class="image"> <img src="images/pic1.png" />
-				</span> <a href="acutionDetail.jsp">
+				</span> <a href="auctionDetail.jsp">
 					<h2>출발지: 고양 이케아(IKEA)</h2>
 					<div class="content">
 						<p>

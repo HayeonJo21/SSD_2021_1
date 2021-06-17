@@ -31,7 +31,7 @@
 								<td><a
 									href="<c:url value='/auction/view.do'>
 						   <c:param name='acId' value='${ac.auctionId}'/>
-				 		 </c:url>">${ac.acutionId}</a></td>
+				 		 </c:url>">${ac.auctionId}</a></td>
 								<td>${ac.username}</td>
 								<td>${ac.serviceId}</td>
 								<td>${ac.startPrice}</td>
@@ -47,7 +47,7 @@
 	<section class="tiles">
 		<article class="style1">
 			<span class="image"> <img src="images/pic1.png" />
-			</span> <a href="acutionDetail.jsp">
+			</span> <a href="auctionDetail.jsp">
 				<h2>출발지: 고양 이케아(IKEA)</h2>
 				<div class="content">
 					<p>

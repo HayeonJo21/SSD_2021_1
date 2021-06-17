@@ -17,7 +17,7 @@
 		<section class="tiles">
 			<article class="style1">
 				<span class="image"> <img src="images/pic1.png" />
-				</span> <a href="acutionDetail.jsp">
+				</span> <a href="auctionDetail.jsp">
 					<h2>수납장 팝니다</h2>
 					<div class="content">
 						<p>
