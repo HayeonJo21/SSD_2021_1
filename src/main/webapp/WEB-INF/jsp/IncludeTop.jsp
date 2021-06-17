@@ -89,7 +89,7 @@
 				<li><a href="/delivery/listView.do">용달서비스 거래</a></li>
 				<c:if test="${userSession.username ne null}">
 
-					<li class="nav-item"><li><a href="/user/mypage.do">마이페이지</a></li>
+					<li class="nav-item"><li><a href="/delivery/mypage.do">마이페이지</a></li>
 					<li><a href="/delivery/message.do">DM</a></li>
 					
 				</c:if>
