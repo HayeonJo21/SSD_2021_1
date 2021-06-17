@@ -63,18 +63,4 @@ public class AdminAuctionController {
 		return "redirect:/";
 	}
 	
-	@RequestMapping("/admin/coPurchasing.do")
-	public ModelAndView adminCPView(Model model, HttpSession session) throws Exception {
-		
-		ModelAndView mav = new ModelAndView();
-		
-		List<CoPurchasingDTO> CPList = delivery.getCPList();
-		
-		
-		mav.addObject("CPList", CPList);
-		mav.setViewName("adminCoPurchasing");
-	
-		return mav;
-	}
-	
 }
