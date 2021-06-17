@@ -74,11 +74,15 @@ public class ViewMessageController {
 		
 		ModelAndView mav = new ModelAndView();
 		
-		List<MessageDTO> messageList = delivery.getMessageListByUsername(username);
+		List<MessageDTO> messageContents = delivery.getMessageContentByUsername(username, receiver);
+		List<MessageDTO> messageReceiveContents = delivery.getMessageContentByReceiverUsername(receiver, username);
 		
-		mav.addObject("DMList", messageList);
-		mav.setViewName("messageList");
-				
+		messageContents.addAll(messageReceiveContents);
+		mav.addObject("username", username);
+		mav.addObject("receiver", receiver);
+		mav.addObject("contentList", messageContents);
+		mav.setViewName("message");
+		
 		return mav;
 	 
 	}

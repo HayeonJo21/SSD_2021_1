@@ -13,13 +13,12 @@
 				<div class="col-12">
 					<label for="demo-name">공동구매 모집자 이름</label> <input type="text"
 						name="username" id="username" value="${userSession.username}"
-						placeholder="${userSession.username }" disabled />
+						placeholder="${userSession.username}" disabled />
 				</div>
 
 				<div class="col-12">
 					<label for="demo-name">공동구매 상품</label> <input type="text"
-						name="deliveryId" id="deliveryId" value="${delivery.deliveryId}"
-						placeholder="${delivery.address1}->${delivery.address2}" disabled />
+						name="deliveryId" id="deliveryId" value="${delivery.deliveryId}" disabled/>
 				</div>
 
 				<div class="col-12">

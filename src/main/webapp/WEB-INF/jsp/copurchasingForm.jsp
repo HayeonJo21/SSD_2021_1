@@ -25,7 +25,7 @@
 						<c:forEach var="del" items="${delList}">
 							<tr>
 								<td><a
-									href="<c:url value='/coPurchasing/insert2.do'>
+									href="<c:url value='/coPurchasing/insert.do'>
 						   <c:param name='deliveryId' value='${del.deliveryId}'/>
 				 		 </c:url>">${del.deliveryId}</a></td>
 								<td>${del.serviceDate}</td>

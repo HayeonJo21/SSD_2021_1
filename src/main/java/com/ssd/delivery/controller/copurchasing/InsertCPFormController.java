@@ -23,40 +23,19 @@ import com.ssd.delivery.service.DeliveryImpl;
 
 @Controller
 @SessionAttributes("userSession")
-@RequestMapping("/coPurchasing/insert.do")
-public class InsertCPController {
+@RequestMapping("/coPurchasing/insert/form.do")
+public class InsertCPFormController {
 	@Autowired
 	private DeliveryFacade delivery;
 
 	@GetMapping
-	public ModelAndView insert2(@RequestParam("deliveryId") int deliveryId) throws Exception {
-
-		System.out.println("%%%%%%%%%%%%%%%%%");
-		DeliveryDTO del = delivery.getDeliveryById(deliveryId);
+	public ModelAndView showInsertForm() {
+		List<DeliveryDTO> deliveryList = delivery.getDeliveryList();
 		ModelAndView mav = new ModelAndView();
 
-		mav.addObject("delivery", del);
-		mav.setViewName("copurchasingForm2");
+		mav.addObject("delList", deliveryList);
+		mav.setViewName("copurchasingForm");
 
 		return mav;
-	}
-
-	@PostMapping
-	public ModelAndView inserCP(Model model, HttpSession session, @ModelAttribute("CPForm")  CoPurchasingDTO CP) throws Exception {
-		AccountDTO account = (AccountDTO)session.getAttribute("userSession");
-		
-		delivery.insertCP(CP);
-		
-		ModelAndView mav = new ModelAndView();
-		
-		DeliveryDTO del = delivery.getDeliveryById(CP.getDelivery());
-		
-		mav.addObject("cp", CP);
-		mav.addObject("del", del);
-		mav.addObject("userSession", account);
-		mav.setViewName("coPurchasingDetail");
-				
-		return mav;
-	
 	}
 }

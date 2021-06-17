@@ -15,12 +15,12 @@
     WHERE coPurchasingId = #{coPurchasingId}
   </update>
   
-  <insert id="insert" parameterType="CoPurchasingDTO">
+  <insert id="insertCP" parameterType="CoPurchasingDTO">
     INSERT INTO COPURCHASING (COPURCHASINGID, UNITCOST, PRICE, USERNAME, MAXNUMBEROFPURCHASER, DELIVERYID, NOTE)
-    VALUES (#{coPurchasingId}, #{unitCost}, #{price}, #{username}, #{maxNumberOfPurchaser}, #{deliveryId}, #{note}"
+    VALUES (coPurchasingID_seq.nextval, #{unitCost}, #{price}, #{username}, #{maxNumberOfPurchaser}, #{deliveryId}, #{note})
   </insert>
   
-  <delete id="delete" parameterType="int">
+  <delete id="deleteCP" parameterType="int">
 	DELETE FROM COPURCHASING 
 	WHERE COPURCHASINGID = #{coPurchasingId}
 	</delete>
