@@ -11,7 +11,7 @@
 					<div class="form-group">
 						<label for="auction.serviceId" style="font-size: 24px">Username</label>
 						<input type="text" style="width: 800px" class="form-control"
-							name="username" value = "${userSession.username}"placeholder="${userSession.username}" >
+							name="username" value = '${userSession.username}' id="username">
 					</div>
 					<!-- <div class="form-group">
 						<label for="auction.endDate" style="font-size: 24px">EndDate</label>
@@ -21,7 +21,7 @@
 					<div class="form-group">
 						<label for="auction.startPrice" style="font-size: 24px">StartPrice</label>
 						<input type="text" style="width: 800px" class="form-control"
-							name="username" placeholder="ex 50000" value="50000">
+							name="startPrice" placeholder="ex 50000" value="50000" id="startPrice">
 					</div>
 					<!-- <div class="col-12">
 						<ul class="actions">

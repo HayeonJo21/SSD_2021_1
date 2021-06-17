@@ -20,9 +20,9 @@
       	servicedate, startprice, finalprice, address1, 
       	address2, successfulbidder, delivery, username)
       	values
-      	(2, null, null,null,
+      	(auctionId_seq.nextval, null, null,null,
       	null,#{startPrice},null, null, 
-      	null, null, null, null )
+      	null, null, null, #{username} )
 	</insert>
 
 	<update id="updateAuction" parameterType="AuctionDTO">

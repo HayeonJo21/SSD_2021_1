@@ -28,6 +28,7 @@ import com.ssd.delivery.service.DeliveryImpl;
 
 @Controller
 @RequestMapping("/delivery/insert.do")
+@SessionAttributes("userSession")
 public class InsertDeliveryController {
 	@Autowired
 	private DeliveryFacade delivery;
