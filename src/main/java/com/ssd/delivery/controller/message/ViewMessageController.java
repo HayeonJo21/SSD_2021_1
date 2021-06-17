@@ -2,6 +2,8 @@ package com.ssd.delivery.controller.message;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 import java.text.SimpleDateFormat;
@@ -77,6 +79,8 @@ public class ViewMessageController {
 		List<MessageDTO> messageReceiveContents = delivery.getMessageContentByReceiverUsername(receiver, username);
 		
 		messageContents.addAll(messageReceiveContents);
+		messageContents.sort((d1,d2) -> d1.getMessageDate().compareTo(d2.getMessageDate()));
+
 		mav.addObject("username", username);
 		mav.addObject("receiver", receiver);
 		mav.addObject("contentList", messageContents);
@@ -131,6 +135,8 @@ public class ViewMessageController {
 		List<MessageDTO> messageReceiveContents = delivery.getMessageContentByReceiverUsername(receiver, username);
 		
 		messageContents.addAll(messageReceiveContents);
+		messageContents.sort((d1,d2) -> d1.getMessageDate().compareTo(d2.getMessageDate()));
+		
 		mav.addObject("username", username);
 		mav.addObject("receiver", receiver);
 		mav.addObject("contentList", messageContents);
