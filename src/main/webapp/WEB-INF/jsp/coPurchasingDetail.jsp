@@ -35,8 +35,7 @@
 						</tr>
 						<tr>
 							<td>Price</td>
-							<td> ${del.price }</td>
-							<td>인당 ${cp.unitCost }</td>
+							<td> ${del.price } / 인당 ${cp.unitCost }</td>
 						</tr>
 						<tr>
 							<td>MaxNumberOfPurchaser</td>

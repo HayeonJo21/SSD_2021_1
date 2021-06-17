@@ -63,24 +63,30 @@
 		<br /> <br /> <br />
 		<h3>* 공동구매</h3>
 		<section class="tiles">
-			<article class="style2">
-				<span class="image"> <img src="images/pic04.jpg" alt="" />
-				</span> <a href="generic.html">
-					<h2>고양이 (1957)</h2>
-					<div class="content">
-						<p>
-							박수근 Park Sugeun의 작품입니다. <br /> (16.8 x 21.2 cm)
-						</p>
-					</div>
-				</a> <br /> 남은기간: 19일
+				<c:forEach var="cp" items="${CPList}">
+				<article class="style5">
+					<span class="image"> <img src="images/pic08.jpg" alt="" />
+					</span> <a
+						href="<c:url value='/delivery/detailView.do'>
+						   <c:param name='coPurchasingId' value='${cp.coPurchasingId}'/>
+				 		 </c:url>">
+						<h2>${cp.username}님의 공동구매</h2>
+						<div class="content">
+							<p>
+								1인당 가격: ${cp.unitCost }
+							</p>
+						</div>
+					</a> 현황
 				<div class="progress">
 					<div class="progress-bar" role="progressbar" style="width: 65%;"
 						aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">65%</div>
 				</div>
-			</article>
+				</article>
+			</c:forEach>
 		</section>
 
 		<br /> <br /> <br />
 	</div>
 </div>
+
 <%@ include file="IncludeBottom.jsp"%>
