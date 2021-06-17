@@ -13,7 +13,7 @@
 				<div class="col-12">
 					<label for="demo-name">공동구매 모집자 이름</label> <input type="text"
 						name="username" id="username" value="${userSession.username}"
-						placeholder="${userSession.username}" disabled />
+						placeholder="${userSession.username}" />
 				</div>
 
 				<div class="col-12">

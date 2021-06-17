@@ -15,7 +15,7 @@ public class CoPurchasingDTO implements Serializable {
 	private int unitCost;
 	private int price;
 	private String username;
-	private int maxNumberofPurchaser;
+	private int maxNumbeOfPurchaser;
 	private int deliveryId;
 	private String note;
 	
@@ -30,7 +30,7 @@ public class CoPurchasingDTO implements Serializable {
 		this.unitCost = unitCost;
 		this.price = price;
 		this.username = username;
-		this.maxNumberofPurchaser = maxNumberofPurchaser;
+		this.maxNumbeOfPurchaser = maxNumberofPurchaser;
 		this.deliveryId = delivery;
 		this.note = note;
 	}
@@ -40,7 +40,7 @@ public class CoPurchasingDTO implements Serializable {
 		super();
 		this.unitCost = unitCost;
 		this.price = price;
-		this.maxNumberofPurchaser = maxNumberofPurchaser;
+		this.maxNumbeOfPurchaser = maxNumberofPurchaser;
 		this.deliveryId = delivery;
 		this.note = note;
 	}
@@ -70,11 +70,11 @@ public class CoPurchasingDTO implements Serializable {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	public int getMaxNumberofPurchaser() {
-		return maxNumberofPurchaser;
+	public int getMaxNumberOfPurchaser() {
+		return maxNumbeOfPurchaser;
 	}
-	public void setMaxNumberofPurchaser(int maxNumberofPurchaser) {
-		this.maxNumberofPurchaser = maxNumberofPurchaser;
+	public void setMaxNumberOfPurchaser(int maxNumberofPurchaser) {
+		this.maxNumbeOfPurchaser = maxNumberofPurchaser;
 	}
 	public int getDelivery() {
 		return deliveryId;

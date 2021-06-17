@@ -16,7 +16,7 @@
   </update>
   
   <insert id="insertCP" parameterType="CoPurchasingDTO">
-    INSERT INTO COPURCHASING (COPURCHASINGID, UNITCOST, PRICE, USERNAME, MAXNUMBEROFPURCHASER, DELIVERYID, NOTE)
+    INSERT INTO COPURCHASING (COPURCHASINGID, UNITCOST, PRICE, USERNAME, MAXNUMBEROFPURCHASER, DELIVERY, NOTE)
     VALUES (coPurchasingID_seq.nextval, #{unitCost}, #{price}, #{username}, #{maxNumberOfPurchaser}, #{deliveryId}, #{note})
   </insert>
   
