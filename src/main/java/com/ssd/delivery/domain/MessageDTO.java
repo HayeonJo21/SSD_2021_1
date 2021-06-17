@@ -22,7 +22,7 @@ public class MessageDTO implements Serializable
 		super();
 		this.senderUsername = senderUsername;
 		this.receiverUsername = receiverUsername;
-		this.content = content;
+		this.content = content; 
 		this.messageDate = messageDate;
 	}
 	

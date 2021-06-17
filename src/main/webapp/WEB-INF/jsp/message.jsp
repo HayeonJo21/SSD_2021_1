@@ -20,7 +20,7 @@
 						style="width: 400px; height: 80px; display: table;">
 						<span class="align-middle"
 							style="display: table-cell; padding: 0 0 0 20px;">${receiver}님 과의
-							대화</span>
+							대화</span> 
 						<!-- <a href="message_list.jsp">DM리스트</a> -->
 						<a href="/delivery/message.do" class="button text-white"
 							style="display: table-cell; padding: 20px;">DM리스트</a>

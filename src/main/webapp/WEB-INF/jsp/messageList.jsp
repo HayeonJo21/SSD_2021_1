@@ -22,7 +22,7 @@
 							style="display: table-cell; padding: 0 0 0 20px;">메시지 리스트</span>
 						<a href=#menu></a>
 					</div>
-
+ 
 				</div>
 				<div class="list-group" style="width: 400px;">
 					<c:if test="${DMList ne null}">

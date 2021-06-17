@@ -80,7 +80,7 @@ public class ViewMessageController {
 		mav.setViewName("messageList");
 				
 		return mav;
-	
+	 
 	}
 	
 	@RequestMapping("/delivery/message.do")
