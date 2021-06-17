@@ -20,13 +20,13 @@ public class ViewUserController {
 		this.delivery = delivery;
 	}
 
-	@RequestMapping("/user/view")
-	public String handleRequest(
-			@RequestParam("username") String username,
-			ModelMap model) throws Exception {
-		AccountDTO user = delivery.findUser(username);
-		model.put("user", user);
-		return "viewUser";
-	}
+//	@RequestMapping("/user/view")
+//	public String handleRequest(
+//			@RequestParam("username") String username,
+//			ModelMap model) throws Exception {
+//		AccountDTO user = delivery.findUser(username);
+//		model.put("user", user);
+//		return "viewUser";
+//	}
 
 }

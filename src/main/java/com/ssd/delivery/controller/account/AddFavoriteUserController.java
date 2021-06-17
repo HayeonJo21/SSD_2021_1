@@ -19,7 +19,7 @@ import com.ssd.delivery.service.DeliveryFacade;
 @Controller
 @SessionAttributes("userSession")
 
-@RequestMapping("/user/favoriteUser.do")
+@RequestMapping({"/user/favoriteUser.do", "/user/view"})
 public class AddFavoriteUserController { 
 	private DeliveryFacade delivery;
 	@Autowired
@@ -27,7 +27,7 @@ public class AddFavoriteUserController {
 		this.delivery= delivery;
 	}
 	
-	@GetMapping 
+//	@GetMapping 
 //	public String handleRequest(
 //			@RequestParam("username") String username,
 //			ModelMap model) throws Exception {
@@ -38,6 +38,7 @@ public class AddFavoriteUserController {
 //		model.put("user", user);
 //		return "viewUser";
 //	}
+	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView viewMypage(Model model, HttpSession session, @RequestParam("username") String username) throws Exception {
 
 		AccountDTO account = (AccountDTO)session.getAttribute("userSession");
@@ -53,7 +54,7 @@ public class AddFavoriteUserController {
 		mav.addObject("favUser", favUser);
 		mav.addObject("user", account);
 
-		mav.setViewName("favoriteUser");
+		mav.setViewName("viewUser");
 
 		return mav;
 	}
@@ -62,7 +63,7 @@ public class AddFavoriteUserController {
 	public String submit(FavoriteUserDTO fav) {
 		delivery.insertFU(fav);
 		
-		return "mypage";
+		return "redirect:/delivery/mypage.do";
 	}
 //	public String onSubmit(HttpServletRequest request, HttpSession session,
 //			@ModelAttribute("accountForm")  AccountDTO account,

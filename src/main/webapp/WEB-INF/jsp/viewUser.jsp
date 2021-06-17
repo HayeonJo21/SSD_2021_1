@@ -9,11 +9,34 @@
 		
 		
 		
+		<form method="post" action="/user/favoriteUser.do">
+			<div class="form-group">
+				<input type="hidden" class="form-control" name="username"
+					value='${user.username}' id="username">
+			</div>
+			<div class="form-group">
+				<input type="hidden" style="width: 800px" class="form-control"
+					name="favoriteUsername" value='${favUser.username}' >
+			</div>
+			<div class="form-group">
+				<input type="hidden" style="width: 800px" class="form-control"
+					name="tradeCount" value="0"
+					id="tradeCount">
+			</div>
+
+			<div class="form-group text-center">
+				<button type="submit" class="button primary">
+					즐겨찾기 등록<i class="fa fa-check spaceLeft"></i>
+				</button>
+				<a class="btn btn-warning" href="/">가입취소<i
+					class="fa fa-times spaceLeft"></i>
+				</a>
+			</div>
+		</form>
 		
 		
-		
-		<a class="button" href="/user/favoriteUser.do?username=${user.username}">즐겨찾기 등록</a>
-		<div>
+<%-- 		<a class="button" href="/user/favoriteUser.do?username=${user.username}">즐겨찾기 등록</a>
+ --%>		<div>
 			<h3>회원정보</h3>
 			<div class="table-wrapper"> 
 				<table class="alt">
