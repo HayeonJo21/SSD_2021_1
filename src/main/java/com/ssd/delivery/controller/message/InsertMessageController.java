@@ -25,6 +25,3 @@ public class InsertMessageController {
 		return "messageList";
 	}
 }
-
-
-//////

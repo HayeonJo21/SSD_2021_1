@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -40,7 +39,7 @@
 					<c:if test="${RCList ne null}">
 						<c:forEach var="rc" items="${RCList}">
 							<a
-								href="<c:url value='/message/view/content.do'>
+								href="<c:url value='/delivery/messageViewContent.do'>
 						   <c:param name='receiver' value='${rc.senderUsername}'/>
 				 		 </c:url>"
 								class="list-group-item list-group-item-action">${rc.senderUsername}</a>

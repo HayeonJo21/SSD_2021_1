@@ -1,6 +1,9 @@
 package com.ssd.delivery.controller.message;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.text.SimpleDateFormat;
 import java.time.LocalTime;
 
 import javax.servlet.http.HttpSession;
@@ -58,10 +61,15 @@ public class ViewMessageController {
 		AccountDTO account = (AccountDTO)session.getAttribute("userSession");
 		
 		String username = account.getUsername();
-		LocalTime currentTime = LocalTime.now();
-		String date = currentTime.getHour() + "시 " + currentTime.getMinute() + "분";
+//		LocalTime currentTime = LocalTime.now();
+//		String date = currentTime.getHour() + "시 " + currentTime.getMinute() + "분";
+//		
+		Calendar cal = Calendar.getInstance();
+		Date date = cal.getTime();
+		SimpleDateFormat dFormat = new SimpleDateFormat("yyyy/MM/dd hh:mm");
+		String currentDate = dFormat.format(date);
 		
-		MessageDTO message = new MessageDTO(username, receiver, content, date);
+		MessageDTO message = new MessageDTO(username, receiver, content, currentDate);
 		delivery.insertMessage(message);
 		
 		ModelAndView mav = new ModelAndView();

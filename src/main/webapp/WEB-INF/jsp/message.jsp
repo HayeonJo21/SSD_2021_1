@@ -10,7 +10,7 @@
 </style>
 
 <!-- Wrapper -->
-<form action="/delivery/messageSend.do" method="POST">
+<form action="/delivery/messageSendRe.do" method="POST">
 	<div id="wrapper">
 		<div id="main">
 			<div class="inner">
