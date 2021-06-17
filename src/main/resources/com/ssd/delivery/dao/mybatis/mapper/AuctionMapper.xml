@@ -16,11 +16,11 @@
 	select SEQ_auctionId.nextval from dual
 	</selectKey> -->
       insert into auction
-      	(auctionid, serviceid, customerid, enddate, 
-      	servicedate, startprice, finalprice, address1, 
-      	address2, successfulbidder, delivery, username)
+      	(auctionid, serviceid, customerid, enddate, 	
+      	servicedate, startprice, finalprice, address1, 	
+      	address2, successfulbidder, delivery, username)	
       	values
-      	(auctionId_seq.nextval, null, null,null,
+      	(auctionId_seq.nextval, null, null, #{endDate},
       	null,#{startPrice},null, null, 
       	null, null, null, #{username} )
 	</insert>
@@ -39,7 +39,6 @@
 	WHERE auctionid = #{auctionId}
 	</delete>
 	
-  
 	
 	<select id="getAuctionById" resultType="AuctionDTO">
     select * from auction
