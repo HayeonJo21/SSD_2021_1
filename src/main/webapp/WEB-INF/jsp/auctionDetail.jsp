@@ -2,25 +2,53 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="IncludeTop.jsp"%>
 
-		<!-- Menu -->
-		<nav id="menu">
-			<h2>Menu</h2>
-			<ul>
-				<li><a href="index2.jsp">홈</a></li>
-				<li><a href="generic.html">로그인 / 마이페이지</a></li>
-				<li><a href="ticketshop.jsp">중고 거래</a></li>
-				<li><a href="generic.html">용달 서비스 경매</a></li>
-				<li><a href="elements.html">용달 공동 이용</a></li>
-			</ul>
-		</nav>
-
-		<div>
-
 		<!-- Main -->
 		<div id="main">
 			<div class="inner">
 				<h1>출발지: 광명 이케아(IKEA)</h1>
-				<h2>${auction.username} </h2>
+				
+				<h2>판매자 : ${auction.username} </h2>
+				
+				<div class="table-wrapper">
+			<table class="alt">
+				<thead>
+					<tr>
+						<th>Item</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>서비스 제공자</td>
+						<td>${delivery.username}</td>
+
+					</tr>
+					<tr>
+						<td>출발지</td>
+						<td>${delivery.address1 }</td>
+
+					</tr>
+					<tr>
+						<td>도착지</td>
+						<td>${delivery.address2 }</td>
+
+					</tr>
+					<tr>
+						<td>서비스 날짜</td>
+						<td>${delivery.serviceDate }</td>
+
+					</tr>
+					<tr>
+						<td>가격</td>
+						<td>${delivery.price }</td>
+
+					</tr>
+				</tbody>
+			</table>
+		</div>
+				
+				
+				
 				<h2>남은시간: (endDate - 현재 시간) <a href="index.jsp" class="button primary">낙찰</a></h2>
 				<span class="image main"><img src="images/pic1.png" alt="" /></span>
 				<h3>시작가: ${auction.startPrice} (KRW)</h3>
