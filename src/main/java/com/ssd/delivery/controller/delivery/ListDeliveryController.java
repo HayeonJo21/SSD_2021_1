@@ -19,7 +19,7 @@ import com.ssd.delivery.service.DeliveryFacade;
 
 @Controller
 @RequestMapping("/delivery/listView.do")
-public class ListDeliveryController {
+public class ListDeliveryController { 
 	@Autowired
 	private DeliveryFacade delivery;
 	

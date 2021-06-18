@@ -49,7 +49,7 @@
 		<!-- Menu -->
 		<nav id="menu">
 			<h2>Menu</h2>
-			<ul>
+			<ul> 
 				<li><a href="/">메인</a></li>
 				<c:choose>
 					<c:when test="${userSession.username ne null}">
