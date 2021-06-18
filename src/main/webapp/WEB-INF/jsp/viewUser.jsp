@@ -61,23 +61,6 @@
 							<td>${favUser.lastName}</td>
 						</tr>
 						<tr>
-							<td>address</td>
-							<td>${favUser.address}</td>
-						</tr>
-						<tr>
-							<td>phone</td>
-							<td>${favUser.phone}</td>
-
-						</tr>
-						<tr>
-							<td>languagePreference</td>
-							<td>${favUser.languagePreference}</td>
-						</tr>
-						<tr>
-							<td>favoriteUser</td>
-							<td>${favUser.favoriteUser}</td>
-						</tr>
-						<tr>
 							<td>carInfo</td>
 							<td>${favUser.carInfo}</td>
 						</tr>
@@ -90,7 +73,7 @@
 					</div> --%>
 		</div>
 		<div>
-			<h3>참여한 공동구매 내역</h3>
+			<h3>${favUser.username}님이 참여한 공동구매 내역</h3>
 			<div class="table-wrapper">
 				<table class="alt">
 					<thead>
@@ -118,7 +101,7 @@
 			</div>
 		</div>
 		<div>
-			<h3>회원간 거래 글</h3>
+			<h3>${favUser.username}님의 회원간 거래 글</h3>
 			<div class="table-wrapper">
 				<table class="alt">
 					<thead>
@@ -144,7 +127,7 @@
 			</div>
 		</div>
 		<div>
-			<h3>참여한 경매 내역</h3>
+			<h3>${favUser.username}님이 참여한 경매 내역</h3>
 			<div class="table-wrapper">
 				<table class="alt">
 					<thead>

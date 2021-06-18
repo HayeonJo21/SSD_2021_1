@@ -36,9 +36,6 @@
 						src="/images/logoicon.svg" alt="" /></span><span class="title">용달의
 						민족 관리자 페이지</span>
 				</a>
-				<div style="float:right; padding-right:100px">
-				<a href="/" class="button primary">&nbsp;&nbsp;사용자 화면으로 돌아가기&nbsp;&nbsp;</a>
-			</div>
 			</div>
 		</header>		
 		<!-- Main -->
@@ -48,29 +45,45 @@
 			<h1>
 				용달의 민족 <br /> Administrator Page <br />
 			</h1>
-			<p>관리자 페이지 입니다.</p>
+			<p>관리자 회원 관리 페이지 입니다.</p>
 		</header>
 		<br />
 		<div class="inner">
-		<h3><a href="/admin/user.do" class="logo"> <span class="symbol"></span><span class="title">* 회원 관리</span></a></h3>
+		<h3>* 회원 관리</h3>
 		</div>
-		<br /> <br /> 
-		
-		<div class="inner">
-		<h3><a href="/admin/auction.do" class="logo"> <span class="symbol"></span><span class="title">* 경매 관리</span></a></h3>
-		</div>
-		<br /> <br />
+		<br />
+		<div class="table-wrapper">
+				<table class="alt">
+					<thead>
+						<tr>
+							<th>Username</th>
+							<th>First Name</th>
+							<th>Last Name</th>
+							<th>Detail</th>
+							<th>Remove</th>
 
-		<div class="inner">
-		<h3><a href="/admin/delivery.do" class="logo"> <span class="symbol"></span><span class="title">* 회원간 용달 거래 관리</span></a></h3>
-		</div>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach var="user" items="${UserList}">
+							<tr>
+								<td>${user.username}</td>
+				 		 <td>${user.firstName}</td>
+								<td>${user.lastName}</td>
+								<td><a
+									href="<c:url value='/delivery/mypage.do'>
+						   <c:param name='username' value="${user.username}"/>
+				 		 </c:url>" class="button">&nbsp;&nbsp;&nbsp;&nbsp;Detail&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
+								<td><a
+									href="<c:url value='/admin/user/delete.do'>
+						   <c:param name='username' value="${user.username}"/>
+				 		 </c:url>" class="button">&nbsp;&nbsp;&nbsp;&nbsp;Remove&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</div>
 
-		<br /> <br />
-		<div class="inner">
-		<h3><a href="/admin/coPurchasing.do" class="logo"> <span class="symbol"></span><span class="title">* 공동구매 관리</span></a></h3>
-		</div>
-
-		<br /> <br />
 	</div>
 </div>
 

@@ -22,7 +22,7 @@
     VALUES (#{username}, #{password}, #{email}, #{firstName}, #{lastName}, #{address}, #{phone}, #{languagePreference}, #{status}, #{favoriteUser}, #{carInfo})
   </insert>
   
-  <delete id="deleteAccount" parameterType="int">
+  <delete id="deleteAccount" parameterType="String">
 	DELETE FROM ACCOUNT 
 	WHERE USERNAME = #{username}
 	</delete>
