@@ -64,7 +64,7 @@
 				
 				<li><a href="/delivery/auctionView.do">경매 </a></li>
 				<li><a href="/delivery/copurchasingView.do">공동구매</a></li>
-				<li><a href="/delivery/list/view.do">용달서비스 거래</a></li>
+				<li><a href="/delivery/listView.do">용달서비스 거래</a></li>
 				<c:if test="${userSession.username ne null}">
 
 					<li class="nav-item"><li><a href="/delivery/mypage.do">마이페이지</a></li>
