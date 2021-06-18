@@ -45,7 +45,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
 	public void addInterceptors(InterceptorRegistry registry) {
 		registry.addInterceptor(interceptor)
 				.addPathPatterns("/shop/editAccount.do", "/shop/listOrders.do",
-					"/shop/viewOrder.do", "/shop/newOrder.do");		
+					"/shop/viewOrder.do", "/shop/newOrder.do");
 	}
 
 }

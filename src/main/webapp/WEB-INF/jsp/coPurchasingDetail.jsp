@@ -9,6 +9,9 @@
 			<h1 style="font-size: 40px">공동구매 상세내역</h1>
 			<h1 style="font-size: 30px">공동구매 ID : ${cp.coPurchasingId}</h1>
 			<h3>@Note: <b style="color:#f2849e">${cp.note }</b></h3>
+			
+						<a href="/coPurchasing/join.do?coPurchasingId=${cp.coPurchasingId}">공동구매 참여</a>
+			
 			<div class="table-wrapper">
 				<table>
 					<thead>
@@ -85,21 +88,14 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>choi03</td>
-							<td>수궁동</td>
-							<td>2개</td>
-						</tr>
-						<tr>
-							<td>skyPark</td>
-							<td>광명1동</td>
-							<td>1개</td>
-						</tr>
-						<tr>
-							<td>rud99</td>
-							<td>광명7동</td>
-							<td>3개</td>
-						</tr>
+						<c:forEach var="cplineitem" items="${cplineitem}">
+							<tr>
+								<td>${cplineitem.deliveryId}</td>
+								<td>${cplineitem.coPurchasingId}</td>
+								<td>${cplineitem.username}</td>
+							</tr>
+						</c:forEach>
+						
 					</tbody>
 				</table>
 			</div>

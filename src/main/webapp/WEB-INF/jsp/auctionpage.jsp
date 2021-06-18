@@ -14,7 +14,7 @@
 			</p>
 
 
-			<li><a href="/auction/insert.do">경매등록 </a></li>
+			<li><a href="/delivery/auctionInsert.do">경매등록 </a></li>
 		</header>
 		<section class="tiles">
 			<c:forEach var="ac" items="${ACList}">

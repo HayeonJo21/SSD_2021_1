@@ -20,11 +20,13 @@ import com.ssd.delivery.dao.MessageDao;
 import com.ssd.delivery.domain.AccountDTO;
 import com.ssd.delivery.domain.AuctionDTO;
 import com.ssd.delivery.domain.CoPurchasingDTO;
+import com.ssd.delivery.domain.CoPurchasingLineItemDTO;
 import com.ssd.delivery.domain.DeliveryDTO;
 import com.ssd.delivery.domain.MessageDTO;
 import com.ssd.delivery.domain.FavoriteUserDTO;
 import com.ssd.delivery.domain.FleaMarketDTO;
 import com.ssd.delivery.domain.ItemDTO;
+import com.ssd.delivery.dao.CoPurchasingLineItemDao;
 
 
 @Transactional
@@ -49,6 +51,7 @@ public class DeliveryImpl implements DeliveryFacade {
 	private EventDao eventDao;
 	@Autowired		// applicationContext.xml에 정의된 scheduler 객체를 주입 받음
 	private ThreadPoolTaskScheduler scheduler;
+	private CoPurchasingLineItemDao cplineitem;
 	
 	// Account
 	public void insertAccount(AccountDTO account) {
@@ -243,6 +246,16 @@ public class DeliveryImpl implements DeliveryFacade {
 	public List<MessageDTO> getMessageList() {
 		return messageDao.getMessageList();
 	}
+	
+
+	//lineitem
+
+		public List<CoPurchasingLineItemDTO> getCPLineItemsByCPId(int cpId){
+			return cplineitem.getCPLineItemsByCPId(cpId);
+		}
+		public void insertCPLineItem(CoPurchasingLineItemDTO lineItem) {
+			cplineitem.insertCPLineItem(lineItem);
+		}
 
 	public void testScheduler(Date closingTime) {
 		

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ssd.delivery.dao.mybatis.mapper.CoPurchasingLineItemMapper">
+
+  <cache />
+
+  <insert id="insertCPLineItem">
+    INSERT INTO copurchasinglineitem (deliveryid, copurchasingid, username)
+    VALUES (#{deliveryId},#{coPurchasingId},#{username} )
+  </insert>
+  
+  <select id="getCPLineItemsByCPId" resultType="CoPurchasingLineItemDTO">
+    SELECT
+      deliveryid, copurchasingid, username
+    FROM copurchasingLINEITEM
+    WHERE copurchasingid = #{coPurchasingId}
+  </select>
+
+</mapper>
