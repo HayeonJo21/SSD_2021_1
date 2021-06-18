@@ -17,6 +17,8 @@
 
 package com.ssd.delivery.dao.mybatis.mapper;
 
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
@@ -36,4 +38,5 @@ public interface AuctionMapper {
 	AuctionDTO getAuctionById(int auctionId);
 	List<AuctionDTO> getAuctionByUsername(String username);
 	List<AuctionDTO> getAuctionList();
+
 }
