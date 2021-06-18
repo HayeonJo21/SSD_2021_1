@@ -16,7 +16,7 @@ import com.ssd.delivery.service.DeliveryFacade;
 
 @Controller
 @SessionAttributes("userSession")
-@RequestMapping("/auction/insert.do")
+@RequestMapping("/delivery/auctionInsert.do")
 public class InsertAuctionFormController {
 
 	@Autowired

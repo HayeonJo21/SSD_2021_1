@@ -1,8 +1,11 @@
 package com.ssd.delivery.controller.auction;
 
+import java.util.Date;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,13 +40,16 @@ public class InsertAuctionController {
 	}
 	
 	@PostMapping
-	public ModelAndView insertAuction(Model model, HttpSession session, @ModelAttribute("AuctionForm")  AuctionDTO auction, @RequestParam("deliveryId") int deliveryId) throws Exception {
+	public ModelAndView insertAuction(Model model, HttpSession session, @ModelAttribute("AuctionForm")  AuctionDTO auction, 
+			@RequestParam("deliveryId") int deliveryId, @RequestParam("endDate")
+	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm") Date closeTime) throws Exception {
 		AccountDTO account = (AccountDTO)session.getAttribute("userSession");
 		
 		auction.setDelivery(deliveryId);
-
-		delivery.insertAuction(auction);
+		System.out.println(closeTime);
 		
+		delivery.insertAuction(auction);
+		delivery.testScheduler(closeTime);
 		ModelAndView mav = new ModelAndView();
 		
 		DeliveryDTO del = delivery.getDeliveryById(deliveryId);

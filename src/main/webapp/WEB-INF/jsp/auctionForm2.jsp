@@ -49,7 +49,7 @@
 				<div class="form-group">
 					<label for="auction.endDate" style="font-size: 24px">경매 마감일</label>
 					<input type="text" style="width: 800px" class="form-control"
-						name="endDate" placeholder="경매 마감일 ex. 20210615">
+						name="endDate" placeholder="경매 마감일 ex. 2021-06-23 13:00">
 				</div>
 
 
