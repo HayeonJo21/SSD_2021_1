@@ -27,11 +27,11 @@
 				<div class="col-12">
 					<label for="serviceDate">서비스 제공일</label>
 					<div class="col-lg-10">
-						<input type="text" id="datepicker1" name="serviceDate"
+						<input type="text" id="serviceDate" name="serviceDate"
 							class="form-control" placeholder="2021/01/01">
 					</div>
 					<div class="col-12">
-						<input type="text" name="filename" id="filename"
+						<input type="hidden" name="filename" id="filename"
 							value="${delivery.filename }" placeholder="첨부파일" />
 					</div>
 					<div class="col-12">

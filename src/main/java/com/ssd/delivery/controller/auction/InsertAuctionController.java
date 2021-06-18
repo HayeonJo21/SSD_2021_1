@@ -15,7 +15,7 @@ import com.ssd.delivery.service.DeliveryImpl;
 @Controller
 //@SessionAttributes("sessionCP")
 @SessionAttributes("userSession")
-@RequestMapping({"/auction/insert", "/auction/newAuctionSubmitted.do"})
+@RequestMapping({"/delivery/auctionInsert.do", "/delivery/auctionNewAuctionSubmitted.do"})
 public class InsertAuctionController {
 	
 	@Autowired

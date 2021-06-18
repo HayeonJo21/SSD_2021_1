@@ -31,10 +31,12 @@ public class WebMvcConfig implements WebMvcConfigurer {
 		registry.addViewController("/delivery/messageCreate.do").setViewName("messageForm");
 		//registry.addViewController("/delivery/messageSendRe.do").setViewName("message");
 		registry.addViewController("/delivery/messageSend.do").setViewName("message");
-		registry.addViewController("auctionDetail.do").setViewName("auctionDetail");
-		registry.addViewController("delivery/detailView.do").setViewName("deliveryDetail");
-		registry.addViewController("delivery/listView.do").setViewName("deliveryDetail");
-		registry.addViewController("delivery/auctionDetailView.do").setViewName("auctionDetail");
+		registry.addViewController("/delivery/auctionDetail.do").setViewName("auctionDetail");
+		registry.addViewController("/delivery/detailView.do").setViewName("deliveryDetail");
+		registry.addViewController("/delivery/listView.do").setViewName("deliveryDetail");
+		registry.addViewController("/delivery/auctionDetailView.do").setViewName("auctionDetail");
+		registry.addViewController("/delivery/auctionInsert.do").setViewName("auctionForm");
+		registry.addViewController("/delivery/auctionNewAuctionSubmitted.do").setViewName("auctionpage");
 	}
 	
 	@Override
