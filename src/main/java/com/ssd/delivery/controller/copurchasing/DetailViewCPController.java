@@ -43,9 +43,12 @@ public class DetailViewCPController {
 		CoPurchasingDTO cp = this.delivery.getCPById(cpId);
 		DeliveryDTO del = delivery.getDeliveryById(cp.getDelivery());
 		
-		List<CoPurchasingLineItemDTO> cplineitem = delivery.getCPLineItemsByCPId(cpId);
+		System.out.println(cpId);
 		
-		if (cplineitem != null) model.put("cplineitem", cplineitem);
+//		List<CoPurchasingLineItemDTO> cplineitem = delivery.getCPLineItemsByCPId(cpId);
+		
+		System.out.println("yyyyyy");
+//		if (cplineitem != null) model.put("cplineitem", cplineitem);
 		
 		model.put("cp", cp);
 		model.put("del", del);
