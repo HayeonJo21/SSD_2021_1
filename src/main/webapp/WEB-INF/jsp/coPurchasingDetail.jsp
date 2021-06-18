@@ -90,7 +90,7 @@
 					<tbody>
 						<c:forEach var="cplineitem" items="${cplineitem}">
 							<tr>
-								<td>${cplineitem.deliveryId}</td>
+								<%-- <td>${cplineitem.linenum}</td> --%>
 								<td>${cplineitem.coPurchasingId}</td>
 								<td>${cplineitem.username}</td>
 							</tr>
