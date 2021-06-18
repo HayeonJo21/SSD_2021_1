@@ -28,9 +28,6 @@
 				<button type="submit" class="button primary">
 					즐겨찾기 등록<i class="fa fa-check spaceLeft"></i>
 				</button>
-				<a class="btn btn-warning" href="/">가입취소<i
-					class="fa fa-times spaceLeft"></i>
-				</a>
 			</div>
 		</form>
 		

@@ -43,7 +43,7 @@ public class InsertDeliveryController {
 		AccountDTO account = (AccountDTO)session.getAttribute("userSession");
 		
 		delivery.insertDelivery(del);
-		
+	
 		ModelAndView mav = new ModelAndView();
 		
 		mav.addObject("delivery", del);

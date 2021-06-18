@@ -12,7 +12,7 @@ public interface FavoriteUserDao {
 	
 	void updateFU(FavoriteUserDTO favoriteUser) throws DataAccessException;
 	
-	void deleteFU(String username) throws DataAccessException;
+	void deleteFU(int favId) throws DataAccessException;
 	
 	List<FavoriteUserDTO> getFUByUsername(String username) throws DataAccessException;
 	

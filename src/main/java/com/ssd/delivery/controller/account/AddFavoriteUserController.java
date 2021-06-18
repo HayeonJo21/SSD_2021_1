@@ -15,12 +15,14 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.ssd.delivery.domain.*;
 import com.ssd.delivery.service.DeliveryFacade;
+import com.ssd.delivery.service.Message;
 
 @Controller
 @SessionAttributes("userSession")
 
 @RequestMapping({"/user/favoriteUser.do", "/user/view"})
 public class AddFavoriteUserController { 
+	
 	private DeliveryFacade delivery;
 	@Autowired
 	public void setDeliveryFacade(DeliveryFacade delivery) {
@@ -38,23 +40,27 @@ public class AddFavoriteUserController {
 //		model.put("user", user);
 //		return "viewUser";
 //	}
+	
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView viewMypage(Model model, HttpSession session, @RequestParam("username") String username) throws Exception {
 
 		AccountDTO account = (AccountDTO)session.getAttribute("userSession");
-
-		String accountName = account.getUsername();
 		
 		AccountDTO favUser = delivery.findUser(username);
-		
-
-
 		ModelAndView mav = new ModelAndView();
-
+		
+		if(account == null) {
+			Message msg = new Message("로그인 후 이용 가능합니다. 로그인을 해주세요.", "/");
+			mav.addObject("msg", msg);
+			mav.setViewName("login");
+			
+		}
+		else {
 		mav.addObject("favUser", favUser);
 		mav.addObject("user", account);
 
 		mav.setViewName("viewUser");
+		}
 
 		return mav;
 	}
@@ -65,6 +71,7 @@ public class AddFavoriteUserController {
 		
 		return "redirect:/delivery/mypage.do";
 	}
+	
 //	public String onSubmit(HttpServletRequest request, HttpSession session,
 //			@ModelAttribute("accountForm")  AccountDTO account,
 //			@RequestParam("username") String username,

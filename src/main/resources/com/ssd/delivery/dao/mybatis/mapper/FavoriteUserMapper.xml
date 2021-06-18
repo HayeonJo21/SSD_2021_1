@@ -6,9 +6,9 @@
 
    <insert id="insertFU" parameterType="FavoriteUserDTO">
     INSERT INTO FAVORITEUSER
-      (USERNAME, FAVORITEUSERNAME, TRADECOUNT)
+      (FAVID, USERNAME, FAVORITEUSERNAME, TRADECOUNT)
     VALUES
-      (#{username}, #{favoriteUsername}, #{tradeCount})
+      (FAV_SEQ.nextval, #{username}, #{favoriteUsername}, #{tradeCount})
 	</insert>
 
 	<update id="updateFU" parameterType="FavoriteUserDTO">
@@ -20,7 +20,7 @@
 
 	<delete id="deleteFU" parameterType="java.lang.String">
 	DELETE FROM FAVORITEUSER 
-	WHERE USERNAME = #{username}
+	WHERE FAVID = #{favId}
 	</delete>
 	
 	<select id="getFUByUsername" resultType="FavoriteUserDTO">
