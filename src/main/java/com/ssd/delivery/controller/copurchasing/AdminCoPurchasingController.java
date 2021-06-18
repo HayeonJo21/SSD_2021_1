@@ -46,20 +46,17 @@ public class AdminCoPurchasingController {
 		
 		ModelAndView mav = new ModelAndView();
 		
-		List<CoPurchasingDTO> NoExistList = delivery.getCPList();
 		List<CoPurchasingDTO> CPList = delivery.getCPList();
 		
 	
 		for (int i = 0; i < del.size(); i++) {
-			for (int j = 0; j < CPList.size() - 1; j++) {
+			for (int j = 0; j < CPList.size(); j++) {
 				if (del.get(i).getDeliveryId() == CPList.get(j).getDelivery()) {
-					NoExistList.remove(j);
+					CPList.get(j).setFlag(1);
 				}
 			}
 		}
 		
-		
-		mav.addObject("NoCPList", NoExistList);
 		mav.addObject("CPList", CPList);
 		mav.setViewName("adminCoPurchasing");
 	

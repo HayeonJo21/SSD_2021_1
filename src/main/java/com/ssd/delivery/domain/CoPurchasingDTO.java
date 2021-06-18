@@ -18,7 +18,8 @@ public class CoPurchasingDTO implements Serializable {
 	private int maxNumbeOfPurchaser;
 	private int deliveryId;
 	private String note;
-	
+	private int flag;
+
 	public CoPurchasingDTO() {
 		super();
 	}
@@ -34,7 +35,15 @@ public class CoPurchasingDTO implements Serializable {
 		this.deliveryId = delivery;
 		this.note = note;
 	}
-	
+
+	public int getFlag() {
+		return flag;
+	}
+
+	public void setFlag(int flag) {
+		this.flag = flag;
+	}
+
 	//update 생성자
 	public CoPurchasingDTO(int unitCost, int price, int maxNumberofPurchaser, int delivery, String note) {
 		super();

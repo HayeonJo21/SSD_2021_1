@@ -70,12 +70,11 @@
 									<td>
 									${cp.coPurchasingId}</td>
 									<td>
-									<!--<c:forEach var="Ncp" items="${NoCPList}">
-									<c:if test="${cp.delivery eq Ncp.delivery}">
+									<c:if test="${cp.flag ne 1}">
 									<b style="color:red">존재하지 않는 용달 서비스 이용, <br/> 삭제 요망</b><br/>
-									</c:if>-->
+									</c:if>
 									${cp.delivery }
-									<!--</c:forEach>-->
+								
 									</td>
 									<td>${cp.username}</td>
 									<td><a
