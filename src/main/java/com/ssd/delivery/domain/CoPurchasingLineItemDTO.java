@@ -1,6 +1,8 @@
 package com.ssd.delivery.domain;
 
-public class CoPurchasingLineItemDTO {
+import java.io.Serializable;
+
+public class CoPurchasingLineItemDTO implements Serializable{
 
 	private int deliveryId;
 	private int coPurchasingId;
