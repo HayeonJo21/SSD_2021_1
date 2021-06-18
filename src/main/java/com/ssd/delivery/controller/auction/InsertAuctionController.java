@@ -18,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.ssd.delivery.domain.*;
 import com.ssd.delivery.service.DeliveryFacade;
+import com.ssd.delivery.service.Message;
 
 @Controller
 @SessionAttributes("userSession")
@@ -27,15 +28,15 @@ public class InsertAuctionController {
 	private DeliveryFacade delivery;
 
 	@GetMapping
-	public ModelAndView insert2(@RequestParam("deliveryId") int deliveryId) throws Exception {
-
+	public ModelAndView insert2(@RequestParam("deliveryId") int deliveryId, HttpSession session) throws Exception {
+		
 		DeliveryDTO delItem = delivery.getDeliveryById(deliveryId);
 		
 		ModelAndView mav = new ModelAndView();
 
 		mav.addObject("delivery", delItem);
 		mav.setViewName("auctionForm2");
-
+		
 		return mav;
 	}
 	

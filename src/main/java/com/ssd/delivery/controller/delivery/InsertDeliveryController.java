@@ -18,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.ssd.delivery.domain.AccountDTO;
 import com.ssd.delivery.domain.DeliveryDTO;
 import com.ssd.delivery.service.DeliveryFacade;
+import com.ssd.delivery.service.Message;
 
 @Controller
 @RequestMapping("/delivery/insert.do")
@@ -27,8 +28,20 @@ public class InsertDeliveryController {
 	private DeliveryFacade delivery;
 	 
 	@GetMapping
-	public String showForm() { 
-		return "deliveryForm";
+	public ModelAndView showForm(HttpSession session) { 
+		AccountDTO account = (AccountDTO)session.getAttribute("userSession");
+		ModelAndView mav = new ModelAndView();
+		
+		if(account == null) {
+			Message msg = new Message("로그인 후 이용 가능합니다. 로그인을 해주세요.", "/");
+			mav.addObject("msg", msg);
+			mav.setViewName("login");
+			
+		}else {
+			mav.setViewName("deliveryForm");
+		}
+		
+		return mav;
 	}
 	
 	@PostMapping
@@ -50,7 +63,8 @@ public class InsertDeliveryController {
 		mav.addObject("delivery", del);
 		mav.addObject("userSession", account);
 		mav.setViewName("deliveryDetail");
-				
+		
+		
 		return mav;
 	
 	}

@@ -7,7 +7,7 @@
 <div id="main">
 	<div class="inner">
 
-		<h2>공동구매 참여</h2>
+		<h1>공동구매 참여하기✏️</h1>
 
 		<div class="row gtr-uniform">
 			<div class="col-12">
@@ -58,7 +58,7 @@
 				<div class="col-12">
 					<label for="demo-name">user</label> <input type="text" name="username"
 						id="username" value='${user.username} ' placeholder="username" />
-				</div>
+				</div><br/>
 				<div class="col-12">
 					<ul class="actions">
 						<li><input type="submit" value="Submit" class="primary" /></li>
