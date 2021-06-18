@@ -51,6 +51,7 @@ public class DeliveryImpl implements DeliveryFacade {
 	private EventDao eventDao;
 	@Autowired		// applicationContext.xml에 정의된 scheduler 객체를 주입 받음
 	private ThreadPoolTaskScheduler scheduler;
+	@Autowired
 	private CoPurchasingLineItemDao cplineitem;
 	
 	// Account
