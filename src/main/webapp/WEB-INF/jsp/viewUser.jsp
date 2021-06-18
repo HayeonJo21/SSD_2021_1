@@ -5,7 +5,7 @@
 <!-- Main -->
 <div id="main">
 	<div class="inner"> 
-		<h1>${user.username}님</h1>
+		<h1>${favUser.username}님</h1>
 		
 		
 		
@@ -49,40 +49,40 @@
 					<tbody>
 						<tr>
 							<td>username</td>
-							<td>${user.username}</td> 
+							<td>${favUser.username}</td> 
 						</tr>
 						<tr>
 							<td>email</td>
-							<td>${user.email}</td>
+							<td>${favUser.email}</td>
 						</tr>
 						<tr>
 							<td>firstName</td>
-							<td>${user.firstName}</td>
+							<td>${favUser.firstName}</td>
 						</tr>
 						<tr>
 							<td>lastName</td>
-							<td>${user.lastName}</td>
+							<td>${favUser.lastName}</td>
 						</tr>
 						<tr>
 							<td>address</td>
-							<td>${user.address}</td>
+							<td>${favUser.address}</td>
 						</tr>
 						<tr>
 							<td>phone</td>
-							<td>${user.phone}</td>
+							<td>${favUser.phone}</td>
 
 						</tr>
 						<tr>
 							<td>languagePreference</td>
-							<td>${user.languagePreference}</td>
+							<td>${favUser.languagePreference}</td>
 						</tr>
 						<tr>
 							<td>favoriteUser</td>
-							<td>${user.favoriteUser}</td>
+							<td>${favUser.favoriteUser}</td>
 						</tr>
 						<tr>
 							<td>carInfo</td>
-							<td>${user.carInfo}</td>
+							<td>${favUser.carInfo}</td>
 						</tr>
 					</tbody>
 				</table>
