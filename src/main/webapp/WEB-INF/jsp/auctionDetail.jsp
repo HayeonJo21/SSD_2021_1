@@ -6,8 +6,8 @@
 		<div id="main">
 			<div class="inner">
 				<h1>Auction</h1>
-				<h2>출발지: 광명 이케아(IKEA)</h2>
-				<h2>판매자 : ${auction.username} </h2>
+				<h2>출발지: ${ac.address1}</h2>
+				<h2>경매 등록자 : ${ac.username} </h2>
 				
 				<div class="table-wrapper">
 			<table class="alt">
@@ -49,9 +49,9 @@
 				
 				
 				
-				<h2>남은시간: (endDate - 현재 시간) <a href="index.jsp" class="button primary">낙찰</a></h2>
-				<span class="image main"><img src="images/pic1.png" alt="" /></span>
-				<h3>시작가: ${auction.startPrice} (KRW)</h3>
+				<h2>경매 마감시간: ${ac.endDate } <a href="index.jsp" class="button primary">낙찰</a></h2>
+				
+				<h3>시작가: ${ac.startPrice} (KRW)</h3>
 				<h3>입찰단위: 500 (KRW)</h3>
 				<br />
 				<h3>입찰 현황</h3>
@@ -92,14 +92,6 @@
 							</tr>
 						</tbody>
 					</table>
-				</div>
-				<div class="col-6 col-12-medium">
-					<h3>경매 정보</h3>
-					<ul>
-						<li>출발지: 광명 이케아(IKEA)</li>
-						<li>도착지: 경기도 의정부시 민락2지구 00플라자 1층</li>
-						<li>규격: 1.4 x 1.0 x 0.89m, 약 9kg</li>
-					</ul>
 				</div>
 			</div>
 		</div>

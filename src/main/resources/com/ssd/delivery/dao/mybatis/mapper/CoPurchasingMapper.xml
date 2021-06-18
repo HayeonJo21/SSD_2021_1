@@ -41,5 +41,11 @@
     FROM COPURCHASING
     WHERE username = #{username}
 	</select>
+	
+	<select id="isExistingCPAC" resultType="CoPurchasingDTO">
+    SELECT * 
+    FROM COPURCHASING c, AUCTION a
+    WHERE c.delivery = a.delivery
+	</select>
 
 </mapper>

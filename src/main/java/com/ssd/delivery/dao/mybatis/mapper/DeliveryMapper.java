@@ -18,6 +18,8 @@ public interface DeliveryMapper {
 	
 	List<DeliveryDTO> isExistingCP();
 	
+	List<DeliveryDTO> isExistingAC();
+	
 	List<DeliveryDTO> getDeliveryByUsername(String username);
 	
 	List<DeliveryDTO> getDeliveryList();

@@ -43,11 +43,19 @@ public class AdminAuctionController {
 
 	@GetMapping
 	public ModelAndView adminAuctionView(Model model, HttpSession session) throws Exception {
+		List<DeliveryDTO> del = delivery.isExistingAC();
 		
 		ModelAndView mav = new ModelAndView();
 		
 		List<AuctionDTO> ACList = delivery.getAuctionList();
-		
+
+		for (int i = 0; i < del.size(); i++) {
+			for (int j = 0; j < ACList.size(); j++) {
+				if (del.get(i).getDeliveryId() == ACList.get(j).getDelivery()) {
+					ACList.get(j).setFlag(1);
+				}
+			}
+		}
 		
 		mav.addObject("ACList", ACList);
 		mav.setViewName("adminAuction");

@@ -21,4 +21,8 @@ public interface DeliveryDao {
 	List<DeliveryDTO> getDeliveryList() throws DataAccessException;
 	
 	List<DeliveryDTO> isExistingCP() throws DataAccessException;
+	
+	List<DeliveryDTO> isExistingAC() throws DataAccessException;
+	
+
 }

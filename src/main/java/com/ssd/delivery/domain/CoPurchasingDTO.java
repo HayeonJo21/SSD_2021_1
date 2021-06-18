@@ -1,10 +1,6 @@
 package com.ssd.delivery.domain;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
 
 @SuppressWarnings("serial")
 public class CoPurchasingDTO implements Serializable {
@@ -19,6 +15,7 @@ public class CoPurchasingDTO implements Serializable {
 	private int deliveryId;
 	private String note;
 	private int flag;
+	private int flag2;
 
 	public CoPurchasingDTO() {
 		super();
@@ -99,6 +96,14 @@ public class CoPurchasingDTO implements Serializable {
 
 	public void setNote(String note) {
 		this.note = note;
+	}
+
+	public int getFlag2() {
+		return flag2;
+	}
+
+	public void setFlag2(int flag2) {
+		this.flag2 = flag2;
 	}
 	
 

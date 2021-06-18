@@ -51,4 +51,10 @@ public class MybatisCoPurchasingDao implements CoPurchasingDao {
 	public List<CoPurchasingDTO> getCPListByUsername(String username) throws DataAccessException {
 		return CPMapper.getCPListByUsername(username);
 	}
+	
+	@Override
+	public List<CoPurchasingDTO> isExsitingCPAC() throws DataAccessException {
+		return CPMapper.isExistingCPAC();
+	}
+	
 }

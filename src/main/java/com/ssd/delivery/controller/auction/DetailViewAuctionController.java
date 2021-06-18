@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ssd.delivery.domain.AuctionDTO;
-import com.ssd.delivery.domain.Item;
+import com.ssd.delivery.domain.DeliveryDTO;
 import com.ssd.delivery.service.DeliveryFacade;
-import com.ssd.delivery.service.PetStoreFacade;
+
 
 /**
  * @author Juergen Hoeller
@@ -33,8 +33,10 @@ public class DetailViewAuctionController {
 			@RequestParam("acId") int auctionId,
 			ModelMap model) throws Exception {
 		AuctionDTO auction = this.delivery.getAuctionById(auctionId);
+		DeliveryDTO del = delivery.getDeliveryById(auction.getDelivery());
 		
-		model.put("auction", auction);
+		model.put("ac", auction);
+		model.put("delivery", del);
 		return "auctionDetail";
 		
 		

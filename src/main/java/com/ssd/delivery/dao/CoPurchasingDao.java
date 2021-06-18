@@ -18,6 +18,8 @@ public interface CoPurchasingDao {
 	CoPurchasingDTO getCPById(int CPId) throws DataAccessException;
 	
 	List<CoPurchasingDTO> getCPListByUsername(String username) throws DataAccessException;
+
+	List<CoPurchasingDTO> isExsitingCPAC() throws DataAccessException;
 	
 	
 

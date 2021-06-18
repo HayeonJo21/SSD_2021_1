@@ -148,6 +148,10 @@ public class DeliveryImpl implements DeliveryFacade {
 	public List<DeliveryDTO> isExistingCP() {
 		return deliveryDao.isExistingCP();
 	}
+	
+	public List<DeliveryDTO> isExistingAC() {
+		return deliveryDao.isExistingAC();
+	}
 
 	public List<DeliveryDTO> getDeliveryByUsername(String username) {
 		return deliveryDao.getDeliveryByUsername(username);

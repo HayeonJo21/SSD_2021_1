@@ -49,7 +49,7 @@ public class InsertAuctionController {
 		DeliveryDTO del = delivery.getDeliveryById(deliveryId);
 
 		mav.addObject("ac", auction);
-		mav.addObject("del", del);
+		mav.addObject("delivery", del);
 		mav.addObject("userSession", account);
 		mav.setViewName("auctionDetail");
 				

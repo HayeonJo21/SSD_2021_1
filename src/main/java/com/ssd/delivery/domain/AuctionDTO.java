@@ -1,8 +1,8 @@
 package com.ssd.delivery.domain;
 
 import java.io.Serializable;
-import java.sql.Date;
 
+@SuppressWarnings("serial")
 public class AuctionDTO implements Serializable {
 	private int auctionId;
 	private String serviceId;
@@ -16,8 +16,11 @@ public class AuctionDTO implements Serializable {
 	private String successfulBidder;
 	private int delivery;
 	private String username;
+	private int flag;
+	private int flag2;
 	
-	
+
+
 	//기본생성자
 	public AuctionDTO() {
 		super();
@@ -60,6 +63,13 @@ public class AuctionDTO implements Serializable {
 
 
 	//getter&setter
+	public int getFlag() {
+		return flag;
+	}
+
+	public void setFlag(int flag) {
+		this.flag = flag;
+	}
 	public int getAuctionId() {
 		return auctionId;
 	}
@@ -135,6 +145,16 @@ public class AuctionDTO implements Serializable {
 
 	public void setUsername(String username) {
 		this.username = username;
+	}
+
+
+	public int getFlag2() {
+		return flag2;
+	}
+
+
+	public void setFlag2(int flag2) {
+		this.flag2 = flag2;
 	}
 	
 	

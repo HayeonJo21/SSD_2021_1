@@ -42,5 +42,9 @@ public class MybatisDeliveryDao implements DeliveryDao{
 	public List<DeliveryDTO> isExistingCP() throws DataAccessException{
 		return deliveryMapper.isExistingCP();
 	}
+	
+	public List<DeliveryDTO> isExistingAC() throws DataAccessException{
+		return deliveryMapper.isExistingAC();
+	}
 
 }
