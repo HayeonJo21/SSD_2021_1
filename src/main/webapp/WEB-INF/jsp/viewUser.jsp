@@ -5,10 +5,7 @@
 <!-- Main -->
 <div id="main">
 	<div class="inner">
-		<h1>${favUser.username}님</h1>
-
-
-
+		<h1><b style="color: #f2849e"> ${favUser.username}</b>님</h1>
 		<form method="post" action="/user/favoriteUser.do">
 			<div class="form-group">
 				<input type="hidden" class="form-control" name="username"
@@ -33,7 +30,7 @@
 			</c:if>
 		</form>
 		<div>
-			<h3>회원정보</h3>
+			<h3>📝 회원정보</h3>
 			<div class="table-wrapper">
 				<table class="alt">
 					<thead>
@@ -70,9 +67,9 @@
 			<%-- <div position="absolute" style="float: right; width: 300px;">
 						<jsp:include page="message.jsp" flush="true" />
 					</div> --%>
-		</div>
+		</div><br/>
 		<div>
-			<h3>${favUser.username}님이참여한 공동구매 내역</h3>
+			<h3>* ${favUser.username}님이 참여한 <b style="color: #f2849e"> 공동구매 내역</b></h3>
 			<div class="table-wrapper">
 				<table class="alt">
 					<thead>
@@ -98,9 +95,9 @@
 					</tbody>
 				</table>
 			</div>
-		</div>
+		</div><br/>
 		<div>
-			<h3>${favUser.username}님의회원간 거래 글</h3>
+			<h3>* ${favUser.username}님의 <b style="color: #f2849e"> 회원간 거래 글</b></h3>
 			<div class="table-wrapper">
 				<table class="alt">
 					<thead>
@@ -124,9 +121,9 @@
 					</tbody>
 				</table>
 			</div>
-		</div>
+		</div><br/>
 		<div>
-			<h3>${favUser.username}님이참여한 경매 내역</h3>
+			<h3>* ${favUser.username}님이 참여한 <b style="color: #f2849e">경매 내역</b></h3>
 			<div class="table-wrapper">
 				<table class="alt">
 					<thead>
