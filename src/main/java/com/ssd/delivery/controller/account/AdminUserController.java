@@ -1,4 +1,4 @@
-package com.ssd.delivery.controller.copurchasing;
+package com.ssd.delivery.controller.account;
 
 import java.util.List;
 
@@ -30,8 +30,8 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.ui.Model;
 
 @Controller
-@RequestMapping("/admin/coPurchasing.do")
-public class AdminCoPurchasingController {
+@RequestMapping("/admin/user.do")
+public class AdminUserController {
 
 	private DeliveryFacade delivery;
 
@@ -42,23 +42,12 @@ public class AdminCoPurchasingController {
 
 	@GetMapping
 	public ModelAndView adminCPView(Model model, HttpSession session) throws Exception {
-		List<DeliveryDTO> del = delivery.isExistingCP();
+		List<AccountDTO> user = delivery.getUserList();
 		
 		ModelAndView mav = new ModelAndView();
 		
-		List<CoPurchasingDTO> CPList = delivery.getCPList();
-		
-	
-		for (int i = 0; i < del.size(); i++) {
-			for (int j = 0; j < CPList.size(); j++) {
-				if (del.get(i).getDeliveryId() == CPList.get(j).getDelivery()) {
-					CPList.get(j).setFlag(1);
-				}
-			}
-		}
-		
-		mav.addObject("CPList", CPList);
-		mav.setViewName("adminCoPurchasing");
+		mav.addObject("UserList", user);
+		mav.setViewName("adminUser");
 	
 		return mav;
 	}

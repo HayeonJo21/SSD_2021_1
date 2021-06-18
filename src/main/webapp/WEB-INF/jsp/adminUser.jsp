@@ -37,65 +37,55 @@
 						민족 관리자 페이지</span>
 				</a>
 			</div>
-		</header>
+		</header>		
 		<!-- Main -->
-		<div id="main">
-			<div class="inner">
-				<header>
-					<h1>
-						용달의 민족 <br /> Administrator Page <br />
-					</h1>
-					<p>관리자 공동구매 관리 페이지 입니다.</p>
-				</header>
-				<br />
-				<div class="inner">
-					<h3>* 공동구매 관리</h3>
-					<br />
-				</div>
-				<div class="table-wrapper">
-					<table class="alt">
-						<thead>
-							<tr>
-								<th>CoPurchasing ID</th>
-								<th>Delivery Id</th>
-								<th>CoPurchasing Promoter</th>
-								<th>Show Detail</th>
-								<th>Remove</th>
-
-							</tr>
-						</thead>
-						<tbody>
-							<c:forEach var="cp" items="${CPList}">
-								<tr>
-									<td>
-									${cp.coPurchasingId}</td>
-									<td>
-									<c:if test="${cp.flag ne 1}">
-									<b style="color:red">존재하지 않는 용달 서비스 이용, <br/> 삭제 요망</b><br/>
-									</c:if>
-									${cp.delivery }
-								
-									</td>
-									<td>${cp.username}</td>
-									<td><a
-										href="<c:url value='/coPurchasing/detailView.do'>
-						   <c:param name='coPurchasingId' value='${cp.coPurchasingId}'/>
-				 		 </c:url>"
-										class="button">&nbsp;&nbsp;&nbsp;&nbsp;Detail&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
-									<td><a
-										href="<c:url value='/admin/coPurchasing/delete.do'>
-						   <c:param name='cpId' value='${cp.coPurchasingId}'/>
-				 		 </c:url>"
-										class="button">&nbsp;&nbsp;&nbsp;&nbsp;Remove&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
-								</tr>
-								</c:forEach>
-							
-						</tbody>
-					</table>
-				</div>
-				<br /> <br /> <br />
-			</div>
+<div id="main">
+	<div class="inner">
+		<header>
+			<h1>
+				용달의 민족 <br /> Administrator Page <br />
+			</h1>
+			<p>관리자 회원 관리 페이지 입니다.</p>
+		</header>
+		<br />
+		<div class="inner">
+		<h3>* 회원 관리</h3>
 		</div>
+		<br />
+		<div class="table-wrapper">
+				<table class="alt">
+					<thead>
+						<tr>
+							<th>Username</th>
+							<th>First Name</th>
+							<th>Last Name</th>
+							<th>Detail</th>
+							<th>Remove</th>
+
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach var="user" items="${UserList}">
+							<tr>
+								<td>${user.username}</td>
+				 		 <td>${user.firstName}</td>
+								<td>${user.lastName}</td>
+								<td><a
+									href="<c:url value='/delivery/mypage.do'>
+						   <c:param name='username' value="${user.username}"/>
+				 		 </c:url>" class="button">&nbsp;&nbsp;&nbsp;&nbsp;Detail&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
+								<td><a
+									href="<c:url value='/admin/user/delete.do'>
+						   <c:param name='username' value="${user.username}"/>
+				 		 </c:url>" class="button">&nbsp;&nbsp;&nbsp;&nbsp;Remove&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</div>
+
+	</div>
+</div>
 
 		<!-- Scripts -->
 		<script src="assets/js/jquery.min.js"></script>
@@ -115,5 +105,6 @@
 			src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
 			integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 			crossorigin="anonymous"></script>
+
 </body>
 </html>

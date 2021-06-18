@@ -12,7 +12,7 @@ public interface FavoriteUserMapper {
 	
 	void updateFU(FavoriteUserDTO favoriteUser);
 	
-	void deleteFU(String username);
+	void deleteFU(int favId);
 	
 	List<FavoriteUserDTO> getFUByUsername(String username);
 	

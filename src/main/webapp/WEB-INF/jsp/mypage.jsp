@@ -69,15 +69,14 @@
 				<table class="alt">
 					<thead>
 						<tr>
-							<th>Name</th>
-							<th>Description</th>
+							<th>Favorite User Name</th>
+							<th>Number of Trade</th>
 
 						</tr>
 					</thead>
 					<tbody>
 						<c:forEach var="fav" items="${favList}">
 							<tr>
-								<td>${fav.username}</a></td>
 								<td>${fav.favoriteUsername}</td>
 								<td>${fav.tradeCount}</td>
 							</tr>

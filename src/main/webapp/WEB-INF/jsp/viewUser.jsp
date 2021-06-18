@@ -5,7 +5,7 @@
 <!-- Main -->
 <div id="main">
 	<div class="inner"> 
-		<h1>${user.username}님</h1>
+		<h1>${favUser.username}님</h1>
 		
 		
 		
@@ -28,9 +28,6 @@
 				<button type="submit" class="button primary">
 					즐겨찾기 등록<i class="fa fa-check spaceLeft"></i>
 				</button>
-				<a class="btn btn-warning" href="/">가입취소<i
-					class="fa fa-times spaceLeft"></i>
-				</a>
 			</div>
 		</form>
 		
@@ -49,40 +46,23 @@
 					<tbody>
 						<tr>
 							<td>username</td>
-							<td>${user.username}</td> 
+							<td>${favUser.username}</td> 
 						</tr>
 						<tr>
 							<td>email</td>
-							<td>${user.email}</td>
+							<td>${favUser.email}</td>
 						</tr>
 						<tr>
 							<td>firstName</td>
-							<td>${user.firstName}</td>
+							<td>${favUser.firstName}</td>
 						</tr>
 						<tr>
 							<td>lastName</td>
-							<td>${user.lastName}</td>
-						</tr>
-						<tr>
-							<td>address</td>
-							<td>${user.address}</td>
-						</tr>
-						<tr>
-							<td>phone</td>
-							<td>${user.phone}</td>
-
-						</tr>
-						<tr>
-							<td>languagePreference</td>
-							<td>${user.languagePreference}</td>
-						</tr>
-						<tr>
-							<td>favoriteUser</td>
-							<td>${user.favoriteUser}</td>
+							<td>${favUser.lastName}</td>
 						</tr>
 						<tr>
 							<td>carInfo</td>
-							<td>${user.carInfo}</td>
+							<td>${favUser.carInfo}</td>
 						</tr>
 					</tbody>
 				</table>
@@ -93,7 +73,7 @@
 					</div> --%>
 		</div>
 		<div>
-			<h3>참여한 공동구매 내역</h3>
+			<h3>${favUser.username}님이 참여한 공동구매 내역</h3>
 			<div class="table-wrapper">
 				<table class="alt">
 					<thead>
@@ -121,7 +101,7 @@
 			</div>
 		</div>
 		<div>
-			<h3>회원간 거래 글</h3>
+			<h3>${favUser.username}님의 회원간 거래 글</h3>
 			<div class="table-wrapper">
 				<table class="alt">
 					<thead>
@@ -147,7 +127,7 @@
 			</div>
 		</div>
 		<div>
-			<h3>참여한 경매 내역</h3>
+			<h3>${favUser.username}님이 참여한 경매 내역</h3>
 			<div class="table-wrapper">
 				<table class="alt">
 					<thead>

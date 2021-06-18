@@ -44,7 +44,7 @@ public class InsertDeliveryController {
 
 		del.setServiceDate(date);
 		delivery.insertDelivery(del);
-		
+	
 		ModelAndView mav = new ModelAndView();
 
 		mav.addObject("delivery", del);

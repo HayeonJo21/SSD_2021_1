@@ -52,20 +52,25 @@
 		</header>
 		<br />
 		<div class="inner">
+		<h3><a href="/admin/user.do" class="logo"> <span class="symbol"></span><span class="title">* 회원 관리</span></a></h3>
+		</div>
+		<br /> <br /> 
+		
+		<div class="inner">
 		<h3><a href="/admin/auction.do" class="logo"> <span class="symbol"></span><span class="title">* 경매 관리</span></a></h3>
 		</div>
-		<br /> <br /> <br />
+		<br /> <br />
 
 		<div class="inner">
 		<h3><a href="/admin/delivery.do" class="logo"> <span class="symbol"></span><span class="title">* 회원간 용달 거래 관리</span></a></h3>
 		</div>
 
-		<br /> <br /> <br />
+		<br /> <br />
 		<div class="inner">
 		<h3><a href="/admin/coPurchasing.do" class="logo"> <span class="symbol"></span><span class="title">* 공동구매 관리</span></a></h3>
 		</div>
 
-		<br /> <br /> <br />
+		<br /> <br />
 	</div>
 </div>
 

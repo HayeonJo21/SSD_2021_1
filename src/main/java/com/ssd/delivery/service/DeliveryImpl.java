@@ -166,8 +166,8 @@ public class DeliveryImpl implements DeliveryFacade {
 		fuDao.updateFU(favoriteUser);
 	}
 
-	public void deleteFU(String username) {
-		fuDao.deleteFU(username);
+	public void deleteFU(int favId) {
+		fuDao.deleteFU(favId);
 	}
 
 	public List<FavoriteUserDTO> getFUByUsername(String username) {

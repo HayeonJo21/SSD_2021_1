@@ -8,6 +8,9 @@
 				<a href="/delivery/admin/signon.do" class="button primary">&nbsp;&nbsp;&nbsp;&nbsp;Admin&nbsp;&nbsp;&nbsp;&nbsp;</a>
 			</div>
 			<div class="inner">
+			<c:if test="${msg ne null}">
+			<p style="color:#f2849e">${msg.message }</p>
+			</c:if>
 				<h1>Login</h1>
 				<form action="/delivery/signon.do" method="POST">
 				<c:if test="${data ne null}"> 
