@@ -1,5 +1,7 @@
 package com.ssd.delivery.dao;
 
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.dao.DataAccessException;
@@ -16,6 +18,5 @@ public interface AuctionDao {
 	  AuctionDTO getAuctionById(int auctionId) throws DataAccessException;
 	  List<AuctionDTO> getAuctionByUsername(String username) throws DataAccessException;
 	  List<AuctionDTO> getAuctionList() throws DataAccessException;
-	  
 
 }

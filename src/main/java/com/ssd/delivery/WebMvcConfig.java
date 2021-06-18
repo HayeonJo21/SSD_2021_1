@@ -1,6 +1,8 @@
 package com.ssd.delivery;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
@@ -45,4 +47,5 @@ public class WebMvcConfig implements WebMvcConfigurer {
 				.addPathPatterns("/shop/editAccount.do", "/shop/listOrders.do",
 					"/shop/viewOrder.do", "/shop/newOrder.do");		
 	}
+
 }

@@ -1,5 +1,6 @@
 package com.ssd.delivery.service;
 
+import java.util.Date;
 import java.util.List;
 
 import com.ssd.delivery.domain.AccountDTO;
@@ -44,6 +45,8 @@ public interface DeliveryFacade {
 	List<AuctionDTO> getAuctionByUsername(String username);
 
 	List<AuctionDTO> getAuctionList();
+	
+	void testScheduler(Date closingTime);
 
 	// CoPurchasing
 	void insertCP(CoPurchasingDTO CP);
