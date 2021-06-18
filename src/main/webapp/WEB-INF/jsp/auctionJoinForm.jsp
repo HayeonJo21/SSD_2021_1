@@ -59,7 +59,7 @@
 				</div>
 				<div class="col-12">
 					<label for="demo-name">입찰가</label> <input type="text" style="width: 800px" name="joinPrice"
-						id="joinPrice" value='${user.username}' placeholder="${ac.currentPrice}보다 낮은 값을 입력해주세요. (숫자만 입력)" />
+						id="joinPrice" placeholder="${ac.currentPrice}보다 낮은 값을 입력해주세요. (숫자만 입력)" />
 				</div>
 				<br/>
 				<div class="col-12">

@@ -1,5 +1,7 @@
 package com.ssd.delivery.controller.auction;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ssd.delivery.domain.AccountDTO;
 import com.ssd.delivery.domain.AuctionDTO;
+import com.ssd.delivery.domain.AuctionLineItemDTO;
 import com.ssd.delivery.domain.DeliveryDTO;
 import com.ssd.delivery.service.DeliveryFacade;
 
@@ -39,14 +42,14 @@ public class DetailViewAuctionController {
 		DeliveryDTO del = delivery.getDeliveryById(auction.getDelivery());
 		AccountDTO account = (AccountDTO)session.getAttribute("userSession");
 		
+		List<AuctionLineItemDTO> aclineitem = delivery.getACLineItemsByACId(auctionId);
+		
+		model.put("aclineitem", aclineitem);
 		model.put("userSession", account);
 		model.put("ac", auction);
 		model.put("delivery", del);
+		
 		return "auctionDetail";
-		
-		
-		
-		
 	}
 
 }
