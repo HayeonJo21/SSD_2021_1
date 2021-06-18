@@ -5,6 +5,7 @@ import java.util.List;
 import com.ssd.delivery.domain.AccountDTO;
 import com.ssd.delivery.domain.AuctionDTO;
 import com.ssd.delivery.domain.CoPurchasingDTO;
+import com.ssd.delivery.domain.CoPurchasingLineItemDTO;
 import com.ssd.delivery.domain.DeliveryDTO;
 import com.ssd.delivery.domain.FavoriteUserDTO;
 import com.ssd.delivery.domain.FleaMarketDTO;
@@ -114,4 +115,10 @@ public interface DeliveryFacade {
 
 	List<MessageDTO> getMessageList();
 
+
+	//lineitem
+
+		List<CoPurchasingLineItemDTO> getCPLineItemsByCPId(int cpId);
+		void insertCPLineItem(CoPurchasingLineItemDTO lineItem);
+	
 }

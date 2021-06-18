@@ -2,35 +2,67 @@ package com.ssd.delivery.domain;
 
 public class CoPurchasingLineItemDTO {
 
+	private int deliveryId;
+	private int coPurchasingId;
 	private String username;
-	private String address;
 	
-	public CoPurchasingLineItemDTO() {}
 	
-	public CoPurchasingLineItemDTO(String username) {
+	
+	public CoPurchasingLineItemDTO() {
 		super();
+	}
+
+
+
+	public CoPurchasingLineItemDTO(int deliveryId, int coPurchasingId, String username) {
+		super();
+		this.deliveryId = deliveryId;
+		this.coPurchasingId = coPurchasingId;
 		this.username = username;
 	}
-	
-	public CoPurchasingLineItemDTO(String username, String address) {
-		super();
-		this.username = username;
-		this.address = address;
+
+
+
+	public int getDeliveryId() {
+		return deliveryId;
 	}
-	
+
+
+
+	public void setDeliveryId(int deliveryId) {
+		this.deliveryId = deliveryId;
+	}
+
+
+
+	public int getCoPurchasingId() {
+		return coPurchasingId;
+	}
+
+
+
+	public void setCoPurchasingId(int coPurchasingId) {
+		this.coPurchasingId = coPurchasingId;
+	}
+
+
+
 	public String getUsername() {
-		return this.username;
+		return username;
 	}
-	
+
+
+
 	public void setUsername(String username) {
 		this.username = username;
 	}
+
+
+
 	
-	public String getAddress() {
-		return this.address;
-	}
 	
-	public void setAddress(String address) {
-		this.address = address;
-	}
+	
+	
+	
+	
 }
