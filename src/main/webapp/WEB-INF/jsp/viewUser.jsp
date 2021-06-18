@@ -4,11 +4,11 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!-- Main -->
 <div id="main">
-	<div class="inner"> 
+	<div class="inner">
 		<h1>${favUser.username}님</h1>
-		
-		
-		
+
+
+
 		<form method="post" action="/user/favoriteUser.do">
 			<div class="form-group">
 				<input type="hidden" class="form-control" name="username"
@@ -16,26 +16,25 @@
 			</div>
 			<div class="form-group">
 				<input type="hidden" style="width: 800px" class="form-control"
-					name="favoriteUsername" value='${favUser.username}' >
+					name="favoriteUsername" value='${favUser.username}'>
 			</div>
 			<div class="form-group">
 				<input type="hidden" style="width: 800px" class="form-control"
-					name="tradeCount" value="0"
-					id="tradeCount">
+					name="tradeCount" value="0" id="tradeCount">
 			</div>
+			<c:if test="${favUser.username ne userSession.username}">
 
-			<div class="form-group text-center">
-				<button type="submit" class="button primary">
-					즐겨찾기 등록<i class="fa fa-check spaceLeft"></i>
-				</button>
-			</div>
+				<div class="form-group text-center">
+					<button type="submit" class="button primary">
+						즐겨찾기 등록<i class="fa fa-check spaceLeft"></i>
+					</button>
+				</div>
+
+			</c:if>
 		</form>
-		
-		
-<%-- 		<a class="button" href="/user/favoriteUser.do?username=${user.username}">즐겨찾기 등록</a>
- --%>		<div>
+		<div>
 			<h3>회원정보</h3>
-			<div class="table-wrapper"> 
+			<div class="table-wrapper">
 				<table class="alt">
 					<thead>
 						<tr>
@@ -46,7 +45,7 @@
 					<tbody>
 						<tr>
 							<td>username</td>
-							<td>${favUser.username}</td> 
+							<td>${favUser.username}</td>
 						</tr>
 						<tr>
 							<td>email</td>
@@ -73,7 +72,7 @@
 					</div> --%>
 		</div>
 		<div>
-			<h3>${favUser.username}님이 참여한 공동구매 내역</h3>
+			<h3>${favUser.username}님이참여한 공동구매 내역</h3>
 			<div class="table-wrapper">
 				<table class="alt">
 					<thead>
@@ -101,7 +100,7 @@
 			</div>
 		</div>
 		<div>
-			<h3>${favUser.username}님의 회원간 거래 글</h3>
+			<h3>${favUser.username}님의회원간 거래 글</h3>
 			<div class="table-wrapper">
 				<table class="alt">
 					<thead>
@@ -127,7 +126,7 @@
 			</div>
 		</div>
 		<div>
-			<h3>${favUser.username}님이 참여한 경매 내역</h3>
+			<h3>${favUser.username}님이참여한 경매 내역</h3>
 			<div class="table-wrapper">
 				<table class="alt">
 					<thead>
@@ -145,9 +144,7 @@
 						   <c:param name='acId' value='${ac.auctionId}'/>
 				 		 </c:url>">${ac.auctionId}</a></td>
 								<td>${ac.username}</td>
-								<td>${ac.serviceId}</td>
 								<td>${ac.startPrice}</td>
-								<td>${ac.finalPrice}</td>
 								<td>${ac.endDate}</td>
 							</tr>
 						</c:forEach>

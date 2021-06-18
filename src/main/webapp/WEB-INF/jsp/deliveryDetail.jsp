@@ -9,7 +9,7 @@
 	<h1>Delivery Service</h1>
 		<h2>용달 서비스 정보</h2>
 		<c:if test="${msg ne null}">
-				<p style="color:#f2849e">${msg.message}
+				<p style="color:#f2849e">** ${msg.message} **
 				<br/><a href="/delivery/copurchasingView.do"><b>공동구매 게시판</b></a>  또는, &nbsp;<a href="/delivery/auctionView.do"><b>경매 게시판</b></a>을 참조해주시기 바랍니다.</p>
 				</c:if>
 		<div class="table-wrapper">

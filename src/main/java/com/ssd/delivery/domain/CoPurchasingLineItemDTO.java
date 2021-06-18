@@ -3,8 +3,8 @@ package com.ssd.delivery.domain;
 import java.io.Serializable;
 
 public class CoPurchasingLineItemDTO implements Serializable{
-
-	private int deliveryId;
+	
+	private int linenum;
 	private int coPurchasingId;
 	private String username;
 	
@@ -16,9 +16,9 @@ public class CoPurchasingLineItemDTO implements Serializable{
 
 
 
-	public CoPurchasingLineItemDTO(int deliveryId, int coPurchasingId, String username) {
+	public CoPurchasingLineItemDTO(int linenum, int coPurchasingId, String username) {
 		super();
-		this.deliveryId = deliveryId;
+		this.linenum = linenum;
 		this.coPurchasingId = coPurchasingId;
 		this.username = username;
 	}
@@ -26,13 +26,13 @@ public class CoPurchasingLineItemDTO implements Serializable{
 
 
 	public int getDeliveryId() {
-		return deliveryId;
+		return linenum;
 	}
 
 
 
 	public void setDeliveryId(int deliveryId) {
-		this.deliveryId = deliveryId;
+		this.linenum = deliveryId;
 	}
 
 

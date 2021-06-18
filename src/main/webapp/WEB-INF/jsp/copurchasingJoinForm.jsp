@@ -56,11 +56,6 @@
 				</div>
 
 				<div class="col-12">
-					<label for="demo-name">deliveryId</label> <input type="text"
-						name="deliveryId" id="deliveryId" value='${cp.delivery} '
-						placeholder="deliveryId" />
-				</div>
-				<div class="col-12">
 					<label for="demo-name">user</label> <input type="text" name="username"
 						id="username" value='${user.username} ' placeholder="username" />
 				</div>
