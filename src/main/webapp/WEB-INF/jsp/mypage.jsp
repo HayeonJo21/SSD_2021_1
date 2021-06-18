@@ -7,7 +7,7 @@
 	<div class="inner"> 
 		<h1>${user.username}님</h1>
 		<div>
-			<h3>회원정보</h3>
+			<h3 style="color:#f2849e">회원정보</h3>
 			<div class="table-wrapper"> 
 				<table class="alt">
 					<thead>
@@ -62,9 +62,9 @@
 						<jsp:include page="message.jsp" flush="true" />
 					</div> --%>
 		</div>
-		
+		<br/>
 		<div>
-			<h3>즐겨찾기</h3>
+			<h3><b style="color:#f2849e">*</b> 즐겨찾기</h3>
 			<div class="table-wrapper">
 				<table class="alt">
 					<thead>
@@ -85,9 +85,9 @@
 				</table>
 			</div>
 		</div>
-		
+		<br/>
 		<div>
-			<h3>참여한 공동구매 내역</h3>
+			<h3><b style="color:#f2849e">*</b> 참여한 공동구매 내역</h3>
 			<div class="table-wrapper">
 				<table class="alt">
 					<thead>
@@ -115,7 +115,8 @@
 			</div>
 		</div>
 		<div>
-			<h3>회원간 거래 글</h3>
+		<br/>
+			<h3><b style="color:#f2849e">*</b> 회원간 거래 글</h3>
 			<div class="table-wrapper">
 				<table class="alt">
 					<thead>
@@ -140,8 +141,9 @@
 				</table>
 			</div>
 		</div>
+		<br/>
 		<div>
-			<h3>참여한 경매 내역</h3>
+			<h3><b style="color:#f2849e">*</b> 참여한 경매 내역</h3>
 			<div class="table-wrapper">
 				<table class="alt">
 					<thead>
@@ -159,9 +161,7 @@
 						   <c:param name='acId' value='${ac.auctionId}'/>
 				 		 </c:url>">${ac.auctionId}</a></td>
 								<td>${ac.username}</td>
-								<td>${ac.serviceId}</td>
 								<td>${ac.startPrice}</td>
-								<td>${ac.finalPrice}</td>
 								<td>${ac.endDate}</td>
 							</tr>
 						</c:forEach>

@@ -51,9 +51,7 @@ public class InsertAuctionFormController {
 		ModelAndView mav = new ModelAndView();
 
 		mav.addObject("delList", deliveryList);
-		if(deliveryList == null) {
-			System.out.println("#####NULL#######");
-		}
+		
 		mav.setViewName("auctionForm");
 
 		return mav;
