@@ -15,7 +15,7 @@
 					<div class="form-group">
 						<label for="auction.endDate" style="font-size: 24px">EndDate</label>
 						<input type="text" style="width: 800px" class="form-control"
-							name="endDate" placeholder="마감일 ex 20210615" value="20210630">
+							name="endDate" placeholder="마감일 ex 2021/06/15" value="2021/06/30">
 					</div>
 					<div class="form-group">
 						<label for="auction.startPrice" style="font-size: 24px">StartPrice</label>

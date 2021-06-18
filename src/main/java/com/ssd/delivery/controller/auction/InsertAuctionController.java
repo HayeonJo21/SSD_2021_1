@@ -1,5 +1,9 @@
 package com.ssd.delivery.controller.auction;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -31,7 +35,17 @@ public class InsertAuctionController {
 	}
 	
 	@RequestMapping(method=RequestMethod.POST)
-	public String submit(AuctionDTO auction) {
+	public String submit(AuctionDTO auction) throws ParseException {
+		
+		String sdate = auction.getEndDate();
+		
+		SimpleDateFormat dFormat = new SimpleDateFormat("yyyy/MM/dd");
+
+		Date to = dFormat.parse(sdate);
+		String date = dFormat.format(to);
+
+		auction.setEndDate(date);
+		
 		delivery.insertAuction(auction);
 		
 		return "index";
