@@ -58,6 +58,8 @@ public interface DeliveryFacade {
 	CoPurchasingDTO getCPById(int CPId);
 
 	List<CoPurchasingDTO> getCPListByUsername(String username);
+	
+	List<CoPurchasingDTO> isExistingCPAC();
 
 	// Delivery
 	void insertDelivery(DeliveryDTO delivery);
@@ -122,5 +124,6 @@ public interface DeliveryFacade {
 
 		List<CoPurchasingLineItemDTO> getCPLineItemsByCPId(int cpId);
 		void insertCPLineItem(CoPurchasingLineItemDTO lineItem);
+
 	
 }

@@ -18,6 +18,9 @@
 		</header>
 		<section class="tiles">
 			<c:forEach var="ac" items="${ACList}">
+			<c:if test="${ACList eq null}">
+		   <h2>아직 등록된 경매가 없습니다. <a href="/"><b>되돌아가기</b></a></h2>
+			</c:if>
 				<article class="style3">
 					<span class="image"> <img src="/images/pic01.jpg" alt="" />
 					</span> <a

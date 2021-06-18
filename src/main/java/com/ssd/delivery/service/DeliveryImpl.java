@@ -166,6 +166,11 @@ public class DeliveryImpl implements DeliveryFacade {
 		return deliveryDao.getDeliveryList();
 	}
 	
+	@Override
+	public List<CoPurchasingDTO> isExistingCPAC() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	// FavoriteUser
 	public void insertFU(FavoriteUserDTO favoriteUser) {
 		fuDao.insertFU(favoriteUser);

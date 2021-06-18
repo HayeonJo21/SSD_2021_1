@@ -31,6 +31,7 @@ public class ViewDeliveryController {
 		
 		DeliveryDTO deliveryItem = delivery.getDeliveryById(deliveryId);
 		List<DeliveryDTO> del = delivery.isExistingCP();
+		List<DeliveryDTO> del2 = delivery.isExistingAC();
 		
 		ModelAndView mav = new ModelAndView();
 		
@@ -48,6 +49,22 @@ public class ViewDeliveryController {
 			mav.addObject("delivery", deliveryItem);
 			mav.addObject("userSession", account);
 			mav.setViewName("deliveryDetail");
+			
+		} if(del2 != null) {
+			for(int i = 0; i < del2.size(); i++) {
+				if(del2.get(i).getDeliveryId() == deliveryId) {
+					Message msg = new Message("경매로 진행중인 용달 서비스 입니다.", "/");
+					mav.addObject("msg", msg);
+					mav.addObject("delivery", deliveryItem);
+					mav.addObject("userSession", account);
+					mav.setViewName("deliveryDetail");
+					break;
+				}
+			}
+			mav.addObject("delivery", deliveryItem);
+			mav.addObject("userSession", account);
+			mav.setViewName("deliveryDetail");
+			
 		}
 		else{
 			mav.addObject("delivery", deliveryItem);

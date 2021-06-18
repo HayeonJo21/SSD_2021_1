@@ -13,6 +13,9 @@
 			<p>현재 진행중인 용달 서비스 경매 및 공동구매 입니다.</p>
 		</header>
 		<h3>* 경매</h3>
+		<c:if test="${ACList eq null}">
+		<p style="color:#d4cdd3">아직 등록된 경매가 없습니다.</p>
+		</c:if>
 		<section class="tiles">
 			<c:forEach var="ac" items="${ACList}">
 				<article class="style3">
@@ -36,29 +39,6 @@
 	</section>
 	
 	<br /> <br /> <br />
-
-	<h3>* 회원간 용달 거래</h3>
-	<section class="tiles">
-		<c:forEach var="del" items="${DelList}">
-			<article class="style1">
-				<span class="image"> <img src="images/pic06.jpg" alt="" />
-				</span> <a
-					href="<c:url value='/delivery/detailView.do'>
-						   <c:param name='deliveryId' value='${del.deliveryId}'/>
-				 		 </c:url>">
-					<h2>출발지: ${del.address1 }</h2>
-					<div class="content">
-						<p>
-							출발: ${del.address1 } > 도착: ${del.address2 } <br /> 가격:
-							${del.price}
-						</p>
-					</div>
-				</a> <br /> 서비스 제공일: ${del.serviceDate }
-			</article>
-		</c:forEach>
-	</section>
-
-	<br /> <br /> <br />
 	<h3>* 공동구매</h3>
 	<section class="tiles">
 		<c:forEach var="cp" items="${CPList}">
@@ -81,6 +61,27 @@
 		</c:forEach>
 	</section>
 
+	<br /> <br /> <br />
+	<h3>* 회원간 용달 거래</h3>
+	<section class="tiles">
+		<c:forEach var="del" items="${DelList}">
+			<article class="style1">
+				<span class="image"> <img src="images/pic06.jpg" alt="" />
+				</span> <a
+					href="<c:url value='/delivery/detailView.do'>
+						   <c:param name='deliveryId' value='${del.deliveryId}'/>
+				 		 </c:url>">
+					<h2>출발지: ${del.address1 }</h2>
+					<div class="content">
+						<p>
+							출발: ${del.address1 } > 도착: ${del.address2 } <br /> 가격:
+							${del.price}
+						</p>
+					</div>
+				</a> <br /> 서비스 제공일: ${del.serviceDate }
+			</article>
+		</c:forEach>
+	</section>
 	<br /> <br /> <br />
 </div>
 </div>
