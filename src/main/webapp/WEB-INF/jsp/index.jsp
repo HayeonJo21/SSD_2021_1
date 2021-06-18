@@ -14,9 +14,6 @@
 		</header>
 		<br/>
 		<h3>⏳ 경매</h3>
-		<c:if test="${ACList eq null}">
-		<p style="color:#d4cdd3">아직 등록된 경매가 없습니다.</p>
-		</c:if>
 		<section class="tiles">
 			<c:forEach var="ac" items="${ACList}">
 				<article class="style3">

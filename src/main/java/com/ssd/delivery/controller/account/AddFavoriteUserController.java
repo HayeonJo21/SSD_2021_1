@@ -47,6 +47,9 @@ public class AddFavoriteUserController {
 		AccountDTO account = (AccountDTO)session.getAttribute("userSession");
 		
 		AccountDTO favUser = delivery.findUser(username);
+		List<CoPurchasingDTO> CPList = delivery.getCPListByUsername(favUser.getUsername());
+		List<AuctionDTO> ACList = delivery.getAuctionByUsername(favUser.getUsername());
+		List<DeliveryDTO> DelList = delivery.getDeliveryByUsername(favUser.getUsername());
 		ModelAndView mav = new ModelAndView();
 		
 		if(account == null) {
@@ -57,6 +60,9 @@ public class AddFavoriteUserController {
 		}
 		else {
 		mav.addObject("favUser", favUser);
+		mav.addObject("CPList", CPList);
+		mav.addObject("DelList", DelList);
+		mav.addObject("ACList", ACList);
 		mav.addObject("user", account);
 
 		mav.setViewName("viewUser");
