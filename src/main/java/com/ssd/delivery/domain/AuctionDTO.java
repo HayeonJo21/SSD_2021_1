@@ -14,7 +14,7 @@ public class AuctionDTO implements Serializable {
 	private String address1;
 	private String address2;
 	private String successfulBidder;
-	private DeliveryDTO delivery; //deliver 객체 참조
+	private int delivery;
 	private String username;
 	
 	
@@ -26,7 +26,7 @@ public class AuctionDTO implements Serializable {
 	
 	public AuctionDTO(int auctionId, String serviceId, String customerId, String endDate, Date serviceDate,
 			int startPrice, int finalPrice, String address1, String address2, String successfulBidder,
-			DeliveryDTO delivery, String username) {
+			int delivery, String username) {
 		super();
 		this.auctionId = auctionId;
 		this.serviceId = serviceId;
@@ -120,11 +120,11 @@ public class AuctionDTO implements Serializable {
 	public void setSuccessfulBidder(String successfulBidder) {
 		this.successfulBidder = successfulBidder;
 	}
-	public DeliveryDTO getDelivery() {
+	public int getDelivery() {
 		return delivery;
 	}
-	public void setDelivery(DeliveryDTO delivery) {
-		this.delivery = delivery;
+	public void setDelivery(int deliveryId) {
+		this.delivery = deliveryId;
 	}
 
 
