@@ -91,20 +91,11 @@
 						<c:forEach var="cplineitem" items="${cplineitem}">
 							<tr>
 								<td>${cplineitem.deliveryId}</td>
-								<td>${cplineitem.serviceDate}</td>
-								<td>${cplineitem.price}</td>
+								<td>${cplineitem.coPurchasingId}</td>
+								<td>${cplineitem.username}</td>
 							</tr>
 						</c:forEach>
-						<tr>
-							<td>skyPark</td>
-							<td>광명1동</td>
-							<td>1개</td>
-						</tr>
-						<tr>
-							<td>rud99</td>
-							<td>광명7동</td>
-							<td>3개</td>
-						</tr>
+						
 					</tbody>
 				</table>
 			</div>
