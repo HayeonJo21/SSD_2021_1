@@ -18,7 +18,7 @@
 				<article class="style3">
 					<span class="image"> <img src="images/pic01.jpg" alt="" />
 					</span> <a
-						href="<c:url value='/auction/view.do'>
+						href="<c:url value='/delivery/auctionDetailView.do'>
 						   <c:param name='acId' value='${ac.auctionId}'/>
 				 		 </c:url>"> <h2>출발지: ${ac.address1 }</h2>
 						<div class="content">

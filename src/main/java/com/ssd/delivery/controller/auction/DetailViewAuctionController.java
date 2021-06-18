@@ -18,7 +18,7 @@ import com.ssd.delivery.service.PetStoreFacade;
  * @modified-by Changsup Park
  */
 @Controller
-@RequestMapping("/auction/view.do")
+@RequestMapping("/delivery/auctionDetailView.do")
 public class DetailViewAuctionController { 
 	@Autowired
 	private DeliveryFacade delivery;

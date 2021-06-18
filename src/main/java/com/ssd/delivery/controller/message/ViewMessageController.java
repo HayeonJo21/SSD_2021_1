@@ -67,7 +67,7 @@ public class ViewMessageController {
 
 		Calendar cal = Calendar.getInstance();
 		Date date = cal.getTime();
-		SimpleDateFormat dFormat = new SimpleDateFormat("yyyy/MM/dd hh:mm");
+		SimpleDateFormat dFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm");
 		String currentDate = dFormat.format(date);
 		
 		MessageDTO message = new MessageDTO(username, receiver, content, currentDate);
