@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
 @Configuration
-public class WebMvcConfig implements WebMvcConfigurer { 
+public class WebMvcConfig implements WebMvcConfigurer {  
 
 	@Autowired
 	@Qualifier(value = "signonInterceptor") 
@@ -33,7 +33,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
 		registry.addViewController("/delivery/messageSend.do").setViewName("message");
 		registry.addViewController("/delivery/auctionDetail.do").setViewName("auctionDetail");
 		registry.addViewController("/delivery/detailView.do").setViewName("deliveryDetail");
-		registry.addViewController("/delivery/listView.do").setViewName("deliveryDetail");
+		registry.addViewController("/delivery/listView.do").setViewName("deliveryPage");
 		registry.addViewController("/delivery/auctionDetailView.do").setViewName("auctionDetail");
 		registry.addViewController("/delivery/auctionInsert.do").setViewName("auctionForm");
 		registry.addViewController("/delivery/auctionNewAuctionSubmitted.do").setViewName("auctionpage");
