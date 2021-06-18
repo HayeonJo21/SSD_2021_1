@@ -1,5 +1,8 @@
 package com.ssd.delivery.controller.auction;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -35,25 +38,40 @@ public class JoinAuctionController {
 			@RequestParam("auctionId") int acId, HttpSession session, ModelMap model) throws Exception {
 		
 		AuctionDTO ac = this.delivery.getAuctionById(acId);
+		DeliveryDTO del = delivery.getDeliveryById(ac.getDelivery());
 		AccountDTO account = (AccountDTO)session.getAttribute("userSession");
 		
-//		String username = userSession.getAccount().getUsername();
-		
-//		AccountDTO user = delivery.findUser(username);
+		if(ac.getCurrentPrice() == 0) {
+			ac.setCurrentPrice(ac.getStartPrice());
+		}
 		
 		model.put("ac", ac);
-//		model.put("delivery", del);
+		model.put("delivery", del);
 		model.put("user", account);
-		return "copurchasingJoinForm";
+		return "auctionJoinForm";
 
 	}
 
 	
 	@PostMapping
-	public String submit(CoPurchasingLineItemDTO cplineitemDTO) {
-		delivery.insertCPLineItem(cplineitemDTO);
+	public ModelAndView submit(AuctionLineItemDTO aclineitemDTO) {
 		
-		return "index";
+		Calendar cal = Calendar.getInstance();
+		Date date = cal.getTime();
+		SimpleDateFormat dFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm");
+		String currentDate = dFormat.format(date);
+		
+		aclineitemDTO.setJoinDate(currentDate);
+		
+		delivery.insertACLineItem(aclineitemDTO);
+		
+		ModelAndView mav = new ModelAndView();
+		
+		List<AuctionLineItemDTO> aclineitem = delivery.getACLineItemsByACId(aclineitemDTO.getAuctionId());
+		mav.addObject("aclineitem", aclineitem);
+		mav.setViewName("auctionDetail");
+		
+		return mav;
 	}
 	
 }

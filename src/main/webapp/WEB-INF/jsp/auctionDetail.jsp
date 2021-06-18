@@ -58,7 +58,7 @@
 				<h3>💵 시작가: ${ac.startPrice} (KRW)</h3>
 				<h3>💰 입찰단위: 입찰자 자유</h3>
 				<br />
-				<c:if test="${userSession.username ne ac.username}">
+				<c:if test="${userSession.username ne ac.username && userSession.username ne null}">
 				<div style="float:right; padding-right:5px">
 				<a href="/auction/join.do?auctionId=${ac.auctionId}" class="button primary">&nbsp;&nbsp;&nbsp;&nbsp;경매 참여🤚🏻&nbsp;&nbsp;&nbsp;&nbsp;</a>
 			</div></c:if>
@@ -68,36 +68,20 @@
 						<thead>
 							<tr>
 								<th>번호</th>
-								<th>Username</th>
+								<th>참여자</th>
 								<th>입찰일시</th>
 								<th>입찰금액</th>
 							</tr>
 						</thead>
 						<tbody>
+							<c:forEach var="aclineitem" items="${aclineitem}" varStatus="st">
 							<tr>
-								<td>1</td>
-								<td>somsom</td>
-								<td>2021-03-20</td>
-								<td>21,000원</td>
+								<td>${st.index+1}</td>
+								<td>${aclineitem.username}</td>
+								<td>${aclineitem.joinDate}</td>
+								<td>${aclineitem.joinPrice}</td>
 							</tr>
-							<tr>
-								<td>2</td>
-								<td>test1</td>
-								<td>2021-03-20</td>
-								<td>21,500원</td>
-							</tr>
-							<tr>
-								<td>3</td>
-								<td>imuser</td>
-								<td>2021-03-21</td>
-								<td>22,500원</td>
-							</tr>
-							<tr>
-								<td>4</td>
-								<td>imcustomer</td>
-								<td>2021-03-21</td>
-								<td>23,500원</td>
-							</tr>
+						</c:forEach>
 						</tbody>
 					</table>
 				</div>

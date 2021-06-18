@@ -1,12 +1,14 @@
 package com.ssd.delivery.domain;
 
-public class AuctionLineItemDTO {
+import java.io.Serializable;
+
+@SuppressWarnings("serial")
+public class AuctionLineItemDTO implements Serializable{
 	private int ACLineId;
 	private String username;
 	private String joinDate;
 	private int joinPrice;
 	private int auctionId;
-	
 
 	public AuctionLineItemDTO() {
 		super();
@@ -51,8 +53,5 @@ public class AuctionLineItemDTO {
 	public void setAuctionId(int auctionId) {
 		this.auctionId = auctionId;
 	}
-	
-	
-	
-	
+
 }
