@@ -16,13 +16,12 @@
 	select SEQ_auctionId.nextval from dual
 	</selectKey> -->
       insert into auction
-      	(auctionid, serviceid, customerid, enddate, 	
-      	servicedate, startprice, finalprice, address1, 	
+      	(auctionid, enddate, servicedate, startprice, finalprice, address1, 	
       	address2, successfulbidder, delivery, username)	
       	values
-      	(auctionId_seq.nextval, null, null, #{endDate},
-      	null,#{startPrice},null, null, 
-      	null, null, null, #{username} )
+      	(auctionId_seq.nextval, #{endDate}, #{serviceDate}, #{startPrice},
+      	null,#{address1}, #{address2}, null, 
+      	#{delivery}, #{username})
 	</insert>
 
 	<update id="updateAuction" parameterType="AuctionDTO">

@@ -8,7 +8,7 @@ public class AuctionDTO implements Serializable {
 	private String serviceId;
 	private String customerId;
 	private String endDate;
-	private Date serviceDate;
+	private String serviceDate;
 	private int startPrice;
 	private int finalPrice;
 	private String address1;
@@ -24,7 +24,7 @@ public class AuctionDTO implements Serializable {
 	}
 	
 	
-	public AuctionDTO(int auctionId, String serviceId, String customerId, String endDate, Date serviceDate,
+	public AuctionDTO(int auctionId, String serviceId, String customerId, String endDate, String serviceDate,
 			int startPrice, int finalPrice, String address1, String address2, String successfulBidder,
 			int delivery, String username) {
 		super();
@@ -84,10 +84,10 @@ public class AuctionDTO implements Serializable {
 	public void setEndDate(String endDate) {
 		this.endDate = endDate;
 	}
-	public Date getServiceDate() {
+	public String getServiceDate() {
 		return serviceDate;
 	}
-	public void setServiceDate(Date serviceDate) {
+	public void setServiceDate(String serviceDate) {
 		this.serviceDate = serviceDate;
 	}
 	public int getStartPrice() {
