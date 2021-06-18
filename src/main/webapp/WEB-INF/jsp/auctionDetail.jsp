@@ -5,7 +5,7 @@
 		<!-- Main -->
 		<div id="main">
 			<div class="inner">
-				<h1>Auction</h1>
+				<h1>Auction ⏳</h1>
 				<h2>출발지: ${ac.address1}</h2>
 				<h2>경매 등록자 : ${ac.username} </h2>
 				
@@ -49,12 +49,15 @@
 				
 				
 				
-				<h2>경매 마감시간: ${ac.endDate } <a href="index.jsp" class="button primary">낙찰</a></h2>
+				<h2>⏰ 경매 마감시간: ${ac.endDate } <a href="index.jsp" class="button primary">🛎낙찰🛎</a></h2>
 				
-				<h3>시작가: ${ac.startPrice} (KRW)</h3>
-				<h3>입찰단위: 500 (KRW)</h3>
+				<h3>💵 시작가: ${ac.startPrice} (KRW)</h3>
+				<h3>💰 입찰단위: 500 (KRW)</h3>
 				<br />
-				<h3>입찰 현황</h3>
+				<div style="float:right; padding-right:5px">
+				<a href="#" class="button primary">&nbsp;&nbsp;&nbsp;&nbsp;경매 참여🤚🏻&nbsp;&nbsp;&nbsp;&nbsp;</a>
+			</div>
+				<h3><b style="color: #f2849e">* 입찰 현황</b></h3>
 				<div class="table-wrapper">
 					<table class="alt">
 						<thead>
