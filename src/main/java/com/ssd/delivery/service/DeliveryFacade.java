@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.ssd.delivery.domain.AccountDTO;
 import com.ssd.delivery.domain.AuctionDTO;
+import com.ssd.delivery.domain.AuctionLineItemDTO;
 import com.ssd.delivery.domain.CoPurchasingDTO;
 import com.ssd.delivery.domain.CoPurchasingLineItemDTO;
 import com.ssd.delivery.domain.DeliveryDTO;
@@ -29,7 +30,7 @@ public interface DeliveryFacade {
 	boolean existingUser(String username);
 
 	List<FavoriteUserDTO> getFavoriteUserList(String username);
-	
+
 	List<AccountDTO> getUserList();
 
 	AccountDTO findUser(String username);
@@ -46,7 +47,7 @@ public interface DeliveryFacade {
 	List<AuctionDTO> getAuctionByUsername(String username);
 
 	List<AuctionDTO> getAuctionList();
-	
+
 	void testScheduler(Date closingTime);
 
 	// CoPurchasing
@@ -61,7 +62,7 @@ public interface DeliveryFacade {
 	CoPurchasingDTO getCPById(int CPId);
 
 	List<CoPurchasingDTO> getCPListByUsername(String username);
-	
+
 	List<CoPurchasingDTO> isExistingCPAC();
 
 	// Delivery
@@ -76,9 +77,9 @@ public interface DeliveryFacade {
 	List<DeliveryDTO> getDeliveryByUsername(String username);
 
 	List<DeliveryDTO> getDeliveryList();
-	
+
 	List<DeliveryDTO> isExistingCP();
-	
+
 	List<DeliveryDTO> isExistingAC();
 
 	// FavoriteUser
@@ -113,20 +114,23 @@ public interface DeliveryFacade {
 	void deleteMessage(String username);
 
 	List<MessageDTO> getMessageListByUsername(String username);
-	
+
 	List<MessageDTO> getMessageListByReceiverUsername(String receiver);
-	
+
 	List<MessageDTO> getMessageContentByUsername(String sender, String receiver);
-	
+
 	List<MessageDTO> getMessageContentByReceiverUsername(String sender, String receiver);
 
 	List<MessageDTO> getMessageList();
 
+	// CP lineitem
+	List<CoPurchasingLineItemDTO> getCPLineItemsByCPId(int cpId);
 
-	//lineitem
+	void insertCPLineItem(CoPurchasingLineItemDTO lineItem);
 
-		List<CoPurchasingLineItemDTO> getCPLineItemsByCPId(int cpId);
-		void insertCPLineItem(CoPurchasingLineItemDTO lineItem);
+	// AC lineitem
+	List<AuctionLineItemDTO> getACLineItemsByACId(int acId);
 
-	
+	void insertACLineItem(AuctionLineItemDTO lineItem);
+
 }

@@ -49,14 +49,19 @@
 				
 				
 				
-				<h2>⏰ 경매 마감시간: ${ac.endDate } <a href="index.jsp" class="button primary">🛎낙찰🛎</a></h2>
-				
+				<h2>⏰ 경매 마감시간: ${ac.endDate }<c:if test="${userSession.username eq ac.username}">
+				<div style="float:right; padding-right:30px">
+				<a href="index.jsp" class="button primary">&nbsp;&nbsp;&nbsp;🛎낙찰🛎&nbsp;&nbsp;&nbsp;</a>
+				</div>
+				</c:if>
+				</h2>
 				<h3>💵 시작가: ${ac.startPrice} (KRW)</h3>
-				<h3>💰 입찰단위: 500 (KRW)</h3>
+				<h3>💰 입찰단위: 입찰자 자유</h3>
 				<br />
+				<c:if test="${userSession.username ne ac.username}">
 				<div style="float:right; padding-right:5px">
-				<a href="#" class="button primary">&nbsp;&nbsp;&nbsp;&nbsp;경매 참여🤚🏻&nbsp;&nbsp;&nbsp;&nbsp;</a>
-			</div>
+				<a href="/auction/join.do?auctionId=${ac.auctionId}" class="button primary">&nbsp;&nbsp;&nbsp;&nbsp;경매 참여🤚🏻&nbsp;&nbsp;&nbsp;&nbsp;</a>
+			</div></c:if>
 				<h3><b style="color: #f2849e">* 입찰 현황</b></h3>
 				<div class="table-wrapper">
 					<table class="alt">
