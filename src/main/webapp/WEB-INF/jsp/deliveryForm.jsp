@@ -13,7 +13,7 @@
 						name="username" id="username" value="${userSession.username}"
 						placeholder="${userSession.username}" />
 				</div>
-
+ 
 				<div class="col-12">
 					<label for="address1">출발지</label> <input type="text"
 						name="address1" id="address1" value="${delivery.address1}"

@@ -32,7 +32,7 @@
 			<li><span class="button">경매 입장가능</span></li>
 		</ul></div>
 	</article>
-	</c:forEach>
+	</c:forEach> 
 	</section>
 	
 	<br /> <br /> <br />

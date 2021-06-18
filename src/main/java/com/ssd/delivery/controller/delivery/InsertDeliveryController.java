@@ -25,7 +25,7 @@ import com.ssd.delivery.service.DeliveryFacade;
 public class InsertDeliveryController {
 	@Autowired
 	private DeliveryFacade delivery;
-	
+	 
 	@GetMapping
 	public String showForm() { 
 		return "deliveryForm";

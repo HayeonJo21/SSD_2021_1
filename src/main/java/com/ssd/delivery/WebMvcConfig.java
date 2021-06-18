@@ -14,7 +14,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
 	@Autowired
 	@Qualifier(value = "signonInterceptor") 
 	private HandlerInterceptor interceptor;
-
+ 
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
 		registry.addViewController("/delivery/mainpage.jsp").setViewName("index"); 

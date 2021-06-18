@@ -6,7 +6,7 @@ import java.util.Date;
 
 @SuppressWarnings("serial")
 public class DeliveryDTO implements Serializable {
-
+ 
 	/* Private Fields */
 
 	private int deliveryId;
