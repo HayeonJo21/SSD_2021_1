@@ -13,6 +13,7 @@ public interface CoPurchasingLineItemDao {
 	void insertCPLineItem2(CoPurchasingLineItemDTO cp) throws DataAccessException;
 	void deleteCPLineItem(int coPurchasingId) throws DataAccessException;
 	List<CoPurchasingLineItemDTO> getCPLineItemsByCPId(int coPurchasingId) throws DataAccessException;
+	int CPLineItemCount(int coPurchasingId) throws DataAccessException;
 
 	
 

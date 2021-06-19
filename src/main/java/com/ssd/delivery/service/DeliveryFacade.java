@@ -33,7 +33,7 @@ public interface DeliveryFacade {
 
 	List<FavoriteUserDTO> getFavoriteUserList(String username);
 
-	List<AccountDTO> getUserList(); 
+	List<AccountDTO> getUserList();
 
 	AccountDTO findUser(String username);
 
@@ -141,6 +141,8 @@ public interface DeliveryFacade {
 	void insertCPLineItem2(CoPurchasingLineItemDTO lineItem);
 
 	void deleteCPLineItem(int cpId);
+	
+	 int CPLineItemCount(int coPurchasingId);
 
 	// AC lineitem
 	List<AuctionLineItemDTO> getACLineItemsByACId(int acId);
