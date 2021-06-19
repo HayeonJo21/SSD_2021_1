@@ -68,7 +68,7 @@ public class DetailViewCPController {
 		if (account == null) {
 			status2 = "signoff";
 		}
-		else if (account.getUsername() == cp.getUsername()) {
+		else if (account.getUsername().equals(cp.getUsername())) {
 			status2 = "poster";
 		}
 		else {
