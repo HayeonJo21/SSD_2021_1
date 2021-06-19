@@ -92,6 +92,13 @@ public class AccountFormController {
 			@ModelAttribute("accountForm")  AccountDTO account,
 			BindingResult result) throws Exception  {
 		
+		new AccountFormValidator().validate(account, result);// validator 생성 및 호출 (입력 값 검증)
+
+		if (result.hasErrors()) {
+
+		return "login";
+
+		}
 //		validator.validate(accountForm, result);
 //		if (result.hasErrors()) return "index";
 		
