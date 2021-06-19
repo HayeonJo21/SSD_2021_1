@@ -13,7 +13,7 @@
 	<div class="inner">
 
 		<h2>공동구매 글 작성</h2>
-		<form method="post" action="/coPurchasing/insert.do">
+		<form method="post" action="/delivery/coPurchasingInsert.do">
 			<div class="row gtr-uniform">
 				<div class="col-12">
 					<label for="demo-name">공동구매 모집자 이름</label><input type="hidden"

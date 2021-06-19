@@ -57,7 +57,7 @@
 					<button type="submit" class="button primary">
 						경매 등록<i class="fa fa-check spaceLeft"></i>
 					</button>
-					<a class="btn btn-warning" href="/">가입취소<i
+					<a class="button" href="/delivery/auctionInsert.do">등록취소<i
 						class="fa fa-times spaceLeft"></i>
 					</a>
 				</div>
