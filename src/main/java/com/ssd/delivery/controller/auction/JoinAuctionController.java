@@ -38,7 +38,8 @@ public class JoinAuctionController {
 		if(ac.getCurrentPrice() == 0) {
 			ac.setCurrentPrice(ac.getStartPrice());
 		}
-		System.out.println("AUCTIONID: " + acId + "CURR PRICE: " + ac.getCurrentPrice());
+		System.out.println("AUCTIONID: " + acId + " CURR PRICE: " + ac.getCurrentPrice());
+		
 		model.put("ac", ac);
 		model.put("delivery", del);
 		model.put("user", account);
@@ -55,7 +56,7 @@ public class JoinAuctionController {
 		SimpleDateFormat dFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm");
 		String currentDate = dFormat.format(date);
 		AuctionDTO auction = delivery.getAuctionById(aclineitemDTO.getAuctionId());
-		
+		DeliveryDTO del = delivery.getDeliveryById(auction.getDelivery());
 		aclineitemDTO.setJoinDate(currentDate);
 		delivery.updateCurrentPriceAuction(aclineitemDTO.getJoinPrice(), aclineitemDTO.getAuctionId());
 	
@@ -66,6 +67,7 @@ public class JoinAuctionController {
 		List<AuctionLineItemDTO> aclineitem = delivery.getACLineItemsByACId(aclineitemDTO.getAuctionId());
 		mav.addObject("aclineitem", aclineitem);
 		mav.addObject("ac", auction);
+		mav.addObject("delivery",del);
 		mav.setViewName("auctionDetail");
 		
 		return mav;

@@ -18,6 +18,7 @@
    <div class="inner">
       <c:if test="${status eq 'CLOSE' or ac.successfulBidder ne null}">
          <h1>🚩 이미 <b style="color:red">진행 종료</b>된 경매입니다. <br/>더이상 입찰을 진행할 수 없습니다.</h1>
+         <h2>* 낙찰가: ${ac.finalPrice }원 *</h2>
       </c:if>
       <h1>Auction ⏳</h1>
       <h2>출발지: ${ac.address1}</h2>
@@ -73,7 +74,7 @@
                      value="&ensp;🛎낙찰🛎&ensp;">
                </c:if>
                <c:if test="${status eq 'OPEN' && ac.successfulBidder eq null}">
-                  <form action="/auction/auctionedOff.do" method="POST">
+                  <form action="/auction/auctionAuctionedOff.do" method="POST">
                      <input type="hidden" name="auctionId" id="auctionId"
                         value='${ac.auctionId}' placeholder="${ac.auctionId}" /> <input
                         type="hidden" name="endDate" id="endDate" value='${ac.endDate}'
@@ -112,7 +113,11 @@
                <a href="#" class="button primary" onclick="closedAuction()">&ensp;&ensp;경매
                   참여🤚🏻&ensp;&ensp;</a>
             </c:if>
-            <c:if test="${status eq 'OPEN'}">
+            <c:if test="${status eq 'OPEN' && ac.successfulBidder ne null}">
+               <a href="#" class="button primary" onclick="closedAuction()">&ensp;&ensp;경매
+                  참여🤚🏻&ensp;&ensp;</a>
+            </c:if>
+             <c:if test="${status eq 'OPEN' && ac.successfulBidder eq null}">
                <a href="/delivery/auctionJoin.do?auctionId=${ac.auctionId}"
                   class="button primary">&ensp;&ensp;경매 참여🤚🏻&ensp;&ensp;</a>
             </c:if>
