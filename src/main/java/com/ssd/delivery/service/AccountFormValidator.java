@@ -23,7 +23,7 @@ public class AccountFormValidator implements Validator {
 	public boolean supports(Class<?> clazz) {
 		return AccountDTO.class.isAssignableFrom(clazz);
 	}
-
+ 
 	public void validate(Object obj, Errors errors) {
 
 		AccountDTO account = (AccountDTO)obj; 

@@ -129,7 +129,7 @@ public class AccountDTO implements Serializable{
 		return detailAddress;
 	}
 
-	public void setDetailAddress(String detailAddress) {
+	public void setDetailAddress(String detailAddress) { 
 		this.detailAddress = detailAddress;
 	}
 

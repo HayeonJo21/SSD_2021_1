@@ -42,7 +42,7 @@ public class AccountFormController {
 //			delivery.insertAccount(account);
 //			
 //			return "redirect:/";
-//		}
+//		} 
 //		else {
 //			delivery.updateAccount(account);
 //		}

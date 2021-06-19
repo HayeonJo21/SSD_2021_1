@@ -10,7 +10,7 @@
 		<div class="col-sm-6 col-md-offset-3">
 			<form:form modelAttribute="accountForm"
 				action="/delivery/newUserSubmitted.do" method="post">
-				<div class="form-group">
+				<div class="form-group"> 
 					<label for="account.username" style="font-size: 24px">Username</label>
 					<input type="text" style="width: 800px" class="form-control"
 						name="username" value="${userSession.username}"
