@@ -7,7 +7,7 @@
 	<div class="inner">
 		<h1>Auction ⏳</h1>
 		<h2>출발지: ${ac.address1}</h2>
-		<h2>경매 등록자 : ${ac.username}</h2>
+		<h2><a href="/user/view?username=${ac.username}">경매 등록자 : ${ac.username}</a></h2>
 
 		<div class="table-wrapper">
 			<table class="alt">
