@@ -30,6 +30,6 @@ public class DeleteUserController {
 		
 		delivery.deleteAccount(username);
 		
-		return "redirect:/admin/user.do";
+		return "redirect:/delivery/adminUser.do";
 	}
 }
