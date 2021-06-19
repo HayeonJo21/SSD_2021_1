@@ -31,6 +31,7 @@ public class DeleteAuctionController {
 	public String adminAuctionDelete(Model model, HttpSession session, @RequestParam("auctionId") int auctionId) throws Exception {
 		
 		delivery.deleteAuction(auctionId);
+		delivery.deleteACLineItem(auctionId);
 		
 		return "redirect:/admin/auction.do";
 	}

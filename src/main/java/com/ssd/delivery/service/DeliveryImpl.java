@@ -264,13 +264,19 @@ public class DeliveryImpl implements DeliveryFacade {
 
 	// CPlineitem
 
-	public List<CoPurchasingLineItemDTO> getCPLineItemsByCPId(int cpId){
-			return cplineitem.getCPLineItemsByCPId(cpId);
-		}
-	
+	public List<CoPurchasingLineItemDTO> getCPLineItemsByCPId(int cpId) {
+		return cplineitem.getCPLineItemsByCPId(cpId);
+	}
+
 	public void insertCPLineItem(CoPurchasingLineItemDTO lineItem) {
-			cplineitem.insertCPLineItem(lineItem);
-		}
+		cplineitem.insertCPLineItem(lineItem);
+	}
+
+	@Override
+	public void deleteCPLineItem(int cpId) {
+		cplineitem.deleteCPLineItem(cpId);
+
+	}
 
 	// AClineitem
 	public List<AuctionLineItemDTO> getACLineItemsByACId(int acId) {
@@ -279,6 +285,11 @@ public class DeliveryImpl implements DeliveryFacade {
 
 	public void insertACLineItem(AuctionLineItemDTO lineItem) {
 		aclineitem.insertACLineItem(lineItem);
+	}
+
+	@Override
+	public void deleteACLineItem(int acId) {
+		aclineitem.deleteACLineItem(acId);
 	}
 
 	public void testScheduler(int deliveryId, Date closingTime) {

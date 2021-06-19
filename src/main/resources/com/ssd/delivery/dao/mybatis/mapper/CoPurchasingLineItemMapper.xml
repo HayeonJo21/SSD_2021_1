@@ -1,21 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.ssd.delivery.dao.mybatis.mapper.CoPurchasingLineItemMapper">
+<mapper
+	namespace="com.ssd.delivery.dao.mybatis.mapper.CoPurchasingLineItemMapper">
 
-  <cache />
+	<cache />
 
-  <insert id="insertCPLineItem">
-    INSERT INTO copurchasinglineitem 
-    (linenum, copurchasingid, username)
-    VALUES (cplinenum_seq.nextval, #{coPurchasingId}, #{username} )
-  </insert>
-  
-  <select id="getCPLineItemsByCPId" resultType="CoPurchasingLineItemDTO">
-    SELECT
-      linenum, copurchasingid, username
-    FROM copurchasingLINEITEM
-    WHERE copurchasingid = #{coPurchasingId}
-  </select>
+	<insert id="insertCPLineItem">
+		INSERT INTO copurchasinglineitem
+		(linenum, copurchasingid, username)
+		VALUES (cplinenum_seq.nextval, #{coPurchasingId}, #{username} )
+	</insert>
+
+	<select id="getCPLineItemsByCPId"
+		resultType="CoPurchasingLineItemDTO">
+		SELECT
+		linenum, copurchasingid, username
+		FROM copurchasingLINEITEM
+		WHERE copurchasingid = #{coPurchasingId}
+	</select>
+
+	<delete id="deleteCPLineItem" parameterType="int">
+		DELETE FROM coPurchasingLineItem
+		WHERE coPurchasingId = {#coPurchasingId}
+	</delete>
 
 </mapper>

@@ -29,8 +29,13 @@ public class MybatisCoPurchasingLineItemDao implements  CoPurchasingLineItemDao 
 
 	@Override
 	public void insertCPLineItem(CoPurchasingLineItemDTO cp) throws DataAccessException {
-		// TODO Auto-generated method stub
 		cplineitemmapper.insertCPLineItem(cp);
+	}
+
+
+	@Override
+	public void deleteCPLineItem(int coPurchasingId) throws DataAccessException {
+		cplineitemmapper.deleteCPLineItem(coPurchasingId);
 	}
 	
 	

@@ -83,7 +83,7 @@
 						<c:forEach var="cp" items="${CPList}">
 							<tr>
 								<td><a
-									href="<c:url value='/cp/view.do'>
+									href="<c:url value='/coPurchasing/detailView.do'>
 						   <c:param name='cpId' value='${cp.coPurchasingId}'/>
 				 		 </c:url>">${cp.coPurchasingId}</a></td>
 								<td>${cp.username}</td>
@@ -111,8 +111,8 @@
 						<c:forEach var="del" items="${DelList}">
 							<tr>
 								<td><a
-									href="<c:url value='/delivery/detail/view.do'>
-						   <c:param name='deliveryd' value='${del.deliveryId}'/>
+									href="<c:url value='/delivery/detailView.do'>
+						   <c:param name='deliveryId' value='${del.deliveryId}'/>
 				 		 </c:url>">${del.deliveryId}</a></td>
 								<td>${del.serviceDate}</td>
 								<td>${del.price}</td>
@@ -137,7 +137,7 @@
 						<c:forEach var="ac" items="${ACList}">
 							<tr>
 								<td><a
-									href="<c:url value='/auction/view.do'>
+									href="<c:url value='/delivery/auctionDetailView.do'>
 						   <c:param name='acId' value='${ac.auctionId}'/>
 				 		 </c:url>">${ac.auctionId}</a></td>
 								<td>${ac.username}</td>

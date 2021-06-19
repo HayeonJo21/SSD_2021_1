@@ -28,6 +28,7 @@ public class DeleteCPController {
 	public String admincoPurchasingDelete(Model model, HttpSession session, @RequestParam("cpId") int cpId) throws Exception {
 		
 		delivery.deleteCP(cpId);
+		delivery.deleteCPLineItem(cpId);
 		
 		return "redirect:/admin/coPurchasing.do";
 	}

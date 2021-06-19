@@ -20,6 +20,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import com.ssd.delivery.domain.AuctionLineItemDTO;
 import com.ssd.delivery.domain.CoPurchasingLineItemDTO;
 
 /**
@@ -31,5 +32,7 @@ public interface CoPurchasingLineItemMapper {
   List<CoPurchasingLineItemDTO> getCPLineItemsByCPId(int cpId);
 
   void insertCPLineItem(CoPurchasingLineItemDTO lineItem);
+  
+  void deleteCPLineItem(int coPurchasingId);
 
 }

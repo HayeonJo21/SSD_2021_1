@@ -11,5 +11,7 @@ public interface AuctionLineItemMapper {
   List<AuctionLineItemDTO> getACLineItemsByACId(int acId);
 
   void insertACLineItem(AuctionLineItemDTO ACLineId);
+  
+  void deleteACLineItem(int auctionId);
 
 }
