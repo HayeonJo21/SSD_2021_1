@@ -35,7 +35,7 @@ public class AccountFormValidator implements Validator {
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "firstName", "FIRST_NAME_REQUIRED", "First name is required.");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "lastName", "LAST_NAME_REQUIRED", "Last name is required.");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "email", "EMAIL_REQUIRED", "Email address is required.");
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "address", "ADDRESS_REQUIRED", "Address is required.");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "address2", "ADDRESS_REQUIRED", "Address is required.");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "phone", "PHONE_REQUIRED", "Phone number is required.");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "carInfo", "CAR_INFO_REQUIRED", "Car Information is required.");
 		
