@@ -39,7 +39,7 @@ public class InsertAuctionController {
 		return mav;
 	}
 	
-	@PostMapping
+	@PostMapping 
 	public ModelAndView insertAuction(Model model, HttpSession session, @ModelAttribute("AuctionForm")  AuctionDTO auction, 
 			@RequestParam("deliveryId") int deliveryId //, @RequestParam("endDate")
 	//@DateTimeFormat(pattern="yyyy-MM-dd HH:mm") Date closeTime

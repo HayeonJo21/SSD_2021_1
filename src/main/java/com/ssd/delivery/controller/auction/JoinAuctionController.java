@@ -42,7 +42,7 @@ public class JoinAuctionController {
 		model.put("ac", ac);
 		model.put("delivery", del);
 		model.put("user", account);
-		return "auctionJoinForm";
+		return "auctionJoinForm"; 
 
 	}
 

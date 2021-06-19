@@ -36,7 +36,7 @@ public class InsertAuctionFormController {
 			mav.addObject("msg", msg);
 			mav.setViewName("login");
 			
-			return mav;
+			return mav; 
 			
 		}else {
 			List<DeliveryDTO> deliveryList = delivery.getDeliveryByUsername(account.getUsername());

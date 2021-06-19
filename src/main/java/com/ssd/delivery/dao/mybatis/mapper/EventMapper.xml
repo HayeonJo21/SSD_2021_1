@@ -7,7 +7,7 @@
   	INSERT INTO EVENTS (DELIVERYID, CUR_TIME, CLOSING_TIME, STATUS)
   	VALUES (#{deliveryId}, #{curTime}, #{closingTime}, 'OPEN')
   </insert>
-  
+   
   <update id="closeEvent" parameterType="Date">
     <![CDATA[
      UPDATE EVENTS SET STATUS = 'CLOSE'

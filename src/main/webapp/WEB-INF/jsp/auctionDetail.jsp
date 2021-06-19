@@ -5,7 +5,7 @@
 	function closedAuction() {
 		alert("종료된 경매 입니다.");
 		return false;
-	}
+	} 
 </script>
 <!-- Main -->
 <div id="main">

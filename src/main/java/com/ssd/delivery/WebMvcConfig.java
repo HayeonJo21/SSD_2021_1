@@ -22,7 +22,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
 		//main
 		registry.addViewController("/delivery/mainpage.jsp").setViewName("index");
 		
-		//account
+		//account 
 		registry.addViewController("/delivery/insertAccount.do").setViewName("register");
 		registry.addViewController("/delivery/updateAccount.do").setViewName("accountUpdate");
 		registry.addViewController("/delivery/newUserSubmitted.do").setViewName("index");

@@ -22,7 +22,7 @@ public class MybatisEventDao implements EventDao {
 	public void closeEvent(Date curTime) {
 		eventMapper.closeEvent(curTime);		
 	}
-	
+	 
 	public String getStatusByDeliveryId(int deliveryId) {
 		return eventMapper.getStatusByDeliveryId(deliveryId);
 	}

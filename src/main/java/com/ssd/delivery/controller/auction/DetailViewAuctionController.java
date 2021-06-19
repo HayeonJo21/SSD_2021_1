@@ -38,7 +38,7 @@ public class DetailViewAuctionController {
 	}
 	
 	@GetMapping
-	public String handleRequest(
+	public String handleRequest( 
 			@RequestParam("acId") int auctionId,
 			ModelMap model, HttpSession session) throws Exception {
 		AuctionDTO auction = this.delivery.getAuctionById(auctionId);

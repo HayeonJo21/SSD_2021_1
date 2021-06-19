@@ -6,7 +6,7 @@
 	<div class="inner">
 
 			<h2>경매 글 작성</h2>
-
+ 
 			<div class="col-12">
 				<label for="demo-name">경매 진행할 상품 선택</label>
 				<div class="table-wrapper">

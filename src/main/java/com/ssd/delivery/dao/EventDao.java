@@ -8,3 +8,4 @@ public interface EventDao {
 	void closeEvent(Date curTime);
 	String getStatusByDeliveryId(int deliveryId);
 }
+ 

@@ -33,7 +33,7 @@ public interface DeliveryFacade {
 
 	List<FavoriteUserDTO> getFavoriteUserList(String username);
 
-	List<AccountDTO> getUserList();
+	List<AccountDTO> getUserList(); 
 
 	AccountDTO findUser(String username);
 

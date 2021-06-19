@@ -7,7 +7,7 @@
 <div id="main">
 	<div class="inner">
 
-		<h1>경매 입찰 ✏️</h1>
+		<h1>경매 입찰 ✏️</h1> 
 
 		<div class="row gtr-uniform">
 			<div class="col-12">

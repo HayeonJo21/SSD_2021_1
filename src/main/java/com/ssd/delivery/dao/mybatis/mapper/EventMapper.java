@@ -12,3 +12,4 @@ public interface EventMapper {
 	String getStatusByDeliveryId(int auctionId);
 	String getStatusByDeilveryId(int deliveryId);
 }
+ 
