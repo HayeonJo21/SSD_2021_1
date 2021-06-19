@@ -92,13 +92,13 @@ public class AccountFormController {
 			@ModelAttribute("accountForm")  AccountDTO account,
 			BindingResult result) throws Exception  {
 		
-		new AccountFormValidator().validate(account, result);// validator 생성 및 호출 (입력 값 검증)
+//		new AccountFormValidator().validate(account, result);// validator 생성 및 호출 (입력 값 검증)
+//
+//		if (result.hasErrors()) {
+//
+//		return "login";
 
-		if (result.hasErrors()) {
-
-		return "login";
-
-		}
+//		}
 //		validator.validate(accountForm, result);
 //		if (result.hasErrors()) return "index";
 		
@@ -106,6 +106,8 @@ public class AccountFormController {
 			AccountDTO existingUser = delivery.findUser(account.getUsername());
 			
 			if(existingUser == null) {
+				String address = account.getAddress2() + account.getPostcode() + account.getDetailAddress() + account.getExtraAddress();
+				account.setAddress(address);
 				account.setStatus(1);
 				delivery.insertAccount(account);
 			}

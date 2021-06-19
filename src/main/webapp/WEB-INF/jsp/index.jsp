@@ -64,11 +64,7 @@
 						<div class="content">
 							<p>1인당 가격: ${cp.unitCost }</p>
 						</div>
-					</a> 현황
-					<div class="progress">
-						<div class="progress-bar" role="progressbar" style="width: 65%;"
-							aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">65%</div>
-					</div>
+					</a>
 				</article>
 			</c:forEach>
 		</section>
