@@ -41,6 +41,9 @@ public class JoinAuctionController {
 		DeliveryDTO del = delivery.getDeliveryById(ac.getDelivery());
 		AccountDTO account = (AccountDTO)session.getAttribute("userSession");
 		
+		if(ac.getCurrentPrice() == 0) {
+			ac.setCurrentPrice(ac.getStartPrice());
+		}
 		System.out.println("AUCTIONID: " + acId + "CURR PRICE: " + ac.getCurrentPrice());
 		model.put("ac", ac);
 		model.put("delivery", del);
