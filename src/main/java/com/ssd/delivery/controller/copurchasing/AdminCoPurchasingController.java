@@ -30,7 +30,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.ui.Model;
 
 @Controller
-@RequestMapping("/admin/coPurchasing.do")
+@RequestMapping({"/delivery/adminCoPurchasing.do", "/admin/coPurchasing.do"})
 public class AdminCoPurchasingController {
 
 	private DeliveryFacade delivery;

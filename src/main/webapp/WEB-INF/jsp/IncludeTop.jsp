@@ -74,7 +74,7 @@
 					
 				</c:if>
 				<c:if test="${userSession.username eq 'king'}">
-				<li class="nav-item"><li><a href="/admin/main.do">**관리자 페이지**</a></li>
+				<li class="nav-item"><li><a href="/delivery/adminMain.do">**관리자 페이지**</a></li>
 				</c:if>
 			</ul>
 		</nav>

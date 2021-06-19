@@ -23,4 +23,10 @@ public interface CoPurchasingDao {
 	
 	
 
+	int isCPUploader(String username, int cpId)throws DataAccessException;
+
+	int isCPPurchaser(String username, int cpId) throws DataAccessException;
+	
+	
+
 }

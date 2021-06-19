@@ -17,7 +17,7 @@ import org.springframework.ui.Model;
 
 @Controller
 @SessionAttributes("userSession")
-@RequestMapping("/admin/delivery.do")
+@RequestMapping({"/admin/delivery.do", "/adminDelivery.do"})
 public class AdminDeliveryController {
 
 	private DeliveryFacade delivery;

@@ -64,7 +64,11 @@
 						<div class="content">
 							<p>1인당 가격: ${cp.unitCost }</p>
 						</div>
+<<<<<<< HEAD
 					</a>
+=======
+					</a> 
+>>>>>>> branch 'master' of https://github.com/choi1k/SSD_2021_1.git
 				</article>
 			</c:forEach>
 		</section>

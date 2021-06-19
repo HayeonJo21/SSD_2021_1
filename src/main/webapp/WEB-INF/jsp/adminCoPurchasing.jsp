@@ -41,7 +41,7 @@
 									</td>
 									<td>${cp.username}</td>
 									<td><a
-										href="<c:url value='/coPurchasing/detailView.do'>
+										href="<c:url value='/delivery/coPurchasingDetailView.do?coPurchasingId='>
 						   <c:param name='coPurchasingId' value='${cp.coPurchasingId}'/>
 				 		 </c:url>"
 										class="button">&nbsp;&nbsp;&nbsp;&nbsp;Detail&nbsp;&nbsp;&nbsp;&nbsp;</a></td>

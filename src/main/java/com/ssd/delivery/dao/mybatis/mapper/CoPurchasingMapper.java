@@ -19,6 +19,7 @@ package com.ssd.delivery.dao.mybatis.mapper;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import com.ssd.delivery.domain.CoPurchasingDTO;
 
@@ -42,5 +43,9 @@ public interface CoPurchasingMapper {
 	CoPurchasingDTO getCPById(int CPId);
 	
 	List<CoPurchasingDTO> getCPListByUsername(String username);
+
+	int isCPUploader(@Param("username")String username, @Param("coPurchasingId")int cpId);
+
+	int isCPPurchaser(@Param("username")String username, @Param("coPurchasingId")int cpId);
 
 }
