@@ -82,7 +82,7 @@
 						참여🤚🏻&nbsp;&nbsp;&nbsp;&nbsp;</a> --%>
 				</div>
 			</c:if>
-			<h1 style="font-size: 35px"><b style="color: #f2849e">*</b> Progress of Co-Purchasing</h1>
+			<h1 style="font-size: 35px"><b style="color: #f2849e">*&nbsp;</b> Progress of Co-Purchasing</h1>
 			<p>공동구매 진행상황을 보여줍니다.</p>
 			<div class="progress">
 				<div
@@ -105,7 +105,7 @@
 
 			<br> <br>
 			<!-- 참여자 정보 -->
-			<h1 style="font-size: 35px"><b style="color: #f2849e">*</b> 참여자 정보</h1>
+			<h1 style="font-size: 35px"><b style="color: #f2849e">*&nbsp;</b> 참여자 정보</h1>
 			<div class="table-wrapper">
 				<table class="alt">
 					<thead>
