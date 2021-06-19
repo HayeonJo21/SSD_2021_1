@@ -52,7 +52,7 @@
 				
 				<div class="col-12">
 					<label for="demo-name">부가 설명</label> <input type="text" name="note"
-						id="note" value="" placeholder="부가 설명을 입력해주세요." />
+						id="note" value="" placeholder="부가 설명을 입력해주세요." /> 
 				</div>
 				<div class="col-12">
 					<ul class="actions">
