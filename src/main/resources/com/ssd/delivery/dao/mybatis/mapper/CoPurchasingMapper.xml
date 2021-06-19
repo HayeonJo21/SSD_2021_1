@@ -63,7 +63,7 @@
 		select count(*)
 		from copurchasing c
 		where copurchasingid = #{coPurchasingId}
-		and username = #{username}
+		and username = #{username} 
 
 	</select>
 	<select id="isCPPurchaser" resultType="int">
