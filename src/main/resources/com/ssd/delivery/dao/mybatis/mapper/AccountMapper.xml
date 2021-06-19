@@ -18,8 +18,8 @@
   </update>
   
   <insert id="insertAccount" parameterType="AccountDTO">
-    INSERT INTO ACCOUNT (USERNAME, PASSWORD, EMAIL, FIRSTNAME, LASTNAME, ADDRESS, PHONE, LANGUAGEPREFERENCE, STATUS, FAVORITEUSER, CARINFO) 
-    VALUES (#{username}, #{password}, #{email}, #{firstName}, #{lastName}, #{address}, #{phone}, #{languagePreference}, #{status}, #{favoriteUser}, #{carInfo})
+    INSERT INTO ACCOUNT (USERNAME, PASSWORD, EMAIL, FIRSTNAME, LASTNAME, ADDRESS, PHONE, STATUS, CARINFO) 
+    VALUES (#{username}, #{password}, #{email}, #{firstName}, #{lastName}, #{address}, #{phone}, #{status}, #{carInfo})
   </insert>
   
   <delete id="deleteAccount" parameterType="String">
