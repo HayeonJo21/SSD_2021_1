@@ -13,8 +13,7 @@
 				진행중인 경매 목록입니다. <br />
 			</p>
 
-
-			<li><a href="/delivery/auctionInsert.do">경매등록 📝</a></li>
+		<a class=button href="/delivery/auctionInsert.do">경매등록 📝</a>
 		</header>
 		<section class="tiles">
 			<c:forEach var="ac" items="${ACList}">
