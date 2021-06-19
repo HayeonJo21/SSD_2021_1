@@ -60,13 +60,10 @@
 		</table>
 	
 		※ ${cp.unitCost}원을 미리 준비해주세요! <br>
-		※ 인원 수 미달시 취소될 수 있습니다.<br>
+		※ 인원 수 미달시 취소되거나 인당 지불할 금액이 인상될 수 있습니다.<br>
 		<br>
 		<a href="/delivery/messageCreate.do">공동구매 개최자에게 디엠 보내기</a><br>
 		<a href="/delivery/messageCreate.do">용달 기사님께 디엠 보내기</a>
-	
-		
- 
 
 	</div>
 

@@ -46,7 +46,7 @@
 				</div>
 				<div class="col-12">
 					<label for="demo-name">1인당 가격</label> <input type="text"
-						name="unitCost" id="unitCost" value="" readonly />
+						name="unitCost" id="unitCost" value="" placeholder="※ 총 모집 인원을 입력하시면 자동으로 계산됩니다."readonly />
 				</div>
 
 				
