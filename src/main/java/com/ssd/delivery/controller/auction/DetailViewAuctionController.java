@@ -47,8 +47,23 @@ public class DetailViewAuctionController {
 		DeliveryDTO del = delivery.getDeliveryById(auction.getDelivery());
 		
 		String status = eventMapper.getStatusByDeliveryId(auction.getDelivery());
-		System.out.println(auction.getDelivery());
-		System.out.println(status);
+		
+		String successfulBidder = "";
+		if(status.equals("CLOSE")) {
+			int finalPrice = auction.getFinalPrice();
+			List<AuctionLineItemDTO> acLineItem = delivery.getACLineItemsByACId(auction.getAuctionId());
+			for(int i = 0; i < acLineItem.size(); i++) {
+				if(acLineItem.get(i).getJoinPrice() == finalPrice) {
+					successfulBidder = acLineItem.get(i).getUsername();
+					break;
+				}
+			}
+			
+			auction.setFinalPrice(finalPrice);
+			auction.setSuccessfulBidder(successfulBidder);
+			delivery.updateAuction(auction);
+		}
+		
 		
 		AccountDTO account = (AccountDTO)session.getAttribute("userSession");
 		
