@@ -7,6 +7,12 @@
 		return false;
 	} 
 </script>
+	<script>
+	function auctionedOff() {
+		alert("정말 낙찰하시겠습니까?");
+		form.submit();
+	}
+</script>
 <!-- Main -->
 <div id="main">
 	<div class="inner">
@@ -67,8 +73,29 @@
 							value="&ensp;🛎낙찰🛎&ensp;">
 					</c:if>
 					<c:if test="${status eq 'OPEN'}">
-						<input type="button" class="button primary"
-							value="&ensp;🛎낙찰🛎&ensp;">
+					<form action="/auction/auctionedOff.do" method="POST">
+					<input type="hidden"
+						name="auctionId" id="auctionId" value='${ac.auctionId}' placeholder="${ac.auctionId}"/>
+						<input type="hidden"
+						name="endDate" id="endDate" value='${ac.endDate}' placeholder="${ac.endDate}"/>
+						<input type="hidden"
+						name="serviceDate" id="serviceDate" value='${delivery.serviceDate}' placeholder="${delivery.serviceDate}"/>
+						<input type="hidden"
+						name="startPrice" id="startPrice" value='${ac.startPrice}' placeholder="${ac.startPrice}"/>
+						<input type="hidden"
+						name="finalPrice" id="finalPrice" value='${ac.currentPrice}' placeholder="${ac.currentPrice}"/>
+						<input type="hidden"
+						name="address1" id="address1" value='${delivery.address1}' placeholder="${delivery.address1}"/>
+						<input type="hidden"
+						name="address2" id="address2" value='${delivery.address2}' placeholder="${delivery.address2}"/>
+						<input type="hidden"
+						name="delivery" id="delivery" value='${delivery.deliveryId}' placeholder="${delivery.deliveryId}"/>
+						<input type="hidden"
+						name="username" id="username" value='${ac.username}' placeholder="${ac.username}"/>
+					<div style="float: right; padding-right: 30px">
+				<button type="submit" onClick="auctionedOff()">&nbsp;&nbsp;&nbsp;&nbsp;🛎낙찰🛎&nbsp;&nbsp;&nbsp;&nbsp;</button>
+				</div>
+				</form>
 					</c:if>
 				</div>
 			</c:if>

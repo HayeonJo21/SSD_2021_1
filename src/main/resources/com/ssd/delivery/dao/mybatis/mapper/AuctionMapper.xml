@@ -30,8 +30,9 @@
 	   TRADECOUNT = #{tradeCount} 
     WHERE USERNAME= #{username} --> 
     update auction set
-    	customerid = #{customerId},
+    	successfulBidder = #{username},
     	finalprice = #{finalPrice}
+    	where auctionId = #{auctionId}
 	</update>
 	
 	
