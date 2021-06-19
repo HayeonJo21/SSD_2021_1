@@ -9,9 +9,9 @@
 			</div>
 			<div class="inner">
 			<c:if test="${msg ne null}">
-			<p style="color:#f2849e">${msg.message }</p>
+			<p style="color:#f2849e">🚩&nbsp;&nbsp;&nbsp; ${msg.message }</p>
 			</c:if>
-				<h1>Login</h1>
+				<h1>🔐 Login</h1>
 				<form action="/delivery/signon.do" method="POST">
 				<c:if test="${data ne null}"> 
 					<p style="color: red">${data.message}</p>

@@ -53,7 +53,7 @@ public class DetailViewCPController {
 		
 		model.put("cp", cp);
 		model.put("del", del);
-//		model.put("cplineitem", cplineitem);
+		model.put("cplineitem", cplineitem);
 		return "coPurchasingDetail";
 		
 		

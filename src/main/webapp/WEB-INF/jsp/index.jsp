@@ -7,7 +7,7 @@
 	<div class="inner">
 		<header>
 			<h1>
-				용달의 민족 <br /> a delivery service auction <br /> and co-purchasing
+				<b style="color: #f2849e">용달의 민족</b> <br /> a delivery service auction <br /> and co-purchasing
 				site.<br />
 			</h1>
 			<p>현재 진행중인 용달 서비스 경매 및 공동구매 입니다.</p>
@@ -36,7 +36,7 @@
 	</c:forEach> 
 	</section>
 	
-	<br /> <br /> <br />
+	<br /> <br /> <br /><br />
 	<h3>👥 공동구매</h3>
 	<section class="tiles">
 		<c:forEach var="cp" items="${CPList}">
@@ -59,7 +59,7 @@
 		</c:forEach>
 	</section>
 
-	<br /> <br /> <br />
+	<br /> <br /> <br /><br />
 	<h3>🚛 회원간 용달 거래</h3>
 	<section class="tiles">
 		<c:forEach var="del" items="${DelList}">
@@ -80,7 +80,7 @@
 			</article>
 		</c:forEach>
 	</section>
-	<br /> <br /> <br />
+	<br /> <br /> <br /><br />
 </div>
 </div>
 

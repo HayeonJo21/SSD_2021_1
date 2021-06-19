@@ -21,35 +21,35 @@ import com.ssd.delivery.service.DeliveryFacade;
 
 @Controller
 @SessionAttributes("userSession")
-@RequestMapping("/auction/insert2.do")
+@RequestMapping("/delivery/auctionInsert2.do")
 public class InsertAuctionController {
 	@Autowired
 	private DeliveryFacade delivery;
 
 	@GetMapping
-	public ModelAndView insert2(@RequestParam("deliveryId") int deliveryId) throws Exception {
-
+	public ModelAndView insert2(@RequestParam("deliveryId") int deliveryId, HttpSession session) throws Exception {
+		
 		DeliveryDTO delItem = delivery.getDeliveryById(deliveryId);
 		
 		ModelAndView mav = new ModelAndView();
 
 		mav.addObject("delivery", delItem);
 		mav.setViewName("auctionForm2");
-
+		
 		return mav;
 	}
 	
 	@PostMapping
 	public ModelAndView insertAuction(Model model, HttpSession session, @ModelAttribute("AuctionForm")  AuctionDTO auction, 
-			@RequestParam("deliveryId") int deliveryId, @RequestParam("endDate")
-	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm") Date closeTime) throws Exception {
+			@RequestParam("deliveryId") int deliveryId //, @RequestParam("endDate")
+	/*@DateTimeFormat(pattern="yyyy-MM-dd HH:mm") Date closeTime*/) throws Exception {
 		AccountDTO account = (AccountDTO)session.getAttribute("userSession");
 		
 		auction.setDelivery(deliveryId);
-		System.out.println(closeTime);
+		//System.out.println(closeTime);
 		
 		delivery.insertAuction(auction);
-		delivery.testScheduler(closeTime);
+		//delivery.testScheduler(closeTime);
 		ModelAndView mav = new ModelAndView();
 		
 		DeliveryDTO del = delivery.getDeliveryById(deliveryId);

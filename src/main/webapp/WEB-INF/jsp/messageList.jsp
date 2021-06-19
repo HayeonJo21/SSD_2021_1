@@ -14,7 +14,7 @@
 	<div id="wrapper">
 		<div id="main">
 			<div class="inner">
-				<h1>Message List</h1>
+				<h1>💬 Message List</h1>
 				<div style="width: 400px;"> 
 					<div class="bg-dark text-white "
 						style="width: 400px; height: 80px; display: table;">

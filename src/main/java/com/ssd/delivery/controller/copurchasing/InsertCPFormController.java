@@ -2,6 +2,8 @@ package com.ssd.delivery.controller.copurchasing;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 import com.ssd.delivery.domain.*;
 import com.ssd.delivery.service.DeliveryFacade;
+import com.ssd.delivery.service.Message;
 
 
 @Controller
@@ -20,7 +23,7 @@ public class InsertCPFormController {
 	private DeliveryFacade delivery;
 
 	@GetMapping
-	public ModelAndView showInsertForm() {
+	public ModelAndView showInsertForm(HttpSession session) {
 		List<DeliveryDTO> deliveryList = delivery.getDeliveryList();
 		List<DeliveryDTO> del = delivery.isExistingCP();
 		List<DeliveryDTO> del2 = delivery.isExistingAC();
@@ -44,10 +47,17 @@ public class InsertCPFormController {
 				}
 			}
 		}
-
+		
+		AccountDTO account = (AccountDTO)session.getAttribute("userSession");
+		if(account == null) {
+			Message msg = new Message("로그인 후 이용 가능합니다. 로그인을 해주세요.", "/");
+			mav.addObject("msg", msg);
+			mav.setViewName("login");
+			
+		}else {
 		mav.addObject("delList", deliveryList);
 		mav.setViewName("copurchasingForm");
-
+		}
 		return mav;
 	}
 }

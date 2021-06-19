@@ -4,14 +4,11 @@
 <!-- Main -->
 <div id="main">
 	<div class="inner">
-		<h1>Co-Purchasing</h1>
+		<h1>Co-Purchasing 👥</h1>
 		<section>
 			<h1 style="font-size: 40px">공동구매 상세내역</h1>
 			<h1 style="font-size: 30px">공동구매 ID : ${cp.coPurchasingId}</h1>
-			<h3>@Note: <b style="color:#f2849e">${cp.note }</b></h3>
-			
-						<a href="/coPurchasing/join.do?coPurchasingId=${cp.coPurchasingId}">공동구매 참여</a>
-			
+			<h3>📢 &nbsp;Note: <b style="color:#f2849e">${cp.note }</b></h3>
 			<div class="table-wrapper">
 				<table>
 					<thead>
@@ -29,7 +26,6 @@
 						<tr>
 							<td>Poster</td>
 							<td> <a href="/user/view?username=${cp.username}">${cp.username}</a></td>
-							<td></td>
 						</tr>
 						<tr>
 							<td>Destination</td>
@@ -65,7 +61,11 @@
 			</div>
 			<br>
 			
-			<!-- percentage bar -->
+			<c:if test="${userSession.username ne null}">
+			<div style="float:right; padding-right:5px">
+				<a href="/coPurchasing/join.do?coPurchasingId=${cp.coPurchasingId}" class="button primary">&nbsp;&nbsp;&nbsp;&nbsp;공동구매 참여🤚🏻&nbsp;&nbsp;&nbsp;&nbsp;</a>
+			</div>
+			</c:if>
 			<h1 style="font-size: 30px">Progress of CoPurchasing</h1>
 			<p>공동구매 진행상황을 보여줍니다.</p>
 			<div class="progress">
@@ -82,16 +82,15 @@
 				<table class="alt">
 					<thead>
 						<tr>
+							<th>No</th>
 							<th>UserName</th>
-							<th>Address</th>
-							<th>Loadage</th>
+							
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach var="cplineitem" items="${cplineitem}">
+						<c:forEach var="cplineitem" items="${cplineitem}" varStatus="st">
 							<tr>
-								<%-- <td>${cplineitem.linenum}</td> --%>
-								<td>${cplineitem.coPurchasingId}</td>
+								<td>${st.index+1}</td>
 								<td>${cplineitem.username}</td>
 							</tr>
 						</c:forEach>

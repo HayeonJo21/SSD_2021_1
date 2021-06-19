@@ -5,7 +5,7 @@
 		<!-- Main -->
 		<div id="main">
 			<div class="inner">
-				<h1>Register Page</h1>
+				<h1>📋  Register Page</h1>
 				<div class="col-sm-6 col-md-offset-3">
 					<form action="/user/newUserSubmitted.do" method="post">
 						<div class="form-group">

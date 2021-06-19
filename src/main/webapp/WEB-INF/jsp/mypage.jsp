@@ -5,9 +5,9 @@
 <!-- Main -->
 <div id="main">
 	<div class="inner"> 
-		<h1>${user.username}님</h1>
+		<h1><b style="color:#f2849e">${user.username}</b>님의 마이페이지</h1>
 		<div>
-			<h3 style="color:#f2849e">회원정보</h3>
+			<h3>📰 회원정보</h3>
 			<div class="table-wrapper"> 
 				<table class="alt">
 					<thead>

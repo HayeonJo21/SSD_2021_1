@@ -18,9 +18,8 @@ public class AuctionDTO implements Serializable {
 	private String username;
 	private int flag;
 	private int flag2;
+	private int currentPrice = 0;
 	
-
-
 	//기본생성자
 	public AuctionDTO() {
 		super();
@@ -63,6 +62,14 @@ public class AuctionDTO implements Serializable {
 
 
 	//getter&setter
+	public int getCurrentPrice() {
+		return currentPrice;
+	}
+
+	public void setCurrentPrice(int currentPrice) {
+		this.currentPrice = currentPrice;
+	}
+	
 	public int getFlag() {
 		return flag;
 	}

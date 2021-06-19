@@ -24,7 +24,7 @@
 							<c:forEach var="del" items="${delList}">
 								<tr>
 									<td><a
-										href="<c:url value='/auction/insert2.do'>
+										href="<c:url value='/delivery/auctionInsert2.do'>
 						   <c:param name='deliveryId' value='${del.deliveryId}'/>
 				 		 </c:url>">${del.deliveryId}</a></td>
 									<td>${del.serviceDate}</td>
@@ -38,6 +38,6 @@
 				<br /> <br /> <br />
 			</div>
 	</div>
-
+</div>
 
 	<%@ include file="IncludeBottom.jsp"%>

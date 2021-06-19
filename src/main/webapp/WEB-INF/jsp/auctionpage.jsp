@@ -7,14 +7,14 @@
 	<div class="inner">
 		<header>
 			<h1>
-				용달 서비스 경매<br />
+				⏳ 용달 서비스 경매<br />
 			</h1>
 			<p>
-				진행중인 경매 목록입니다. <br /> ** 기사분이 올린 경매는 저가 경매로 이루어집니다.(역경매) **
+				진행중인 경매 목록입니다. <br />
 			</p>
 
 
-			<li><a href="/delivery/auctionInsert.do">경매등록 </a></li>
+			<li><a href="/delivery/auctionInsert.do">경매등록 📝</a></li>
 		</header>
 		<section class="tiles">
 			<c:forEach var="ac" items="${ACList}">

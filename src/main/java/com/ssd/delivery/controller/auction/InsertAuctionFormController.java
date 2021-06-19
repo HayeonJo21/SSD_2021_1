@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.ssd.delivery.domain.*;
 import com.ssd.delivery.service.DeliveryFacade;
+import com.ssd.delivery.service.Message;
 
 @Controller
 @SessionAttributes("userSession")
@@ -22,14 +23,26 @@ public class InsertAuctionFormController {
 	@Autowired
 	private DeliveryFacade delivery;
 
+	@SuppressWarnings("unused")
 	@GetMapping
 	public ModelAndView showInsertForm(HttpSession session) {
 
 		AccountDTO account = (AccountDTO) session.getAttribute("userSession");
-		List<DeliveryDTO> deliveryList = delivery.getDeliveryByUsername(account.getUsername());
-		List<DeliveryDTO> del = delivery.isExistingCP();
-		List<DeliveryDTO> del2 = delivery.isExistingAC();
+		
+		ModelAndView mav = new ModelAndView();
 
+		if(account == null) {
+			Message msg = new Message("로그인 후 이용 가능합니다. 로그인을 해주세요.", "/");
+			mav.addObject("msg", msg);
+			mav.setViewName("login");
+			
+			return mav;
+			
+		}else {
+			List<DeliveryDTO> deliveryList = delivery.getDeliveryByUsername(account.getUsername());
+			List<DeliveryDTO> del = delivery.isExistingCP();
+			List<DeliveryDTO> del2 = delivery.isExistingAC();
+		
 		// 같은 딜리버리로 공동구매가 진행중인게 있는지 확인하고 있으면 삭제함
 		for (int i = 0; i < del.size(); i++) {
 			for (int j = 0; j < deliveryList.size(); j++) {
@@ -47,12 +60,10 @@ public class InsertAuctionFormController {
 				}
 			}
 		}
-
-		ModelAndView mav = new ModelAndView();
-
-		mav.addObject("delList", deliveryList);
 		
-		mav.setViewName("auctionForm");
+			mav.addObject("delList", deliveryList);
+			mav.setViewName("auctionForm");
+		}
 
 		return mav;
 	}

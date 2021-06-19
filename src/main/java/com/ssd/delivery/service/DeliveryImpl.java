@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.ssd.delivery.dao.AccountDao;
 import com.ssd.delivery.dao.AuctionDao;
+import com.ssd.delivery.dao.AuctionLineItemDao;
 import com.ssd.delivery.dao.CoPurchasingDao;
 import com.ssd.delivery.dao.DeliveryDao;
 import com.ssd.delivery.dao.EventDao;
@@ -19,6 +20,7 @@ import com.ssd.delivery.dao.FleaMarketDao;
 import com.ssd.delivery.dao.MessageDao;
 import com.ssd.delivery.domain.AccountDTO;
 import com.ssd.delivery.domain.AuctionDTO;
+import com.ssd.delivery.domain.AuctionLineItemDTO;
 import com.ssd.delivery.domain.CoPurchasingDTO;
 import com.ssd.delivery.domain.CoPurchasingLineItemDTO;
 import com.ssd.delivery.domain.DeliveryDTO;
@@ -28,11 +30,10 @@ import com.ssd.delivery.domain.FleaMarketDTO;
 import com.ssd.delivery.domain.ItemDTO;
 import com.ssd.delivery.dao.CoPurchasingLineItemDao;
 
-
 @Transactional
 @Service
 public class DeliveryImpl implements DeliveryFacade {
-	
+
 	@Autowired
 	private AccountDao accountDao;
 	@Autowired
@@ -49,17 +50,19 @@ public class DeliveryImpl implements DeliveryFacade {
 	private MessageDao messageDao;
 	@Autowired
 	private EventDao eventDao;
-	@Autowired		// applicationContext.xml에 정의된 scheduler 객체를 주입 받음
+	@Autowired // applicationContext.xml에 정의된 scheduler 객체를 주입 받음
 	private ThreadPoolTaskScheduler scheduler;
 	@Autowired
-	private CoPurchasingLineItemDao cplineitem; 
-	
+	private CoPurchasingLineItemDao cplineitem;
+	@Autowired
+	private AuctionLineItemDao aclineitem;
+
 	// Account
 	public void insertAccount(AccountDTO account) {
 		accountDao.insertAccount(account);
 	}
-	
-	public List<AccountDTO> getUserList(){
+
+	public List<AccountDTO> getUserList() {
 		return accountDao.getUserList();
 	}
 
@@ -115,7 +118,7 @@ public class DeliveryImpl implements DeliveryFacade {
 	public List<AuctionDTO> getAuctionList() {
 		return auctionDao.getAuctionList();
 	}
-	
+
 	// CoPurchasing
 	public void insertCP(CoPurchasingDTO CP) {
 		cpDao.insertCP(CP);
@@ -128,6 +131,7 @@ public class DeliveryImpl implements DeliveryFacade {
 	public void deleteCP(int CPId) {
 		cpDao.deleteCP(CPId);
 	}
+
 	public List<CoPurchasingDTO> getCPList() {
 		return cpDao.getCPList();
 	}
@@ -139,7 +143,7 @@ public class DeliveryImpl implements DeliveryFacade {
 	public List<CoPurchasingDTO> getCPListByUsername(String username) {
 		return cpDao.getCPListByUsername(username);
 	}
-	
+
 	// Delivery
 	public void insertDelivery(DeliveryDTO delivery) {
 		deliveryDao.insertDelivery(delivery);
@@ -156,11 +160,11 @@ public class DeliveryImpl implements DeliveryFacade {
 	public DeliveryDTO getDeliveryById(int deliveryId) {
 		return deliveryDao.getDeliveryById(deliveryId);
 	}
-	
+
 	public List<DeliveryDTO> isExistingCP() {
 		return deliveryDao.isExistingCP();
 	}
-	
+
 	public List<DeliveryDTO> isExistingAC() {
 		return deliveryDao.isExistingAC();
 	}
@@ -172,12 +176,13 @@ public class DeliveryImpl implements DeliveryFacade {
 	public List<DeliveryDTO> getDeliveryList() {
 		return deliveryDao.getDeliveryList();
 	}
-	
+
 	@Override
 	public List<CoPurchasingDTO> isExistingCPAC() {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 	// FavoriteUser
 	public void insertFU(FavoriteUserDTO favoriteUser) {
 		fuDao.insertFU(favoriteUser);
@@ -240,7 +245,7 @@ public class DeliveryImpl implements DeliveryFacade {
 	public List<MessageDTO> getMessageListByUsername(String username) {
 		return messageDao.getMessageListByUsername(username);
 	}
-	
+
 	public List<MessageDTO> getMessageListByReceiverUsername(String receiver) {
 		return messageDao.getMessageListByReceiverUsername(receiver);
 	}
@@ -248,46 +253,60 @@ public class DeliveryImpl implements DeliveryFacade {
 	public List<MessageDTO> getMessageContentByUsername(String sender, String receiver) {
 		return messageDao.getMessageContentByUsername(sender, receiver);
 	}
-	
+
 	public List<MessageDTO> getMessageContentByReceiverUsername(String sender, String receiver) {
 		return messageDao.getMessageContentByReceiverUsername(sender, receiver);
 	}
-	
+
 	public List<MessageDTO> getMessageList() {
 		return messageDao.getMessageList();
 	}
-	
 
-	//lineitem
+	// CPlineitem
 
-		public List<CoPurchasingLineItemDTO> getCPLineItemsByCPId(int cpId){
+	public List<CoPurchasingLineItemDTO> getCPLineItemsByCPId(int cpId){
 			return cplineitem.getCPLineItemsByCPId(cpId);
 		}
-		public void insertCPLineItem(CoPurchasingLineItemDTO lineItem) {
+	
+	public void insertCPLineItem(CoPurchasingLineItemDTO lineItem) {
 			cplineitem.insertCPLineItem(lineItem);
 		}
 
+	// AClineitem
+	public List<AuctionLineItemDTO> getACLineItemsByACId(int acId) {
+		return aclineitem.getACLineItemsByACId(acId);
+	}
+
+	public void insertACLineItem(AuctionLineItemDTO lineItem) {
+		aclineitem.insertACLineItem(lineItem);
+	}
+
 	public void testScheduler(Date closingTime) {
-		
-		Runnable updateTableRunner = new Runnable() {	
+
+		Runnable updateTableRunner = new Runnable() {
 			// anonymous class 정의
 			@Override
-			public void run() {   // 스케쥴러에 의해 미래의 특정 시점에 실행될 작업을 정의				
+			public void run() { // 스케쥴러에 의해 미래의 특정 시점에 실행될 작업을 정의
 				Date curTime = new Date();
-				// 실행 시점의 시각을 전달하여 그 시각 이전의 closing time 값을 갖는 event의 상태를 변경 
-				eventDao.closeEvent(curTime);	// EVENTS 테이블의 레코드 갱신	
+				// 실행 시점의 시각을 전달하여 그 시각 이전의 closing time 값을 갖는 event의 상태를 변경
+				eventDao.closeEvent(curTime); // EVENTS 테이블의 레코드 갱신
 				System.out.println("updateTableRunner is executed at " + curTime);
 			}
 		};
-		
+
 		HashMap<String, Date> hashMap = new HashMap<String, Date>();
-		hashMap.put("curTime", new Date());			// 현재 시각: PK 값으로 사용
+		// PK 값으로 사용
+		hashMap.put("curTime", new Date());			// 현재 시각
 		hashMap.put("closingTime", closingTime);	// 미래의 종료 시각
 		eventDao.insertNewEvent(hashMap);	// EVENTS 테이블에 레코드 삽입
+		hashMap.put("curTime", new Date()); // 현재 시각: PK 값으로 사용
+		hashMap.put("closingTime", closingTime); // 미래의 종료 시각
+		eventDao.insertNewEvent(hashMap); // EVENTS 테이블에 레코드 삽입
 
 		// 스케줄 생성: closingTime에 updateTableRunner.run() 메소드 실행
-		scheduler.schedule(updateTableRunner, closingTime);  
-		
+		scheduler.schedule(updateTableRunner, closingTime);
+
 		System.out.println("updateTableRunner has been scheduled to execute at " + closingTime);
 	}
+
 }

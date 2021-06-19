@@ -50,25 +50,25 @@
 		<nav id="menu">
 			<h2>Menu</h2>
 			<ul> 
-				<li><a href="/">메인</a></li>
+				<li><a href="/"><b>메인</b></a></li>
 				<c:choose>
 					<c:when test="${userSession.username ne null}">
-						<li><a href="/delivery/signoff.do">${userSession.username} 로그아웃
+						<li><a href="/delivery/signoff.do">🔓 ${userSession.username} 로그아웃
 						</a></li>
 					</c:when>
 					<c:otherwise>
-						<li><a href="/delivery/signon.do">로그인</a></li>
-						<li><a href="/delivery/insertAccount.do">회원가입</a></li>
+						<li><a href="/delivery/signon.do">🔐 로그인</a></li>
+						<li><a href="/delivery/insertAccount.do">📋 회원가입</a></li>
 					</c:otherwise>
 				</c:choose>
 				
-				<li><a href="/delivery/auctionView.do">경매 </a></li>
-				<li><a href="/delivery/copurchasingView.do">공동구매</a></li>
-				<li><a href="/delivery/listView.do">용달서비스 거래</a></li>
+				<li><a href="/delivery/auctionView.do">⏱ 경매 </a></li>
+				<li><a href="/delivery/copurchasingView.do">👥 공동구매</a></li>
+				<li><a href="/delivery/listView.do">🚘 1:1 용달 거래</a></li>
 				<c:if test="${userSession.username ne null}">
 
-					<li class="nav-item"><li><a href="/delivery/mypage.do">마이페이지</a></li>
-					<li><a href="/delivery/message.do">DM</a></li>
+					<li class="nav-item"><li><a href="/delivery/mypage.do">📰 마이페이지</a></li>
+					<li><a href="/delivery/message.do">💬 DM</a></li>
 					
 				</c:if>
 				<c:if test="${userSession.username eq 'king'}">

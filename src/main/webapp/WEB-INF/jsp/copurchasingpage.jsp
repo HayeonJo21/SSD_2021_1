@@ -6,11 +6,11 @@
 	<div class="inner">
 		<header>
 			<h1>
-				용달 서비스 공동구매<br />
+			👥  용달 서비스 공동구매<br />
 			</h1>
 			<p>진행중인 공동구매 목록입니다.</p>
 			<br/>
-			<li><a href="/coPurchasing/insert/form.do">공동구매 등록 </a></li>
+			<li><a href="/coPurchasing/insert/form.do">공동구매 등록 📝</a></li>
 			<br/>
 		</header>
 		<section class="tiles">
