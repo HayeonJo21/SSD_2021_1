@@ -24,7 +24,7 @@
 				
 				<ul class="actions">
 					<li><button type="submit" >&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;</button></li>
-					<li><a href="/delivery/userInsertAccount.do" class="button">&nbsp;&nbsp;Register&nbsp;&nbsp;</a></li>
+					<li><a href="/delivery/insertAccount.do" class="button">&nbsp;&nbsp;Register&nbsp;&nbsp;</a></li>
 				</ul></form>
 			</div>
 		
