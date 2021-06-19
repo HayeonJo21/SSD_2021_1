@@ -171,7 +171,7 @@
 						<c:forEach var="ac" items="${ACList}">
 							<tr>
 								<td><a
-									href="<c:url value='/auction/view.do'>
+									href="<c:url value='/delivery/auctionDetailView.do'>
 						   <c:param name='acId' value='${ac.auctionId}'/>
 				 		 </c:url>">${ac.auctionId}</a></td>
 								<td>${ac.startPrice}원</td>
