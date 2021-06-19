@@ -73,7 +73,7 @@
 					<li><a href="/delivery/message.do">💬 DM</a></li>
 					
 				</c:if>
-				<c:if test="${userSession.username eq 'king'}">
+				<c:if test="${userSession.status eq 0}">
 				<li class="nav-item"><li><a href="/delivery/adminMain.do">**관리자 페이지**</a></li>
 				</c:if>
 			</ul>
