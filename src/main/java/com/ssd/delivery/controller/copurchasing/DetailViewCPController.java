@@ -53,7 +53,7 @@ public class DetailViewCPController {
 		if(delivery.getCPById(cpId).getMaxNumberOfPurchaser() <= delivery.CPLineItemCount(cpId)) {
 			status= 1;
 		}else status=0;
-		
+		 
 		
 		
 		System.out.println("status:"+status);
