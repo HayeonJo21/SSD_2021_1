@@ -71,9 +71,11 @@
 			<div class="progress">
 				<div
 					class="progress-bar progress-bar-warning progress-bar-striped active"
-					role="progressbar" aria-valuenow="40" aria-valuemin="0"
-					aria-valuemax="100" style="width: 75%">75%</div>
+					role="progressbar" aria-valuenow='${fn:length(cplineitem) }' aria-valuemin="0"
+					aria-valuemax='${ cp.maxNumberOfPurchaser }' style="width: ${fn:length(cplineitem)/cp.maxNumberOfPurchaser*100}%">${fn:length(cplineitem) }명 참여중!   </div>
 			</div>
+			
+			
 			<br>
 			<br>
 			<!-- 참여자 정보 -->
