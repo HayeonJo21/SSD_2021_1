@@ -209,6 +209,20 @@ public class DeliveryImpl implements DeliveryFacade {
 	public List<FavoriteUserDTO> getFUList() {
 		return fuDao.getFUList();
 	}
+	
+	public void updateTradeCount(String tradeCount, String username, String favUsername) throws DataAccessException {
+		fuDao.updateTradeCount(tradeCount, username, favUsername);
+		
+	}
+	
+	public List<AuctionDTO> getACTradeCount(String favUsername, String username) throws DataAccessException {
+		
+		return fuDao.getACTradeCount(favUsername, username);
+	}
+	public List<CoPurchasingDTO> getCPTradeCount(String favUsername, String username) throws DataAccessException {
+		
+		return fuDao.getCPTradeCount(favUsername, username);
+	}
 
 	// FleaMarket
 	public void insertFM(ItemDTO item) {

@@ -36,6 +36,16 @@ public class MyPageController {
 		List<DeliveryDTO> DelList = delivery.getDeliveryByUsername(username);
 		List<FavoriteUserDTO> favList = delivery.getFUByUsername(username);
 		
+		for(int i = 0; i < favList.size(); i++) {
+			Integer tradeCount = 0;
+			
+			List<CoPurchasingDTO> CPTrade = delivery.getCPTradeCount(favList.get(i).getFavoriteUsername(), username);
+			List<AuctionDTO> ACTrade = delivery.getACTradeCount(favList.get(i).getFavoriteUsername(), username);
+			
+			tradeCount = CPTrade.size() + ACTrade.size();
+			delivery.updateTradeCount(tradeCount.toString(), username, favList.get(i).getFavoriteUsername());
+		}
+		
 		mav.addObject("CPList", CPList);
 		mav.addObject("DelList", DelList);
 		mav.addObject("ACList", ACList);
