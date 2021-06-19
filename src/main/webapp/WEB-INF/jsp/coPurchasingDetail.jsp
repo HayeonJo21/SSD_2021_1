@@ -7,10 +7,11 @@
 		<h1>Co-Purchasing 👥</h1>
 		<section>
 			<h1 style="font-size: 40px">공동구매 상세내역</h1>
-			<h1 style="font-size: 30px">📢 &nbsp;게시자 says &nbsp;&nbsp;<b style="color: #f2849e">" &nbsp;${cp.note } &nbsp;"</b></h1>
-			<h3>
-			* 공동구매 ID : ${cp.coPurchasingId}
-			</h3>
+			<h1 style="font-size: 30px">
+				📢 &nbsp;게시자 says &nbsp;&nbsp;<b style="color: #f2849e">"
+					&nbsp;${cp.note } &nbsp;"</b>
+			</h1>
+			<h3>* 공동구매 ID : ${cp.coPurchasingId}</h3>
 			<div class="table-wrapper">
 				<table>
 					<thead>
@@ -36,7 +37,7 @@
 						</tr>
 						<tr>
 							<td>가격</td>
-							<td>${del.price } / 인당 ${cp.unitCost }</td>
+							<td>${del.price }/인당 ${cp.unitCost }</td>
 						</tr>
 						<tr>
 							<td>1인당 가격</td>
@@ -65,24 +66,35 @@
 
 			<c:if test="${userSession.username ne null}">
 				<div style="float: right; padding-right: 5px">
-					<c:if test="${status eq 1}">
+
+					<c:if test="${status eq 1 }">
 						<button disabled>&nbsp;&nbsp;&nbsp;&nbsp;공동구매
 							종료&nbsp;&nbsp;&nbsp;&nbsp;</button>
 
 					</c:if>
-					<c:if test="${status eq 0}">
-					<a
-							href="/delivery/coPurchasingJoin.do?coPurchasingId=${cp.coPurchasingId}"
-							class="button primary" >&nbsp;&nbsp;&nbsp;&nbsp;공동구매
-							참여🤚🏻&nbsp;&nbsp;&nbsp;&nbsp;</a>
+					userSession.username ${userSession.username }<br> 
+					cp.username ${cp.username }<br>
+					<c:if
+						test="${ userSession.username eq cp.username and status eq 0}">
+						
+						공동구매 주최자입니다! 이미 참여되었습니다 <br>
+
+
 					</c:if>
-					<%-- <a
-						href="/delivery/coPurchasingJoin.do?coPurchasingId=${cp.coPurchasingId}"
-						class="button primary">&nbsp;&nbsp;&nbsp;&nbsp;공동구매
-						참여🤚🏻&nbsp;&nbsp;&nbsp;&nbsp;</a> --%>
+					<c:forEach items="${cplineitem}" var="list">
+					lineitem ${list.username}
+
+						<c:if
+							test="${ userSession.username eq  list.username and status eq 0}">
+							이미 참여하셨습니다!
+						</c:if>
+						<br>
+					</c:forEach>
 				</div>
 			</c:if>
-			<h1 style="font-size: 35px"><b style="color: #f2849e">*&nbsp;</b> Progress of Co-Purchasing</h1>
+			<h1 style="font-size: 35px">
+				<b style="color: #f2849e">*&nbsp;</b> Progress of Co-Purchasing
+			</h1>
 			<p>공동구매 진행상황을 보여줍니다.</p>
 			<div class="progress">
 				<div
@@ -98,14 +110,16 @@
 					${fn:length(cplineitem) }명
 					참여중!
 					</c:if>
-					
-					</div>
+
+				</div>
 			</div>
 
 
 			<br> <br>
 			<!-- 참여자 정보 -->
-			<h1 style="font-size: 35px"><b style="color: #f2849e">*&nbsp;</b> 참여자 정보</h1>
+			<h1 style="font-size: 35px">
+				<b style="color: #f2849e">*&nbsp;</b> 참여자 정보
+			</h1>
 			<div class="table-wrapper">
 				<table class="alt">
 					<thead>
