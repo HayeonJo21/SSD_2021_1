@@ -2,7 +2,12 @@
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ include file="IncludeTop.jsp"%>
-
+<script type="text/javaScript">
+	function eventKeyup(str){
+		var total = $('#price').val();
+		$("#unitCost").val(total/str);   
+	}
+</script>
 <!-- Main -->
 <div id="main">
 	<div class="inner">
@@ -34,17 +39,17 @@
 	        	<p class="form-control-static">${delivery.price}</p> 
 	        </div>
 				</div>
-
-				<div class="col-12">
-					<label for="demo-name">1인당 가격</label> <input type="text"
-						name="unitCost" id="unitCost" value="" placeholder="1인당 가격을 입력하세요." />
-				</div>
-
 				<div class="col-12">
 					<label for="demo-name">총 모집 인원</label> <input type="text"
 						name="maxNumberOfPurchaser" id="maxNumberOfPurchaser" value=""
-						placeholder="총 모집 인원을 입력하세요." />
+						placeholder="총 모집 인원을 입력하세요." onkeyup="eventKeyup(this.value)" />
 				</div>
+				<div class="col-12">
+					<label for="demo-name">1인당 가격</label> <input type="text"
+						name="unitCost" id="unitCost" value="" readonly />
+				</div>
+
+				
 				<div class="col-12">
 					<label for="demo-name">부가 설명</label> <input type="text" name="note"
 						id="note" value="" placeholder="부가 설명을 입력해주세요." />
