@@ -8,9 +8,10 @@
 			<h1>
 			👥  용달 서비스 공동구매<br />
 			</h1>
-			<p>진행중인 공동구매 목록입니다.</p>
-			<br/>
-			<li><a href="/delivery/coPurchasingInsertForm.do">공동구매 등록 📝</a></li>
+			<p>진행중인 공동구매 목록입니다.</p> 
+			
+			<a class=button href="/delivery/coPurchasingInsertForm.do">공동구매 등록 📝</a>
+			<br>
 			<br/>
 		</header>
 		<section class="tiles">

@@ -55,15 +55,22 @@ public class JoinCPController {
 
 	
 	@PostMapping
-	public String submit(CoPurchasingLineItemDTO cplineitemDTO) {
+	public String submit(CoPurchasingLineItemDTO cplineitemDTO, ModelMap model) {
 		delivery.insertCPLineItem(cplineitemDTO);
 		
 		int cpId = cplineitemDTO.getCoPurchasingId();
-		if (delivery.getCPById(cpId).getMaxNumberOfPurchaser() == delivery.CPLineItemCount(cpId)) {
-			
-		}
+		CoPurchasingDTO cp = delivery.getCPById(cpId);
+		
+		DeliveryDTO del = delivery.getDeliveryById(cp.getDelivery());
+		
+		model.put("cp", cp);
+		model.put("cplineitemDTO", cplineitemDTO);
+		model.put("del", del);
+		
+		
 	
-		return "redirect:/delivery/coPurchasingDetailView.do?coPurchasingId=" + cpId;
+//		return "redirect:/delivery/coPurchasingDetailView.do?coPurchasingId=" + cpId;
+		return "coPurchasingJoinSuccess";
 	}
 	
 }
