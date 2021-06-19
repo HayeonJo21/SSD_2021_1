@@ -62,8 +62,9 @@
 				<div class="col-12">
 					<ul class="actions">
 						<li><input type="submit" value="참여신청" class="primary" /></li>
-						<li><!--  <input type="reset" value="참여취소" />-->
-						<a class="button" href="/delivery/coPurchasingDetailView.do?coPurchasingId=${cp.coPurchasingId}">참여취소<i class="fa fa-times spaceLeft"></i></a></li>
+						<li>
+						<a class="button" href="/delivery/coPurchasingDetailView.do?coPurchasingId=${cp.coPurchasingId}">참여취소<i class="fa fa-times spaceLeft">
+						</i></a></li>
 					</ul>
 				</div>
 
