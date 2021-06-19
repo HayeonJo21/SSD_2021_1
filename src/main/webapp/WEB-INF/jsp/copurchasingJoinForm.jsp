@@ -50,13 +50,13 @@
 			
 			<form method="post" action="/delivery/coPurchasingJoin.do">
 				<div class="col-12">
-					<label for="demo-name">coPurchasingId</label> <input type="text"
+					<input type="hidden"
 						name="coPurchasingId" id="coPurchasingId" value='${cp.coPurchasingId} '
-						placeholder="1인당 가격을 입력하세요." />
+						 />
 				</div>
 
 				<div class="col-12">
-					<label for="demo-name">user</label> <input type="text" name="username"
+					<input type="hidden" name="username"
 						id="username" value='${user.username} ' placeholder="username" />
 				</div><br/>
 				<div class="col-12">
