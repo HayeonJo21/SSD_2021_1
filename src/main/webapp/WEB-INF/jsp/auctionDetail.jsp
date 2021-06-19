@@ -48,8 +48,11 @@
 		</div>
 				
 				
-				
-				<h2>⏰ 경매 마감시간: ${ac.endDate } <a href="index.jsp" class="button primary">🛎낙찰🛎</a></h2>
+				<form action="" method="post"></form>
+				<h2>⏰ 경매 마감시간: ${ac.endDate } 
+				<!--<c:if test="${status eq 'close'}"><input type="submit" class="button" disabled value="🛎낙찰🛎"></c:if>
+				<c:if test="${status eq 'open'}"><input type="submit" class="button primary" value="🛎낙찰🛎"></c:if>
+				--></h2>
 				
 				<h3>💵 시작가: ${ac.startPrice} (KRW)</h3>
 				<h3>💰 입찰단위: 500 (KRW)</h3>

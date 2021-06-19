@@ -9,4 +9,5 @@ import org.apache.ibatis.annotations.Mapper;
 public interface EventMapper {
 	void insertNewEvent(HashMap<String, Date> map);
 	void closeEvent(Date curTime);
+	String getStatusByAuctionId(int auctionId);
 }

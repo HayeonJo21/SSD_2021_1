@@ -13,13 +13,17 @@ import com.ssd.delivery.dao.mybatis.mapper.EventMapper;
 @Repository
 public class MybatisEventDao implements EventDao {	
 	@Autowired
-	private EventMapper enventMapper;
+	private EventMapper eventMapper;
 	
 	public void insertNewEvent(HashMap<String, Date> map) {
-		enventMapper.insertNewEvent(map);
+		eventMapper.insertNewEvent(map);
 	}
 
 	public void closeEvent(Date curTime) {
-		enventMapper.closeEvent(curTime);		
+		eventMapper.closeEvent(curTime);		
+	}
+	
+	public String getStatusByAuctionId(int auctionId) {
+		return eventMapper.getStatusByAuctionId(auctionId);
 	}
 }

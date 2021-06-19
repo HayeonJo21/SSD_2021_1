@@ -18,11 +18,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.ssd.delivery.domain.*;
 import com.ssd.delivery.service.DeliveryFacade;
-import com.ssd.delivery.service.Message;
 
 @Controller
 @SessionAttributes("userSession")
-@RequestMapping("/auction/insert2.do")
+@RequestMapping("/delivery/auctionInsert2.do")
 public class InsertAuctionController {
 	@Autowired
 	private DeliveryFacade delivery;
