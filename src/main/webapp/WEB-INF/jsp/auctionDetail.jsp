@@ -72,6 +72,38 @@
 				<a href="/auction/join.do?auctionId=${ac.auctionId}"
 					class="button primary">&nbsp;&nbsp;&nbsp;&nbsp;경매
 					참여🤚🏻&nbsp;&nbsp;&nbsp;&nbsp;</a>
+				</c:if>
+				</h2>
+				<h3>💵 시작가: ${ac.startPrice} (KRW)</h3>
+				<h3>💰 입찰단위: 입찰자 자유</h3>
+				<br />
+				<c:if test="${userSession.username ne ac.username && userSession.username ne null}">
+				<div style="float:right; padding-right:5px">
+				<a href="/auction/join.do?auctionId=${ac.auctionId}" class="button primary">&nbsp;&nbsp;&nbsp;&nbsp;경매 참여🤚🏻&nbsp;&nbsp;&nbsp;&nbsp;</a>
+			</div></c:if>
+				<h3><b style="color: #f2849e">* 입찰 현황</b></h3>
+				<div class="table-wrapper">
+					<table class="alt">
+						<thead>
+							<tr>
+								<th>번호</th>
+								<th>참여자</th>
+								<th>입찰일시</th>
+								<th>입찰금액</th>
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach var="aclineitem" items="${aclineitem}" varStatus="st">
+							<tr>
+								<td>${st.index+1}</td>
+								<td>${aclineitem.username}</td>
+								<td>${aclineitem.joinDate}</td>
+								<td>${aclineitem.joinPrice}원</td>
+							</tr>
+						</c:forEach>
+						</tbody>
+					</table>
+				</div>
 			</div>
 		</c:if>
 		<h3>

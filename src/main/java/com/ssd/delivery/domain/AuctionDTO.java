@@ -18,7 +18,7 @@ public class AuctionDTO implements Serializable {
 	private String username;
 	private int flag;
 	private int flag2;
-	private int currentPrice;
+	private int currentPrice = 0;
 	
 	//기본생성자
 	public AuctionDTO() {
