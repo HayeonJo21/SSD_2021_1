@@ -6,7 +6,7 @@
 	<div class="inner">
 
 		<h2>경매 글 작성</h2>
-		<form method="post" action="/auction/insert2.do">
+		<form method="post" action="/delivery/auctionInsert2.do">
 			<div class="form-group">
 				<label for="username" style="font-size: 24px">경매 게시자</label> <input
 					type="text" style="width: 800px" class="form-control"
@@ -92,4 +92,4 @@
 
 </div>
 
-<%@ include file="IncludeTop.jsp"%>
+<%@ include file="IncludeBottom.jsp"%>

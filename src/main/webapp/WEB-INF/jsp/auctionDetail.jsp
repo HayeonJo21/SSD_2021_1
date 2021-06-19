@@ -48,6 +48,14 @@
 		</div>
 				
 				
+<<<<<<< HEAD
+				<form action="" method="post"></form>
+				<h2>⏰ 경매 마감시간: ${ac.endDate } 
+				<!--<c:if test="${status eq 'close'}"><input type="submit" class="button" disabled value="🛎낙찰🛎"></c:if>
+				<c:if test="${status eq 'open'}"><input type="submit" class="button primary" value="🛎낙찰🛎"></c:if>
+				--></h2>
+				
+=======
 				
 				<h2>⏰ 경매 마감시간: ${ac.endDate }<c:if test="${userSession.username eq ac.username}">
 				<div style="float:right; padding-right:30px">
@@ -55,6 +63,7 @@
 				</div>
 				</c:if>
 				</h2>
+>>>>>>> branch 'master' of https://github.com/choi1k/SSD_2021_1.git
 				<h3>💵 시작가: ${ac.startPrice} (KRW)</h3>
 				<h3>💰 입찰단위: 입찰자 자유</h3>
 				<br />

@@ -264,13 +264,13 @@ public class DeliveryImpl implements DeliveryFacade {
 
 	// CPlineitem
 
-	public List<CoPurchasingLineItemDTO> getCPLineItemsByCPId(int cpId) {
-		return cplineitem.getCPLineItemsByCPId(cpId);
-	}
-
+	public List<CoPurchasingLineItemDTO> getCPLineItemsByCPId(int cpId){
+			return cplineitem.getCPLineItemsByCPId(cpId);
+		}
+	
 	public void insertCPLineItem(CoPurchasingLineItemDTO lineItem) {
-		cplineitem.insertCPLineItem(lineItem);
-	}
+			cplineitem.insertCPLineItem(lineItem);
+		}
 
 	// AClineitem
 	public List<AuctionLineItemDTO> getACLineItemsByACId(int acId) {
@@ -295,6 +295,10 @@ public class DeliveryImpl implements DeliveryFacade {
 		};
 
 		HashMap<String, Date> hashMap = new HashMap<String, Date>();
+		// PK 값으로 사용
+		hashMap.put("curTime", new Date());			// 현재 시각
+		hashMap.put("closingTime", closingTime);	// 미래의 종료 시각
+		eventDao.insertNewEvent(hashMap);	// EVENTS 테이블에 레코드 삽입
 		hashMap.put("curTime", new Date()); // 현재 시각: PK 값으로 사용
 		hashMap.put("closingTime", closingTime); // 미래의 종료 시각
 		eventDao.insertNewEvent(hashMap); // EVENTS 테이블에 레코드 삽입

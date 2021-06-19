@@ -23,12 +23,12 @@ public class TestSchedulerController {
 		this.delivery = delivery;
 	}
 
-	@RequestMapping("/shop/testScheduler.do")
-	public ModelAndView handleRequest(HttpServletRequest request,
-			@RequestParam("keyword")
-			@DateTimeFormat(pattern="yyyy-MM-dd HH:mm") Date closeTime) throws Exception {
-		System.out.println(closeTime);
-		delivery.testScheduler(closeTime);
-		return new ModelAndView("Scheduled", "closeTime", closeTime);	
-	}
+//	@RequestMapping("/delivery/auctionInsertddsfsfd.do")
+//	public ModelAndView handleRequest(HttpServletRequest request,
+//			@RequestParam("endDate")
+//			@DateTimeFormat(pattern="yyyy-MM-dd HH:mm") Date closeTime) throws Exception {
+//		System.out.println(closeTime);
+//		delivery.testScheduler(closeTime);
+//		return new ModelAndView("Scheduled", "closeTime", closeTime);	
+//	}
 }

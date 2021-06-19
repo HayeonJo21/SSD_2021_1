@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.ssd.delivery.dao.mybatis.mapper.EventMapper;
 import com.ssd.delivery.domain.AccountDTO;
 import com.ssd.delivery.domain.AuctionDTO;
 import com.ssd.delivery.domain.AuctionLineItemDTO;
@@ -28,6 +29,8 @@ import com.ssd.delivery.service.DeliveryFacade;
 public class DetailViewAuctionController { 
 	@Autowired
 	private DeliveryFacade delivery;
+	@Autowired
+	EventMapper eventMapper;
 	
 	@Autowired
 	public void setDelivery(DeliveryFacade delivery) {
@@ -40,6 +43,8 @@ public class DetailViewAuctionController {
 			ModelMap model, HttpSession session) throws Exception {
 		AuctionDTO auction = this.delivery.getAuctionById(auctionId);
 		DeliveryDTO del = delivery.getDeliveryById(auction.getDelivery());
+		String status = eventMapper.getStatusByAuctionId(auctionId);
+		model.put("status", status);
 		AccountDTO account = (AccountDTO)session.getAttribute("userSession");
 		
 		List<AuctionLineItemDTO> aclineitem = delivery.getACLineItemsByACId(auctionId);
