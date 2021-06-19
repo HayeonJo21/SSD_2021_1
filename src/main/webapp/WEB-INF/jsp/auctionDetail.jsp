@@ -79,7 +79,7 @@
 								<td>${st.index+1}</td>
 								<td>${aclineitem.username}</td>
 								<td>${aclineitem.joinDate}</td>
-								<td>${aclineitem.joinPrice}</td>
+								<td>${aclineitem.joinPrice}원</td>
 							</tr>
 						</c:forEach>
 						</tbody>

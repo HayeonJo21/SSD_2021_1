@@ -60,8 +60,11 @@ public class JoinAuctionController {
 		Date date = cal.getTime();
 		SimpleDateFormat dFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm");
 		String currentDate = dFormat.format(date);
+		AuctionDTO auction = delivery.getAuctionById(aclineitemDTO.getAuctionId());
 		
 		aclineitemDTO.setJoinDate(currentDate);
+		auction.setCurrentPrice(aclineitemDTO.getJoinPrice());
+		
 		
 		delivery.insertACLineItem(aclineitemDTO);
 		
