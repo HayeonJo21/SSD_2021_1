@@ -59,14 +59,14 @@ public class MybatisCoPurchasingDao implements CoPurchasingDao {
 	public List<CoPurchasingDTO> isExsitingCPAC() throws DataAccessException {
 		return CPMapper.isExistingCPAC();
 	}
-	@Override
-	public int isCPUploader(String username, int cpId) throws DataAccessException{
-		return CPMapper.isCPUploader(username, cpId);
-	}
-	@Override
-	public int isCPPurchaser(String username, int cpId) throws DataAccessException{
-		return CPMapper.isCPPurchaser(username, cpId);
-	}
+//	@Override
+//	public int isCPUploader(String username, int cpId) throws DataAccessException{
+//		return CPMapper.isCPUploader(username, cpId);
+//	}
+//	@Override
+//	public int isCPPurchaser(String username, int cpId) throws DataAccessException{
+//		return CPMapper.isCPPurchaser(username, cpId);
+//	}
 
 	@Override
 	public CoPurchasingDTO getCPByDeliveryId(int deliveryId) throws DataAccessException {
