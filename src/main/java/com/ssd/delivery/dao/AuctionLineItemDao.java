@@ -9,6 +9,7 @@ import com.ssd.delivery.domain.CoPurchasingLineItemDTO;
 public interface AuctionLineItemDao {
 
 	void insertACLineItem(AuctionLineItemDTO ac) throws DataAccessException;
+	void deleteACLineItem(int auctionId) throws DataAccessException;
 	List<AuctionLineItemDTO> getACLineItemsByACId(int auctionId) throws DataAccessException;
 
 	

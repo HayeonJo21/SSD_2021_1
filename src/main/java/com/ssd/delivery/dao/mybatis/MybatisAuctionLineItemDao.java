@@ -25,8 +25,14 @@ public class MybatisAuctionLineItemDao implements  AuctionLineItemDao {
 
 	@Override
 	public void insertACLineItem(AuctionLineItemDTO ac) throws DataAccessException {
-		// TODO Auto-generated method stub
 		aclineitemmapper.insertACLineItem(ac);
+	}
+
+
+	@Override
+	public void deleteACLineItem(int auctionId) throws DataAccessException {
+		aclineitemmapper.deleteACLineItem(auctionId);
+		
 	}
 	
 	
