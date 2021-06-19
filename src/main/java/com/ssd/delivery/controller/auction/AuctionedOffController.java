@@ -29,7 +29,7 @@ public class AuctionedOffController {
 
 	@PostMapping 
 	public ModelAndView insertAuction(Model model, HttpSession session, @ModelAttribute("AuctionForm")  AuctionDTO auction) throws Exception {
-		AccountDTO account = (AccountDTO)session.getAttribute("userSession");
+		
 		List<AuctionLineItemDTO> acLineItem = delivery.getACLineItemsByACId(auction.getAuctionId());
 		String successfulBidder = "";
 		
