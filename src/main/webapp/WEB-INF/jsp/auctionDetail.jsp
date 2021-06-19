@@ -5,9 +5,9 @@
 	function closedAuction() {
 		alert("종료된 경매 입니다.");
 		return false;
-	} 
+	}
 </script>
-	<script>
+<script>
 	function auctionedOff() {
 		alert("정말 낙찰하시겠습니까?");
 		form.submit();
@@ -16,6 +16,9 @@
 <!-- Main -->
 <div id="main">
 	<div class="inner">
+		<c:if test="${status eq 'CLOSE' or ac.successfulBidder ne null}">
+			<h1>🚩 이미 <b style="color:red">진행 종료</b>된 경매입니다. <br/>더이상 입찰을 진행할 수 없습니다.</h1>
+		</c:if>
 		<h1>Auction ⏳</h1>
 		<h2>출발지: ${ac.address1}</h2>
 		<h2>
@@ -65,37 +68,35 @@
 			⏰ 경매 마감시간: ${ac.endDate }
 			<c:if test="${userSession.username eq ac.username}">
 				<div style="float: right; padding-right: 30px">
-					<!--<c:if test="${status eq close}">
-						<a href="index" class="button primary">&nbsp;&nbsp;&nbsp;🛎낙찰🛎&nbsp;&nbsp;&nbsp;</a>
-					</c:if>-->
-					<c:if test="${status eq 'CLOSE'}">
+					<c:if test="${status eq 'CLOSE' or ac.successfulBidder ne null}">
 						<input type="button" class="button" disabled
 							value="&ensp;🛎낙찰🛎&ensp;">
 					</c:if>
-					<c:if test="${status eq 'OPEN'}">
-					<form action="/auction/auctionedOff.do" method="POST">
-					<input type="hidden"
-						name="auctionId" id="auctionId" value='${ac.auctionId}' placeholder="${ac.auctionId}"/>
-						<input type="hidden"
-						name="endDate" id="endDate" value='${ac.endDate}' placeholder="${ac.endDate}"/>
-						<input type="hidden"
-						name="serviceDate" id="serviceDate" value='${delivery.serviceDate}' placeholder="${delivery.serviceDate}"/>
-						<input type="hidden"
-						name="startPrice" id="startPrice" value='${ac.startPrice}' placeholder="${ac.startPrice}"/>
-						<input type="hidden"
-						name="finalPrice" id="finalPrice" value='${ac.currentPrice}' placeholder="${ac.currentPrice}"/>
-						<input type="hidden"
-						name="address1" id="address1" value='${delivery.address1}' placeholder="${delivery.address1}"/>
-						<input type="hidden"
-						name="address2" id="address2" value='${delivery.address2}' placeholder="${delivery.address2}"/>
-						<input type="hidden"
-						name="delivery" id="delivery" value='${delivery.deliveryId}' placeholder="${delivery.deliveryId}"/>
-						<input type="hidden"
-						name="username" id="username" value='${ac.username}' placeholder="${ac.username}"/>
-					<div style="float: right; padding-right: 30px">
-				<button type="submit" onClick="auctionedOff()">&nbsp;&nbsp;&nbsp;&nbsp;🛎낙찰🛎&nbsp;&nbsp;&nbsp;&nbsp;</button>
-				</div>
-				</form>
+					<c:if test="${status eq 'OPEN' && ac.successfulBidder eq null}">
+						<form action="/auction/auctionedOff.do" method="POST">
+							<input type="hidden" name="auctionId" id="auctionId"
+								value='${ac.auctionId}' placeholder="${ac.auctionId}" /> <input
+								type="hidden" name="endDate" id="endDate" value='${ac.endDate}'
+								placeholder="${ac.endDate}" /> <input type="hidden"
+								name="serviceDate" id="serviceDate"
+								value='${delivery.serviceDate}'
+								placeholder="${delivery.serviceDate}" /> <input type="hidden"
+								name="startPrice" id="startPrice" value='${ac.startPrice}'
+								placeholder="${ac.startPrice}" /> <input type="hidden"
+								name="finalPrice" id="finalPrice" value='${ac.currentPrice}'
+								placeholder="${ac.currentPrice}" /> <input type="hidden"
+								name="address1" id="address1" value='${delivery.address1}'
+								placeholder="${delivery.address1}" /> <input type="hidden"
+								name="address2" id="address2" value='${delivery.address2}'
+								placeholder="${delivery.address2}" /> <input type="hidden"
+								name="delivery" id="delivery" value='${delivery.deliveryId}'
+								placeholder="${delivery.deliveryId}" /> <input type="hidden"
+								name="username" id="username" value='${ac.username}'
+								placeholder="${ac.username}" />
+							<div style="float: right; padding-right: 30px">
+								<button type="submit" onClick="auctionedOff()">&nbsp;&nbsp;&nbsp;&nbsp;🛎낙찰🛎&nbsp;&nbsp;&nbsp;&nbsp;</button>
+							</div>
+						</form>
 					</c:if>
 				</div>
 			</c:if>
@@ -105,10 +106,10 @@
 		<br />
 		<c:if
 			test="${userSession.username ne ac.username && userSession.username ne null}">
+			<c:if test="${status ne 'CLOSE' or ac.successfulBidder eq null}">
 			<div style="float: right; padding-right: 5px">
 				<c:if test="${status eq 'CLOSE'}">
-					<a href="#"
-						class="button primary" onclick="closedAuction()">&ensp;&ensp;경매
+					<a href="#" class="button primary" onclick="closedAuction()">&ensp;&ensp;경매
 						참여🤚🏻&ensp;&ensp;</a>
 				</c:if>
 				<c:if test="${status eq 'OPEN'}">
@@ -116,6 +117,7 @@
 						class="button primary">&ensp;&ensp;경매 참여🤚🏻&ensp;&ensp;</a>
 				</c:if>
 			</div>
+			</c:if>
 		</c:if>
 		<br />
 		<h3>

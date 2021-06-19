@@ -33,16 +33,18 @@ public class AuctionedOffController {
 		List<AuctionLineItemDTO> acLineItem = delivery.getACLineItemsByACId(auction.getAuctionId());
 		String successfulBidder = "";
 		
-		int finalPrice = auction.getCurrentPrice();
+		int finalPrice = auction.getFinalPrice();
+		System.out.println("Final price: ## " + finalPrice);
 		for(int i = 0; i < acLineItem.size(); i++) {
 			if(acLineItem.get(i).getJoinPrice() == finalPrice) {
 				successfulBidder = acLineItem.get(i).getUsername();
 				break;
 			}
 		}
-		
+		System.out.println("Successful Bidder: ## " + successfulBidder);
 		auction.setFinalPrice(finalPrice);
 		auction.setSuccessfulBidder(successfulBidder);
+		delivery.updateAuction(auction);
 		
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("ac", auction);
