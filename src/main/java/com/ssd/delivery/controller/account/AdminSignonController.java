@@ -24,7 +24,7 @@ import org.springframework.ui.Model;
 
 @Controller
 @SessionAttributes("userSession")
-@RequestMapping("/delivery/admin/signon.do")
+@RequestMapping("/delivery/adminSignon.do")
 public class AdminSignonController {
 
 	private DeliveryFacade delivery;
@@ -54,10 +54,10 @@ public class AdminSignonController {
 		model.addAttribute("userSession", account);
 
 		if (forwardAction != null) {
-			return "redirect:/admin/main.do" + forwardAction;
+			return "redirect:/delivery/adminMain.do" + forwardAction;
 		}
 		else {
-			return "redirect:/admin/main.do";
+			return "redirect:/delivery/adminMain.do";
 		}
 	}
 }

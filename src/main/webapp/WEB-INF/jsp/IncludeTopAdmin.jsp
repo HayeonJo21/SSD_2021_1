@@ -1,17 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-
 <!--
 	Phantom by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <!DOCTYPE HTML>
-<html> 
+<html>
 <head>
-<title>용달의 민족</title>
+<title>용달의 민족 - 관리자</title>
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -25,7 +23,7 @@
 	<link rel="stylesheet" href="/assets/css/noscript.css" />
 </noscript>
 </head>
-<body class="is-preload">
+<body class="p-3 mb-2 bg-dark text-white">
 	<!-- Wrapper -->
 	<div id="wrapper">
 
@@ -34,9 +32,9 @@
 			<div class="inner">
 
 				<!-- Logo -->
-				<a href="/" class="logo"> <span class="symbol"><img
+				<a href="/delivery/adminMain.do" class="logo"> <span class="symbol"><img
 						src="/images/logoicon.svg" alt="" /></span><span class="title">용달의
-						민족</span>
+						민족 관리자 페이지</span>
 				</a>
 				<!-- Nav -->
 				<nav>
@@ -51,30 +49,15 @@
 		<!-- Menu -->
 		<nav id="menu">
 			<h2>Menu</h2>
-			<ul> 
-				<li><a href="/"><b>메인</b></a></li>
-				<c:choose>
-					<c:when test="${userSession.username ne null}">
+			<ul>
+			<li><a href="/delivery/adminMain.do"><b>메인</b></a></li>
+				<c:if test="${userSession.username ne null}">
 						<li><a href="/delivery/signoff.do">🔓 ${userSession.username} 로그아웃
 						</a></li>
-					</c:when>
-					<c:otherwise>
-						<li><a href="/delivery/signon.do">🔐 로그인</a></li>
-						<li><a href="/delivery/insertAccount.do">📋 회원가입</a></li>
-					</c:otherwise>
-				</c:choose>
-				
-				<li><a href="/delivery/auctionView.do">⏱ 경매</a></li>
-				<li><a href="/delivery/copurchasingView.do">👥 공동구매</a></li>
-				<li><a href="/delivery/listView.do">🚘 1:1 용달 거래</a></li>
-				<c:if test="${userSession.username ne null}">
-
-					<li class="nav-item"><li><a href="/delivery/mypage.do">📰 마이페이지</a></li>
-					<li><a href="/delivery/message.do">💬 DM</a></li>
-					
 				</c:if>
-				<c:if test="${userSession.username eq 'king'}">
-				<li class="nav-item"><li><a href="/admin/main.do">**관리자 페이지**</a></li>
-				</c:if>
+				<li><a href="/delivery/adminUser.do">📋 회원 관리</a></li>
+				<li><a href="/delivery/adminAuction.do">⏱ 경매 관리</a></li>
+				<li><a href="/delivery/adminCoPurchasing.do">👥 공동구매 관리</a></li>
+				<li><a href="/delivery/adminDelivery.do">🚘 1:1 용달 거래 관리</a></li>
 			</ul>
 		</nav>

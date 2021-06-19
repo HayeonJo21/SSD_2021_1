@@ -30,7 +30,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.ui.Model;
 
 @Controller
-@RequestMapping("/admin/user.do")
+@RequestMapping("/delivery/adminUser.do")
 public class AdminUserController {
 
 	private DeliveryFacade delivery;

@@ -31,7 +31,6 @@ import org.springframework.ui.Model;
 
 @Controller
 @SessionAttributes("userSession")
-@RequestMapping("/admin/main.do")
 public class AdminController {
 
 	private DeliveryFacade delivery;
@@ -41,12 +40,12 @@ public class AdminController {
 		this.delivery = delivery;
 	}
 
-	@GetMapping
+	@RequestMapping("/delivery/adminMain.do")
 	public String showForm() {
 		return "adminMain";
 	}
 	
-	@RequestMapping("/admin/auction.do")
+	@RequestMapping("/delivery/adminAuction.do")
 	public ModelAndView adminAuctionView(Model model, HttpSession session) throws Exception {
 		
 		ModelAndView mav = new ModelAndView();
@@ -60,7 +59,7 @@ public class AdminController {
 		return mav;
 	}
 	
-	@RequestMapping("/admin/delivery.do")
+	@RequestMapping("/delivery/adminDelivery.do")
 	public ModelAndView adminDeliveryView(Model model, HttpSession session) throws Exception {
 		
 		ModelAndView mav = new ModelAndView();
@@ -74,7 +73,7 @@ public class AdminController {
 		return mav;
 	}
 	
-	@RequestMapping("/admin/coPurchasing.do")
+	@RequestMapping("/delivery/adminCoPurchasing.do")
 	public ModelAndView adminCPView(Model model, HttpSession session) throws Exception {
 		
 		ModelAndView mav = new ModelAndView();

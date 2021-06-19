@@ -22,6 +22,9 @@ public class WebMvcConfig implements WebMvcConfigurer {
 		//main
 		registry.addViewController("/delivery/mainpage.jsp").setViewName("index");
 		
+		//admin
+		registry.addViewController("/delivery/adminSignon.do").setViewName("adminLogin");
+		registry.addViewController("/deliery/adminMainl.do").setViewName("adminMain");
 		//account 
 		registry.addViewController("/delivery/insertAccount.do").setViewName("register");
 		registry.addViewController("/delivery/updateAccount.do").setViewName("accountUpdate");
