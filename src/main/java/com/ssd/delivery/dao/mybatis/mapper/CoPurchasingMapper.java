@@ -46,9 +46,9 @@ public interface CoPurchasingMapper {
 	CoPurchasingDTO getCPByDeliveryId(int deliveryId);
 	
 	List<CoPurchasingDTO> getCPListByUsername(String username);
-
-	int isCPUploader(@Param("username")String username, @Param("coPurchasingId")int cpId);
-
-	int isCPPurchaser(@Param("username")String username, @Param("coPurchasingId")int cpId);
+//
+//	int isCPUploader(@Param("username")String username, @Param("coPurchasingId")int cpId);
+//
+//	int isCPPurchaser(@Param("username")String username, @Param("coPurchasingId")int cpId);
 
 }
