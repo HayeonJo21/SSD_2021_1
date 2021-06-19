@@ -6,6 +6,7 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
 import com.ssd.delivery.dao.CoPurchasingDao;
+import com.ssd.delivery.dao.mybatis.mapper.CoPurchasingLineItemMapper;
 import com.ssd.delivery.dao.mybatis.mapper.CoPurchasingMapper;
 import com.ssd.delivery.domain.CoPurchasingDTO;
 
@@ -18,6 +19,8 @@ public class MybatisCoPurchasingDao implements CoPurchasingDao {
 
 	@Autowired
 	private CoPurchasingMapper CPMapper;
+	@Autowired
+	private CoPurchasingLineItemMapper CPLineItemMapper;
 	
 	@Override
 	public void insertCP(CoPurchasingDTO CP) throws DataAccessException {

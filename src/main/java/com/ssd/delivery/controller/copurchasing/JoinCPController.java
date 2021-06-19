@@ -59,6 +59,10 @@ public class JoinCPController {
 		delivery.insertCPLineItem(cplineitemDTO);
 		
 		int cpId = cplineitemDTO.getCoPurchasingId();
+		if (delivery.getCPById(cpId).getMaxNumberOfPurchaser() == delivery.CPLineItemCount(cpId)) {
+			
+		}
+	
 		return "redirect:/delivery/coPurchasingDetailView.do?coPurchasingId=" + cpId;
 	}
 	

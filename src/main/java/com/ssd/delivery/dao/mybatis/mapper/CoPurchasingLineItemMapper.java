@@ -19,6 +19,7 @@ package com.ssd.delivery.dao.mybatis.mapper;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.springframework.dao.DataAccessException;
 
 import com.ssd.delivery.domain.AuctionLineItemDTO;
 import com.ssd.delivery.domain.CoPurchasingLineItemDTO;
@@ -35,5 +36,6 @@ public interface CoPurchasingLineItemMapper {
   void insertCPLineItem2(CoPurchasingLineItemDTO lineItem);
   
   void deleteCPLineItem(int coPurchasingId);
-
+  
+  int CPLineItemCount(int coPurchasingId);
 }

@@ -22,7 +22,7 @@ import com.ssd.delivery.service.DeliveryFacade;
 
 @Controller
 @SessionAttributes("userSession")
-@RequestMapping("/auction/auctionedOff.do")
+@RequestMapping("/delivery/auctionAuctionedOff.do")
 public class AuctionedOffController {
 	@Autowired
 	private DeliveryFacade delivery;
