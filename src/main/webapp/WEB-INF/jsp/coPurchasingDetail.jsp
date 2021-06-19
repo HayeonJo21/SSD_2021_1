@@ -63,7 +63,7 @@
 			
 			<c:if test="${userSession.username ne null}">
 			<div style="float:right; padding-right:5px">
-				<a href="/coPurchasing/join.do?coPurchasingId=${cp.coPurchasingId}" class="button primary">&nbsp;&nbsp;&nbsp;&nbsp;공동구매 참여🤚🏻&nbsp;&nbsp;&nbsp;&nbsp;</a>
+				<a href="/delivery/coPurchasingJoin.do?coPurchasingId=${cp.coPurchasingId}" class="button primary">&nbsp;&nbsp;&nbsp;&nbsp;공동구매 참여🤚🏻&nbsp;&nbsp;&nbsp;&nbsp;</a>
 			</div>
 			</c:if>
 			<h1 style="font-size: 30px">Progress of CoPurchasing</h1>

@@ -129,6 +129,7 @@ public interface DeliveryFacade {
 	List<CoPurchasingLineItemDTO> getCPLineItemsByCPId(int cpId);
 
 	void insertCPLineItem(CoPurchasingLineItemDTO lineItem);
+	void insertCPLineItem2(CoPurchasingLineItemDTO lineItem);
 	
 	void deleteCPLineItem(int cpId);
 

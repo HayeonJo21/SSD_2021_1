@@ -25,7 +25,7 @@ import com.ssd.delivery.service.Message;
 
 @Controller
 @SessionAttributes("userSession")
-@RequestMapping("/coPurchasing/join.do")
+@RequestMapping("/delivery/coPurchasingJoin.do")
 public class JoinCPController {
 	@Autowired
 	private DeliveryFacade delivery;
@@ -58,7 +58,8 @@ public class JoinCPController {
 	public String submit(CoPurchasingLineItemDTO cplineitemDTO) {
 		delivery.insertCPLineItem(cplineitemDTO);
 		
-		return "index";
+		int cpId = cplineitemDTO.getCoPurchasingId();
+		return "redirect:/delivery/coPurchasingDetailView.do?coPurchasingId=" + cpId;
 	}
 	
 }

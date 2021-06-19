@@ -31,6 +31,11 @@ public class MybatisCoPurchasingLineItemDao implements  CoPurchasingLineItemDao 
 	public void insertCPLineItem(CoPurchasingLineItemDTO cp) throws DataAccessException {
 		cplineitemmapper.insertCPLineItem(cp);
 	}
+	
+	@Override
+	public void insertCPLineItem2(CoPurchasingLineItemDTO cp) throws DataAccessException {
+		cplineitemmapper.insertCPLineItem2(cp);
+	}
 
 
 	@Override

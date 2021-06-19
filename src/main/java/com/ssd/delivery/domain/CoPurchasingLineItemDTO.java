@@ -16,6 +16,21 @@ public class CoPurchasingLineItemDTO implements Serializable{
 
 
 
+	public CoPurchasingLineItemDTO(int coPurchasingId, String username) {
+		super();
+		this.coPurchasingId = coPurchasingId;
+		this.username = username;
+	}
+
+
+
+	public CoPurchasingLineItemDTO(String username) {
+		super();
+		this.username = username;
+	}
+
+
+
 	public CoPurchasingLineItemDTO(int linenum, int coPurchasingId, String username) {
 		super();
 		this.linenum = linenum;

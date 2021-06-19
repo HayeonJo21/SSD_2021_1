@@ -277,6 +277,10 @@ public class DeliveryImpl implements DeliveryFacade {
 	public void insertCPLineItem(CoPurchasingLineItemDTO lineItem) {
 		cplineitem.insertCPLineItem(lineItem);
 	}
+	
+	public void insertCPLineItem2(CoPurchasingLineItemDTO lineItem) {
+		cplineitem.insertCPLineItem2(lineItem);
+	}
 
 	@Override
 	public void deleteCPLineItem(int cpId) {
