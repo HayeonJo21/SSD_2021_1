@@ -62,7 +62,7 @@
 					</a>
 				</div>
 
-
+			</div>
 				<!-- <div class="row gtr-uniform">
 						<div class="col-12">
 							<label for="demo-name"></label> <input type="text"

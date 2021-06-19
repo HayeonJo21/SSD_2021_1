@@ -2,14 +2,14 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="IncludeTop.jsp"%>
 
-		<!-- Main -->
-		<div id="main">
-			<div class="inner">
-				<h1>Auction ⏳</h1>
-				<h2>출발지: ${ac.address1}</h2>
-				<h2>경매 등록자 : ${ac.username} </h2>
-				
-				<div class="table-wrapper">
+<!-- Main -->
+<div id="main">
+	<div class="inner">
+		<h1>Auction ⏳</h1>
+		<h2>출발지: ${ac.address1}</h2>
+		<h2>경매 등록자 : ${ac.username}</h2>
+
+		<div class="table-wrapper">
 			<table class="alt">
 				<thead>
 					<tr>
@@ -46,55 +46,60 @@
 				</tbody>
 			</table>
 		</div>
-				
-				
-<<<<<<< HEAD
-				<form action="" method="post"></form>
-				<h2>⏰ 경매 마감시간: ${ac.endDate } 
-				<!--<c:if test="${status eq 'close'}"><input type="submit" class="button" disabled value="🛎낙찰🛎"></c:if>
+		<form action="" method="post"></form>
+		<!--<h2>
+			⏰ 경매 마감시간: ${ac.endDate }
+			<c:if test="${status eq 'close'}"><input type="submit" class="button" disabled value="🛎낙찰🛎"></c:if>
 				<c:if test="${status eq 'open'}"><input type="submit" class="button primary" value="🛎낙찰🛎"></c:if>
-				--></h2>
-				
-=======
-				
-				<h2>⏰ 경매 마감시간: ${ac.endDate }<c:if test="${userSession.username eq ac.username}">
-				<div style="float:right; padding-right:30px">
-				<a href="index.jsp" class="button primary">&nbsp;&nbsp;&nbsp;🛎낙찰🛎&nbsp;&nbsp;&nbsp;</a>
+			
+		</h2>	-->
+
+
+		<h2>
+			⏰ 경매 마감시간: ${ac.endDate }
+			<c:if test="${userSession.username eq ac.username}">
+				<div style="float: right; padding-right: 30px">
+					<a href="index.jsp" class="button primary">&nbsp;&nbsp;&nbsp;🛎낙찰🛎&nbsp;&nbsp;&nbsp;</a>
 				</div>
-				</c:if>
-				</h2>
->>>>>>> branch 'master' of https://github.com/choi1k/SSD_2021_1.git
-				<h3>💵 시작가: ${ac.startPrice} (KRW)</h3>
-				<h3>💰 입찰단위: 입찰자 자유</h3>
-				<br />
-				<c:if test="${userSession.username ne ac.username && userSession.username ne null}">
-				<div style="float:right; padding-right:5px">
-				<a href="/auction/join.do?auctionId=${ac.auctionId}" class="button primary">&nbsp;&nbsp;&nbsp;&nbsp;경매 참여🤚🏻&nbsp;&nbsp;&nbsp;&nbsp;</a>
-			</div></c:if>
-				<h3><b style="color: #f2849e">* 입찰 현황</b></h3>
-				<div class="table-wrapper">
-					<table class="alt">
-						<thead>
-							<tr>
-								<th>번호</th>
-								<th>참여자</th>
-								<th>입찰일시</th>
-								<th>입찰금액</th>
-							</tr>
-						</thead>
-						<tbody>
-							<c:forEach var="aclineitem" items="${aclineitem}" varStatus="st">
-							<tr>
-								<td>${st.index+1}</td>
-								<td>${aclineitem.username}</td>
-								<td>${aclineitem.joinDate}</td>
-								<td>${aclineitem.joinPrice}</td>
-							</tr>
-						</c:forEach>
-						</tbody>
-					</table>
-				</div>
+			</c:if>
+		</h2>
+		<h3>💵 시작가: ${ac.startPrice} (KRW)</h3>
+		<h3>💰 입찰단위: 입찰자 자유</h3>
+		<br />
+		<c:if
+			test="${userSession.username ne ac.username && userSession.username ne null}">
+			<div style="float: right; padding-right: 5px">
+				<a href="/auction/join.do?auctionId=${ac.auctionId}"
+					class="button primary">&nbsp;&nbsp;&nbsp;&nbsp;경매
+					참여🤚🏻&nbsp;&nbsp;&nbsp;&nbsp;</a>
 			</div>
+		</c:if>
+		<h3>
+			<b style="color: #f2849e">* 입찰 현황</b>
+		</h3>
+		<div class="table-wrapper">
+			<table class="alt">
+				<thead>
+					<tr>
+						<th>번호</th>
+						<th>참여자</th>
+						<th>입찰일시</th>
+						<th>입찰금액</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach var="aclineitem" items="${aclineitem}" varStatus="st">
+						<tr>
+							<td>${st.index+1}</td>
+							<td>${aclineitem.username}</td>
+							<td>${aclineitem.joinDate}</td>
+							<td>${aclineitem.joinPrice}</td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
 		</div>
-		
+	</div>
+</div>
+
 <%@ include file="IncludeBottom.jsp"%>

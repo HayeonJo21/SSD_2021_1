@@ -281,7 +281,7 @@ public class DeliveryImpl implements DeliveryFacade {
 		aclineitem.insertACLineItem(lineItem);
 	}
 
-	public void testScheduler(Date closingTime) {
+	public void testScheduler(int deliveryId, Date closingTime) {
 
 		Runnable updateTableRunner = new Runnable() {
 			// anonymous class 정의
@@ -294,12 +294,10 @@ public class DeliveryImpl implements DeliveryFacade {
 			}
 		};
 
-		HashMap<String, Date> hashMap = new HashMap<String, Date>();
-		// PK 값으로 사용
-		hashMap.put("curTime", new Date());			// 현재 시각
-		hashMap.put("closingTime", closingTime);	// 미래의 종료 시각
-		eventDao.insertNewEvent(hashMap);	// EVENTS 테이블에 레코드 삽입
-		hashMap.put("curTime", new Date()); // 현재 시각: PK 값으로 사용
+		HashMap<String, Object> hashMap = new HashMap<String, Object>();
+		hashMap.put("deliveryId", deliveryId);// PK 값으로 사용
+		System.out.println(deliveryId);
+		hashMap.put("curTime", new Date()); // 현재 시각
 		hashMap.put("closingTime", closingTime); // 미래의 종료 시각
 		eventDao.insertNewEvent(hashMap); // EVENTS 테이블에 레코드 삽입
 

@@ -49,7 +49,8 @@ public class InsertAuctionController {
 		System.out.println(closeTime);
 		
 		delivery.insertAuction(auction);
-		delivery.testScheduler(closeTime);
+		System.out.println(deliveryId + "	" + closeTime);
+		delivery.testScheduler(deliveryId, closeTime);
 		ModelAndView mav = new ModelAndView();
 		
 		DeliveryDTO del = delivery.getDeliveryById(deliveryId);

@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface EventMapper {
-	void insertNewEvent(HashMap<String, Date> map);
+	void insertNewEvent(HashMap<String, Object> map);
 	void closeEvent(Date curTime);
-	String getStatusByAuctionId(int auctionId);
+	String getStatusByDeliveryId(int auctionId);
 }
