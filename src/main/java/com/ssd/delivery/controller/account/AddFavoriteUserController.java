@@ -72,7 +72,17 @@ public class AddFavoriteUserController {
 	}
 
 	@PostMapping
-	public String submit(FavoriteUserDTO fav) {
+	public String submit(HttpSession session, Model model, FavoriteUserDTO fav) {
+		AccountDTO account = (AccountDTO)session.getAttribute("userSession");
+//		List<FavoriteUserDTO> favUser = delivery.getFavoriteUserList(account.getUsername());
+//		
+//		for(int i = 0; i < favUser.size(); i++) {
+//			if(fav.getFavoriteUsername().equals(favUser.get(i).getFavoriteUsername())) {
+//				model.addAttribute("data", new Message("이미 즐겨찾기로 등록된 유저입니다.", "/"));
+//				break;
+//			}
+//		}
+//		
 		delivery.insertFU(fav);
 		
 		return "redirect:/delivery/mypage.do";

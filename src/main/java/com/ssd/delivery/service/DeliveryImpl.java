@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -118,6 +119,11 @@ public class DeliveryImpl implements DeliveryFacade {
 	public List<AuctionDTO> getAuctionList() {
 		return auctionDao.getAuctionList();
 	}
+	
+	public void updateCurrentPriceAuction(int currentPrice, int auctionId) {
+		
+		auctionDao.updateCurrentPriceAuction(currentPrice, auctionId);
+	}
 
 	// CoPurchasing
 	public void insertCP(CoPurchasingDTO CP) {
@@ -202,6 +208,20 @@ public class DeliveryImpl implements DeliveryFacade {
 
 	public List<FavoriteUserDTO> getFUList() {
 		return fuDao.getFUList();
+	}
+	
+	public void updateTradeCount(String tradeCount, String username, String favUsername) throws DataAccessException {
+		fuDao.updateTradeCount(tradeCount, username, favUsername);
+		
+	}
+	
+	public List<AuctionDTO> getACTradeCount(String favUsername, String username) throws DataAccessException {
+		
+		return fuDao.getACTradeCount(favUsername, username);
+	}
+	public List<CoPurchasingDTO> getCPTradeCount(String favUsername, String username) throws DataAccessException {
+		
+		return fuDao.getCPTradeCount(favUsername, username);
 	}
 
 	// FleaMarket

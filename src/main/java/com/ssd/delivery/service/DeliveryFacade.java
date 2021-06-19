@@ -3,6 +3,8 @@ package com.ssd.delivery.service;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.dao.DataAccessException;
+
 import com.ssd.delivery.domain.AccountDTO;
 import com.ssd.delivery.domain.AuctionDTO;
 import com.ssd.delivery.domain.AuctionLineItemDTO;
@@ -39,6 +41,8 @@ public interface DeliveryFacade {
 	void insertAuction(AuctionDTO auction);
 
 	void updateAuction(AuctionDTO auction);
+
+	void updateCurrentPriceAuction(int currentPrice, int auctionId);
 
 	void deleteAuction(int auctionId);
 
@@ -89,9 +93,15 @@ public interface DeliveryFacade {
 
 	void deleteFU(int favId);
 
+	void updateTradeCount(String tradeCount, String username, String favUsername);
+
 	List<FavoriteUserDTO> getFUByUsername(String username);
 
 	List<FavoriteUserDTO> getFUList();
+
+	List<AuctionDTO> getACTradeCount(String favUsername, String username);
+
+	List<CoPurchasingDTO> getCPTradeCount(String favUsername, String username);
 
 	// FleaMarket
 	void insertFM(ItemDTO item);
@@ -127,14 +137,15 @@ public interface DeliveryFacade {
 	List<CoPurchasingLineItemDTO> getCPLineItemsByCPId(int cpId);
 
 	void insertCPLineItem(CoPurchasingLineItemDTO lineItem);
+
 	void insertCPLineItem2(CoPurchasingLineItemDTO lineItem);
-	
+
 	void deleteCPLineItem(int cpId);
 
 	// AC lineitem
 	List<AuctionLineItemDTO> getACLineItemsByACId(int acId);
 
 	void insertACLineItem(AuctionLineItemDTO lineItem);
-	
+
 	void deleteACLineItem(int acId);
 }

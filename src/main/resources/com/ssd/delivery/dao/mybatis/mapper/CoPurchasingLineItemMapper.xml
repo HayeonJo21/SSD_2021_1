@@ -28,7 +28,7 @@
 
 	<delete id="deleteCPLineItem" parameterType="int">
 		DELETE FROM coPurchasingLineItem
-		WHERE coPurchasingId = {#coPurchasingId}
+		WHERE coPurchasingId = #{coPurchasingId}
 	</delete>
 
 </mapper>
