@@ -31,7 +31,7 @@ import org.springframework.ui.Model;
 
 @Controller
 @SessionAttributes("userSession")
-@RequestMapping("/admin/auction.do")
+@RequestMapping({"/admin/auction.do","/delivery/adminAuction.do"})
 public class AdminAuctionController {
 
 	private DeliveryFacade delivery;
@@ -42,10 +42,8 @@ public class AdminAuctionController {
 	}
 
 	@GetMapping
-	public ModelAndView adminAuctionView(Model model, HttpSession session) throws Exception {
+	public String adminAuctionView(Model model, HttpSession session) throws Exception {
 		List<DeliveryDTO> del = delivery.isExistingAC();
-		
-		ModelAndView mav = new ModelAndView();
 		
 		List<AuctionDTO> ACList = delivery.getAuctionList();
 
@@ -57,10 +55,9 @@ public class AdminAuctionController {
 			}
 		}
 		
-		mav.addObject("ACList", ACList);
-		mav.setViewName("adminAuction");
+		model.addAttribute("ACList", ACList);
 	
-		return mav;
+		return "redirect:/admin/auction.do";
 	}
 	
 	
