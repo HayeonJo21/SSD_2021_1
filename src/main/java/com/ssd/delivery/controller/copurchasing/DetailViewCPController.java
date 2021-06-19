@@ -23,6 +23,7 @@ import com.ssd.delivery.service.PetStoreFacade;
  * @since 30.11.2003
  * @modified-by Changsup Park
  */
+
 @Controller
 @RequestMapping("/coPurchasing/detailView.do")
 public class DetailViewCPController { 
@@ -45,10 +46,10 @@ public class DetailViewCPController {
 		
 		System.out.println(cpId);
 		
-//		List<CoPurchasingLineItemDTO> cplineitem = delivery.getCPLineItemsByCPId(cpId);
+		List<CoPurchasingLineItemDTO> cplineitem = delivery.getCPLineItemsByCPId(cpId);
 		
 		System.out.println("yyyyyy");
-//		if (cplineitem != null) model.put("cplineitem", cplineitem);
+		if (cplineitem != null) model.put("cplineitem", cplineitem);
 		
 		model.put("cp", cp);
 		model.put("del", del);

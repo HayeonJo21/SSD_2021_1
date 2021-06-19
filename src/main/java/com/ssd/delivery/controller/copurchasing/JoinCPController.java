@@ -31,26 +31,6 @@ public class JoinCPController {
 	private DeliveryFacade delivery;
 
 	@GetMapping
-//	public ModelAndView inserCP(Model model, HttpSession session, @ModelAttribute("CoPurchasingForm")  CoPurchasingDTO CP throws Exception {
-//		AccountDTO account = (AccountDTO)session.getAttribute("userSession");
-//
-//		CP.setDelivery(deliveryId);
-//
-//		ModelAndView mav = new ModelAndView();
-//
-//		DeliveryDTO del = delivery.getDeliveryById(deliveryId);
-//		
-//		delivery.insertCPLineItem(cplineitem);
-//		
-//
-//		mav.addObject("cp", CP);
-//		mav.addObject("del", del);
-//		mav.addObject("userSession", account);
-//		mav.setViewName("coPurchasingDetail");
-//
-//		return mav;
-//
-//	}
 	public String handleRequest(
 			@RequestParam("coPurchasingId") int cpId,
 			HttpSession session,
