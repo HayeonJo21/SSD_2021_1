@@ -111,9 +111,10 @@
 						<c:forEach var="cp" items="${CPList}">
 							<tr>
 								<td><a
-									href="<c:url value='/cp/view.do'>
-						   <c:param name='cpId' value='${cp.coPurchasingId}'/>
-				 		 </c:url>">${cp.coPurchasingId}</a></td>
+					href="<c:url value='/delivery/coPurchasingDetailView.do'>
+						   <c:param name='coPurchasingId' value='${cp.coPurchasingId}'/>
+				 		 </c:url>">
+				 		 ${cp.coPurchasingId}</a></td>
 								<td>${cp.note}</td>
 								<td>${cp.unitCost}원</td>
 								<td>${cp.price}원</td>
@@ -142,8 +143,8 @@
 						<c:forEach var="del" items="${DelList}">
 							<tr>
 								<td><a
-									href="<c:url value='/delivery/detail/view.do'>
-						   <c:param name='deliveryd' value='${del.deliveryId}'/>
+									href="<c:url value='/delivery/detailView.do'>
+						   <c:param name='deliveryId' value='${del.deliveryId}'/>
 				 		 </c:url>">${del.deliveryId}</a></td>
 								<td>${del.serviceDate}</td>
 								<td>${del.price}원</td>
