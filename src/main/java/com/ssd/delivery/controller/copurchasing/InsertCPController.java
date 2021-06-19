@@ -48,6 +48,9 @@ public class InsertCPController {
 		
 		CP.setDelivery(deliveryId);
 		delivery.insertCP(CP);
+		System.out.println(CP.getCoPurchasingId());
+		
+		delivery.insertCPLineItem2(new CoPurchasingLineItemDTO(CP.getUsername() ));
 	
 		ModelAndView mav = new ModelAndView();
 		

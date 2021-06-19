@@ -58,7 +58,7 @@ public class JoinCPController {
 	public String submit(CoPurchasingLineItemDTO cplineitemDTO) {
 		delivery.insertCPLineItem(cplineitemDTO);
 		
-		return "index";
+		return "/delivery/copurchasingView.do";
 	}
 	
 }

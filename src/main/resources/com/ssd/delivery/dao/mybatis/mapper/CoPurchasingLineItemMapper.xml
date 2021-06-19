@@ -11,6 +11,12 @@
 		(linenum, copurchasingid, username)
 		VALUES (cplinenum_seq.nextval, #{coPurchasingId}, #{username} )
 	</insert>
+	
+	<insert id="insertCPLineItem2">
+		INSERT INTO copurchasinglineitem
+		(linenum, copurchasingid, username)
+		VALUES (cplinenum_seq.nextval, coPurchasingID_seq.currval, #{username} )
+	</insert>
 
 	<select id="getCPLineItemsByCPId"
 		resultType="CoPurchasingLineItemDTO">
