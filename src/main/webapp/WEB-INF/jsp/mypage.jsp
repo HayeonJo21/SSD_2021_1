@@ -4,11 +4,13 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!-- Main -->
 <div id="main">
-	<div class="inner"> 
-		<h1><b style="color:#f2849e">${user.username}</b>님의 마이페이지</h1>
+	<div class="inner">
+		<h1>
+			<b style="color: #f2849e">${user.username}</b>님의 마이페이지
+		</h1>
 		<div>
 			<h3>📰 회원정보</h3>
-			<div class="table-wrapper"> 
+			<div class="table-wrapper">
 				<table class="alt">
 					<thead>
 						<tr>
@@ -19,7 +21,7 @@
 					<tbody>
 						<tr>
 							<td>username</td>
-							<td>${user.username}</td> 
+							<td>${user.username}</td>
 						</tr>
 						<tr>
 							<td>email</td>
@@ -57,20 +59,24 @@
 					</tbody>
 				</table>
 			</div>
-			<a class="button" href="/delivery/updateAccount.do">정보수정</a><br><br><br>
+			<a class="button" href="/delivery/updateAccount.do">정보수정</a><br>
+			<br>
+			<br>
 			<%-- <div position="absolute" style="float: right; width: 300px;">
 						<jsp:include page="message.jsp" flush="true" />
 					</div> --%>
 		</div>
-		<br/>
+		<br />
 		<div>
-			<h3><b style="color:#f2849e">*</b> 즐겨찾기</h3>
+			<h3>
+				<b style="color: #f2849e">*</b> 즐겨찾기
+			</h3>
 			<div class="table-wrapper">
 				<table class="alt">
 					<thead>
 						<tr>
-							<th>Favorite User Name</th>
-							<th>Number of Trade</th>
+							<th>즐겨찾기한 회원</th>
+							<th>거래 횟수</th>
 
 						</tr>
 					</thead>
@@ -85,16 +91,20 @@
 				</table>
 			</div>
 		</div>
-		<br/>
+		<br />
 		<div>
-			<h3><b style="color:#f2849e">*</b> 참여한 공동구매 내역</h3>
+			<h3>
+				<b style="color: #f2849e">*</b> 참여한 공동구매 내역
+			</h3>
 			<div class="table-wrapper">
 				<table class="alt">
 					<thead>
 						<tr>
-							<th>Name</th>
-							<th>Description</th>
-
+							<th>공동구매 ID</th>
+							<th>공동구매 부가정보</th>
+							<th>1인당 가격</th>
+							<th>총금액</th>
+							<th>
 						</tr>
 					</thead>
 					<tbody>
@@ -104,10 +114,9 @@
 									href="<c:url value='/cp/view.do'>
 						   <c:param name='cpId' value='${cp.coPurchasingId}'/>
 				 		 </c:url>">${cp.coPurchasingId}</a></td>
-								<td>${cp.username}</td>
 								<td>${cp.note}</td>
-								<td>${cp.unitCost}</td>
-								<td>${cp.price}</td>
+								<td>${cp.unitCost}원</td>
+								<td>${cp.price}원</td>
 							</tr>
 						</c:forEach>
 					</tbody>
@@ -115,14 +124,17 @@
 			</div>
 		</div>
 		<div>
-		<br/>
-			<h3><b style="color:#f2849e">*</b> 회원간 거래 글</h3>
+			<br />
+			<h3>
+				<b style="color: #f2849e">*</b> 회원간 거래 글
+			</h3>
 			<div class="table-wrapper">
 				<table class="alt">
 					<thead>
 						<tr>
-							<th>Name</th>
-							<th>Description</th>
+							<th>용달 서비스 ID</th>
+							<th>서비스 일자</th>
+							<th>서비스 요금</th>
 
 						</tr>
 					</thead>
@@ -134,23 +146,25 @@
 						   <c:param name='deliveryd' value='${del.deliveryId}'/>
 				 		 </c:url>">${del.deliveryId}</a></td>
 								<td>${del.serviceDate}</td>
-								<td>${del.price}</td>
+								<td>${del.price}원</td>
 							</tr>
 						</c:forEach>
 					</tbody>
 				</table>
 			</div>
 		</div>
-		<br/>
+		<br />
 		<div>
-			<h3><b style="color:#f2849e">*</b> 참여한 경매 내역</h3>
+			<h3>
+				<b style="color: #f2849e">*</b> 참여한 경매 내역
+			</h3>
 			<div class="table-wrapper">
 				<table class="alt">
 					<thead>
 						<tr>
-							<th>Name</th>
-							<th>Description</th>
-
+							<th>경매 ID</th>
+							<th>경매 시작가</th>
+							<th>경매 종료시각</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -160,8 +174,7 @@
 									href="<c:url value='/auction/view.do'>
 						   <c:param name='acId' value='${ac.auctionId}'/>
 				 		 </c:url>">${ac.auctionId}</a></td>
-								<td>${ac.username}</td>
-								<td>${ac.startPrice}</td>
+								<td>${ac.startPrice}원</td>
 								<td>${ac.endDate}</td>
 							</tr>
 						</c:forEach>
