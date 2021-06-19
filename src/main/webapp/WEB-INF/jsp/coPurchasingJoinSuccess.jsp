@@ -54,7 +54,7 @@
 				<tr>
 					<td>Weight</td>
 					<td>${del.weight }kg</td>
-
+ 
 				</tr>
 			</tbody>
 		</table>
