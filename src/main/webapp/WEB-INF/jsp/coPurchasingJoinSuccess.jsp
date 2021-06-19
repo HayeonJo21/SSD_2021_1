@@ -66,7 +66,7 @@
 		<a href="/delivery/messageCreate.do">용달 기사님께 디엠 보내기</a>
 	
 		
-
+ 
 
 	</div>
 
