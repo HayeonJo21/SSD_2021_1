@@ -1,4 +1,4 @@
-package com.ssd.delivery.domain;
+ package com.ssd.delivery.domain;
 
 import java.io.Serializable;
 @SuppressWarnings("serial")
@@ -11,19 +11,18 @@ public class AccountDTO implements Serializable{
 	private String lastName;
 	private String address;
 	private String phone;
-	private String languagePreference;
 	private int status;
-	private String favoriteUser;
-	
-
-	public void setExtraAddress(String extraAddress) {
-		this.extraAddress = extraAddress;
-	}
 	private String carInfo;
 	private String postcode;
 	private String address2;
 	private String detailAddress;
 	private String extraAddress;
+	
+
+	public void setExtraAddress(String extraAddress) {
+		this.extraAddress = extraAddress;
+	}
+	
 	
 	//기본생성자
 	public AccountDTO() {
@@ -32,7 +31,7 @@ public class AccountDTO implements Serializable{
 	
 	//Register 생성자
 	public AccountDTO(String username, String password, String email, String firstName, String lastName,
-			String address, String phone, String languagePreference, int status, String favoriteUser, String carInfo) {
+			String address, String phone, int status, String carInfo) {
 		super();
 		this.username = username;
 		this.password = password;
@@ -41,31 +40,13 @@ public class AccountDTO implements Serializable{
 		this.lastName = lastName;
 		this.address = address;
 		this.phone = phone;
-		this.languagePreference = languagePreference;
 		this.status = status;
-		this.favoriteUser = favoriteUser;
 		this.carInfo = carInfo;
 	}
-	
-	//update 생성자
-	public AccountDTO(String email, String firstName, String lastName, String address, String phone,
-			String languagePreference, int status, String favoriteUser, String carInfo) {
-		super();
-		this.email = email;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.address = address;
-		this.phone = phone;
-		this.languagePreference = languagePreference;
-		this.status = status;
-		this.favoriteUser = favoriteUser;
-		this.carInfo = carInfo;
-	}
-	
 	
 	
 	public AccountDTO(String username, String password, String email, String firstName, String lastName, String address,
-			String phone, String languagePreference, int status, String favoriteUser, String carInfo, String postcode,
+			String phone, int status, String carInfo, String postcode,
 			String address2, String detailAddress, String extraAddress) {
 		super();
 		this.username = username;
@@ -75,9 +56,7 @@ public class AccountDTO implements Serializable{
 		this.lastName = lastName;
 		this.address = address;
 		this.phone = phone;
-		this.languagePreference = languagePreference;
 		this.status = status;
-		this.favoriteUser = favoriteUser;
 		this.carInfo = carInfo;
 		this.postcode = postcode;
 		this.address2 = address2;
@@ -184,23 +163,11 @@ public class AccountDTO implements Serializable{
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	public String getLanguagePreference() {
-		return languagePreference;
-	}
-	public void setLanguagePreference(String languagePreference) {
-		this.languagePreference = languagePreference;
-	}
 	public int getStatus() {
 		return status;
 	}
 	public void setStatus(int status) {
 		this.status = status;
-	}
-	public String getFavoriteUser() {
-		return favoriteUser;
-	}
-	public void setFavoriteUser(String favoriteUser) {
-		this.favoriteUser = favoriteUser;
 	}
 	public String getCarInfo() {
 		return carInfo;
