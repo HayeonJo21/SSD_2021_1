@@ -80,7 +80,7 @@
 		<div id="main" class="p-3 mb-2 bg-dark text-white">
 			<div class="inner">
 				<h1 style="color: #f2849e">Administrator Login</h1>
-				<form action="/delivery/admin/signon.do" method="POST">
+				<form action="/delivery/adminSignon.do" method="POST">
 				<c:if test="${data ne null}">
 					<p style="color: red">${data.message}</p>
 				 </c:if>

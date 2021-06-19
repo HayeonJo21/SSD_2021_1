@@ -5,7 +5,7 @@
 		<!-- Main -->
 		<div id="main">
 			<div style="float:right; padding-right:100px">
-				<a href="/delivery/admin/signon.do" class="button primary">&nbsp;&nbsp;&nbsp;&nbsp;Admin&nbsp;&nbsp;&nbsp;&nbsp;</a>
+				<a href="/delivery/adminSignon.do" class="button primary">&nbsp;&nbsp;&nbsp;&nbsp;Admin&nbsp;&nbsp;&nbsp;&nbsp;</a>
 			</div>
 			<div class="inner">
 			<c:if test="${msg ne null}">

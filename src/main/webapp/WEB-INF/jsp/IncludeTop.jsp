@@ -64,7 +64,7 @@
 					</c:otherwise>
 				</c:choose>
 				
-				<li><a href="/delivery/auctionView.do">⏱ 경매 </a></li>
+				<li><a href="/delivery/auctionView.do">⏱ 경매</a></li>
 				<li><a href="/delivery/copurchasingView.do">👥 공동구매</a></li>
 				<li><a href="/delivery/listView.do">🚘 1:1 용달 거래</a></li>
 				<c:if test="${userSession.username ne null}">
