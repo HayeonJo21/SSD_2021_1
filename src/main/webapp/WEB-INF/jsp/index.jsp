@@ -43,7 +43,7 @@
 			<article class="style5">
 				<span class="image"> <img src="images/pic08.jpg" alt="" />
 				</span> <a
-					href="<c:url value='/coPurchasing/detailView.do'>
+					href="<c:url value='/delivery/coPurchasingDetailView.do'>
 						   <c:param name='coPurchasingId' value='${cp.coPurchasingId}'/>
 				 		 </c:url>">
 					<h2>${cp.username}님의공동구매</h2>
