@@ -56,11 +56,35 @@ public class DetailViewCPController {
 		
 		List<CoPurchasingLineItemDTO> cplineitem = delivery.getCPLineItemsByCPId(cpId);
 		
-		int status;
+		String status = "open";
 		
-		if(delivery.getCPById(cpId).getMaxNumberOfPurchaser() <= delivery.CPLineItemCount(cpId)) {
-			status= 1;
-		}else status=0;
+		if(delivery.getCPById(cpId).getMaxNumberOfPurchaser() <= delivery.CPLineItemCount(cpId)) 
+		{
+			status= "closed";
+		}
+		System.out.println("status " + status);
+		String status2 = null;
+		
+		if (account == null) {
+			status2 = "signoff";
+		}
+		else if (account.getUsername() == cp.getUsername()) {
+			status2 = "poster";
+		}
+		else {
+			for (CoPurchasingLineItemDTO list:cplineitem) {
+				System.out.println("lineitem " + list.getUsername());
+				System.out.println("account.getUsername " + account.getUsername());
+				if (list.getUsername().equals(account.getUsername()) )
+					status2 = "purchaser";
+				//진짜도라이인듯,,,, 
+			}
+		}
+		
+		System.out.println("status " + status);
+		System.out.println("status2 " + status2);
+		
+		
 		
 //		int isCPUploader = delivery.isCPUploader(account.getUsername(), cpId);
 //		int isCPPurchaser = delivery.isCPPurchaser(account.getUsername(), cpId);
@@ -68,7 +92,6 @@ public class DetailViewCPController {
 		
 //		System.out.println("isCPUploader:"+isCPUploader);
 //		System.out.println("isCPPurchaser:"+isCPPurchaser);
-		System.out.println("status:"+status);
 		if (cplineitem != null) model.put("cplineitem", cplineitem);
 		
 		model.put("cp", cp);
