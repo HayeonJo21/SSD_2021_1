@@ -50,11 +50,11 @@ public class DetailViewCPController {
 		CoPurchasingDTO cp = this.delivery.getCPById(cpId);
 		DeliveryDTO del = delivery.getDeliveryById(cp.getDelivery());
 		AccountDTO account = (AccountDTO)session.getAttribute("userSession");
-
 		
 		System.out.println(cpId);
 		
 		List<CoPurchasingLineItemDTO> cplineitem = delivery.getCPLineItemsByCPId(cpId);
+		
 		
 		String status = "open";
 		
@@ -63,21 +63,28 @@ public class DetailViewCPController {
 			status= "closed";
 		}
 		System.out.println("status " + status);
-		String status2 = null;
+		
+		
+		String status2 = "notparticipant";
 		
 		if (account == null) {
 			status2 = "signoff";
 		}
 		else if (account.getUsername().equals(cp.getUsername())) {
+			
 			status2 = "poster";
+			
 		}
 		else {
-			for (CoPurchasingLineItemDTO list:cplineitem) {
-				System.out.println("lineitem " + list.getUsername());
-				System.out.println("account.getUsername " + account.getUsername());
+			for (CoPurchasingLineItemDTO list : cplineitem) {
+				
+				System.out.println("lineitem [" + list.getUsername() +"]");
+				System.out.println("account.getUsername [" + account.getUsername() +"]");
+				
 				if (list.getUsername().equals(account.getUsername()) )
-					status2 = "purchaser";
-				//진짜도라이인듯,,,,  
+					
+					status2 = "participant";
+				
 			}
 		}
 		
@@ -98,6 +105,7 @@ public class DetailViewCPController {
 		model.put("del", del);
 		model.put("cplineitem", cplineitem);
 		model.put("status", status);
+		model.put("status2", status2);
 //		model.put("isCPUploader", isCPUploader);
 		return "coPurchasingDetail";
 		

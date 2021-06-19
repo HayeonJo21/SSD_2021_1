@@ -45,26 +45,26 @@
 					<p class="form-control-static">${cp.unitCost}</p>
 				</div>
 			</div>
-			
-			
-			
+
+
+
 			<form method="post" action="/delivery/coPurchasingJoin.do">
 				<div class="col-12">
-					<input type="hidden"
-						name="coPurchasingId" id="coPurchasingId" value='${cp.coPurchasingId} '
-						 />
+					<input type="hidden" name="coPurchasingId" id="coPurchasingId"
+						value='${cp.coPurchasingId}' />
 				</div>
 
 				<div class="col-12">
-					<input type="hidden" name="username"
-						id="username" value='${user.username} ' placeholder="username" />
-				</div><br/>
+					<input type="hidden" name="username" id="username"
+						value='${user.username}' placeholder="username" />
+				</div>
+				<br />
 				<div class="col-12">
 					<ul class="actions">
 						<li><input type="submit" value="참여신청" class="primary" /></li>
-						<li>
-						<a class="button" href="/delivery/coPurchasingDetailView.do?coPurchasingId=${cp.coPurchasingId}">참여취소<i class="fa fa-times spaceLeft">
-						</i></a></li>
+						<li><a class="button"
+							href="/delivery/coPurchasingDetailView.do?coPurchasingId=${cp.coPurchasingId}">참여취소<i
+								class="fa fa-times spaceLeft"> </i></a></li>
 					</ul>
 				</div>
 
@@ -72,7 +72,7 @@
 		</div>
 
 	</div>
- 
+
 </div>
 
 <%@ include file="IncludeBottom.jsp"%>
