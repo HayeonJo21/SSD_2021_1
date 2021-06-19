@@ -23,7 +23,7 @@ public class MybatisEventDao implements EventDao {
 		eventMapper.closeEvent(curTime);		
 	}
 	
-	public String getStatusByAuctionId(int auctionId) {
-		return eventMapper.getStatusByDeliveryId(auctionId);
+	public String getStatusByDeliveryId(int deliveryId) {
+		return eventMapper.getStatusByDeliveryId(deliveryId);
 	}
 }

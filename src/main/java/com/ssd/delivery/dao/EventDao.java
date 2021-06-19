@@ -6,5 +6,5 @@ import java.util.HashMap;
 public interface EventDao {
 	void insertNewEvent(HashMap<String, Object> hashMap);
 	void closeEvent(Date curTime);
-	String getStatusByAuctionId(int auctionId);
+	String getStatusByDeliveryId(int deliveryId);
 }

@@ -47,7 +47,7 @@
 			</div>
 			
 			
-			<form method="post" action="/auction/join.do">
+			<form method="post" action="/delivery/auctionJoin.do">
 			<input type="hidden"
 						name="auctionId" id="auctionId" value='${ac.auctionId} ' />
 				<div class="col-12">

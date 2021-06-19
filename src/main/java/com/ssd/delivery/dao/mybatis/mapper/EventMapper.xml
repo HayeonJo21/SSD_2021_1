@@ -18,6 +18,6 @@
   <select id="getStatusByDeliveryId" resultType="java.lang.String">
   SELECT STATUS
   FROM EVENTS
-  WHERE deliveryId= ${deliveryId}
+  WHERE DELIVERYID = #{deliveryId}
   </select>
 </mapper>

@@ -10,4 +10,5 @@ public interface EventMapper {
 	void insertNewEvent(HashMap<String, Object> map);
 	void closeEvent(Date curTime);
 	String getStatusByDeliveryId(int auctionId);
+	String getStatusByDeilveryId(int deliveryId);
 }

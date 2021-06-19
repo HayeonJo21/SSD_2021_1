@@ -38,6 +38,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
 		registry.addViewController("/delivery/auctionInsert2.do").setViewName("auctionForm2");
 		registry.addViewController("/delivery/auctionNewAuctionSubmitted.do").setViewName("auctionpage");
 		registry.addViewController("/delivery/auctionDetail.do").setViewName("auctionDetail");
+		registry.addViewController("/delivery/auctionJoin.do").setViewName("auctionJoinForm");
 
 		//copurchasing
 		registry.addViewController("/delivery/copurchasingView.do").setViewName("copurchasingpage");
