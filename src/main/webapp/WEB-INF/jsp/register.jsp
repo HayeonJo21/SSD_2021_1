@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ include file="IncludeTop.jsp"%>
 		<!-- Main -->
 		<div id="main">
 			<div class="inner">
 				<h1>📋  Register Page</h1>
 				<div class="col-sm-6 col-md-offset-3">
-					<form action="/user/newUserSubmitted.do" method="post">
+					<form action="/delivery/newUserSubmitted.do" method="post">
 						<div class="form-group">
 							<label for="account.username" style="font-size: 24px">Username</label>
 							<input type="text" style="width: 800px" class="form-control"

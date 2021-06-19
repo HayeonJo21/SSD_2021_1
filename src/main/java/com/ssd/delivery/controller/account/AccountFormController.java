@@ -19,14 +19,17 @@ import com.ssd.delivery.domain.*;
 import com.ssd.delivery.service.AccountFormValidator;
 import com.ssd.delivery.service.DeliveryFacade;
 import com.ssd.delivery.service.Message;
+import com.ssd.delivery.service.OrderValidator;
 
 //등록, 수정 둘 다 이곳에서
 @Controller
 @SessionAttributes("userSession")
-@RequestMapping({"/user/insertAccount.do","/user/newUserSubmitted.do"})
+@RequestMapping({"/delivery/userInsertAccount.do","/delivery/newUserSubmitted.do"})
 public class AccountFormController {
 	@Autowired
 	private DeliveryFacade delivery;
+	@Autowired
+	private AccountFormValidator validator;
 	
 	@GetMapping
 	public String showForm() { 
@@ -89,11 +92,11 @@ public class AccountFormController {
 //	
 	@PostMapping
 	public String onSubmit(HttpServletRequest request, HttpSession session,
-			@ModelAttribute("accountForm")  AccountDTO account,
+			@ModelAttribute("accountForm") AccountDTO account,
 			BindingResult result) throws Exception  {
 		
-//		validator.validate(accountForm, result);
-//		if (result.hasErrors()) return "index";
+		validator.validate(account, result);
+		if (result.hasErrors()) return "register";
 		
 		try {
 			AccountDTO existingUser = delivery.findUser(account.getUsername());
@@ -104,9 +107,9 @@ public class AccountFormController {
 			}
 		}
 		catch (DataIntegrityViolationException ex) {
-			result.rejectValue("account.userId", "USER_ID_ALREADY_EXISTS",
+			result.rejectValue("account.username", "USER_ID_ALREADY_EXISTS",
 					"User ID already exists: choose a different ID.");
-			return "index"; 
+			return "redirect:/"; 
 		}
 		
 		session.setAttribute("userSession", account);
