@@ -48,7 +48,7 @@
 			
 			
 			
-			<form method="post" action="/coPurchasing/join.do">
+			<form method="post" action="/delivery/coPurchasingJoin.do">
 				<div class="col-12">
 					<label for="demo-name">coPurchasingId</label> <input type="text"
 						name="coPurchasingId" id="coPurchasingId" value='${cp.coPurchasingId} '
@@ -58,12 +58,12 @@
 				<div class="col-12">
 					<label for="demo-name">user</label> <input type="text" name="username"
 						id="username" value='${user.username} ' placeholder="username" />
-]
 				</div><br/>
 				<div class="col-12">
 					<ul class="actions">
-						<li><input type="submit" value="Submit" class="primary" /></li>
-						<li><input type="reset" value="Reset" /></li>
+						<li><input type="submit" value="참여신청" class="primary" /></li>
+						<li><!--  <input type="reset" value="참여취소" />-->
+						<a class="button" href="/delivery/coPurchasingDetailView.do?coPurchasingId=${cp.coPurchasingId}">참여취소<i class="fa fa-times spaceLeft"></i></a></li>
 					</ul>
 				</div>
 

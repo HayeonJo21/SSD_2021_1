@@ -25,7 +25,7 @@ import com.ssd.delivery.service.PetStoreFacade;
  */
 
 @Controller
-@RequestMapping("/coPurchasing/detailView.do")
+@RequestMapping("/delivery/coPurchasingDetailView.do")
 public class DetailViewCPController { 
 	@Autowired
 	private DeliveryFacade delivery;

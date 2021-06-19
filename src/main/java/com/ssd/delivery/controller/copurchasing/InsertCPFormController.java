@@ -17,7 +17,7 @@ import com.ssd.delivery.service.Message;
 
 @Controller
 @SessionAttributes("userSession")
-@RequestMapping("/coPurchasing/insert/form.do")
+@RequestMapping("/delivery/coPurchasingInsertForm.do")
 public class InsertCPFormController {
 	@Autowired
 	private DeliveryFacade delivery;

@@ -19,27 +19,45 @@ public class WebMvcConfig implements WebMvcConfigurer {
  
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
-		registry.addViewController("/delivery/mainpage.jsp").setViewName("index"); 
+		//main
+		registry.addViewController("/delivery/mainpage.jsp").setViewName("index");
+		
+		//account
 		registry.addViewController("/delivery/insertAccount.do").setViewName("register");
 		registry.addViewController("/delivery/updateAccount.do").setViewName("accountUpdate");
 		registry.addViewController("/delivery/newUserSubmitted.do").setViewName("index");
 		registry.addViewController("/delivery/mypage.do").setViewName("mypage");
+		
+		//login
 		registry.addViewController("/delivery/signon.do").setViewName("login");
-		registry.addViewController("/delivery/signoff.do").setViewName("index"); 
-//		registry.addViewController("/auction/view.do").setViewName("auctionpage");
-		registry.addViewController("/delivery/copurchasingView.do").setViewName("copurchasingpage");
-		registry.addViewController("/delivery/fleamarketView.do").setViewName("fleaMarketPage");
-		registry.addViewController("/delivery/message.do").setViewName("message");
-		registry.addViewController("/delivery/messageCreate.do").setViewName("messageForm");
-		//registry.addViewController("/delivery/messageSendRe.do").setViewName("message");
-		registry.addViewController("/delivery/messageSend.do").setViewName("message");
-		registry.addViewController("/delivery/auctionDetail.do").setViewName("auctionDetail");
-		registry.addViewController("/delivery/detailView.do").setViewName("deliveryDetail");
-		registry.addViewController("/delivery/listView.do").setViewName("deliveryPage");
+		registry.addViewController("/delivery/signoff.do").setViewName("index");
+		
+		//auction
 		registry.addViewController("/delivery/auctionDetailView.do").setViewName("auctionDetail");
 		registry.addViewController("/delivery/auctionInsert.do").setViewName("auctionForm");
 		registry.addViewController("/delivery/auctionInsert2.do").setViewName("auctionForm2");
 		registry.addViewController("/delivery/auctionNewAuctionSubmitted.do").setViewName("auctionpage");
+		registry.addViewController("/delivery/auctionDetail.do").setViewName("auctionDetail");
+
+		//copurchasing
+		registry.addViewController("/delivery/copurchasingView.do").setViewName("copurchasingpage");
+		registry.addViewController("/delivery/coPurchasingDetailView.do").setViewName("coPurchasingDetail");
+		registry.addViewController("/delivery/coPurchasingInsertForm.do").setViewName("copurchasingForm");
+		registry.addViewController("/delivery/coPurchasingJoin.do").setViewName("copurhasingjoinForm");
+		
+		//delivery
+		registry.addViewController("/delivery/detailView.do").setViewName("deliveryDetail");
+		registry.addViewController("/delivery/listView.do").setViewName("deliveryPage");
+		
+		//fleamarket
+		registry.addViewController("/delivery/fleamarketView.do").setViewName("fleaMarketPage");
+		
+		//message
+		registry.addViewController("/delivery/message.do").setViewName("message");
+		registry.addViewController("/delivery/messageCreate.do").setViewName("messageForm");
+		registry.addViewController("/delivery/messageSend.do").setViewName("message");
+
+
 	}
 	
 	@Override
