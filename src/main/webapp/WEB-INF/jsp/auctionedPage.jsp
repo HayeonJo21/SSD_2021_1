@@ -4,7 +4,7 @@
 <!-- Main -->
 <div id="main">
 	<div class="inner">
-		<h1>Auction 낙찰 성공⏳</h1>
+		<h1>Auction 낙찰 성공 🎉</h1>
 		<h2>출발지: ${ac.address1}</h2>
 		<h2>
 			<a href="/user/view?username=${ac.username}">경매 등록자 :
