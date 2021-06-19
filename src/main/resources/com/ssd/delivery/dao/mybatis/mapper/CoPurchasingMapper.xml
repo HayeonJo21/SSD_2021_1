@@ -37,6 +37,12 @@
 		SELECT *
 		FROM COPURCHASING
 	</select>
+	
+	<select id="getCPByDeliveryId" resultType="CoPurchasingDTO">
+		SELECT *
+		FROM COPURCHASING
+		WHERE Delivery = #{deliveryId}
+	</select>
 
 	<select id="getCPById" resultType="CoPurchasingDTO">
 		SELECT *

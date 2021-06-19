@@ -20,6 +20,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.dao.DataAccessException;
 
 import com.ssd.delivery.domain.CoPurchasingDTO;
 
@@ -41,6 +42,8 @@ public interface CoPurchasingMapper {
 	List<CoPurchasingDTO> isExistingCPAC();
 	
 	CoPurchasingDTO getCPById(int CPId);
+	
+	CoPurchasingDTO getCPByDeliveryId(int deliveryId);
 	
 	List<CoPurchasingDTO> getCPListByUsername(String username);
 

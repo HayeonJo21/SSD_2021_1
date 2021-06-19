@@ -47,9 +47,9 @@ public class InsertCPController {
 		delivery.insertCPLineItem2(new CoPurchasingLineItemDTO(CP.getUsername() ));
 	
 		ModelAndView mav = new ModelAndView();
-		
 		DeliveryDTO del = delivery.getDeliveryById(deliveryId);
-
+		CoPurchasingDTO cop = delivery.getCPByDeliveryId(deliveryId);
+		CP.setCoPurchasingId(cop.getCoPurchasingId());
 		mav.addObject("cp", CP);
 		mav.addObject("del", del);
 		mav.addObject("userSession", account);

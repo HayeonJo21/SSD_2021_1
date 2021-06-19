@@ -57,7 +57,7 @@ public class AdminAuctionController {
 		
 		model.addAttribute("ACList", ACList);
 	
-		return "redirect:/admin/auction.do";
+		return "adminAuction";
 	}
 	
 	

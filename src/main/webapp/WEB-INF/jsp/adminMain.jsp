@@ -5,6 +5,7 @@
 <div id="main">
 	<div class="inner">
 		<header>
+		<div style="float: right; padding-right: 5px"><a href="/" class="button">&nbsp;&nbsp;사용자 페이지로&nbsp;&nbsp;</a></div>
 			<h1>
 				용달의 민족 <br /> Administrator Page <br />
 			</h1>

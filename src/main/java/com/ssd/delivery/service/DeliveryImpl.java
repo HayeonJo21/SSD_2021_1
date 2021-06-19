@@ -354,4 +354,9 @@ public class DeliveryImpl implements DeliveryFacade {
 		System.out.println("updateTableRunner has been scheduled to execute at " + closingTime);
 	}
 
+	@Override
+	public CoPurchasingDTO getCPByDeliveryId(int deliveryId) {
+		return cpDao.getCPByDeliveryId(deliveryId);
+	}
+
 }

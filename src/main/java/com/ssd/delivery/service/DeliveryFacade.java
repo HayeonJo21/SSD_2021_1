@@ -64,6 +64,8 @@ public interface DeliveryFacade {
 	List<CoPurchasingDTO> getCPList();
 
 	CoPurchasingDTO getCPById(int CPId);
+	
+	CoPurchasingDTO getCPByDeliveryId(int deliveryId);
 
 	List<CoPurchasingDTO> getCPListByUsername(String username);
 
