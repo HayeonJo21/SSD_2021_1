@@ -77,7 +77,7 @@ public class DetailViewCPController {
 				System.out.println("account.getUsername " + account.getUsername());
 				if (list.getUsername().equals(account.getUsername()) )
 					status2 = "purchaser";
-				//진짜도라이인듯,,,, 
+				//진짜도라이인듯,,,,  
 			}
 		}
 		
