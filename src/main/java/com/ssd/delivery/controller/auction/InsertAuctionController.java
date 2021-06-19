@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.ssd.delivery.dao.mybatis.mapper.EventMapper;
 import com.ssd.delivery.domain.*;
 import com.ssd.delivery.service.DeliveryFacade;
 
@@ -25,7 +26,9 @@ import com.ssd.delivery.service.DeliveryFacade;
 public class InsertAuctionController {
 	@Autowired
 	private DeliveryFacade delivery;
-
+	@Autowired
+	EventMapper eventMapper;
+	
 	@GetMapping
 	public ModelAndView insert2(@RequestParam("deliveryId") int deliveryId, HttpSession session) throws Exception {
 		
@@ -41,21 +44,24 @@ public class InsertAuctionController {
 	
 	@PostMapping 
 	public ModelAndView insertAuction(Model model, HttpSession session, @ModelAttribute("AuctionForm")  AuctionDTO auction, 
-			@RequestParam("deliveryId") int deliveryId //, @RequestParam("endDate")
-	//@DateTimeFormat(pattern="yyyy-MM-dd HH:mm") Date closeTime
+			@RequestParam("deliveryId") int deliveryId , @RequestParam("endDate")
+	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm") Date closeTime
 			) throws Exception {
+		
 		AccountDTO account = (AccountDTO)session.getAttribute("userSession");
 		
 		auction.setDelivery(deliveryId);
-		//System.out.println(closeTime);
-		
 		delivery.insertAuction(auction);
-		//System.out.println(deliveryId + "	" + closeTime);
-		//delivery.testScheduler(deliveryId, closeTime);
+
+		System.out.println(deliveryId + "	" + closeTime);
+		delivery.testScheduler(deliveryId, closeTime);
+		
 		ModelAndView mav = new ModelAndView();
 		
 		DeliveryDTO del = delivery.getDeliveryById(deliveryId);
-
+		String status = eventMapper.getStatusByDeliveryId(deliveryId);
+		
+		mav.addObject("status", status);
 		mav.addObject("ac", auction);
 		mav.addObject("delivery", del);
 		mav.addObject("userSession", account);

@@ -41,11 +41,15 @@ public class DetailViewAuctionController {
 	public String handleRequest( 
 			@RequestParam("acId") int auctionId,
 			ModelMap model, HttpSession session) throws Exception {
+		
 		AuctionDTO auction = this.delivery.getAuctionById(auctionId);
+		
 		DeliveryDTO del = delivery.getDeliveryById(auction.getDelivery());
+		
 		String status = eventMapper.getStatusByDeliveryId(auction.getDelivery());
 		System.out.println(auction.getDelivery());
 		System.out.println(status);
+		
 		AccountDTO account = (AccountDTO)session.getAttribute("userSession");
 		
 		List<AuctionLineItemDTO> aclineitem = delivery.getACLineItemsByACId(auctionId);
