@@ -68,7 +68,11 @@
 						<tbody>
 							<c:forEach var="ac" items="${ACList}">
 								<tr>
-									<td>${ac.auctionId}</td>
+									<td>
+									<c:if test="${ac.successfulBidder ne null}">
+									<b style="color:red">종료된 경매, <br/> 삭제 요망</b><br/>
+									</c:if>
+									${ac.auctionId}</td>
 									<td>
 									<c:if test="${ac.flag ne 1}">
 									<b style="color:red">존재하지 않는 용달 서비스 이용, <br/> 삭제 요망</b><br/>
