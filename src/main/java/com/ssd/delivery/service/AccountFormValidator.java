@@ -20,6 +20,9 @@ public class AccountFormValidator implements Validator {
 
 	public void validate(Object obj, Errors errors) {
 
+		AccountDTO accountForm = (AccountDTO)obj; 
+
+
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "username", "USER_NAME_REQUIRED", "User name is required.");
 //		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password", "PASSWORD_REQUIRED", "Password is required.");
 //		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "account.firstName", "FIRST_NAME_REQUIRED", "First name is required.");

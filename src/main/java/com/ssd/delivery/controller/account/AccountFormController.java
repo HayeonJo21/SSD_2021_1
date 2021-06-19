@@ -95,13 +95,17 @@ public class AccountFormController {
 			@ModelAttribute("accountForm") AccountDTO account,
 			BindingResult result) throws Exception  {
 		
+
 		validator.validate(account, result);
 		if (result.hasErrors()) return "register";
+
 		
 		try {
 			AccountDTO existingUser = delivery.findUser(account.getUsername());
 			
 			if(existingUser == null) {
+				String address = account.getAddress2() + account.getPostcode() + account.getDetailAddress() + account.getExtraAddress();
+				account.setAddress(address);
 				account.setStatus(1);
 				delivery.insertAccount(account);
 			}

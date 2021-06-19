@@ -13,7 +13,16 @@ public class AccountDTO implements Serializable{
 	private String languagePreference;
 	private int status;
 	private String favoriteUser;
+	
+
+	public void setExtraAddress(String extraAddress) {
+		this.extraAddress = extraAddress;
+	}
 	private String carInfo;
+	private String postcode;
+	private String address2;
+	private String detailAddress;
+	private String extraAddress;
 	
 	//기본생성자
 	public AccountDTO() {
@@ -52,6 +61,29 @@ public class AccountDTO implements Serializable{
 		this.carInfo = carInfo;
 	}
 	
+	
+	
+	public AccountDTO(String username, String password, String email, String firstName, String lastName, String address,
+			String phone, String languagePreference, int status, String favoriteUser, String carInfo, String postcode,
+			String address2, String detailAddress, String extraAddress) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.email = email;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.address = address;
+		this.phone = phone;
+		this.languagePreference = languagePreference;
+		this.status = status;
+		this.favoriteUser = favoriteUser;
+		this.carInfo = carInfo;
+		this.postcode = postcode;
+		this.address2 = address2;
+		this.detailAddress = detailAddress;
+		this.extraAddress = extraAddress;
+	}
+
 	//비밀번호 확인 메소드
 	public boolean matchPassword(String password) {
 		System.out.println(password);
@@ -76,6 +108,33 @@ public class AccountDTO implements Serializable{
 	}
 
 	//setter & getter
+	public String getPostcode() {
+		return postcode;
+	}
+
+	public void setPostcode(String postcode) {
+		this.postcode = postcode;
+	}
+
+	public String getAddress2() {
+		return address2;
+	}
+
+	public void setAddress2(String address2) {
+		this.address2 = address2;
+	}
+
+	public String getDetailAddress() {
+		return detailAddress;
+	}
+
+	public void setDetailAddress(String detailAddress) {
+		this.detailAddress = detailAddress;
+	}
+
+	public String getExtraAddress() {
+		return extraAddress;
+	}
 	public String getUsername() {
 		return username;
 	}
