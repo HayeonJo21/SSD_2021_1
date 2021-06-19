@@ -1,6 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="IncludeTopAdmin.jsp"%>
+<script>
+   function deleteFuc() {
+      alert("정말 삭제하시겠습니까?");
+      form.submit();
+   }
+</script>
 		<!-- Main -->
 		<div id="main">
 			<div class="inner">
@@ -52,7 +58,7 @@
 										href="<c:url value='/admin/auction/delete.do'>
 						   <c:param name='auctionId' value='${ac.auctionId}'/>
 				 		 </c:url>"
-										class="button">&nbsp;&nbsp;&nbsp;&nbsp;Remove&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
+										class="button" onClick="deleteFuc()">&nbsp;&nbsp;&nbsp;&nbsp;Remove&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
 								</tr>
 							</c:forEach>
 						</tbody>
