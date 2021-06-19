@@ -41,10 +41,7 @@ public class JoinAuctionController {
 		DeliveryDTO del = delivery.getDeliveryById(ac.getDelivery());
 		AccountDTO account = (AccountDTO)session.getAttribute("userSession");
 		
-		if(ac.getCurrentPrice() == 0) {
-			ac.setCurrentPrice(ac.getStartPrice());
-		}
-		
+		System.out.println("AUCTIONID: " + acId + "CURR PRICE: " + ac.getCurrentPrice());
 		model.put("ac", ac);
 		model.put("delivery", del);
 		model.put("user", account);
@@ -63,15 +60,15 @@ public class JoinAuctionController {
 		AuctionDTO auction = delivery.getAuctionById(aclineitemDTO.getAuctionId());
 		
 		aclineitemDTO.setJoinDate(currentDate);
-		auction.setCurrentPrice(aclineitemDTO.getJoinPrice());
-		
-		
+		delivery.updateCurrentPriceAuction(aclineitemDTO.getJoinPrice(), aclineitemDTO.getAuctionId());
+	
 		delivery.insertACLineItem(aclineitemDTO);
 		
 		ModelAndView mav = new ModelAndView();
 		
 		List<AuctionLineItemDTO> aclineitem = delivery.getACLineItemsByACId(aclineitemDTO.getAuctionId());
 		mav.addObject("aclineitem", aclineitem);
+		mav.addObject("ac", auction);
 		mav.setViewName("auctionDetail");
 		
 		return mav;

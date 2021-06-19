@@ -34,6 +34,14 @@
     	finalprice = #{finalPrice}
 	</update>
 	
+	
+	<update id="updateCurrentPriceAuction" parameterType="int">
+    update auction set
+    	currentprice = #{currentPrice}
+    	where auctionId = #{auctionId}
+	</update>
+	
+	
 	<delete id="deleteAuction" parameterType="int">
 	DELETE FROM auction 
 	WHERE auctionid = #{auctionId}

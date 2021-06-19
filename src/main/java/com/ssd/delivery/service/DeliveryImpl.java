@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -117,6 +118,11 @@ public class DeliveryImpl implements DeliveryFacade {
 
 	public List<AuctionDTO> getAuctionList() {
 		return auctionDao.getAuctionList();
+	}
+	
+	public void updateCurrentPriceAuction(int currentPrice, int auctionId) {
+		
+		auctionDao.updateCurrentPriceAuction(currentPrice, auctionId);
 	}
 
 	// CoPurchasing

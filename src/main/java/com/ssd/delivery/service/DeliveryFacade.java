@@ -39,6 +39,8 @@ public interface DeliveryFacade {
 	void insertAuction(AuctionDTO auction);
 
 	void updateAuction(AuctionDTO auction);
+	
+	void updateCurrentPriceAuction(int currentPrice, int auctionId);
 
 	void deleteAuction(int auctionId);
 

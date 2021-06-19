@@ -22,7 +22,7 @@
 
 	<delete id="deleteACLineItem" parameterType="int">
 		DELETE FROM AuctionLineItem
-		WHERE auctionId = {#auctionId}
+		WHERE auctionId = #{auctionId}
 	</delete>
 
 </mapper>

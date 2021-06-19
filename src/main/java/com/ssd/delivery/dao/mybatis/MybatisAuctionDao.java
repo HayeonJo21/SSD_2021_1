@@ -39,6 +39,11 @@ public class MybatisAuctionDao implements AuctionDao {
     	auctionMapper.updateAuction(auction);
 	}
 	@Override
+	public void updateCurrentPriceAuction(int currentPrice, int auctionId) throws DataAccessException {
+		auctionMapper.updateCurrentPriceAuction(currentPrice, auctionId);
+		
+	}
+	@Override
 	public void deleteAuction(int auctionId) throws DataAccessException {  
     	auctionMapper.deleteAuction(auctionId);
 	}
@@ -56,5 +61,5 @@ public class MybatisAuctionDao implements AuctionDao {
 	public List<AuctionDTO> getAuctionList(){
 	    return auctionMapper.getAuctionList();
 	}
-
+	
 }
