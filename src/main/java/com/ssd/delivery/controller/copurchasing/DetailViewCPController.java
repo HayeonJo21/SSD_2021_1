@@ -62,12 +62,12 @@ public class DetailViewCPController {
 			status= 1;
 		}else status=0;
 		
-		int isCPUploader = delivery.isCPUploader(account.getUsername(), cpId);
-		int isCPPurchaser = delivery.isCPPurchaser(account.getUsername(), cpId);
+//		int isCPUploader = delivery.isCPUploader(account.getUsername(), cpId);
+//		int isCPPurchaser = delivery.isCPPurchaser(account.getUsername(), cpId);
 		 
 		
-		System.out.println("isCPUploader:"+isCPUploader);
-		System.out.println("isCPPurchaser:"+isCPPurchaser);
+//		System.out.println("isCPUploader:"+isCPUploader);
+//		System.out.println("isCPPurchaser:"+isCPPurchaser);
 		System.out.println("status:"+status);
 		if (cplineitem != null) model.put("cplineitem", cplineitem);
 		
@@ -75,7 +75,7 @@ public class DetailViewCPController {
 		model.put("del", del);
 		model.put("cplineitem", cplineitem);
 		model.put("status", status);
-		model.put("isCPUploader", isCPUploader);
+//		model.put("isCPUploader", isCPUploader);
 		return "coPurchasingDetail";
 		
 		

@@ -7,9 +7,9 @@
 		<h1>Co-Purchasing 👥</h1>
 		<section>
 			<h1 style="font-size: 40px">공동구매 상세내역</h1>
-			<h1 style="font-size: 30px">공동구매 ID : ${cp.coPurchasingId}</h1>
+			<h1 style="font-size: 30px">📢 &nbsp;게시자 says &nbsp;&nbsp;<b style="color: #f2849e">" &nbsp;${cp.note } &nbsp;"</b></h1>
 			<h3>
-				📢 &nbsp;Note: <b style="color: #f2849e">${cp.note }</b>
+			* 공동구매 ID : ${cp.coPurchasingId}
 			</h3>
 			<div class="table-wrapper">
 				<table>
@@ -21,40 +21,40 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td>ServiceDate</td>
+							<td>서비스 일시</td>
 							<td>${del.serviceDate }</td>
 
 						</tr>
 						<tr>
-							<td>Poster</td>
+							<td>공동구매 게시자</td>
 							<td><a href="/user/view?username=${cp.username}">${cp.username}</a></td>
 						</tr>
 						<tr>
-							<td>Destination</td>
+							<td>도착지</td>
 							<td>${del.address2 }</td>
 
 						</tr>
 						<tr>
-							<td>Price</td>
+							<td>가격</td>
 							<td>${del.price } / 인당 ${cp.unitCost }</td>
 						</tr>
 						<tr>
-							<td>MaxNumberOfPurchaser</td>
+							<td>1인당 가격</td>
 							<td>${cp.maxNumberOfPurchaser }</td>
 
 						</tr>
 						<tr>
-							<td>Width</td>
+							<td>가로 규격</td>
 							<td>${del.width}m</td>
 
 						</tr>
 						<tr>
-							<td>Height</td>
+							<td>세로 규격</td>
 							<td>${del.height }m</td>
 
 						</tr>
 						<tr>
-							<td>Weight</td>
+							<td>총 무게</td>
 							<td>${del.weight }kg</td>
 
 						</tr>
@@ -82,7 +82,7 @@
 						참여🤚🏻&nbsp;&nbsp;&nbsp;&nbsp;</a> --%>
 				</div>
 			</c:if>
-			<h1 style="font-size: 30px">Progress of CoPurchasing</h1>
+			<h1 style="font-size: 35px"><b style="color: #f2849e">*&nbsp;</b> Progress of Co-Purchasing</h1>
 			<p>공동구매 진행상황을 보여줍니다.</p>
 			<div class="progress">
 				<div
@@ -105,7 +105,7 @@
 
 			<br> <br>
 			<!-- 참여자 정보 -->
-			<h1 style="font-size: 30px">참여자 정보</h1>
+			<h1 style="font-size: 35px"><b style="color: #f2849e">*&nbsp;</b> 참여자 정보</h1>
 			<div class="table-wrapper">
 				<table class="alt">
 					<thead>
