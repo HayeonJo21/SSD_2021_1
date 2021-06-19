@@ -73,10 +73,6 @@
 					참여🤚🏻&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
 				</c:if>
 				<br />
-				<c:if test="${userSession.username ne ac.username && userSession.username ne null}">
-				<div style="float:right; padding-right:5px">
-				<a href="/auction/join.do?auctionId=${ac.auctionId}" class="button primary">&nbsp;&nbsp;&nbsp;&nbsp;경매 참여🤚🏻&nbsp;&nbsp;&nbsp;&nbsp;</a>
-			</div></c:if>
 				<h3><b style="color: #f2849e">* 입찰 현황</b></h3>
 				<div class="table-wrapper">
 					<table class="alt">
