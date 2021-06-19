@@ -6,9 +6,10 @@
 <!-- Main -->
 <div id="main">
 	<div class="inner">
+	<c:if test="${userSession.username ne null}">
 	<div style="float: right; padding-right: 10px">
 				<a class=button href="/delivery/messageCreate.do">💬 용달 기사님께 디엠 보내기</a>
-				</div>
+				</div></c:if>
 	<h1>Delivery Service</h1>
 		<h2>🚚 용달 서비스 정보</h2>
 		<c:if test="${msg ne null}">
