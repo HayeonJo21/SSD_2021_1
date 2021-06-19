@@ -19,7 +19,7 @@ public class TestSchedulerController {
 	private DeliveryFacade delivery;
 
 	@Autowired
-	public void setPetStore(DeliveryFacade delivery) {
+	public void setDelivery(DeliveryFacade delivery) {
 		this.delivery = delivery;
 	}
 

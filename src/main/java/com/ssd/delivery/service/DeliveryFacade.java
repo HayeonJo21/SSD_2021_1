@@ -48,7 +48,7 @@ public interface DeliveryFacade {
 
 	List<AuctionDTO> getAuctionList();
 
-	void testScheduler(Date closingTime);
+	void testScheduler(int deliveryId, Date closingTime);
 
 	// CoPurchasing
 	void insertCP(CoPurchasingDTO CP);

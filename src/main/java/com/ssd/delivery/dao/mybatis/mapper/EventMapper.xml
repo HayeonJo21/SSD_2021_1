@@ -4,8 +4,8 @@
 <mapper namespace="com.ssd.delivery.dao.mybatis.mapper.EventMapper">
   <cache />
   <insert id="insertNewEvent" parameterType="hashmap">
-  	INSERT INTO EVENTS (CUR_TIME, CLOSING_TIME, STATUS)
-  	VALUES (#{curTime}, #{closingTime}, 'OPEN')
+  	INSERT INTO EVENTS (DELIVERYID, CUR_TIME, CLOSING_TIME, STATUS)
+  	VALUES (#{deliveryId}, #{curTime}, #{closingTime}, 'OPEN')
   </insert>
   
   <update id="closeEvent" parameterType="Date">
@@ -15,9 +15,9 @@
     ]]>
   </update>
   
-  <select id="getStatusByAcutionId" resultType="java.lang.String">
+  <select id="getStatusByDeliveryId" resultType="java.lang.String">
   SELECT STATUS
   FROM EVENTS
-  WHERE AUCTIONIDm= ${auctionId}
+  WHERE deliveryId= ${deliveryId}
   </select>
 </mapper>

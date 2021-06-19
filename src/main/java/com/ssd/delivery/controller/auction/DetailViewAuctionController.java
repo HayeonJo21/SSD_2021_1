@@ -43,12 +43,13 @@ public class DetailViewAuctionController {
 			ModelMap model, HttpSession session) throws Exception {
 		AuctionDTO auction = this.delivery.getAuctionById(auctionId);
 		DeliveryDTO del = delivery.getDeliveryById(auction.getDelivery());
-		String status = eventMapper.getStatusByAuctionId(auctionId);
-		model.put("status", status);
+		String status = eventMapper.getStatusByDeliveryId(auction.getDelivery());
+		
 		AccountDTO account = (AccountDTO)session.getAttribute("userSession");
 		
 		List<AuctionLineItemDTO> aclineitem = delivery.getACLineItemsByACId(auctionId);
 		
+		model.put("status", status);
 		model.put("aclineitem", aclineitem);
 		model.put("userSession", account);
 		model.put("ac", auction);

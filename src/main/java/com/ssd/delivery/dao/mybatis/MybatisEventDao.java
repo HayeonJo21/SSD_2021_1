@@ -15,7 +15,7 @@ public class MybatisEventDao implements EventDao {
 	@Autowired
 	private EventMapper eventMapper;
 	
-	public void insertNewEvent(HashMap<String, Date> map) {
+	public void insertNewEvent(HashMap<String, Object> map) {
 		eventMapper.insertNewEvent(map);
 	}
 
@@ -24,6 +24,6 @@ public class MybatisEventDao implements EventDao {
 	}
 	
 	public String getStatusByAuctionId(int auctionId) {
-		return eventMapper.getStatusByAuctionId(auctionId);
+		return eventMapper.getStatusByDeliveryId(auctionId);
 	}
 }

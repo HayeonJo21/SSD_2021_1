@@ -41,15 +41,16 @@ public class InsertAuctionController {
 	
 	@PostMapping
 	public ModelAndView insertAuction(Model model, HttpSession session, @ModelAttribute("AuctionForm")  AuctionDTO auction, 
-			@RequestParam("deliveryId") int deliveryId //, @RequestParam("endDate")
-	/*@DateTimeFormat(pattern="yyyy-MM-dd HH:mm") Date closeTime*/) throws Exception {
+			@RequestParam("deliveryId") int deliveryId , @RequestParam("endDate")
+	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm") Date closeTime) throws Exception {
 		AccountDTO account = (AccountDTO)session.getAttribute("userSession");
 		
 		auction.setDelivery(deliveryId);
-		//System.out.println(closeTime);
+		System.out.println(closeTime);
 		
 		delivery.insertAuction(auction);
-		//delivery.testScheduler(closeTime);
+		System.out.println(deliveryId + "	" + closeTime);
+		delivery.testScheduler(deliveryId, closeTime);
 		ModelAndView mav = new ModelAndView();
 		
 		DeliveryDTO del = delivery.getDeliveryById(deliveryId);
