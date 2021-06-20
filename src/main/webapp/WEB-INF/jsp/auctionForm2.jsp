@@ -1,16 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="IncludeTop.jsp"%>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+	function dateFormat(el) {
+		//익스플로러 브라우저인 
+		if ((navigator.appName == 'Netscape' && navigator.userAgent
+				.search('Trident') != -1)
+				|| (agent.indexOf("msie") != -1))
+			el.value = el.value.replace(/(\d\d\d\d)(\d\d)(\d\d)/g, '$1-$2-$3');
+	}
+</script>
 <!-- Main -->
 <div id="main">
 	<div class="inner">
-
-		<h2>경매 글 작성</h2> 
+		<!-- 	
+<input type="date" onkeyup="dateFormat(this)" maxlength="10">
+ -->
+		<h2>경매 글 작성</h2>
 		<form method="post" action="/delivery/auctionInsert2.do">
 			<div class="form-group">
 				<label for="username" style="font-size: 24px">경매 게시자</label> <input
 					type="text" style="width: 800px" class="form-control"
-					name="username" value='${userSession.username}' id="username">
+					name="username" value='${userSession.username}' id="username"
+					readonly>
 			</div>
 			<div class="col-12">
 				<label for="demo-name">경매 진행할 상품</label> <input type="hidden"
@@ -20,29 +34,33 @@
 					<p class="form-control-static">${delivery.deliveryId}</p>
 				</div>
 				<div class="form-group">
-					<label for="auction.address1" style="font-size: 24px">출발지</label>
-					<input type="hidden" style="width: 800px" class="form-control"
-						name="address1" placeholder="${delivery.address1 }" id="address1" value='${delivery.address1}'>
-						<p class="form-control-static">${delivery.address1}</p> 
+					<label for="auction.address1" style="font-size: 24px">출발지</label> <input
+						type="hidden" style="width: 800px" class="form-control"
+						name="address1" placeholder="${delivery.address1 }" id="address1"
+						value='${delivery.address1}'>
+					<p class="form-control-static">${delivery.address1}</p>
 				</div>
 				<div class="form-group">
-					<label for="auction.address2" style="font-size: 24px">도착지</label>
-					<input type="hidden" style="width: 800px" class="form-control"
-						name="address2" placeholder="${delivery.address2 }" id="address2" value='${delivery.address2 }'>
-						<p class="form-control-static">${delivery.address2}</p> 
+					<label for="auction.address2" style="font-size: 24px">도착지</label> <input
+						type="hidden" style="width: 800px" class="form-control"
+						name="address2" placeholder="${delivery.address2 }" id="address2"
+						value='${delivery.address2 }'>
+					<p class="form-control-static">${delivery.address2}</p>
 				</div>
-				
+
 				<div class="form-group">
-					<label for="auction.startPrice" style="font-size: 24px">용달 서비스 제공일</label>
-					<input type="hidden" style="width: 800px" class="form-control"
-						name="serviceDate" placeholder="${delivery.serviceDate }" id="serviceDate" value='${delivery.serviceDate }'>
-						<p class="form-control-static">${delivery.serviceDate}</p> 
+					<label for="auction.startPrice" style="font-size: 24px">용달
+						서비스 제공일</label> <input type="hidden" style="width: 800px"
+						class="form-control" name="serviceDate"
+						placeholder="${delivery.serviceDate }" id="serviceDate"
+						value='${delivery.serviceDate }'>
+					<p class="form-control-static">${delivery.serviceDate}</p>
 				</div>
-				
-				
+
+
 				<div class="form-group">
-					<label for="auction.startPrice" style="font-size: 24px">경매 시작가</label>
-					<input type="text" style="width: 800px" class="form-control"
+					<label for="auction.startPrice" style="font-size: 24px">경매
+						시작가</label> <input type="text" style="width: 800px" class="form-control"
 						name="startPrice" placeholder="경매 시작가 ex. 50000" id="startPrice">
 				</div>
 
@@ -63,7 +81,7 @@
 				</div>
 
 			</div>
-				<!-- <div class="row gtr-uniform">
+			<!-- <div class="row gtr-uniform">
 						<div class="col-12">
 							<label for="demo-name"></label> <input type="text"
 								name="demo-name" id="demo-name" value="" placeholder="username"
