@@ -54,9 +54,6 @@ public class WebMvcConfig implements WebMvcConfigurer {
 		registry.addViewController("/delivery/detailView.do").setViewName("deliveryDetail");
 		registry.addViewController("/delivery/listView.do").setViewName("deliveryPage");
 		
-		//fleamarket
-		registry.addViewController("/delivery/fleamarketView.do").setViewName("fleaMarketPage");
-		
 		//message
 		registry.addViewController("/delivery/message.do").setViewName("message");
 		registry.addViewController("/delivery/messageCreate.do").setViewName("messageForm");
