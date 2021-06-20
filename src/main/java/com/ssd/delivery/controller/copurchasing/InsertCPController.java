@@ -66,14 +66,12 @@ public class InsertCPController {
 		} else {
 			status = 0;
 		}
-//		int isCPUploader = delivery.isCPUploader(account.getUsername(), cpId);
 		
 		mav.addObject("cp", CP);
 		mav.addObject("del", del);
 		mav.addObject("userSession", account);
 		mav.addObject("cplineitem", cplineitem);
 		mav.addObject("status", status);
-//		mav.addObject("isCPUploader", isCPUploader);
 		mav.setViewName("coPurchasingDetail");
 
 		return mav;
