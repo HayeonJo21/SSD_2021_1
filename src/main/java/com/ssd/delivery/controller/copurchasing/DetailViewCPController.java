@@ -34,84 +34,77 @@ import com.ssd.delivery.service.PetStoreFacade;
 public class DetailViewCPController { 
 	@Autowired
 	private DeliveryFacade delivery;
-	
+
 	@Autowired
 	public void setDelivery(DeliveryFacade delivery) {
 		this.delivery = delivery;
 	}
-	
+
 	@GetMapping
 	public String handleRequest(
 			@RequestParam("coPurchasingId") int cpId,
 			HttpSession session,
 			ModelMap model) throws Exception {
-		
+
 		System.out.println(cpId);
 		CoPurchasingDTO cp = this.delivery.getCPById(cpId);
 		DeliveryDTO del = delivery.getDeliveryById(cp.getDelivery());
 		AccountDTO account = (AccountDTO)session.getAttribute("userSession");
-		
+
 		System.out.println(cpId);
-		
+
 		List<CoPurchasingLineItemDTO> cplineitem = delivery.getCPLineItemsByCPId(cpId);
-		
-		
+
+
 		String status = "open";
-		
+
 		if(delivery.getCPById(cpId).getMaxNumberOfPurchaser() <= delivery.CPLineItemCount(cpId)) 
 		{
 			status= "closed";
 		}
 		System.out.println("status " + status);
-		
-		
+
+
 		String status2 = "notparticipant";
-		
+
 		if (account == null) {
 			status2 = "signoff";
 		}
 		else if (account.getUsername().equals(cp.getUsername())) {
-			
+
 			status2 = "poster";
-			
+
 		}
 		else {
 			for (CoPurchasingLineItemDTO list : cplineitem) {
-				
+
 				System.out.println("lineitem [" + list.getUsername() +"]");
 				System.out.println("account.getUsername [" + account.getUsername() +"]");
-				
+
 				if (list.getUsername().equals(account.getUsername()) )
-					
+
 					status2 = "participant";
-				
+
 			}
 		}
-		
+
 		System.out.println("status " + status);
 		System.out.println("status2 " + status2);
-		
-		
-		
-//		int isCPUploader = delivery.isCPUploader(account.getUsername(), cpId);
-//		int isCPPurchaser = delivery.isCPPurchaser(account.getUsername(), cpId);
-		 
-		
-//		System.out.println("isCPUploader:"+isCPUploader);
-//		System.out.println("isCPPurchaser:"+isCPPurchaser);
+
+
+
 		if (cplineitem != null) model.put("cplineitem", cplineitem);
-		
+
 		model.put("cp", cp);
 		model.put("del", del);
 		model.put("cplineitem", cplineitem);
 		model.put("status", status);
 		model.put("status2", status2);
-//		model.put("isCPUploader", isCPUploader);
 		return "coPurchasingDetail";
-		
-		
-		
-		
+
+
+
+
 	}
 
 }

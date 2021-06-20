@@ -34,20 +34,15 @@ public class JoinCPController {
 	public String handleRequest(
 			@RequestParam("coPurchasingId") int cpId,
 			HttpSession session,
-//			@ModelAttribute("userSession") UserSession userSession,
 			ModelMap model) throws Exception {
 		
 		
 		CoPurchasingDTO cp = this.delivery.getCPById(cpId);
 		
 		AccountDTO account = (AccountDTO)session.getAttribute("userSession");
-		
-//		String username = userSession.getAccount().getUsername();
-		
-//		AccountDTO user = delivery.findUser(username);
+
 		
 		model.put("cp", cp);
-//		model.put("delivery", del);
 		model.put("user", account);
 		return "copurchasingJoinForm";
 
@@ -67,9 +62,7 @@ public class JoinCPController {
 		model.put("cplineitemDTO", cplineitemDTO);
 		model.put("del", del);
 		
-		
 	
-//		return "redirect:/delivery/coPurchasingDetailView.do?coPurchasingId=" + cpId;
 		return "coPurchasingJoinSuccess";
 	}
 	

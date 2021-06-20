@@ -102,11 +102,11 @@
 					role="progressbar" aria-valuenow='${fn:length(cplineitem) }'
 					aria-valuemin="0" aria-valuemax='${ cp.maxNumberOfPurchaser }'
 					style="width: ${fn:length(cplineitem)/cp.maxNumberOfPurchaser*100}%; ">
-					<c:if test="${status eq 1}">
+					<c:if test="${status eq 'closed'}">
 					공동구매 달성 완료!
 
 					</c:if>
-					<c:if test="${status eq 0}">
+					<c:if test="${status eq 'open'}">
 					${fn:length(cplineitem) }명
 					참여중!
 					</c:if>
