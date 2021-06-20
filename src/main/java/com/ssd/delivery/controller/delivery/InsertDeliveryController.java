@@ -56,14 +56,13 @@ public class InsertDeliveryController {
 		
 		AccountDTO account = (AccountDTO)session.getAttribute("userSession");
 		mav.addObject("userSession", account);	
-		
+
 		validator.validate(del, result);
+
 		if (result.hasErrors()) {
 			mav.setViewName("deliveryForm");
-			
 			return mav;
 		}
-		
 		String sdate = del.getServiceDate();
 		
 		SimpleDateFormat dFormat = new SimpleDateFormat("yyyy/MM/dd");

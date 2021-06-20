@@ -5,7 +5,7 @@
   <cache />
 
    <insert id="insertDelivery" parameterType="DeliveryDTO">
-    INSERT INTO DELIVERY VALUES(DeliveryID_SEQ.nextval, #{address1}, #{address2}, #{username, jdbcType=VARCHAR}, #{serviceDate}, #{filename}, #{price}, #{width}, #{height}, #{weight}, #{loadage}, #{depth})
+    INSERT INTO DELIVERY VALUES(DeliveryID_SEQ.nextval, #{address1}, #{address2}, #{username, jdbcType=VARCHAR}, #{serviceDate}, #{price}, #{width}, #{height}, #{weight}, #{loadage}, #{depth})
 	</insert>
 
 	<update id="updateDelivery" parameterType="DeliveryDTO">
@@ -14,7 +14,6 @@
 	   ADDRESS2 = #{address2}, 
 	   USERNAME = #{username}, 
 	   SERVICEDATE = #{serviceDate},
-	   FILENAME = #{filename}, 
 	   PRICE = #{price}, 
 	   WIDTH = #{width}, 
 	   LENGTH = #{depth}, 
