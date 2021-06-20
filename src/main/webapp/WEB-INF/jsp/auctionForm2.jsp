@@ -25,9 +25,9 @@
  -->
 			<div class="form-group">
 				<label for="username" style="font-size: 24px">경매 게시자</label> <input
-					type="text" style="width: 800px" class="form-control"
-					name="username" value='${userSession.username}' id="username"
-					readonly>
+					type="hidden" style="width: 800px" class="form-control"
+					name="username" value='${userSession.username}' id="username" >
+					<p class="form-control-static">${userSession.username}</p>
 			</div>
 			<div class="form-group">
 				<label for="demo-name" style="font-size: 24px">경매 진행할 상품</label> <input type="hidden"
