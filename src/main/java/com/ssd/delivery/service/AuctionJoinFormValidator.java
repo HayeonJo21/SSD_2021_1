@@ -26,7 +26,7 @@ public class AuctionJoinFormValidator implements Validator {
 		
 		AuctionDTO ac = delivery.getAuctionById(auction.getAuctionId());
 		System.out.println(auction.getAuctionId());
-		//System.out.println(ac.getCurrentPrice());
+		System.out.println(ac.getCurrentPrice());
 		System.out.println(auction.getJoinPrice());
 		if (ac.getCurrentPrice() >= auction.getJoinPrice() && auction.getJoinPrice() != 0)
 			errors.rejectValue("joinPrice", "JOIN_PRICE_NOT_HIGHER_THAN_CURRENT_PRICE", "Join Price must be higher than " + ac.getCurrentPrice() + " (KRW)");
