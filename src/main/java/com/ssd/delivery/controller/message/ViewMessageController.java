@@ -58,6 +58,22 @@ public class ViewMessageController {
 	
 	}
 	
+	@RequestMapping("/delivery/messageCreate2.do")
+	public ModelAndView showMessageForm2(Model model, HttpSession session, @RequestParam("receiverUsername") String receiverUsername) throws Exception {
+		AccountDTO account = (AccountDTO)session.getAttribute("userSession");
+		
+		String username = account.getUsername();
+		ModelAndView mav = new ModelAndView();
+		
+		mav.addObject("sender", username);
+		mav.addObject("receiver", receiverUsername);
+		mav.setViewName("messageForm2");
+				
+		return mav;
+
+	
+	}
+	
 	@RequestMapping("/delivery/messageSend.do")
 	public ModelAndView sendingMessage(Model model, HttpSession session, @RequestParam("receiverUsername") String receiver,
 			@RequestParam("content") String content) throws Exception {

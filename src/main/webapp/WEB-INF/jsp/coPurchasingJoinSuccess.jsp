@@ -8,6 +8,8 @@
 	<div class="inner">
 
 		<h1>공동구매 참여 성공!️</h1>
+		
+		<a href="/delivery/coPurchasingDetailView.do?coPurchasingId=${cp.coPurchasingId }">공동구매 페이지로 돌아가기 </a>
 
 		<h2>차량 정보</h2>
 		<table>
@@ -62,8 +64,8 @@
 		※ ${cp.unitCost}원을 미리 준비해주세요! <br>
 		※ 인원 수 미달시 취소되거나 인당 지불할 금액이 인상될 수 있습니다.<br>
 		<br>
-		<a href="/delivery/messageCreate.do">💬 공동구매 개최자에게 디엠 보내기</a><br>
-		<a href="/delivery/messageCreate.do">💬 용달 기사님께 디엠 보내기</a>
+		<a href="/delivery/messageCreate2.do?receiverUsername=${cp.username}">💬 공동구매 개최자에게 디엠 보내기</a><br>
+		<a href="/delivery/messageCreate2.do?receiverUsername=${del.username}">💬 용달 기사님께 디엠 보내기</a>
 
 	</div>
 
