@@ -6,7 +6,7 @@
 
    <insert id="insertDelivery" parameterType="DeliveryDTO">
     INSERT INTO DELIVERY VALUES(DeliveryID_SEQ.nextval, #{address1}, #{address2}, #{username, jdbcType=VARCHAR}, #{serviceDate}, #{price}, #{width}, #{height}, #{weight}, #{loadage}, #{depth})
-	</insert>
+	</insert> 
 
 	<update id="updateDelivery" parameterType="DeliveryDTO">
     UPDATE DELIVERY SET 

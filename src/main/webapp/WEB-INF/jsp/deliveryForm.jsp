@@ -50,7 +50,7 @@
 				<div class="col-6">
 					<label for="size">세로 (m)</label> <input type="text" name="depth"
 						id="depth" value="1" />
-				</div>
+				</div> 
 				<div class="col-6">
 					<label for="size">높이 (m)</label> <input type="text" name="height"
 						id="height" value="1" />

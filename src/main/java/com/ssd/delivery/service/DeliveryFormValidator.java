@@ -29,3 +29,4 @@ public class DeliveryFormValidator implements Validator {
 			errors.rejectValue("serviceDate", "SERVICE_DATE_PATTERN_WRONG", "Service Date pattern is wrong.");
 	}
 }
+ 
