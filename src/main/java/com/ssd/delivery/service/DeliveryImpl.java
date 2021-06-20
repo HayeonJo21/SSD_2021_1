@@ -374,4 +374,15 @@ public class DeliveryImpl implements DeliveryFacade {
 		return deliveryDao.getDeliveryIdByUsername(username);
 	}
 
+	@Override
+	public void deleteCPLineItemByUsername(String username) {
+		cplineitem.deleteCPLineItemByUsername(username);
+		
+	}
+
+	@Override
+	public void deleteACLineItemByUsername(String username) {
+		aclineitem.deleteACLineItemByUsername(username);
+	}
+
 }

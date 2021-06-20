@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
-
+import com.ssd.delivery.domain.*;
 import com.ssd.delivery.service.DeliveryFacade;
 
 
@@ -30,8 +30,8 @@ public class DeleteAuctionController {
 	@GetMapping
 	public String adminAuctionDelete(Model model, HttpSession session, @RequestParam("auctionId") int auctionId) throws Exception {
 		
-		delivery.deleteAuction(auctionId);
 		delivery.deleteACLineItem(auctionId);
+		delivery.deleteAuction(auctionId);
 		
 		return "redirect:/admin/auction.do";
 	}

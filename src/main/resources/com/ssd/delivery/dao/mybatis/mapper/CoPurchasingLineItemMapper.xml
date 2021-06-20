@@ -31,4 +31,8 @@
 		WHERE coPurchasingId = #{coPurchasingId}
 	</delete>
 
+ <delete id="deleteCPLineItemByUsername" parameterType="String">
+		DELETE FROM CoPurchasingLineItem
+		WHERE username = #{username}
+	</delete>
 </mapper>

@@ -153,12 +153,17 @@ public interface DeliveryFacade {
 
 	void deleteCPLineItem(int cpId);
 	
-	 int CPLineItemCount(int coPurchasingId);
+	void deleteCPLineItemByUsername(String username);
+	
+	int CPLineItemCount(int coPurchasingId);
+	 
 
 	// AC lineitem
 	List<AuctionLineItemDTO> getACLineItemsByACId(int acId);
 
 	void insertACLineItem(AuctionLineItemDTO lineItem);
 
+	void deleteACLineItemByUsername(String username);
+	
 	void deleteACLineItem(int acId);
 }

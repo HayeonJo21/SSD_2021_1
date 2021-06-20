@@ -24,5 +24,10 @@
 		DELETE FROM AuctionLineItem
 		WHERE auctionId = #{auctionId}
 	</delete>
+	
+	<delete id="deleteACLineItemByUsername" parameterType="String">
+		DELETE FROM AuctionLineItem
+		WHERE username = #{username}
+	</delete>
 
 </mapper>

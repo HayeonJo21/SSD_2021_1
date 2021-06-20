@@ -37,9 +37,7 @@ public interface AuctionMapper {
 	void updateCurrentPriceAuction(int currentPrice, int auctionId);
 	void deleteAuction(int auctionId);
 	AuctionDTO getAuctionIdByUsername(String username);
-
 	AuctionDTO getAuctionById(int auctionId);
 	List<AuctionDTO> getAuctionByUsername(String username);
 	List<AuctionDTO> getAuctionList();
-
 }

@@ -32,11 +32,13 @@ public class DeleteUserController {
 			int deliveryId = del.getDeliveryId();
 			delivery.deleteDelivery(deliveryId);
 		}
+		delivery.deleteACLineItemByUsername(username);
 		if(auction != null) {
 		  int auctionId = auction.getAuctionId();
-		  delivery.deleteAuction(auctionId);
 		  delivery.deleteACLineItem(auctionId);
+		  delivery.deleteAuction(auctionId);
 		}
+		delivery.deleteCPLineItemByUsername(username);
 		if(cp != null) {
 			int cpId = cp.getCoPurchasingId();
 			delivery.deleteCP(cpId);

@@ -14,6 +14,7 @@ public interface CoPurchasingLineItemDao {
 	void deleteCPLineItem(int coPurchasingId) throws DataAccessException;
 	List<CoPurchasingLineItemDTO> getCPLineItemsByCPId(int coPurchasingId) throws DataAccessException;
 	int CPLineItemCount(int coPurchasingId) throws DataAccessException;
+	void deleteCPLineItemByUsername(String username) throws DataAccessException;
 
 	
 

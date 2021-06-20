@@ -34,6 +34,12 @@ public class MybatisAuctionLineItemDao implements  AuctionLineItemDao {
 		aclineitemmapper.deleteACLineItem(auctionId);
 		
 	}
+
+
+	@Override
+	public void deleteACLineItemByUsername(String username) throws DataAccessException {
+		aclineitemmapper.deleteACLineItemByUsername(username);
+	}
 	
 	
 	

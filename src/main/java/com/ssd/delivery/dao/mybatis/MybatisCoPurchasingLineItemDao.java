@@ -47,6 +47,13 @@ public class MybatisCoPurchasingLineItemDao implements  CoPurchasingLineItemDao 
 	public int CPLineItemCount(int coPurchasingId) throws DataAccessException {
 		return cplineitemmapper.getCPLineItemsByCPId(coPurchasingId).size();
 	}
+
+
+	@Override
+	public void deleteCPLineItemByUsername(String username) throws DataAccessException {
+		cplineitemmapper.deleteCPLineItemByUsername(username);
+		
+	}
 	
 	
 	

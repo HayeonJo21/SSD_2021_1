@@ -3,6 +3,7 @@ package com.ssd.delivery.dao.mybatis.mapper;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.springframework.dao.DataAccessException;
 
 import com.ssd.delivery.domain.AuctionLineItemDTO;
 
@@ -13,5 +14,8 @@ public interface AuctionLineItemMapper {
   void insertACLineItem(AuctionLineItemDTO ACLineId);
   
   void deleteACLineItem(int auctionId);
+  
+  void deleteACLineItemByUsername(String username);
+
 
 }

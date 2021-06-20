@@ -36,6 +36,7 @@ public interface CoPurchasingLineItemMapper {
   void insertCPLineItem2(CoPurchasingLineItemDTO lineItem);
   
   void deleteCPLineItem(int coPurchasingId);
-  
+  void deleteCPLineItemByUsername(String username);
+
   int CPLineItemCount(int coPurchasingId);
 }
