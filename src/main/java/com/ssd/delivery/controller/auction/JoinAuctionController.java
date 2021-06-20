@@ -28,7 +28,7 @@ import com.ssd.delivery.service.DeliveryFacade;
 @RequestMapping("/delivery/auctionJoin.do")
 public class JoinAuctionController {
 	@Autowired
-	private DeliveryFacade delivery;
+	private DeliveryFacade delivery; 
 	@Autowired
 	private AuctionJoinFormValidator validator;
 	@GetMapping

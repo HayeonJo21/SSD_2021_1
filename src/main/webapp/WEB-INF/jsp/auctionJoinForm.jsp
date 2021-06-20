@@ -66,7 +66,7 @@
 						style="width: 800px" name="joinPrice" id="joinPrice"
 						value="${ac.currentPrice}" />
 					<form:errors path="joinPrice"
-						style="color:#E16A93; font-size:28px;" />
+						style="color:#E16A93; font-size:28px;"/>
 				</div>
 				<br />
 				<div class="col-12">

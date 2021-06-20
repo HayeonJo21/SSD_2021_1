@@ -12,7 +12,7 @@ import com.ssd.delivery.domain.AuctionLineItemDTO;
 @Component
 public class AuctionJoinFormValidator implements Validator {
 	@Autowired
-	private DeliveryFacade delivery;
+	private DeliveryFacade delivery; 
 	
 	public boolean supports(Class<?> clazz) {
 		return AuctionLineItemDTO.class.isAssignableFrom(clazz);
