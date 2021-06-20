@@ -80,7 +80,7 @@
 
 					</c:if>
 					<c:if test="${ status eq 'open' and status2 eq 'poster'}">
-						공동구매 주최자입니다! 이미 참여되었습니다 <br>
+						공동구매 주최자입니다! 이미 참여되었습니다. <br>
 
 
 					</c:if>

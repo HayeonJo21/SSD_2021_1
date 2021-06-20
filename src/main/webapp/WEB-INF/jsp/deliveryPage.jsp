@@ -12,7 +12,7 @@
 			<p>
 				진행중인 용달 서비스 입니다. <br />
 			</p>
-			<li><a href="/delivery/insert.do">용달 서비스 등록 📝</a></li>
+			<a class=button href="/delivery/insert.do">용달 서비스 등록 📝</a>
 			<br />
 			<section class="tiles">
 				<c:forEach var="del" items="${delivery}">
