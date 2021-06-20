@@ -2,34 +2,23 @@ package com.ssd.delivery.controller.message;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 import java.text.SimpleDateFormat;
-import java.time.LocalTime;
 
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ssd.delivery.domain.AccountDTO;
-import com.ssd.delivery.domain.AuctionDTO;
-import com.ssd.delivery.domain.CoPurchasingDTO;
-import com.ssd.delivery.domain.FleaMarketDTO;
 import com.ssd.delivery.domain.MessageDTO;
 import com.ssd.delivery.service.DeliveryFacade;
-import com.ssd.delivery.service.DeliveryImpl;
+import com.ssd.delivery.service.Message;
 
 @Controller
 public class ViewMessageController {
@@ -73,9 +62,55 @@ public class ViewMessageController {
 
 	
 	}
-	
-	@RequestMapping("/delivery/messageSend.do")
-	public ModelAndView sendingMessage(Model model, HttpSession session, @RequestParam("receiverUsername") String receiver,
+//	
+//	@RequestMapping("/delivery/messageSend.do")
+//	public ModelAndView sendingMessage(HttpSession session, @RequestParam("receiverUsername") String receiver,
+//			@RequestParam("content") String content) throws Exception {
+//		AccountDTO account = (AccountDTO)session.getAttribute("userSession");
+//		
+//		String username = account.getUsername();
+//
+//		Calendar cal = Calendar.getInstance();
+//		Date date = cal.getTime();
+//		SimpleDateFormat dFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm");
+//		String currentDate = dFormat.format(date);
+//		
+//		ModelAndView mav = new ModelAndView();
+//		
+//		if (content.equals("")) {
+//			AccountDTO account = (AccountDTO)session.getAttribute("userSession");
+//			
+//			String username = account.getUsername();
+//			List<AccountDTO> receivers = delivery.getUserList();
+//			ModelAndView mav = new ModelAndView();
+//			
+//			mav.addObject("sender", username);
+//			mav.addObject("receiversList", receivers);
+//			mav.setViewName("messageForm");
+//			
+//			return mav;
+//		}
+//			
+//		MessageDTO message = new MessageDTO(username, receiver, content, currentDate);
+//		delivery.insertMessage(message);
+//		
+//		List<MessageDTO> messageContents = delivery.getMessageContentByUsername(username, receiver);
+//		List<MessageDTO> messageReceiveContents = delivery.getMessageContentByReceiverUsername(receiver, username);
+//		
+//		messageContents.addAll(messageReceiveContents);
+//		messageContents.sort((d1,d2) -> d1.getMessageDate().compareTo(d2.getMessageDate()));
+//
+//		mav.addObject("username", username);
+//		mav.addObject("receiver", receiver);
+//		mav.addObject("contentList", messageContents);
+//		mav.setViewName("message");
+//		
+//		return mav;
+//	 
+//	}
+//	
+	@RequestMapping("/delivery/messageSend2.do")
+	public ModelAndView sendingMessage2(HttpSession session, @RequestParam("receiverUsername") String receiver,
 			@RequestParam("content") String content) throws Exception {
 		AccountDTO account = (AccountDTO)session.getAttribute("userSession");
 		
@@ -86,10 +121,21 @@ public class ViewMessageController {
 		SimpleDateFormat dFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm");
 		String currentDate = dFormat.format(date);
 		
+		ModelAndView mav = new ModelAndView();
+		
+		if (content.equals("")) {
+			List<AccountDTO> receivers = delivery.getUserList();
+			
+			mav.addObject("data", new Message("메세지를 입력해 주세요.", "/delivery/messageCreate.do"));
+			mav.addObject("username", username);
+			mav.addObject("receiversList", receivers);
+			mav.setViewName("messageForm");
+			
+			return mav;
+		}
+			
 		MessageDTO message = new MessageDTO(username, receiver, content, currentDate);
 		delivery.insertMessage(message);
-		
-		ModelAndView mav = new ModelAndView();
 		
 		List<MessageDTO> messageContents = delivery.getMessageContentByUsername(username, receiver);
 		List<MessageDTO> messageReceiveContents = delivery.getMessageContentByReceiverUsername(receiver, username);

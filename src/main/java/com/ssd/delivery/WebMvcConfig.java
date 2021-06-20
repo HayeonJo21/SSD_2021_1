@@ -59,6 +59,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
 		registry.addViewController("/delivery/messageCreate.do").setViewName("messageForm");
 		registry.addViewController("/delivery/messageCreate2.do").setViewName("messageForm2");
 		registry.addViewController("/delivery/messageSend.do").setViewName("message");
+		registry.addViewController("/delivery/messageSend2.do").setViewName("messageForm");
 
 
 	}

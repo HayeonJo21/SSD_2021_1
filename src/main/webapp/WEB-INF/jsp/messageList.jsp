@@ -15,16 +15,16 @@
 		<div id="main">
 			<div class="inner">
 				<h1>💬 Message List</h1>
-				<div style="width: 400px;"> 
+				<div style="width: 500px;"> 
 					<div class="bg-dark text-white "
-						style="width: 400px; height: 80px; display: table;">
+						style="width: 500px; height: 80px; display: table;">
 						<span class="align-middle"
 							style="display: table-cell; padding: 0 0 0 20px;">메시지 리스트</span>
 						<a href=#menu></a>
 					</div>
 
 				</div>
-				<div class="list-group" style="width: 400px;">
+				<div class="list-group" style="width: 500px;">
 					<a class="list-group-item list-group-item-action active">현재
 						채팅중인 상대</a>
 					<c:if test="${DMList ne null}">
@@ -40,7 +40,7 @@
 						</c:forEach>
 					</c:if> 
 					<a href="/delivery/messageCreate.do"
-						class="list-group-item list-group-item-action active">새로운 메시지
+						class="button primary">새로운 메시지
 						시작하기</a>
 				</div>
 			</div>
