@@ -3,6 +3,7 @@ package com.ssd.delivery.dao.mybatis.mapper;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.springframework.dao.DataAccessException;
 
 import com.ssd.delivery.domain.DeliveryDTO;
 @Mapper
@@ -13,6 +14,8 @@ public interface DeliveryMapper {
 	void updateDelivery(DeliveryDTO delivery);
 	
 	void deleteDelivery(int deliveryId);
+	
+	DeliveryDTO getDeliveryIdByUsername(String username);
 	
 	DeliveryDTO getDeliveryById(int deliveryId);
 	

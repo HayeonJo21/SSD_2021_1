@@ -72,5 +72,11 @@ public class MybatisCoPurchasingDao implements CoPurchasingDao {
 	public CoPurchasingDTO getCPByDeliveryId(int deliveryId) throws DataAccessException {
 		return CPMapper.getCPByDeliveryId(deliveryId);
 	}
+
+	@Override
+	public CoPurchasingDTO getCPIdByUsername(String username) throws DataAccessException {
+		// TODO Auto-generated method stub
+		return CPMapper.getCPIdByUsername(username)
+;	}
 	
 }

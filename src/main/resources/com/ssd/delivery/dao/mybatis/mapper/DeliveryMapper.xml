@@ -52,4 +52,8 @@
  	 <select id="isExistingAC" resultType="DeliveryDTO">
   	select * from Delivery d, auction a 
  	where d.deliveryId = a.delivery</select>
+ 	
+ 	<select id="getDeliveryIdByUsername" resultType="DeliveryDTO">
+    select deliveryId from delivery where username = #{username}
+	</select>
 </mapper>

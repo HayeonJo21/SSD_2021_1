@@ -22,6 +22,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.springframework.dao.DataAccessException;
 
 import com.ssd.delivery.domain.AuctionDTO;
 
@@ -35,6 +36,7 @@ public interface AuctionMapper {
 	void updateAuction(AuctionDTO auction);
 	void updateCurrentPriceAuction(int currentPrice, int auctionId);
 	void deleteAuction(int auctionId);
+	AuctionDTO getAuctionIdByUsername(String username);
 
 	AuctionDTO getAuctionById(int auctionId);
 	List<AuctionDTO> getAuctionByUsername(String username);

@@ -1,17 +1,13 @@
 package com.ssd.delivery.controller.account;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.util.WebUtils;
-import com.ssd.delivery.domain.AccountDTO;
+import com.ssd.delivery.domain.*;
 import com.ssd.delivery.service.DeliveryFacade;
-import com.ssd.delivery.service.DeliveryImpl;
 
 @Controller
 @SessionAttributes("userSession")
@@ -28,6 +24,25 @@ public class DeleteUserController {
 	@GetMapping
 	public String adminUserDelete(Model model, HttpSession session, @RequestParam("username") String username) throws Exception {
 		
+		AuctionDTO auction = delivery.getAuctionIdByUsername(username);
+		CoPurchasingDTO cp = delivery.getCPIdByUsername(username);
+		DeliveryDTO del = delivery.getDeliveryIdByUsername(username);
+		
+		if(del != null) {
+			int deliveryId = del.getDeliveryId();
+			delivery.deleteDelivery(deliveryId);
+		}
+		if(auction != null) {
+		  int auctionId = auction.getAuctionId();
+		  delivery.deleteAuction(auctionId);
+		  delivery.deleteACLineItem(auctionId);
+		}
+		if(cp != null) {
+			int cpId = cp.getCoPurchasingId();
+			delivery.deleteCP(cpId);
+			delivery.deleteCPLineItem(cpId);
+		}
+		delivery.deleteFU(username);
 		delivery.deleteAccount(username);
 		
 		return "redirect:/delivery/adminUser.do";

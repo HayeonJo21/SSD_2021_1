@@ -37,6 +37,8 @@ public interface CoPurchasingMapper {
 	
 	void deleteCP(int CPId);
 	
+    CoPurchasingDTO getCPIdByUsername(String username);
+	
 	List<CoPurchasingDTO> getCPList();
 	
 	List<CoPurchasingDTO> isExistingCPAC();

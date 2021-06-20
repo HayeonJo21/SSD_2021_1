@@ -53,6 +53,8 @@ public interface DeliveryFacade {
 	List<AuctionDTO> getAuctionList();
 
 	void testScheduler(int deliveryId, Date closingTime);
+	
+	AuctionDTO getAuctionIdByUsername(String username);
 
 	// CoPurchasing
 	void insertCP(CoPurchasingDTO CP);
@@ -60,6 +62,8 @@ public interface DeliveryFacade {
 	void updateCP(CoPurchasingDTO CP);
 
 	void deleteCP(int cpId);
+	
+	CoPurchasingDTO getCPIdByUsername(String username);
 
 	List<CoPurchasingDTO> getCPList();
 
@@ -81,6 +85,8 @@ public interface DeliveryFacade {
 
 	void deleteDelivery(int deliveryId);
 
+	DeliveryDTO getDeliveryIdByUsername(String username);
+	
 	DeliveryDTO getDeliveryById(int deliveryId);
 
 	List<DeliveryDTO> getDeliveryByUsername(String username);
@@ -96,7 +102,7 @@ public interface DeliveryFacade {
 
 	void updateFU(FavoriteUserDTO favoriteUser);
 
-	void deleteFU(int favId);
+	void deleteFU(String username);
 
 	void updateTradeCount(String tradeCount, String username, String favUsername);
 

@@ -81,6 +81,10 @@
 
 	</select>
 	
+	<select id="getCPIdByUsername" resultType="CoPurchasingDTO">
+    select coPurchasingId from coPurchasing where username = #{username}
+	</select>
+	
 	
 
 </mapper>

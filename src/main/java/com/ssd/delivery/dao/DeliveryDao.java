@@ -14,6 +14,8 @@ public interface DeliveryDao {
 	
 	void deleteDelivery(int deliveryId) throws DataAccessException;
 	
+	DeliveryDTO getDeliveryIdByUsername(String username) throws DataAccessException;
+	
 	DeliveryDTO getDeliveryById(int deliveryId) throws DataAccessException;
 	
 	List<DeliveryDTO> getDeliveryByUsername(String username) throws DataAccessException;

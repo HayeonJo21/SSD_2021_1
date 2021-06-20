@@ -16,7 +16,7 @@ public interface FavoriteUserDao {
 	
 	void updateTradeCount(String tradeCount, String username, String favUsername) throws DataAccessException;
 	
-	void deleteFU(int favId) throws DataAccessException;
+	void deleteFU(String favId) throws DataAccessException;
 	
 	List<FavoriteUserDTO> getFUByUsername(String username) throws DataAccessException;
 	

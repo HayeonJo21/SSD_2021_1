@@ -25,12 +25,19 @@ public class MyPageController {
 	}
    
 	@GetMapping 
-	public ModelAndView viewMypage(Model model, HttpSession session) throws Exception {
-		AccountDTO account = (AccountDTO)session.getAttribute("userSession");
+	public ModelAndView viewMypage(Model model, HttpSession session, @RequestParam("username")String username) throws Exception {
+		List<AccountDTO> accountList = delivery.getUserList();
+		AccountDTO account = null;
 		
-		String username = account.getUsername();
+		for(int i = 0 ; i < accountList.size(); i++) {
+			if(accountList.get(i).getUsername().equals(username)) {
+				account = accountList.get(i);
+				break;
+			}
+		}
+	
 		ModelAndView mav = new ModelAndView();
-		
+		System.out.println("%%%%%%" + username);
 		List<CoPurchasingDTO> CPList = delivery.getCPListByUsername(username);
 		List<AuctionDTO> ACList = delivery.getAuctionByUsername(username);
 		List<DeliveryDTO> DelList = delivery.getDeliveryByUsername(username);

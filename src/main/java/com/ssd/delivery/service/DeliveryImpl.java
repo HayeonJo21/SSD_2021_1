@@ -206,8 +206,8 @@ public class DeliveryImpl implements DeliveryFacade {
 		fuDao.updateFU(favoriteUser);
 	}
 
-	public void deleteFU(int favId) {
-		fuDao.deleteFU(favId);
+	public void deleteFU(String username) {
+		fuDao.deleteFU(username);
 	}
 
 	public List<FavoriteUserDTO> getFUByUsername(String username) {
@@ -357,6 +357,21 @@ public class DeliveryImpl implements DeliveryFacade {
 	@Override
 	public CoPurchasingDTO getCPByDeliveryId(int deliveryId) {
 		return cpDao.getCPByDeliveryId(deliveryId);
+	}
+
+	@Override
+	public AuctionDTO getAuctionIdByUsername(String username) {
+		return auctionDao.getAuctionIdByUsername(username);
+	}
+
+	@Override
+	public CoPurchasingDTO getCPIdByUsername(String username) {
+		return cpDao.getCPIdByUsername(username);
+	}
+
+	@Override
+	public DeliveryDTO getDeliveryIdByUsername(String username) {
+		return deliveryDao.getDeliveryIdByUsername(username);
 	}
 
 }

@@ -63,5 +63,9 @@
     select * from auction
 	</select>
 	
+	<select id="getAuctionIdByUsername" resultType="AuctionDTO">
+    select auctionId from auction where username = #{username}
+	</select>
+	
   
 </mapper>

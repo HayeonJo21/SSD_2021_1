@@ -21,7 +21,7 @@
 
 	<delete id="deleteFU" parameterType="java.lang.String">
 		DELETE FROM FAVORITEUSER
-		WHERE FAVID = #{favId}
+		WHERE username = #{username}
 	</delete>
 
 	<select id="getFUByUsername" resultType="FavoriteUserDTO">

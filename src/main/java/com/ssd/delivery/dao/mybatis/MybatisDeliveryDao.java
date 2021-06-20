@@ -47,4 +47,9 @@ public class MybatisDeliveryDao implements DeliveryDao{
 		return deliveryMapper.isExistingAC();
 	}
 
+	@Override
+	public DeliveryDTO getDeliveryIdByUsername(String username) throws DataAccessException {
+		return deliveryMapper.getDeliveryIdByUsername(username);
+	}
+
 }

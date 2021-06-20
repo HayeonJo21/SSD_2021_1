@@ -18,7 +18,7 @@ public interface FavoriteUserMapper {
 
 	void updateTradeCount(String tradeCount, String username, String favUsername);
 
-	void deleteFU(int favId);
+	void deleteFU(String favId);
 
 	List<FavoriteUserDTO> getFUByUsername(String username);
 

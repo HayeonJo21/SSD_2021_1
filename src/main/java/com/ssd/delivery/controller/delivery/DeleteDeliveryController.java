@@ -26,6 +26,8 @@ public class DeleteDeliveryController {
 	@GetMapping
 	public String adminDeliveryDelete(Model model, HttpSession session, @RequestParam("delId") int delId) throws Exception {
 		
+		delivery.deleteAuction(delId);
+		delivery.deleteCP(delId);
 		delivery.deleteDelivery(delId);
 		
 		return "redirect:/admin/delivery.do";

@@ -25,7 +25,7 @@ public class MybatisFavoriteUserDao implements FavoriteUserDao{
 		favoriteUserMapper.updateFU(favoriteUser);
 	}
 	
-	public void deleteFU(int favId) throws DataAccessException {
+	public void deleteFU(String favId) throws DataAccessException {
 		favoriteUserMapper.deleteFU(favId);
 	}
 	
