@@ -8,7 +8,7 @@ import org.springframework.validation.Validator;
 
 import com.ssd.delivery.domain.AuctionDTO;
 import com.ssd.delivery.domain.AuctionLineItemDTO;
-
+ 
 @Component
 public class AuctionJoinFormValidator implements Validator {
 	@Autowired

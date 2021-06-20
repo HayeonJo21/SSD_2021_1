@@ -82,7 +82,7 @@ public class InsertAuctionController {
 
 			mav.addObject("currentDate", currentDate);
 			mav.setViewName("auctionForm2");
-			
+			 
 			return mav;
 		}
 		

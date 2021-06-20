@@ -33,7 +33,7 @@ public class AuctionFormValidator implements Validator {
 		Date day2 = null;
 		
 		try {
-			day1 = dFormat.parse(currentDate);
+			day1 = dFormat.parse(currentDate); 
 			day2 = dFormat.parse(auction.getEndDate());
 		} catch (ParseException e) {
 			e.printStackTrace();
