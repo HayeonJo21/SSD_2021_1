@@ -3,6 +3,8 @@ package com.ssd.delivery.domain;
 import java.io.Serializable;
 import java.util.Date;
 
+import com.sun.istack.internal.NotNull;
+
 
 @SuppressWarnings("serial")
 public class DeliveryDTO implements Serializable {
@@ -15,10 +17,15 @@ public class DeliveryDTO implements Serializable {
 	private String username;
 	private String serviceDate;
 	private String filename;
+	@NotNull
 	private int price;
+	@NotNull
 	private int width;
+	@NotNull
 	private int depth;
+	@NotNull
 	private int height;
+	@NotNull
 	private int weight;
 	private int loadage;
 
