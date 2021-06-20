@@ -14,7 +14,6 @@ public class DeliveryDTO implements Serializable {
 	private String address2;
 	private String username;
 	private String serviceDate;
-	private String filename;
 	private int price;
 	private int width;
 	private int depth;
@@ -27,15 +26,13 @@ public class DeliveryDTO implements Serializable {
 	public DeliveryDTO() {
 		super();
 	}
-	public DeliveryDTO(String address1, String address2, String username, String serviceDate,
-			String filename, int price, int width, int depth, int height, int weight, int loadage) {
+	public DeliveryDTO(String address1, String address2, String username, String serviceDate, int price, int width, int depth, int height, int weight, int loadage) {
 		super();
 	
 		this.address1 = address1;
 		this.address2 = address2;
 		this.username = username;
 		this.serviceDate = serviceDate;
-		this.filename = filename;
 		this.price = price;
 		this.width = width;
 		this.depth = depth;
@@ -79,12 +76,6 @@ public class DeliveryDTO implements Serializable {
 	}
 	public void setServiceDate(String serviceDate) {
 		this.serviceDate = serviceDate;
-	}
-	public String getFilename() {
-		return filename;
-	}
-	public void setFilename(String filename) {
-		this.filename = filename;
 	}
 	public int getPrice() {
 		return price;

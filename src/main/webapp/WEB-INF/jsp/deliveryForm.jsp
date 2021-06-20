@@ -31,10 +31,6 @@
 							class="form-control" placeholder="2021/01/01">
 					</div>
 					<div class="col-12">
-						<input type="hidden" name="filename" id="filename"
-							value="${delivery.filename }" placeholder="첨부파일" />
-					</div>
-					<div class="col-12">
 						<label for="address2">가격</label> <input type="text" name="price"
 							id="price" value="${delivery.price }" placeholder="가격" />
 					</div>

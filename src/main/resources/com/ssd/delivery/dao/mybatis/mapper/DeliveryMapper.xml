@@ -14,7 +14,6 @@
 	   ADDRESS2 = #{address2}, 
 	   USERNAME = #{username}, 
 	   SERVICEDATE = #{serviceDate},
-	   FILENAME = #{filename}, 
 	   PRICE = #{price}, 
 	   WIDTH = #{width}, 
 	   LENGTH = #{depth}, 
