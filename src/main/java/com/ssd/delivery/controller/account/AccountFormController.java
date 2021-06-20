@@ -87,7 +87,7 @@ public class AccountFormController {
 	@PostMapping
 	public String onSubmit(HttpServletRequest request, HttpSession session,
 			@ModelAttribute("accountForm") AccountDTO account,
-			BindingResult result) throws Exception  {
+			BindingResult result) throws Exception {
 		
 
 		validator.validate(account, result);

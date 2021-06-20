@@ -10,7 +10,9 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,6 +20,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ssd.delivery.domain.*;
+import com.ssd.delivery.service.AuctionJoinFormValidator;
 import com.ssd.delivery.service.DeliveryFacade;
 
 @Controller
@@ -26,7 +29,8 @@ import com.ssd.delivery.service.DeliveryFacade;
 public class JoinAuctionController {
 	@Autowired
 	private DeliveryFacade delivery;
-
+	@Autowired
+	private AuctionJoinFormValidator validator;
 	@GetMapping
 	public String handleRequest(
 			@RequestParam("auctionId") int acId, HttpSession session, ModelMap model) throws Exception {
@@ -49,20 +53,30 @@ public class JoinAuctionController {
 
 	
 	@PostMapping
-	public ModelAndView submit(AuctionLineItemDTO aclineitemDTO) {
+	public ModelAndView submit(@ModelAttribute("auctionJoinForm") AuctionLineItemDTO aclineitemDTO,
+			BindingResult result) throws Exception {
+		
+		ModelAndView mav = new ModelAndView();
+		AuctionDTO auction = delivery.getAuctionById(aclineitemDTO.getAuctionId());
+		
+		validator.validate(aclineitemDTO, result);
+		if (result.hasErrors()) {
+			mav.addObject("ac", auction);
+			mav.setViewName("auctionJoinForm");
+			System.out.println("aaaaa");
+			return mav;
+		}
 		
 		Calendar cal = Calendar.getInstance();
 		Date date = cal.getTime();
 		SimpleDateFormat dFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm");
 		String currentDate = dFormat.format(date);
-		AuctionDTO auction = delivery.getAuctionById(aclineitemDTO.getAuctionId());
+		
 		DeliveryDTO del = delivery.getDeliveryById(auction.getDelivery());
 		aclineitemDTO.setJoinDate(currentDate);
 		delivery.updateCurrentPriceAuction(aclineitemDTO.getJoinPrice(), aclineitemDTO.getAuctionId());
 	
 		delivery.insertACLineItem(aclineitemDTO);
-		
-		ModelAndView mav = new ModelAndView();
 		
 		List<AuctionLineItemDTO> aclineitem = delivery.getACLineItemsByACId(aclineitemDTO.getAuctionId());
 		mav.addObject("aclineitem", aclineitem);
