@@ -53,17 +53,18 @@ public class JoinAuctionController {
 
 	
 	@PostMapping
-	public ModelAndView submit(@ModelAttribute("auctionJoinForm") AuctionLineItemDTO aclineitemDTO,
-			BindingResult result) throws Exception {
+	public ModelAndView submit(HttpSession session,@ModelAttribute("auctionJoinForm") AuctionLineItemDTO aclineitemDTO,
+			BindingResult result) {
 		
 		ModelAndView mav = new ModelAndView();
 		AuctionDTO auction = delivery.getAuctionById(aclineitemDTO.getAuctionId());
 		
 		validator.validate(aclineitemDTO, result);
 		if (result.hasErrors()) {
+			AccountDTO account = (AccountDTO)session.getAttribute("userSession");
+			mav.addObject("user", account);
 			mav.addObject("ac", auction);
 			mav.setViewName("auctionJoinForm");
-			System.out.println("aaaaa");
 			return mav;
 		}
 		
