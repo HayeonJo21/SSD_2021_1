@@ -6,16 +6,28 @@
 <!-- Main -->
 <div id="main">
 	<div class="inner">
-	<c:if test="${userSession.username ne null}">
-	<div style="float: right; padding-right: 10px">
-				<a class=button href="/delivery/messageCreate.do">💬 용달 기사님께 디엠 보내기</a>
-				</div></c:if>
-	<h1>Delivery Service</h1>
+		<c:if test="${userSession.username ne null and userSession.username ne delivery.username}">
+			<div style="float: right; padding-right: 10px">
+				<a class=button
+					href="/delivery/messageCreate2.do?receiverUsername=${delivery.username}">💬
+					용달 기사님께 디엠 보내기</a>
+			</div>
+		</c:if>
+		<c:if test="${userSession.username eq delivery.username}">
+			<div style="float: right; padding-right: 10px">
+				내가 작성한 거래글입니다.
+			</div>
+		</c:if>
+		<h1>Delivery Service</h1>
 		<h2>🚚 용달 서비스 정보</h2>
 		<c:if test="${msg ne null}">
-				<p style="color:#f2849e">** ${msg.message} **
-				<br/><a href="/delivery/copurchasingView.do"><b>공동구매 게시판</b></a>  또는, &nbsp;<a href="/delivery/auctionView.do"><b>경매 게시판</b></a>을 참조해주시기 바랍니다.</p>
-				</c:if>
+			<p style="color: #f2849e">
+				** ${msg.message} ** <br />
+				<a href="/delivery/copurchasingView.do"><b>공동구매 게시판</b></a> 또는,
+				&nbsp;<a href="/delivery/auctionView.do"><b>경매 게시판</b></a>을 참조해주시기
+				바랍니다.
+			</p>
+		</c:if>
 		<div class="table-wrapper">
 			<table class="alt">
 				<thead>
