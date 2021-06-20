@@ -1,6 +1,5 @@
 package com.ssd.delivery.controller.copurchasing;
 
-import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
