@@ -18,6 +18,7 @@
 		SELECT *
 		FROM AUCTIONLINEITEM
 		WHERE auctionId = #{auctionId}
+		order by joindate desc
 	</select>
 
 	<delete id="deleteACLineItem" parameterType="int">
