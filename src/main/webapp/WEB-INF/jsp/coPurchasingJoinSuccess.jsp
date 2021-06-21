@@ -27,7 +27,7 @@
 				</tr>
 				<tr>
 					<td>Poster</td>
-					<td><a href="/delivery/userView?username=${cp.username}">${cp.username}</a></td>
+					<td><a href="/delivery/userView.do?username=${cp.username}">${cp.username}</a></td>
 				</tr>
 				<tr>
 					<td>Destination</td>
