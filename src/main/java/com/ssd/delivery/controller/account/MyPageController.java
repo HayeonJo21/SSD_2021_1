@@ -37,7 +37,6 @@ public class MyPageController {
 		}
 	
 		ModelAndView mav = new ModelAndView();
-		System.out.println("%%%%%%" + username);
 		List<CoPurchasingDTO> CPList = delivery.getCPListByUsername(username);
 		List<AuctionDTO> ACList = delivery.getAuctionByUsername(username);
 		List<DeliveryDTO> DelList = delivery.getDeliveryByUsername(username);

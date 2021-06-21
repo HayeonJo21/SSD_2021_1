@@ -5,7 +5,9 @@
 <!-- Main -->
 <div id="main">
 	<div class="inner">
-		<h1><b style="color: #f2849e"> ${favUser.username}</b>님 Profile</h1> 
+		<h1>
+			<b style="color: #f2849e"> ${favUser.username}</b>님 Profile
+		</h1>
 		<form method="post" action="/delivery/favoriteUser.do">
 			<div class="form-group">
 				<input type="hidden" class="form-control" name="username"
@@ -19,8 +21,12 @@
 				<input type="hidden" style="width: 800px" class="form-control"
 					name="tradeCount" value="0" id="tradeCount">
 			</div>
-			<c:if test="${favUser.username ne userSession.username}">
-
+			<c:if
+				test="${m ne null}">
+			<p><b>※ ${m.message }</b></p>
+			</c:if>
+			<c:if
+				test="${favUser.username ne userSession.username && m eq null}">
 				<div class="form-group text-center">
 					<button type="submit" class="button primary">
 						즐겨찾기 등록<i class="fa fa-check spaceLeft"></i>
@@ -63,9 +69,12 @@
 					</tbody>
 				</table>
 			</div>
-		</div><br/>
+		</div>
+		<br />
 		<div>
-			<h3>* ${favUser.username}님이 참여한 <b style="color: #f2849e"> 공동구매 내역</b></h3>
+			<h3>
+				* ${favUser.username}님이 참여한 <b style="color: #f2849e"> 공동구매 내역</b>
+			</h3>
 			<div class="table-wrapper">
 				<table class="alt">
 					<thead>
@@ -91,9 +100,12 @@
 					</tbody>
 				</table>
 			</div>
-		</div><br/>
+		</div>
+		<br />
 		<div>
-			<h3>* ${favUser.username}님의 <b style="color: #f2849e"> 회원간 거래 글</b></h3>
+			<h3>
+				* ${favUser.username}님의 <b style="color: #f2849e"> 회원간 거래 글</b>
+			</h3>
 			<div class="table-wrapper">
 				<table class="alt">
 					<thead>
@@ -117,9 +129,12 @@
 					</tbody>
 				</table>
 			</div>
-		</div><br/>
+		</div>
+		<br />
 		<div>
-			<h3>* ${favUser.username}님이 참여한 <b style="color: #f2849e">경매 내역</b></h3>
+			<h3>
+				* ${favUser.username}님이 참여한 <b style="color: #f2849e">경매 내역</b>
+			</h3>
 			<div class="table-wrapper">
 				<table class="alt">
 					<thead>
