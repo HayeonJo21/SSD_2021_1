@@ -25,7 +25,7 @@
 
 				</div>
 				<div class="list-group" style="width: 500px;">
-					<a class="list-group-item list-group-item-action active">현재
+					<a class="list-group-item list-group-item-action active" style="bgcolor:#f2849e">현재
 						채팅중인 상대</a>
 					<c:if test="${DMList ne null}">
 						<c:forEach var="dm" items="${DMList}">

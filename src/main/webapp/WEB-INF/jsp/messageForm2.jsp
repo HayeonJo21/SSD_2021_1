@@ -5,7 +5,7 @@
 
 <style>
 .chatbox {
-	padding: 10px 0; 
+	padding: 10px 0;
 	width: 100%;
 }
 </style>
@@ -18,20 +18,18 @@
 		<div id="main">
 			<div class="inner">
 				<h1>💬 Send Message to ${receiver}</h1>
-				<form action="/delivery/messageSend2.do" method="POST">
+				<form action="/delivery/messageSend3.do" method="POST">
 					<div style="width: 500px;">
 						<div class="bg-dark text-white "
 							style="width: 500px; height: 80px; display: table;">
 							<span class="align-middle"
-								style="display: table-cell; padding: 0 0 0 20px;">받는사람</span> 
-								
-								<select
+								style="display: table-cell; padding: 0 0 0 20px;">받는사람</span> <select
 								id="receiverSelect" name="receiverUsername" class="form-control">
-								
-									<option value="${receiver}">${receiver} </option>
-								
-							</select> 
-							
+
+								<option value="${receiver}">${receiver}</option>
+
+							</select>
+
 
 							<!-- <a href="message_list.jsp">DM리스트</a> -->
 							<a href="/delivery/message2.do" class="button text-white"
@@ -44,12 +42,15 @@
 							<textarea class="form-control" id="exampleFormControlTextarea1"
 								rows="3" style="width: 500px;" placeholder="이곳에 메세지를 작성하세요."
 								name="content"></textarea>
+							<c:if test="${data ne null}">
+								<p style="color: #E16A93">${data.message}</p>
+							</c:if>
 						</div>
 						<input type="submit" value="Send Message" class="primary" />
-						</div>
+					</div>
 				</form>
 
 			</div>
 		</div>
 	</div>
-<%@ include file="IncludeBottom.jsp"%>
+	<%@ include file="IncludeBottom.jsp"%>

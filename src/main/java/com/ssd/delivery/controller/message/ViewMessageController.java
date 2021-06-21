@@ -128,7 +128,6 @@ public class ViewMessageController {
 			
 			mav.addObject("data", new Message("메세지를 입력해 주세요.", "/delivery/messageCreate.do"));
 			mav.addObject("username", username);
-			mav.addObject("receiver", receiver);
 			mav.addObject("receiversList", receivers);
 			mav.setViewName("messageForm");
 			
@@ -147,6 +146,46 @@ public class ViewMessageController {
 		mav.addObject("username", username);
 		mav.addObject("receiver", receiver);
 		mav.addObject("contentList", messageContents);
+		mav.setViewName("message");
+		
+		return mav;
+	 
+	}
+	
+	@RequestMapping("/delivery/messageSend3.do")
+	public ModelAndView sendingMessage3(HttpSession session, @RequestParam("receiverUsername") String receiver,
+			@RequestParam("content") String content) throws Exception {
+		AccountDTO account = (AccountDTO)session.getAttribute("userSession");
+		
+		String username = account.getUsername();
+
+		Calendar cal = Calendar.getInstance();
+		Date date = cal.getTime();
+		SimpleDateFormat dFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm");
+		String currentDate = dFormat.format(date);
+		
+		ModelAndView mav = new ModelAndView();
+		
+		if (content.equals("")) {
+			mav.addObject("data", new Message("메세지를 입력해 주세요.", "/delivery/messageCreate2.do"));
+			mav.addObject("receiver", receiver);
+			mav.addObject("username", username);
+			mav.setViewName("messageForm2");
+			
+			return mav;
+		}
+			
+		MessageDTO message = new MessageDTO(username, receiver, content, currentDate);
+		delivery.insertMessage(message);
+		
+		List<MessageDTO> messageContents = delivery.getMessageContentByUsername(username, receiver);
+		List<MessageDTO> messageReceiveContents = delivery.getMessageContentByReceiverUsername(receiver, username);
+		
+		messageContents.addAll(messageReceiveContents);
+		messageContents.sort((d1,d2) -> d1.getMessageDate().compareTo(d2.getMessageDate()));
+
+		mav.addObject("username", username);
+		mav.addObject("receiver", receiver);
 		mav.setViewName("message");
 		
 		return mav;
