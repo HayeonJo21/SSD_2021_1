@@ -41,7 +41,7 @@
 						</tr>
 						<tr>
 							<td>모집인원</td>
-							<td>${cp.maxNumberOfPurchaser }</td>
+							<td>${cp.maxNumberOfPurchaser } 명</td>
 
 						</tr>
 						<tr>
