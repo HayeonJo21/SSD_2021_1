@@ -44,6 +44,8 @@ public interface DeliveryFacade {
 
 	AuctionDTO getAuctionById(int auctionId);
 
+	AuctionDTO getAuctionByDeliveryId(int deliveryId);
+	
 	List<AuctionDTO> getAuctionByUsername(String username);
 
 	List<AuctionDTO> getAuctionList();

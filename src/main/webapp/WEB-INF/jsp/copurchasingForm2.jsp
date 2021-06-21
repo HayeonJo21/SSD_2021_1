@@ -13,7 +13,7 @@
 <div id="main">
 	<div class="inner">
 
-		<h2>공동구매 글 작성</h2>
+		<h1>공동구매 글 작성 ✏️</h1>
 		<form method="post" action="/delivery/coPurchasingInsert.do">
 			<div class="row gtr-uniform">
 				<div class="col-12">

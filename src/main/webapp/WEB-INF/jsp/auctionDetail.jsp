@@ -18,9 +18,13 @@
    <div class="inner">
       <c:if test="${status eq 'CLOSE' or ac.successfulBidder ne null}">
          <h1>🚩 이미 <b style="color:red">진행 종료</b>된 경매입니다. <br/>더이상 입찰을 진행할 수 없습니다.</h1>
+         
          <h2><b style="color: #f2849e">* 낙찰가: ${ac.finalPrice }원 *</b></h2>
       </c:if>
       <h1>Auction ⏳</h1>
+      <div style="float: right; padding-right: 30px">
+			<a href="/delivery/auctionView.do" class="button">경매 페이지로 돌아가기 </a>
+			</div>
       <h2><b style="color: #f2849e">*</b>출발지: ${ac.address1}</h2>
       <h2>
          <a href="/delivery/userView.do?username=${ac.username}"><b style="color: #f2849e">*</b>경매 등록자 :

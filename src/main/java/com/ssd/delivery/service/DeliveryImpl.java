@@ -107,6 +107,10 @@ public class DeliveryImpl implements DeliveryFacade {
 		return auctionDao.getAuctionById(auctionId);
 	}
 
+	public AuctionDTO getAuctionByDeliveryId(int deliveryId) {
+		return auctionDao.getAuctionById(deliveryId);
+	}
+	
 	public List<AuctionDTO> getAuctionByUsername(String username) {
 		return auctionDao.getAuctionByUsername(username);
 	}

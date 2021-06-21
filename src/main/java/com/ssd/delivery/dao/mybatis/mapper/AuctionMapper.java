@@ -30,11 +30,20 @@ import com.ssd.delivery.domain.AuctionDTO;
 public interface AuctionMapper {
 
 	void insertAuction(AuctionDTO auction);
+	
 	void updateAuction(AuctionDTO auction);
+	
 	void updateCurrentPriceAuction(int currentPrice, int auctionId);
+	
 	void deleteAuction(int auctionId);
+	
 	AuctionDTO getAuctionIdByUsername(String username);
+	
 	AuctionDTO getAuctionById(int auctionId);
+	
+	AuctionDTO getAuctionByDeliveryId(int deliveryId);
+	
 	List<AuctionDTO> getAuctionByUsername(String username);
+	
 	List<AuctionDTO> getAuctionList();
 }

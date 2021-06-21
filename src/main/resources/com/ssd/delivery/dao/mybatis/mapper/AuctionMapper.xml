@@ -39,6 +39,11 @@
     where  auctionId = #{auctionId}
 	</select>
 	
+	<select id="getAuctionByDeliveryId" resultType="AuctionDTO">
+    select * from auction
+    where  delivery = #{delivery}
+	</select>
+	
 	<select id="getAuctionByUsername" resultType="AuctionDTO">
    	select * from auction
     where username = #{username}

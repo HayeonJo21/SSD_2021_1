@@ -7,6 +7,9 @@
 		<h1>Co-Purchasing 👥</h1>
 		<section>
 			<h1 style="font-size: 40px">공동구매 상세내역</h1>
+			<div style="float: right; padding-right: 30px">
+			<a href="/delivery/copurchasingView.do" class="button">공동구매 페이지로 돌아가기 </a>
+			</div>
 			<h1 style="font-size: 30px">
 				📢 &nbsp;게시자 says &nbsp;&nbsp;<b style="color: #f2849e">" 
 					&nbsp;${cp.note } &nbsp;"</b>
