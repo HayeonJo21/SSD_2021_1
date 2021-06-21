@@ -36,7 +36,7 @@
 				</tr>
 				<tr>
 					<td>Price</td>
-					<td>${del.price }/ 인당 ${cp.unitCost }</td>
+					<td>${del.price } (KRW)&nbsp;(인당 ${cp.unitCost }(KRW))</td>
 				</tr>
 				<tr>
 					<td>MaxNumberOfPurchaser</td>

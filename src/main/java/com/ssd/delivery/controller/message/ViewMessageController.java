@@ -128,6 +128,7 @@ public class ViewMessageController {
 			
 			mav.addObject("data", new Message("메세지를 입력해 주세요.", "/delivery/messageCreate.do"));
 			mav.addObject("username", username);
+			mav.addObject("receiver", receiver);
 			mav.addObject("receiversList", receivers);
 			mav.setViewName("messageForm");
 			

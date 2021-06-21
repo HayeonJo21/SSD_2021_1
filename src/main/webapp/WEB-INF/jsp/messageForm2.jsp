@@ -34,7 +34,7 @@
 							
 
 							<!-- <a href="message_list.jsp">DM리스트</a> -->
-							<a href="/delivery/message.do" class="button text-white"
+							<a href="/delivery/message2.do" class="button text-white"
 								style="display: table-cell; padding: 20px;">DM리스트</a>
 						</div>
 
