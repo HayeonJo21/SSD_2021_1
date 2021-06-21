@@ -11,9 +11,10 @@
 			action="/delivery/insert.do">
 			<div class="col-sm-6 col-md-offset-3">
 				<div class="col-12">
-					<label for="address1">아이디</label> <input type="text"
+					<label for="address1">아이디</label> <input type="hidden"
 						name="username" id="username" value="${userSession.username}"
 						placeholder="${userSession.username}" />
+						<p class="form-control-static">${userSession.username}</p> 
 				</div>
 
 				<div class="col-12">
