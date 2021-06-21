@@ -21,12 +21,12 @@
 				<input type="hidden" style="width: 800px" class="form-control"
 					name="tradeCount" value="0" id="tradeCount">
 			</div>
-			<c:if
-				test="${m ne null}">
-			<p><b>※ ${m.message }</b></p>
+			<c:if test="${m ne null}">
+				<p>
+					<b>※ ${m.message }</b>
+				</p>
 			</c:if>
-			<c:if
-				test="${favUser.username ne userSession.username && m eq null}">
+			<c:if test="${favUser.username ne userSession.username && m eq null}">
 				<div class="form-group text-center">
 					<button type="submit" class="button primary">
 						즐겨찾기 등록<i class="fa fa-check spaceLeft"></i>
