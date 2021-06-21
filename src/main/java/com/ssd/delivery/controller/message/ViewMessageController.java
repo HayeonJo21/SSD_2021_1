@@ -170,7 +170,7 @@ public class ViewMessageController {
 			mav.addObject("data", new Message("메세지를 입력해 주세요.", "/delivery/messageCreate2.do"));
 			mav.addObject("receiver", receiver);
 			mav.addObject("username", username);
-			mav.setViewName("messageForm2");
+			mav.setViewName("message");
 			
 			return mav;
 		}
@@ -186,6 +186,7 @@ public class ViewMessageController {
 
 		mav.addObject("username", username);
 		mav.addObject("receiver", receiver);
+		mav.addObject("contentList", messageContents);
 		mav.setViewName("message");
 		
 		return mav;
