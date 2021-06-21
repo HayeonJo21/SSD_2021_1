@@ -23,7 +23,7 @@
       <h1>Auction ⏳</h1>
       <h2><b style="color: #f2849e">*</b>출발지: ${ac.address1}</h2>
       <h2>
-         <a href="/delivery/userView?username=${ac.username}"><b style="color: #f2849e">*</b>경매 등록자 :
+         <a href="/delivery/userView.do?username=${ac.username}"><b style="color: #f2849e">*</b>경매 등록자 :
             ${ac.username}</a>
       </h2>
 
