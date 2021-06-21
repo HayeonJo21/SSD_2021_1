@@ -3,10 +3,8 @@ package com.ssd.delivery.controller;
 import java.io.Serializable;
 import org.springframework.beans.support.PagedListHolder;
 
-import com.ssd.delivery.domain.Account;
 import com.ssd.delivery.domain.AccountDTO;
 import com.ssd.delivery.domain.FavoriteUserDTO;
-import com.ssd.delivery.domain.Product;
 
 /**
  * @author Juergen Hoeller

@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 
 import com.ssd.delivery.dao.AccountDao;
 import com.ssd.delivery.dao.mybatis.mapper.AccountMapper;
-import com.ssd.delivery.domain.Account;
 import com.ssd.delivery.domain.AccountDTO;
 import com.ssd.delivery.domain.FavoriteUserDTO;
 

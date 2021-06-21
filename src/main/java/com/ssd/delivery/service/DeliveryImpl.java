@@ -17,7 +17,6 @@ import com.ssd.delivery.dao.CoPurchasingDao;
 import com.ssd.delivery.dao.DeliveryDao;
 import com.ssd.delivery.dao.EventDao;
 import com.ssd.delivery.dao.FavoriteUserDao;
-import com.ssd.delivery.dao.FleaMarketDao;
 import com.ssd.delivery.dao.MessageDao;
 import com.ssd.delivery.domain.AccountDTO;
 import com.ssd.delivery.domain.AuctionDTO;
@@ -27,8 +26,6 @@ import com.ssd.delivery.domain.CoPurchasingLineItemDTO;
 import com.ssd.delivery.domain.DeliveryDTO;
 import com.ssd.delivery.domain.MessageDTO;
 import com.ssd.delivery.domain.FavoriteUserDTO;
-import com.ssd.delivery.domain.FleaMarketDTO;
-import com.ssd.delivery.domain.ItemDTO;
 import com.ssd.delivery.dao.CoPurchasingLineItemDao;
 
 @Transactional
@@ -45,8 +42,6 @@ public class DeliveryImpl implements DeliveryFacade {
 	private DeliveryDao deliveryDao;
 	@Autowired
 	private FavoriteUserDao fuDao;
-	@Autowired
-	private FleaMarketDao fmDao;
 	@Autowired
 	private MessageDao messageDao;
 	@Autowired
@@ -232,30 +227,6 @@ public class DeliveryImpl implements DeliveryFacade {
 		return fuDao.getCPTradeCount(favUsername, username);
 	}
 
-	// FleaMarket
-	public void insertFM(ItemDTO item) {
-		fmDao.insertFM(item);
-	}
-
-	public void updateFM(ItemDTO item) {
-		fmDao.updateFM(item);
-	}
-
-	public void deleteFM(ItemDTO item) {
-		fmDao.deleteFM(item);
-	}
-
-	public ItemDTO getFMById(int itemId) {
-		return fmDao.getFMById(itemId);
-	}
-
-	public List<FleaMarketDTO> getFMByUsername(String username) {
-		return fmDao.getFMByUsername(username);
-	}
-
-	public List<ItemDTO> getFMList() {
-		return fmDao.getFMList();
-	}
 
 	// Message
 	public void insertMessage(MessageDTO message) {
@@ -291,7 +262,6 @@ public class DeliveryImpl implements DeliveryFacade {
 	}
 
 	// CPlineitem
-
 	public List<CoPurchasingLineItemDTO> getCPLineItemsByCPId(int cpId) {
 		return cplineitem.getCPLineItemsByCPId(cpId);
 	}

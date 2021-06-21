@@ -15,16 +15,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.ssd.delivery.domain.Account;
-import com.ssd.delivery.domain.AccountDTO;
-import com.ssd.delivery.domain.AuctionDTO;
-import com.ssd.delivery.domain.CoPurchasingDTO;
-import com.ssd.delivery.domain.DeliveryDTO;
-import com.ssd.delivery.domain.FavoriteUserDTO;
-import com.ssd.delivery.domain.Product;
+
 import com.ssd.delivery.service.DeliveryFacade;
-import com.ssd.delivery.service.Message;
-import com.ssd.delivery.service.PetStoreFacade;
 
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.ui.Model;
@@ -45,46 +37,46 @@ public class AdminController {
 		return "adminMain";
 	}
 	
-	@RequestMapping("/delivery/adminAuction.do")
-	public ModelAndView adminAuctionView(Model model, HttpSession session) throws Exception {
-		
-		ModelAndView mav = new ModelAndView();
-		
-		List<AuctionDTO> ACList = delivery.getAuctionList();
-		
-		
-		mav.addObject("ACList", ACList);
-		mav.setViewName("adminAuction");
-	
-		return mav;
-	}
-	
-	@RequestMapping("/delivery/adminDelivery.do")
-	public ModelAndView adminDeliveryView(Model model, HttpSession session) throws Exception {
-		
-		ModelAndView mav = new ModelAndView();
-		
-		List<DeliveryDTO> DelList = delivery.getDeliveryList();
-		
-		
-		mav.addObject("DelList", DelList);
-		mav.setViewName("adminDelivery");
-	
-		return mav;
-	}
-	
-	@RequestMapping("/delivery/adminCoPurchasing.do")
-	public ModelAndView adminCPView(Model model, HttpSession session) throws Exception {
-		
-		ModelAndView mav = new ModelAndView();
-		
-		List<CoPurchasingDTO> CPList = delivery.getCPList();
-		
-		
-		mav.addObject("CPList", CPList);
-		mav.setViewName("adminCoPurchasing");
-	
-		return mav;
-	}
+//	@RequestMapping("/delivery/adminAuction.do")
+//	public ModelAndView adminAuctionView(Model model, HttpSession session) throws Exception {
+//		
+//		ModelAndView mav = new ModelAndView();
+//		
+//		List<AuctionDTO> ACList = delivery.getAuctionList();
+//		
+//		
+//		mav.addObject("ACList", ACList);
+//		mav.setViewName("adminAuction");
+//	
+//		return mav;
+//	}
+//	
+//	@RequestMapping("/delivery/adminDelivery.do")
+//	public ModelAndView adminDeliveryView(Model model, HttpSession session) throws Exception {
+//		
+//		ModelAndView mav = new ModelAndView();
+//		
+//		List<DeliveryDTO> DelList = delivery.getDeliveryList();
+//		
+//		
+//		mav.addObject("DelList", DelList);
+//		mav.setViewName("adminDelivery");
+//	
+//		return mav;
+//	}
+//	
+//	@RequestMapping("/delivery/adminCoPurchasing.do")
+//	public ModelAndView adminCPView(Model model, HttpSession session) throws Exception {
+//		
+//		ModelAndView mav = new ModelAndView();
+//		
+//		List<CoPurchasingDTO> CPList = delivery.getCPList();
+//		
+//		
+//		mav.addObject("CPList", CPList);
+//		mav.setViewName("adminCoPurchasing");
+//	
+//		return mav;
+//	}
 	
 }

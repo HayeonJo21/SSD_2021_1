@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ssd.delivery.domain.AccountDTO;
 import com.ssd.delivery.service.DeliveryFacade;
-import com.ssd.delivery.service.PetStoreFacade;
 
 @Controller
 public class ViewUserController { 

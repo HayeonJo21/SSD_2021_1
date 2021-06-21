@@ -20,7 +20,6 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.ssd.delivery.domain.Account;
 import com.ssd.delivery.domain.AccountDTO;
 import com.ssd.delivery.domain.FavoriteUserDTO;
 @Mapper

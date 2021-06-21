@@ -4,7 +4,6 @@ import java.util.List;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
-import com.ssd.delivery.domain.Account;
 import com.ssd.delivery.domain.AccountDTO;
 import com.ssd.delivery.domain.FavoriteUserDTO;
 

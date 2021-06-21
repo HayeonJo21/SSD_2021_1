@@ -7,8 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.ssd.delivery.dao.AuctionDao;
 import com.ssd.delivery.dao.SequenceDao;
 import com.ssd.delivery.dao.mybatis.mapper.AuctionMapper;
-import com.ssd.delivery.dao.mybatis.mapper.LineItemMapper;
-import com.ssd.delivery.dao.mybatis.mapper.OrderMapper;
 import com.ssd.delivery.domain.AuctionDTO;
 
 import org.springframework.dao.DataAccessException;
@@ -16,14 +14,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class MybatisAuctionDao implements AuctionDao {
-	
-	
-	@Autowired
-	protected OrderMapper orderMapper;
-	@Autowired
-	protected LineItemMapper lineItemMapper;
-	@Autowired
-	private SequenceDao sequenceDao;
 	
 	@Autowired
 	private AuctionMapper auctionMapper;

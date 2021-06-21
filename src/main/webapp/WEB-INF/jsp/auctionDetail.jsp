@@ -74,7 +74,7 @@
                      value="&ensp;🛎낙찰🛎&ensp;">
                </c:if>
                <c:if test="${status eq 'OPEN' && ac.successfulBidder eq null}">
-                  <form action="/auction/auctionAuctionedOff.do" method="POST">
+                  <form action="/delivery/auctionAuctionedOff.do" method="POST">
                      <input type="hidden" name="auctionId" id="auctionId"
                         value='${ac.auctionId}' placeholder="${ac.auctionId}" /> <input
                         type="hidden" name="endDate" id="endDate" value='${ac.endDate}'

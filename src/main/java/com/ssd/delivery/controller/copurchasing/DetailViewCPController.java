@@ -18,9 +18,7 @@ import com.ssd.delivery.domain.CoPurchasingDTO;
 import com.ssd.delivery.domain.CoPurchasingLineItemDTO;
 
 import com.ssd.delivery.domain.DeliveryDTO;
-import com.ssd.delivery.domain.Item;
 import com.ssd.delivery.service.DeliveryFacade;
-import com.ssd.delivery.service.PetStoreFacade;
 
 /**
  * @author Juergen Hoeller

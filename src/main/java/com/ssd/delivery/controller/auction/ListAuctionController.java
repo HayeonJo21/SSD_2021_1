@@ -17,12 +17,10 @@ import com.ssd.delivery.controller.UserSession;
 import com.ssd.delivery.domain.AccountDTO;
 import com.ssd.delivery.domain.AuctionDTO;
 import com.ssd.delivery.domain.CoPurchasingDTO;
-import com.ssd.delivery.domain.FleaMarketDTO;
 import com.ssd.delivery.service.DeliveryFacade;
-import com.ssd.delivery.service.PetStoreFacade;
 
 
-//@Controller
+//@Controllerf
 //@RequestMapping("/auction/view.do")
 //public class ListAuctionController {
 //	private DeliveryFacade delivery;
@@ -60,7 +58,7 @@ public class ListAuctionController {
 	private DeliveryFacade delivery;
 
 	@Autowired
-	public void setPetStore(PetStoreFacade petStore) {
+	public void setDelivery(DeliveryFacade delivery) {
 		this.delivery = delivery;
 	}
 

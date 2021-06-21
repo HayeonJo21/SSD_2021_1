@@ -18,7 +18,7 @@
 		<div id="main">
 			<div class="inner">
 				<h1>💬 Send Message to ${receiver}</h1>
-				<form action="/delivery/messageSend.do" method="POST">
+				<form action="/delivery/messageSend2.do" method="POST">
 					<div style="width: 500px;">
 						<div class="bg-dark text-white "
 							style="width: 500px; height: 80px; display: table;">

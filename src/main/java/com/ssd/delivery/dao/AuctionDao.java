@@ -7,7 +7,6 @@ import java.util.List;
 import org.springframework.dao.DataAccessException;
 
 import com.ssd.delivery.domain.AuctionDTO;
-import com.ssd.delivery.domain.Order;
 
 public interface AuctionDao {
 		  

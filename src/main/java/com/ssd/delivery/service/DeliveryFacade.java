@@ -12,8 +12,6 @@ import com.ssd.delivery.domain.CoPurchasingDTO;
 import com.ssd.delivery.domain.CoPurchasingLineItemDTO;
 import com.ssd.delivery.domain.DeliveryDTO;
 import com.ssd.delivery.domain.FavoriteUserDTO;
-import com.ssd.delivery.domain.FleaMarketDTO;
-import com.ssd.delivery.domain.ItemDTO;
 import com.ssd.delivery.domain.MessageDTO;
 
 public interface DeliveryFacade {
@@ -114,18 +112,6 @@ public interface DeliveryFacade {
 
 	List<CoPurchasingDTO> getCPTradeCount(String favUsername, String username);
 
-	// FleaMarket
-	void insertFM(ItemDTO item);
-
-	void updateFM(ItemDTO item);
-
-	void deleteFM(ItemDTO item);
-
-	ItemDTO getFMById(int itemId);
-
-	List<FleaMarketDTO> getFMByUsername(String username);
-
-	List<ItemDTO> getFMList();
 
 	// Message
 	void insertMessage(MessageDTO message);
