@@ -17,7 +17,7 @@ import org.springframework.ui.Model;
 
 @Controller
 @SessionAttributes("userSession")
-@RequestMapping({"/admin/delivery.do", "/adminDelivery.do"})
+@RequestMapping({"/admin/delivery.do", "/adminDelivery.do", "/delivery/adminDelivery.do"})
 public class AdminDeliveryController {
 
 	private DeliveryFacade delivery;
@@ -33,6 +33,7 @@ public class AdminDeliveryController {
 		ModelAndView mav = new ModelAndView();
 		
 		List<DeliveryDTO> DelList = delivery.getDeliveryList();
+		System.out.println("%%%%%%%%" + DelList.isEmpty());
 
 		mav.addObject("DelList", DelList);
 		mav.setViewName("adminDelivery");

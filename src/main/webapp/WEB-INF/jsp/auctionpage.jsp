@@ -33,11 +33,22 @@
 							</p>
 						</div>
 					</a> <br />
-					<div class="col-6 col-12-medium">
+					<c:choose>
+						<c:when test="${ac.successfulBidder eq null}">
+							<div class="col-6 col-12-medium">
 						<ul class="actions">
-							<li><span class="button primary">경매 입장가능</span></li>
+							<li><span class="button">경매 입장가능</span></li>
 						</ul>
 					</div>
+						</c:when>
+						<c:otherwise>
+							<div class="col-6 col-12-medium">
+						<ul class="actions">
+							<li><span class="button primary" disabled>종료된 경매</span></li>
+						</ul>
+					</div>
+						</c:otherwise>
+					</c:choose>
 				</article>
 			</c:forEach>
 		</section>
