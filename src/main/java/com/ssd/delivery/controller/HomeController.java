@@ -24,7 +24,7 @@ public class HomeController {
 		this.delivery= delivery;
 	}
 	
-	@GetMapping("/")
+	@GetMapping("/delivery")
 	public ModelAndView home(Model model, HttpSession session) throws Exception {
 			
 			ModelAndView mav = new ModelAndView();
