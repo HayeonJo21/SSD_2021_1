@@ -50,7 +50,8 @@
 		<nav id="menu">
 			<h2>Menu</h2>
 			<ul>
-			<li><a href="/delivery/adminMain.do"><b>메인</b></a></li>
+			<li><a href="/delivery/adminMain.do"><b>관리자 메인</b></a></li>
+			<li><a href="/">사용자 페이지로</a></li>
 				<c:if test="${userSession.username ne null}">
 						<li><a href="/delivery/signoff.do">🔓 ${userSession.username} 로그아웃
 						</a></li>

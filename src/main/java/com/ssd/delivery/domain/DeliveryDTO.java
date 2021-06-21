@@ -3,8 +3,6 @@ package com.ssd.delivery.domain;
 import java.io.Serializable;
 import java.util.Date;
 
-import com.sun.istack.internal.NotNull;
-
 
 @SuppressWarnings("serial")
 public class DeliveryDTO implements Serializable {

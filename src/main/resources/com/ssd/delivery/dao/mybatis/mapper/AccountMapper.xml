@@ -52,7 +52,7 @@
 	
 	<select id="getFavoriteUserList" resultType="AccountDTO">
     SELECT FAVORITEUSERNAME
-    FROM ACCOUNT JOIN FAVORITEUSER
+    FROM ACCOUNT JOIN FAVORITEUSER USING(username)
     WHERE username = #{username}
 	</select>
 	

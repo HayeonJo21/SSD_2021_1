@@ -5,7 +5,8 @@
 <script type="text/javaScript">
 	function eventKeyup(str){
 		var total = $('#price').val();
-		$("#unitCost").val(total/str);   
+		
+		$("#unitCost").val(parseInt(total/str));
 	}
 </script>
 <!-- Main -->
