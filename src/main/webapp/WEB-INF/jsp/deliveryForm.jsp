@@ -45,24 +45,24 @@
 					<label for="size">차량 재적 정보</label>
 				</div>
 				<div class="col-6">
-					<label for="size">가로 (m)</label> <input type="text" name="width"
-						id="width" value="1" />
+					<label for="size">가로 (cm)</label> <input type="text" name="width"
+						id="width" value="100" />
 				</div>
 				<div class="col-6">
-					<label for="size">세로 (m)</label> <input type="text" name="depth"
-						id="depth" value="1" />
+					<label for="size">세로 (cm)</label> <input type="text" name="depth"
+						id="depth" value="100" />
 				</div> 
 				<div class="col-6">
-					<label for="size">높이 (m)</label> <input type="text" name="height"
-						id="height" value="1" />
+					<label for="size">높이 (cm)</label> <input type="text" name="height"
+						id="height" value="100" />
 				</div>
 				<div class="col-6">
-					<label for="size">무게 (kg)</label> <input type="text" name="weight"
-						id="weight" value="1" />
+					<label for="size">개당 최대 무게 (g)</label> <input type="text" name="weight"
+						id="weight" value="1000" />
 				</div>
 				<div class="col-6">
-					<label for="size">총 적재량 (kg)</label> <input type="text"
-						name="loadage" id="loadage" value="1" />
+					<label for="size">총 적재량 (g)</label> <input type="text"
+						name="loadage" id="loadage" value="1000" />
 				</div>
 				<br> <br>
 				<div class="col-12">
