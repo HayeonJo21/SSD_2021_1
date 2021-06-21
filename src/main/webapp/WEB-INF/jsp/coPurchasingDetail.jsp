@@ -49,17 +49,17 @@
 						</tr>
 						<tr>
 							<td>가로 규격</td>
-							<td>${del.width}m</td>
+							<td>${del.width} cm</td>
 
 						</tr>
 						<tr>
 							<td>세로 규격</td>
-							<td>${del.height }m</td>
+							<td>${del.height } cm</td>
 
 						</tr>
 						<tr>
 							<td>총 무게</td>
-							<td>${del.weight }kg</td>
+							<td>${del.weight } g</td>
 
 						</tr>
 					</tbody>
