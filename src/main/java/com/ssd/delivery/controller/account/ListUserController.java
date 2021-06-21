@@ -16,17 +16,17 @@ public class ListUserController {
 
 	private DeliveryFacade delStore;
 
-	@Autowired
-	public void setDelStore(DeliveryFacade delStore) {
-		this.delStore = delStore;
-	}
-
-	@RequestMapping("/user/list.do")
-	public ModelAndView handleRequest(
-		@ModelAttribute("userSession") UserSession userSession
-		) throws Exception {
-		return new ModelAndView("viewUserList", "userList", 
-				delStore.getUserList());
-	}
+//	@Autowired
+//	public void setDelStore(DeliveryFacade delStore) {
+//		this.delStore = delStore;
+//	}
+//
+//	@RequestMapping("/user/list.do")
+//	public ModelAndView handleRequest(
+//		@ModelAttribute("userSession") UserSession userSession
+//		) throws Exception {
+//		return new ModelAndView("viewUserList", "userList", 
+//				delStore.getUserList());
+//	}
 
 }

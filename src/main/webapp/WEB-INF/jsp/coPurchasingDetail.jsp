@@ -28,7 +28,7 @@
 						</tr>
 						<tr>
 							<td>공동구매 게시자</td>
-							<td><a href="/user/view?username=${cp.username}">${cp.username}</a></td>
+							<td><a href="/delivery/userView.do?username=${cp.username}">${cp.username}</a></td>
 						</tr>
 						<tr>
 							<td>도착지</td>

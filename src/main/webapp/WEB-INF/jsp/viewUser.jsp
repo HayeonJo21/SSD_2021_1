@@ -6,7 +6,7 @@
 <div id="main">
 	<div class="inner">
 		<h1><b style="color: #f2849e"> ${favUser.username}</b>님 Profile</h1>
-		<form method="post" action="/user/favoriteUser.do">
+		<form method="post" action="/delivery/favoriteUser.do">
 			<div class="form-group">
 				<input type="hidden" class="form-control" name="username"
 					value='${user.username}' id="username">

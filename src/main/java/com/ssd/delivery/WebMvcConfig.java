@@ -1,8 +1,6 @@
 package com.ssd.delivery;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
@@ -25,12 +23,17 @@ public class WebMvcConfig implements WebMvcConfigurer {
 		//admin
 		registry.addViewController("/delivery/adminSignon.do").setViewName("adminLogin");
 		registry.addViewController("/delivery/adminMain.do").setViewName("adminMain");
+		registry.addViewController("/delivery/adminAuction.do").setViewName("adminAuction");
 		registry.addViewController("/delivery/adminDelivery.do").setViewName("adminDelivery");
+		registry.addViewController("/delivery/adminCoPurchasing.do").setViewName("adminCoPurchasing");
+		
 		//account 
 		registry.addViewController("/delivery/insertAccount.do").setViewName("register");
 		registry.addViewController("/delivery/updateAccount.do").setViewName("accountUpdate");
 		registry.addViewController("/delivery/newUserSubmitted.do").setViewName("index");
 		registry.addViewController("/delivery/mypage.do").setViewName("mypage");
+		//registry.addViewController("/delivery/favoriteUser.do").setViewName("viewUser");
+		registry.addViewController("/delivery/userView.do").setViewName("viewUser");
 		
 		//login
 		registry.addViewController("/delivery/signon.do").setViewName("login");

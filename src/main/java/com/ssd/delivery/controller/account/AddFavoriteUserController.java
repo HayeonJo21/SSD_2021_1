@@ -20,7 +20,7 @@ import com.ssd.delivery.service.Message;
 @Controller
 @SessionAttributes("userSession")
 
-@RequestMapping({"/user/favoriteUser.do", "/user/view"})
+@RequestMapping({"/delivery/favoriteUser.do", "/delivery/userView.do"})
 public class AddFavoriteUserController { 
 	
 	private DeliveryFacade delivery;
