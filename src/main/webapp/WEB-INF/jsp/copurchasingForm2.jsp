@@ -57,8 +57,14 @@
 				</div>
 				<div class="col-12">
 					<ul class="actions">
-						<li><input type="submit" value="Submit" class="primary" /></li>
-						<li><input type="reset" value="Reset" /></li>
+						<li>
+							<button type="submit" id="submit" class="button primary">
+								공구 등록<i class="fa fa-check spaceLeft"></i>
+							</button>
+						</li>
+						<li><a class="button" href="/delivery/coPurchasingInsertForm.do">&nbsp;신청
+								취소&nbsp;<i class="fa fa-times spaceLeft"></i>
+						</a></li>
 					</ul>
 				</div>
 			</div>

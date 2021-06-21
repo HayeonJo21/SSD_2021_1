@@ -59,7 +59,7 @@
 					</tr>
 					<tr>
 						<td>가격</td>
-						<td>${delivery.price }</td>
+						<td>${delivery.price } (KRW)</td>
 
 					</tr>
 				</tbody>
