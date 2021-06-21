@@ -35,7 +35,7 @@ public class ListAuctionController {
 
 	@RequestMapping("/auction/list")
 	public ModelAndView handleRequest(
-		@ModelAttribute("userSession") UserSession userSession) throws Exception {
+		@ModelAttribute("userSession") UserSession userSession) throws Exception { 
 		
 		List<AuctionDTO> auctionList =  delivery.getAuctionList();
 		
