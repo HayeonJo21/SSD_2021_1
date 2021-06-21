@@ -37,7 +37,7 @@
 						</tr>
 						<tr>
 							<td>가격</td>
-							<td>${del.price } (KRW)인당${cp.unitCost } (KRW)</td>
+							<td>${del.price } (KRW) (인당${cp.unitCost } (KRW))</td>
 						</tr>
 						<tr>
 							<td>모집인원</td>
