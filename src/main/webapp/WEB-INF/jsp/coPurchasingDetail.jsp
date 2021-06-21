@@ -8,7 +8,7 @@
 		<section>
 			<h1 style="font-size: 40px">공동구매 상세내역</h1>
 			<h1 style="font-size: 30px">
-				📢 &nbsp;게시자 says &nbsp;&nbsp;<b style="color: #f2849e">"
+				📢 &nbsp;게시자 says &nbsp;&nbsp;<b style="color: #f2849e">" 
 					&nbsp;${cp.note } &nbsp;"</b>
 			</h1>
 			<h3>* 공동구매 ID : ${cp.coPurchasingId}</h3>
