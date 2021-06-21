@@ -10,12 +10,10 @@ public class MessageDTO implements Serializable
 	private String content;
 	private String messageDate; //String으로 변경 가능
 	
-	
 	//기본 생성자
 	public MessageDTO() {
 		super();
 	}
-	
 	
 	public MessageDTO(String senderUsername, String receiverUsername, String content, String messageDate) {
 		super();
@@ -24,7 +22,6 @@ public class MessageDTO implements Serializable
 		this.content = content; 
 		this.messageDate = messageDate;
 	}
-	
 	
 	//getter & setter
 	public String getSenderUsername() {
@@ -52,11 +49,9 @@ public class MessageDTO implements Serializable
 		this.messageDate = messageDate;
 	}
 
-
 	public int getDmNo() {
 		return dmNo;
 	}
-
 
 	public void setDmNo(int dmNo) {
 		this.dmNo = dmNo;

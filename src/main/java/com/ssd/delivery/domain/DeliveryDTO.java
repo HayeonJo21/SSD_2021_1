@@ -1,8 +1,6 @@
 package com.ssd.delivery.domain;
 
 import java.io.Serializable;
-import java.util.Date;
-
 
 @SuppressWarnings("serial")
 public class DeliveryDTO implements Serializable {
@@ -21,8 +19,6 @@ public class DeliveryDTO implements Serializable {
 	private int weight;
 	private int loadage;
 
-
-
 	public DeliveryDTO() {
 		super();
 	}
@@ -40,10 +36,6 @@ public class DeliveryDTO implements Serializable {
 		this.weight = weight;
 		this.loadage = loadage;
 	}
-
-
-
-
 
 	/* JavaBeans Properties */
 
@@ -113,6 +105,5 @@ public class DeliveryDTO implements Serializable {
 	public void setLoadage(int loadage) {
 		this.loadage = loadage;
 	}
-
 
 }

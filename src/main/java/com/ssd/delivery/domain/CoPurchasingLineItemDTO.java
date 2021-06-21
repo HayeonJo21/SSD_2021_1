@@ -2,19 +2,16 @@ package com.ssd.delivery.domain;
 
 import java.io.Serializable;
 
-public class CoPurchasingLineItemDTO implements Serializable{
+@SuppressWarnings("serial")
+public class CoPurchasingLineItemDTO implements Serializable {
 	
 	private int linenum;
 	private int coPurchasingId;
 	private String username;
-	
-	
-	
+
 	public CoPurchasingLineItemDTO() {
 		super();
 	}
-
-
 
 	public CoPurchasingLineItemDTO(int coPurchasingId, String username) {
 		super();
@@ -22,14 +19,10 @@ public class CoPurchasingLineItemDTO implements Serializable{
 		this.username = username;
 	}
 
-
-
 	public CoPurchasingLineItemDTO(String username) {
 		super();
 		this.username = username;
 	}
-
-
 
 	public CoPurchasingLineItemDTO(int linenum, int coPurchasingId, String username) {
 		super();
@@ -37,8 +30,6 @@ public class CoPurchasingLineItemDTO implements Serializable{
 		this.coPurchasingId = coPurchasingId;
 		this.username = username;
 	}
-
-
 
 	public int getDeliveryId() {
 		return linenum;
@@ -73,13 +64,5 @@ public class CoPurchasingLineItemDTO implements Serializable{
 	public void setUsername(String username) {
 		this.username = username;
 	}
-
-
-
-	
-	
-	
-	
-	
 	
 }

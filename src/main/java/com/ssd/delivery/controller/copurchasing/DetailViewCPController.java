@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.ssd.delivery.domain.AccountDTO;
-import com.ssd.delivery.domain.AuctionDTO;
 import com.ssd.delivery.domain.CoPurchasingDTO;
 import com.ssd.delivery.domain.CoPurchasingLineItemDTO;
 
@@ -53,7 +52,6 @@ public class DetailViewCPController {
 
 		List<CoPurchasingLineItemDTO> cplineitem = delivery.getCPLineItemsByCPId(cpId);
 
-
 		String status = "open";
 
 		if(delivery.getCPById(cpId).getMaxNumberOfPurchaser() <= delivery.CPLineItemCount(cpId)) 
@@ -82,14 +80,11 @@ public class DetailViewCPController {
 				if (list.getUsername().equals(account.getUsername()) )
 
 					status2 = "participant";
-
 			}
 		}
 
 		System.out.println("status " + status);
 		System.out.println("status2 " + status2);
-
-
 
 		if (cplineitem != null) model.put("cplineitem", cplineitem);
 
@@ -99,9 +94,6 @@ public class DetailViewCPController {
 		model.put("status", status);
 		model.put("status2", status2);
 		return "coPurchasingDetail";
-
-
-
 
 	}
 

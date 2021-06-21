@@ -2,8 +2,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-
-
 <!-- Main -->
 <div id="main">
 	<div class="inner">
@@ -124,6 +122,5 @@
 		<br /> <br /> <br />
 	</div>
 </div>
-
 
 <%@ include file="IncludeBottom.jsp"%>

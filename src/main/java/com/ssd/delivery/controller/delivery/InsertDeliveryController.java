@@ -63,6 +63,7 @@ public class InsertDeliveryController {
 			mav.setViewName("deliveryForm");
 			return mav;
 		}
+		
 		String sdate = del.getServiceDate();
 		
 		SimpleDateFormat dFormat = new SimpleDateFormat("yyyy/MM/dd");
@@ -75,7 +76,6 @@ public class InsertDeliveryController {
 
 		mav.addObject("delivery", del);
 		mav.setViewName("deliveryDetail");
-		
 		
 		return mav;
 	

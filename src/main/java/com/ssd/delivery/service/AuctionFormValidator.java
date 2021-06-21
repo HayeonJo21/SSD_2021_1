@@ -5,7 +5,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
@@ -14,9 +13,7 @@ import com.ssd.delivery.domain.AuctionDTO;
 
 @Component
 public class AuctionFormValidator implements Validator {
-	@Autowired
-	private DeliveryFacade delivery; 
-	
+
 	public boolean supports(Class<?> clazz) {
 		return AuctionDTO.class.isAssignableFrom(clazz);
 	}

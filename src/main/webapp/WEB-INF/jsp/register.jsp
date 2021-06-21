@@ -195,14 +195,10 @@
 					<form:errors path="phone" style="color:#E16A93; font-size:28px;" />
 				</div>
 				<div class="form-group">
-					<!-- <label for="favoriteUser" style="font-size: 24px">Favorite
-						User</label> -->
 					<input type="hidden" style="width: 800px" class="form-control"
 						name="favoriteUser" value="null" placeholder="선호하는 매장을 입력하세요.">
 				</div>
 				<div class="form-group">
-					<!-- <label for="languagePrefernce" style="font-size: 24px">Language
-						Setting</label> -->
 					<input type="hidden" style="width: 800px" class="form-control"
 						name="languagePreference" value="null" placeholder="Korean">
 				</div>

@@ -14,7 +14,6 @@ import com.ssd.delivery.domain.*;
 import com.ssd.delivery.service.DeliveryFacade;
 import com.ssd.delivery.service.Message;
 
-
 @Controller
 @SessionAttributes("userSession")
 @RequestMapping("/delivery/coPurchasingInsertForm.do")

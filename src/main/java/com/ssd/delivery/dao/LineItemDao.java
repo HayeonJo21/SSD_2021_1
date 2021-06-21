@@ -4,7 +4,6 @@ import java.util.List;
 import org.springframework.dao.DataAccessException;
 
 import com.ssd.delivery.domain.CoPurchasingDTO;
-import com.ssd.delivery.domain.CoPurchasingLineItemDTO;
 
 public interface LineItemDao {
 	

@@ -29,61 +29,7 @@ public class AccountFormController {
 	public String showForm() { 
 		return "register";
 	}
-	
-//	@PostMapping
-//	public String handleRequest(HttpServletRequest request, AccountDTO account,
-//			@RequestParam(value = "forwardAction", required = false) String forwardAction, Model model)
-//			throws Exception {
-//
-//		boolean existingUser = delivery.existingUser(account.getUsername());
-//
-//		if (existingUser == false) { // 존재하지 않는 회원, 회원가입기능 구현
-//			account.setStatus(1);
-//			delivery.insertAccount(account);
-//			
-//			return "redirect:/";
-//		} 
-//		else {
-//			delivery.updateAccount(account);
-//		}
-//
-//		model.addAttribute("userSession", account);
-//
-//		if (forwardAction != null) {
-//			return "redirect:/" + forwardAction;
-//		}
-//		else {
-//			return "redirect:/";
-//		}
-//	}
-//	
-//	@RequestMapping(method=RequestMethod.POST)
-//	public String submit(AccountDTO account) {
-//		account.setStatus(1);
-//		delivery.insertAccount(account);
-//		
-//		return "redirect:/";
-//	}
 
-	
-//	@Autowired
-//	private AccountFormValidator validator;
-//	
-//	@ModelAttribute("register")
-//	public AccountForm formBackingObject(HttpServletRequest request) 
-//			throws Exception {
-//		Account userSession = 
-//			(Account) WebUtils.getSessionAttribute(request, "userSession");
-//		if (userSession != null) {	// edit an existing account
-//			return new AccountForm(delivery.findUser(userSession.getUsername()));
-//		}
-//		else {	// create a new account
-//			return new AccountForm();
-//		}
-//	}
-//	
-
-//	
 	@PostMapping
 	public String onSubmit(HttpServletRequest request, HttpSession session,
 			@ModelAttribute("accountForm") AccountDTO account,

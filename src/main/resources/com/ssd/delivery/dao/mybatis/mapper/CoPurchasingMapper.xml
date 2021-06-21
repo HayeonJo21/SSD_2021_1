@@ -85,6 +85,4 @@
     select coPurchasingId from coPurchasing where username = #{username}
 	</select>
 	
-	
-
 </mapper>

@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.ssd.delivery.service.DeliveryFacade;
 
-
 @Controller
 @RequestMapping("/admin/delivery/delete.do")
 public class DeleteDeliveryController {

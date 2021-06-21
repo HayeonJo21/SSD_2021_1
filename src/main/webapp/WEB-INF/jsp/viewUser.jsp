@@ -63,10 +63,6 @@
 					</tbody>
 				</table>
 			</div>
-			<!-- <a class="button" href="/delivery/updateAccount.do">정보수정</a><br><br><br> -->
-			<%-- <div position="absolute" style="float: right; width: 300px;">
-						<jsp:include page="message.jsp" flush="true" />
-					</div> --%>
 		</div><br/>
 		<div>
 			<h3>* ${favUser.username}님이 참여한 <b style="color: #f2849e"> 공동구매 내역</b></h3>

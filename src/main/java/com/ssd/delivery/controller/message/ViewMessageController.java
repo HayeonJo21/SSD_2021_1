@@ -43,8 +43,6 @@ public class ViewMessageController {
 		mav.setViewName("messageForm");
 				
 		return mav;
-
-	
 	}
 	
 	@RequestMapping("/delivery/messageCreate2.do")
@@ -59,56 +57,8 @@ public class ViewMessageController {
 		mav.setViewName("messageForm2");
 				
 		return mav;
-
-	
 	}
-//	
-//	@RequestMapping("/delivery/messageSend.do")
-//	public ModelAndView sendingMessage(HttpSession session, @RequestParam("receiverUsername") String receiver,
-//			@RequestParam("content") String content) throws Exception {
-//		AccountDTO account = (AccountDTO)session.getAttribute("userSession");
-//		
-//		String username = account.getUsername();
-//
-//		Calendar cal = Calendar.getInstance();
-//		Date date = cal.getTime();
-//		SimpleDateFormat dFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm");
-//		String currentDate = dFormat.format(date);
-//		
-//		ModelAndView mav = new ModelAndView();
-//		
-//		if (content.equals("")) {
-//			AccountDTO account = (AccountDTO)session.getAttribute("userSession");
-//			
-//			String username = account.getUsername();
-//			List<AccountDTO> receivers = delivery.getUserList();
-//			ModelAndView mav = new ModelAndView();
-//			
-//			mav.addObject("sender", username);
-//			mav.addObject("receiversList", receivers);
-//			mav.setViewName("messageForm");
-//			
-//			return mav;
-//		}
-//			
-//		MessageDTO message = new MessageDTO(username, receiver, content, currentDate);
-//		delivery.insertMessage(message);
-//		
-//		List<MessageDTO> messageContents = delivery.getMessageContentByUsername(username, receiver);
-//		List<MessageDTO> messageReceiveContents = delivery.getMessageContentByReceiverUsername(receiver, username);
-//		
-//		messageContents.addAll(messageReceiveContents);
-//		messageContents.sort((d1,d2) -> d1.getMessageDate().compareTo(d2.getMessageDate()));
-//
-//		mav.addObject("username", username);
-//		mav.addObject("receiver", receiver);
-//		mav.addObject("contentList", messageContents);
-//		mav.setViewName("message");
-//		
-//		return mav;
-//	 
-//	}
-//	
+
 	@RequestMapping("/delivery/messageSend2.do")
 	public ModelAndView sendingMessage2(HttpSession session, @RequestParam("receiverUsername") String receiver,
 			@RequestParam("content") String content) throws Exception {

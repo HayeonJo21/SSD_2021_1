@@ -67,10 +67,6 @@ public class MyPageController {
 	public String onSubmit(HttpServletRequest request, HttpSession session,
 			@ModelAttribute("accountForm")  AccountDTO account,
 			BindingResult result) throws Exception  {
-		
-//		validator.validate(accountForm, result);
-//		if (result.hasErrors()) return "index";
-		
 		delivery.updateAccount(account);
 		
 		session.setAttribute("userSession", account);

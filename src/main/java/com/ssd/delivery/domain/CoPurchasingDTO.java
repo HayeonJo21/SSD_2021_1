@@ -105,8 +105,5 @@ public class CoPurchasingDTO implements Serializable {
 	public void setFlag2(int flag2) {
 		this.flag2 = flag2;
 	}
-	
-
-	
 
 }

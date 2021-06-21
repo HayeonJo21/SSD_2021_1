@@ -1,7 +1,5 @@
 package com.ssd.delivery.dao;
 
-import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.dao.DataAccessException;

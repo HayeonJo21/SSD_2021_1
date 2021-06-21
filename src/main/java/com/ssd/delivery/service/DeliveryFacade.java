@@ -3,8 +3,6 @@ package com.ssd.delivery.service;
 import java.util.Date;
 import java.util.List;
 
-import org.springframework.dao.DataAccessException;
-
 import com.ssd.delivery.domain.AccountDTO;
 import com.ssd.delivery.domain.AuctionDTO;
 import com.ssd.delivery.domain.AuctionLineItemDTO;
@@ -73,9 +71,6 @@ public interface DeliveryFacade {
 
 	List<CoPurchasingDTO> isExistingCPAC();
 	
-//	int isCPUploader(String username, int cpId);
-//	int isCPPurchaser(String username, int cpId);
-
 	// Delivery
 	void insertDelivery(DeliveryDTO delivery);
 

@@ -75,7 +75,6 @@ public class AccountDTO implements Serializable{
 
 	//사용자 관리자 구분 메소드
 	public boolean isManager() {
-		//		System.out.println(this.user_level);
 		if (this.status < 2) {
 			return false;
 		}

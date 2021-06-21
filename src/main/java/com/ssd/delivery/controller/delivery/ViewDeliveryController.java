@@ -10,13 +10,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ssd.delivery.domain.AccountDTO;
 import com.ssd.delivery.domain.DeliveryDTO;
 import com.ssd.delivery.service.DeliveryFacade;
-import com.ssd.delivery.service.DeliveryImpl;
 import com.ssd.delivery.service.Message;
 
 @Controller
@@ -64,14 +62,12 @@ public class ViewDeliveryController {
 			mav.addObject("delivery", deliveryItem);
 			mav.addObject("userSession", account);
 			mav.setViewName("deliveryDetail");
-			
 		}
 		else{
 			mav.addObject("delivery", deliveryItem);
 			mav.addObject("userSession", account);
 			mav.setViewName("deliveryDetail");
 		}
-		
 				
 		return mav;
 	}

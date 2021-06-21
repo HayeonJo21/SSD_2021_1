@@ -44,15 +44,6 @@ public class AuctionDTO implements Serializable {
 		this.username = username;
 	}
 	
-	
-	
-//	public AuctionDTO(Date endDate, int startPrice, String username) {
-//		super();
-//		this.endDate = endDate;
-//		this.startPrice = startPrice;
-//		this.username = username;
-//	}
-	
 	public AuctionDTO(int startPrice, String endDate, String username) {
 		super();
 		this.startPrice = startPrice;
@@ -163,11 +154,5 @@ public class AuctionDTO implements Serializable {
 	public void setFlag2(int flag2) {
 		this.flag2 = flag2;
 	}
-	
-	
-	
-	
-	
-	
 
 }

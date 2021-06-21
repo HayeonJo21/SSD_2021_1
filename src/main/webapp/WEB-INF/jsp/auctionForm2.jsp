@@ -20,19 +20,19 @@
 		<h1>경매 글 작성 ✏️</h1>
 		<form:form modelAttribute="AuctionForm" method="post"
 			action="/delivery/auctionInsert2.do">
-		<!-- 	
+			<!-- 	
 <input type="date" onkeyup="dateFormat(this)" maxlength="10">
  -->
 			<div class="form-group">
 				<label for="username" style="font-size: 24px">경매 게시자</label> <input
 					type="hidden" style="width: 800px" class="form-control"
-					name="username" value='${userSession.username}' id="username" >
-					<p class="form-control-static">${userSession.username}</p>
+					name="username" value='${userSession.username}' id="username">
+				<p class="form-control-static">${userSession.username}</p>
 			</div>
 			<div class="form-group">
-				<label for="demo-name" style="font-size: 24px">경매 진행할 상품</label> <input type="hidden"
-					name="deliveryId" id="deliveryId" value='${delivery.deliveryId}'
-					placeholder="${delivery.deliveryId}" />
+				<label for="demo-name" style="font-size: 24px">경매 진행할 상품</label> <input
+					type="hidden" name="deliveryId" id="deliveryId"
+					value='${delivery.deliveryId}' placeholder="${delivery.deliveryId}" />
 				<div class="col-lg-10">
 					<p class="form-control-static">${delivery.deliveryId}</p>
 				</div>
@@ -89,31 +89,9 @@
 				</div>
 
 			</div>
-			<!-- <div class="row gtr-uniform">
-						<div class="col-12">
-							<label for="demo-name"></label> <input type="text"
-								name="demo-name" id="demo-name" value="" placeholder="username"
-								disabled />
-						</div>
-						<div class="col-12">
-							<input type="text" name="endDate" id="endDate" value=""
-								placeholder="마감일" />
-						</div>
-						<div class="col-12">
-							<input type="text" name="startPrice" id="startPrice" value=""
-								placeholder="경매 시작가" />
-						</div>
 
-						<div class="col-12">
-							<ul class="actions">
-								<li><input type="submit" value="Submit" class="primary" /></li>
-								<li><input type="reset" value="Reset" /></li>
-							</ul>
-						</div>
-					</div> -->
 		</form:form>
 
-		<%-- 	<jsp:include page="delivery.jsp" flush="true" /> --%>
 	</div>
 
 </div>

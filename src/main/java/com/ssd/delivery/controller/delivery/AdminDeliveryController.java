@@ -33,8 +33,7 @@ public class AdminDeliveryController {
 		ModelAndView mav = new ModelAndView();
 		
 		List<DeliveryDTO> DelList = delivery.getDeliveryList();
-		
-		
+
 		mav.addObject("DelList", DelList);
 		mav.setViewName("adminDelivery");
 	

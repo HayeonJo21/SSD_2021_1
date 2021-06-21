@@ -36,17 +36,5 @@ public class ViewAuctionController {
 				
 		return mav;
 	} 
-	
-//	@RequestMapping("/auction/view.do")
-//	public String handleRequest(
-//			@RequestParam("username") String username,
-//			@RequestParam("auction") String auction,
-//			ModelMap model) throws Exception {
-////		AuctionDTO auction = this.petStore.getAuctionById(auctionId);
-//
-//		AccountDTO user = this.petStore.getAccountDTO(username);
-//		model.put("auction", auction);
-//		return "auction";
-//	}
 
 }

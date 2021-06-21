@@ -46,8 +46,6 @@
 				</div>
 			</div>
 
-
-
 			<form method="post" action="/delivery/coPurchasingJoin.do">
 				<div class="col-12">
 					<input type="hidden" name="coPurchasingId" id="coPurchasingId"

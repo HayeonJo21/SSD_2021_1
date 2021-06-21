@@ -17,6 +17,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
  
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
+		
 		//main
 		registry.addViewController("/delivery/mainpage.jsp").setViewName("index");
 		

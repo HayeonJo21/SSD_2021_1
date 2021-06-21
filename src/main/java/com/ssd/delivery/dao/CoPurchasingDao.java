@@ -24,13 +24,5 @@ public interface CoPurchasingDao {
 	List<CoPurchasingDTO> getCPListByUsername(String username) throws DataAccessException;
 
 	List<CoPurchasingDTO> isExsitingCPAC() throws DataAccessException;
-	
-	
-//
-//	int isCPUploader(String username, int cpId)throws DataAccessException;
-//
-//	int isCPPurchaser(String username, int cpId) throws DataAccessException;
-//	
-	
 
 }

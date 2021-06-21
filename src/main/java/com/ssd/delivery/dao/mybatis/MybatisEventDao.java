@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 import com.ssd.delivery.dao.EventDao;
 import com.ssd.delivery.dao.mybatis.mapper.EventMapper;
 
-
 @Repository
 public class MybatisEventDao implements EventDao {	
 	@Autowired

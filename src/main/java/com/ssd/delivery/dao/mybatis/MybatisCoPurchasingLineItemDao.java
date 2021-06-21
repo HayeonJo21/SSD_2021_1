@@ -19,8 +19,6 @@ public class MybatisCoPurchasingLineItemDao implements  CoPurchasingLineItemDao 
 	@Autowired
 	private CoPurchasingLineItemMapper cplineitemmapper;
 
-	
-	
 	@Override
 	public List<CoPurchasingLineItemDTO> getCPLineItemsByCPId(int CPId) throws DataAccessException {
 		return cplineitemmapper.getCPLineItemsByCPId(CPId);
@@ -37,7 +35,6 @@ public class MybatisCoPurchasingLineItemDao implements  CoPurchasingLineItemDao 
 		cplineitemmapper.insertCPLineItem2(cp);
 	}
 
-
 	@Override
 	public void deleteCPLineItem(int coPurchasingId) throws DataAccessException {
 		cplineitemmapper.deleteCPLineItem(coPurchasingId);
@@ -48,14 +45,10 @@ public class MybatisCoPurchasingLineItemDao implements  CoPurchasingLineItemDao 
 		return cplineitemmapper.getCPLineItemsByCPId(coPurchasingId).size();
 	}
 
-
 	@Override
 	public void deleteCPLineItemByUsername(String username) throws DataAccessException {
 		cplineitemmapper.deleteCPLineItemByUsername(username);
 		
 	}
-	
-	
-	
 	
 }

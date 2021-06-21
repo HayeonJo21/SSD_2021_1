@@ -53,10 +53,6 @@
 			</div>
 			<a class="button" href="/delivery/updateAccount.do">정보수정</a><br>
 			<br>
-			<br>
-			<%-- <div position="absolute" style="float: right; width: 300px;">
-						<jsp:include page="message.jsp" flush="true" />
-					</div> --%>
 		</div>
 		<br />
 		<div>

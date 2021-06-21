@@ -144,14 +144,6 @@ public class DeliveryImpl implements DeliveryFacade {
 	public List<CoPurchasingDTO> getCPListByUsername(String username) {
 		return cpDao.getCPListByUsername(username);
 	}
-	
-//	public int isCPUploader(String username, int cpId) {
-//		return cpDao.isCPUploader(username, cpId);
-//	}
-//	
-//	public int isCPPurchaser(String username, int cpId) {
-//		return cpDao.isCPPurchaser(username, cpId);
-//	}
 
 	// Delivery
 	public void insertDelivery(DeliveryDTO delivery) {

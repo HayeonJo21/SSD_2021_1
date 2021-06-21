@@ -21,9 +21,8 @@ public class AuctionJoinFormValidator implements Validator {
 
 		AuctionLineItemDTO auction = (AuctionLineItemDTO)obj; 
 
-		//ValidationUtils.rejectIfEmptyOrWhitespace(errors, "joinPrice", "JOIN_PRICE_REQUIRED", "JoinPrice is required.");
-		
 		AuctionDTO ac = delivery.getAuctionById(auction.getAuctionId());
+		
 		System.out.println(auction.getAuctionId());
 		System.out.println(ac.getCurrentPrice());
 		System.out.println(auction.getJoinPrice());

@@ -22,8 +22,6 @@ public class FavoriteUserDTO implements Serializable {
 		this.favoriteUsername = favoriteUsername;
 		this.tradeCount = tradeCount;
 	}
-	
-	
 
 	public FavoriteUserDTO(String username, String favoriteUsername) {
 		super();

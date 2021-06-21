@@ -8,7 +8,6 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -28,18 +27,6 @@ public class AddFavoriteUserController {
 	public void setDeliveryFacade(DeliveryFacade delivery) {
 		this.delivery= delivery;
 	}
-	
-//	@GetMapping 
-//	public String handleRequest(
-//			@RequestParam("username") String username,
-//			ModelMap model) throws Exception {
-//		
-//		AccountDTO user = delivery.findUser(username);
-//		AccountDTO favUser = delivery.findUser(username);
-//		model.put("favUser", favUser);
-//		model.put("user", user);
-//		return "viewUser";
-//	}
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView viewMypage(Model model, HttpSession session, @RequestParam("username") String username) throws Exception {
